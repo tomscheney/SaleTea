@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta name="referrer" content="no-referrer|no-referrer-when-downgrade|origin|origin-when-crossorigin|unsafe-url"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script src="js/jquery-3.3.1.js"></script> 
+	<script type="text/javascript" src="js/jquery-addShopping.js"></script>
     <script src="js/swiper-5.0.4/package/js/swiper.min.js"></script>
 	<script src="js/jquery.fly.min.js"></script>
     <!-- Link Swiper's CSS -->
@@ -143,7 +145,7 @@
 		display: inline-block;
 		background-color: #fff;
 		padding-top: 3rem;
-		/* padding-left: 1rem; */
+		padding-left: 10px;
 	}
 	.Bright-spot-1-r span{
 		text-align: center;
@@ -270,6 +272,9 @@
     </style>
 </head>
 <body>
+	<div class="product-body">
+		
+	</div>
     <!-- 轮播图 -->
   <div class="swiper-top">
       <div class="swiper-container">
@@ -393,67 +398,76 @@
 	  </div>
   </div>
 </body>
-<script type="text/javascript" src="js/jquery-addShopping.js"></script>
 <script>
 	// var offset = $('.yuan').offset();
    var mySwiper = new Swiper ('.swiper-container', {
-    loop: true, // 循环模式选项
-    autoplay:true,//等同于以下设置
-    // 分页器
-    pagination: {
-      el: '.swiper-pagination'
-    }
-  })  
-
+					loop: true, // 循环模式选项
+					autoplay:true,//等同于以下设置
+					pagination: {
+					  el: '.swiper-pagination' // 分页器
+					}
+				  })  
   $(document).ready(function(){
-	  
-	  function myFunction(){
+	  // function myFunction(){
 	  	   console.log("dianji le ")
 	  	   $.ajax({
-	  		   url: "htttp://www.zhixianzhai.com:8088/getProductDetail",
-	  		   type: "post",
+	  		   // url: "https://47.112.98.24:8090/getProductDetail",
+			   url:"https://47.112.98.24:8090/getUserByTelephone",
+	  		   type: "POST",
+			   dataType:"json",
 	  		   data:{
-	  			   // "id": 123,
-	  			   // "niubi": 1326556
-	  		   },
-	  		   success(res){
-	  			   console.log(res)
-	  		   }
-	  	   })
-	  	   // location.href = "shop-car.html?id=1"
-	  	   location.href = "shop-car.html"
-		   }
-		   })
-	  // function myFunction() {
-	  //     setTimeout(function(){ alert("Hello"); }, 3000);
-	  // }
-	$("#btn-car2").click(function(){
-		  $(".yuan").show();
-		   $("#num").show();
-		  $(".jia1").show(100);
-		  $(".jia1").show().delay(1000).fadeOut();
-	  
-		})
-	function adCar(){
-			location.href = "adress.html";
-		}
-	function addCar(){
-			location.href = "shop-car.html";
-		}
-		// 点击添加购物车
-		$(function(){
-		   $('#btn-car2').shoping({
-				endElement:".yuan",
-				iconCSS:"",
-				iconImg:"img/l.JPG",
-				endFunction:function(element){
-					$("#num").html(parseInt($("#num").html())+1);
-					console.log(element);
-					return false;
+				   'productId':'88880001'
+			   },
+	  		   success:function(res) {
+                            //var methodId=data.methodList.length;
+                            if(res!=null&&res!=""){
+                                var data4 = eval(res);
+                                var Str2="";
+                                for(var k in data4){
+                                    Str2+="<tr class=\"tab2_tr\">";
+                                    Str2+=" <td>"+data4[k].code+"</td>";
+                                    Str2+=" <td>"+data4[k].msg+"</td> </tr>";
+                                }  
+								 $(".product-body").html(Str2);   
+							}
+				},
+				error: function(data) {
+					console.log("dataerro",data)
 				}
-			})
-		});
- 
+			});
+		})
+							   // location.href = "shop-car.html?id=1"
+							   // location.href = "shop-car.html"
+		 
+	  // ,(res){
+	  // 	   productId=88880001
+	  // 	   console.log(res)
+	  //    }
+	// $("#btn-car2").click(function(){
+	// 	  $(".yuan").show();
+	// 	   $("#num").show();
+	// 	  $(".jia1").show(100);
+	// 	  $(".jia1").show().delay(1000).fadeOut();
+	// 	})
+	// function adCar(){
+	// 		location.href = "adress.html";
+	// 	}
+	// function addCar(){
+	// 		location.href = "shop-car.html";
+	// 	}
+		// 点击添加购物车
+		// $(function(){
+		//    $('#btn-car2').shoping({
+		// 		endElement:".yuan",
+		// 		iconCSS:"",
+		// 		iconImg:"img/l.JPG",
+		// 		endFunction:function(element){
+		// 			$("#num").html(parseInt($("#num").html())+1);
+		// 			console.log(element);
+		// 			return false;
+		// 		}
+		// 	})
+		// })
 
 </script>
 </html>
