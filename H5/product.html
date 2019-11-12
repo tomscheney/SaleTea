@@ -109,7 +109,7 @@
 				<hr class="hr-4">
 			</div>
 			<div class="like-1">
-				<img src="img/qing4-(6).jpg" />
+				<img src="img/gushu-(3).jpg" />
 				<p>芷贤斋 正山小种</p>
 				<p style="color: red;">547.3元/份</p>
 			</div>
@@ -141,6 +141,13 @@
 		</div>
 	</body>
 	<script>
+		var mySwiper = new Swiper('.swiper-container', {
+			loop: true, // 循环模式选项
+			autoplay: true, //等同于以下设置
+			pagination: {
+				el: '.swiper-pagination' // 分页器
+			}
+		})
 		$("#btn-car2").click(function() {
 			$(".yuan").show();
 			$("#num").show();

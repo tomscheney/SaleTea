@@ -28,15 +28,8 @@
 				console.log("dataerro", data);
 			}
 		});
-		var mySwiper = new Swiper('.swiper-container', {
-			loop: true, // 循环模式选项
-			autoplay: true, //等同于以下设置
-			pagination: {
-				el: '.swiper-pagination' // 分页器
-			}
-		})
-
-		
+	
+	
 
 		function adCar() {
 			location.href = "adress.html";
