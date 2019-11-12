@@ -2,16 +2,10 @@
 <html>
 <head lang="en">
 <meta charset="UTF-8">
-<!--  <meta name="format-detection" content="telephone=no" /> -->
-<!--  <meta name="renderer" content="webkit"> -->
- <!-- <meta name="description" content=""> -->
-<!--  <meta name="keywords" content=""> -->
-<!--  <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
 <meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <title>购物车</title>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-
 <link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.7-dist/css/bootstrap.css"/>
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/animate.css">
@@ -21,12 +15,8 @@
 <body>
 <!--顶部通栏-->
    <header class="jd_topBar">
-        <!-- <a href="#" class="icon_back"></a> -->
         <h3>购物车</h3>
-        <!-- <a href="#"class="icon_menu"></a> -->
     </header>
-
-
 <!--安全提示-->
 <div class="safety-tip">
    <p class="fadeInDown animated">您正在安全购物环境中，请放心购物</p>
@@ -93,32 +83,22 @@
 </div>
 <script src="js/cartjs.js"></script>
 <script>
-	console.log(window.location.href)
-	let str = window.location.href.split("?")
-	console.log(str[1])
-	let str1 = str[1].split("=")
-	// console.log(str1[1])
-	var params = {
-		dataList:[
-			{
-				title:'111',
-				price: '120'
-			},
-			{
-				title:'111',
-				price: '120'
-			},
-			{
-				title:'111',
-				price: '120'
-			}
-		],
-		// dafasfa:'ajsdkldjskljskl'
+	// 获取地址栏中的字符串，并将其转化为对象
+	function addr_obj() {
+	 var search = location.search;
+	 var obj = {};
+	 var keyValues = search.slice(1).split("&");
+	 keyValues.forEach(function(keyValue) {
+	 var tempArr = keyValue.split("=");
+	 var key = tempArr[0];
+	 // var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
+	 var value = tempArr[1];
+	  obj[key] = value;
+	 });
+	 return obj;
 	}
-	
-	for (let item of params.dataList) {
-		$('.jd_shop_con').html("<div class='123'>"+ params.dafasfa +"</div>")
-	}
+	var obj = addr_obj();
+	console.log(obj.userId);
 </script>
 </body>
 </html>
