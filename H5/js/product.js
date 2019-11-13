@@ -16,9 +16,8 @@
 			 return obj;
 			}
 			 
-			if(obj.code!=''&&obj.code!='undefined'&&obj.code!='null') {
-				var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
-				var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
+			if(obj.code==''&&obj.code=='undefined'&&obj.code=='null') {
+				
 				var Jumpurl = encodeURIComponent(window.location.href);
 				var appid = 'wx3837a50ccd30cf87';
 				window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
@@ -26,7 +25,8 @@
 			}
 			console.log(obj.code)
 			
-			
+			var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
+			var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
 			$.ajax({
 				url: "http://47.112.98.24:8090/getPayInfo",
 				type: "get",
