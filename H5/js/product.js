@@ -2,12 +2,12 @@
 		$(document).ready(function() {
 			var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
 			var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
-			var Jumpurl = encodeURIComponent(window.location.href);
-			var appid = 'wx3837a50ccd30cf87';
-			window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
-			+ appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
-			var code = decodeURIComponent(Jumpurl);
-			console.log("zhifu")
+			// var Jumpurl = encodeURIComponent(window.location.href);
+			// var appid = 'wx3837a50ccd30cf87';
+			// window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
+			// + appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+			// var code = decodeURIComponent(Jumpurl);
+			// console.log("zhifu",code)
 			$.ajax({
 				url: "http://47.112.98.24:8090/getPayInfo",
 				type: "get",
@@ -60,7 +60,13 @@
 	
 
 		function adCar() {
-			location.href = "adress.html";
+			// location.href = "adress.html";
+			var Jumpurl = encodeURIComponent(window.location.href);
+			var appid = 'wx3837a50ccd30cf87';
+			window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
+			+ appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+			var code = decodeURIComponent(Jumpurl);
+			console.log("zhifu",code)
 		}
 
 		function addCar() {
