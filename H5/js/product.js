@@ -14,7 +14,7 @@
 				dataType: "json",
 				// contentType: "application/json",
 				data:{
-					code:code,
+					code:'',
 					totalFee:Fee,
 					orderNo:orde,
 				},
