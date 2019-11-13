@@ -5,8 +5,8 @@
 			var Jumpurl = encodeURIComponent(window.location.href);
 			var appid = 'wx3837a50ccd30cf87';
 			window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
-			+ appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
-			var code = decodeURIComponent(Jumpurl)
+			+ appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+			var code = decodeURIComponent(Jumpurl);
 			console.log("zhifu")
 			$.ajax({
 				url: "http://47.112.98.24:8090/getPayInfo",
