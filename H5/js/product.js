@@ -1,5 +1,33 @@
 // 获取后台数据
 		$(document).ready(function() {
+			var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
+			var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
+			var Jumpurl = encodeURIComponent(window.location.href);
+			var appid = 'wx3837a50ccd30cf87';
+			window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
+			+ appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
+			var code = decodeURIComponent(Jumpurl)
+			console.log("zhifu")
+			$.ajax({
+				url: "http://47.112.98.24:8090/getPayInfo",
+				type: "post",
+				dataType: "json",
+				// contentType: "application/json",
+				data:{
+					code:code,
+					totalFee:Fee,
+					orderNo:orde,
+				},
+				success: function(res) { // res就是后台接口返回的数据
+					console.log(res.code)
+				},
+			})
+			error: function data() {
+				console.log("dataerro", data);
+				console.log(111)
+			}
+		});
+		$(document).ready(function() {
 			// function myFunction(){
 			console.log("dianji le ")
 			$.ajax({
