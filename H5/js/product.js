@@ -10,7 +10,7 @@
 			console.log("zhifu")
 			$.ajax({
 				url: "http://47.112.98.24:8090/getPayInfo",
-				type: "post",
+				type: "get",
 				dataType: "json",
 				// contentType: "application/json",
 				data:{
