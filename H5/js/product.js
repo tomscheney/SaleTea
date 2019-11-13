@@ -1,13 +1,32 @@
 // 获取后台数据
 		$(document).ready(function() {
-			var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
-			var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
-			// var Jumpurl = encodeURIComponent(window.location.href);
-			// var appid = 'wx3837a50ccd30cf87';
-			// window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
-			// + appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
-			// var code = decodeURIComponent(Jumpurl);
-			// console.log("zhifu",code)
+			
+			// 获取地址栏中的字符串，并将其转化为对象
+			function addr_obj() {
+			 var search = location.search;
+			 var obj = {};
+			 var keyValues = search.slice(1).split("&");
+			 keyValues.forEach(function(keyValue) {
+			  var tempArr = keyValue.split("=");
+			  var key = tempArr[0];
+			  // var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
+			  var value = tempArr[1];
+			  obj[key] = value;
+			 });
+			 return obj;
+			}
+			 
+			if(obj.code!=''&&obj.code!='undefined'&&obj.code!='null') {
+				var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
+				var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
+				var Jumpurl = encodeURIComponent(window.location.href);
+				var appid = 'wx3837a50ccd30cf87';
+				window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
+				+ appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+			}
+			console.log(obj.code)
+			
+			
 			$.ajax({
 				url: "http://47.112.98.24:8090/getPayInfo",
 				type: "get",
@@ -60,13 +79,8 @@
 	
 
 		function adCar() {
-			// location.href = "adress.html";
-			var Jumpurl = encodeURIComponent(window.location.href);
-			var appid = 'wx3837a50ccd30cf87';
-			window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
-			+ appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
-			var code = decodeURIComponent(Jumpurl);
-			console.log("zhifu",code)
+			location.href = "adress.html";
+			
 		}
 
 		function addCar() {
