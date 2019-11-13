@@ -16,7 +16,8 @@
 			 return obj;
 			}
 			var obj = addr_obj()
-			 
+			
+			 console.log(obj.code)
 			if(obj.code==''||obj.code=='undefined'||obj.code=='null') {
 				
 				var Jumpurl = encodeURIComponent(window.location.href);
