@@ -356,7 +356,7 @@
 		<!-- 商品金额 -->
 		<div class="amount">
 			<span>商品金额</span>
-			<span>49.9元</span>
+			<span>元</span>
 		</div>
 		<!-- 叒一条没有感情的分割线 -->
 		<hr class="hr-2">
@@ -421,7 +421,27 @@
 	<script src="http://testmecom.hhit.com.cn/mecom/micromall/page/wxPrePay.jsp" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="../js/common.js"></script>
 	<script type="text/javascript">
-
+	// 获取后台数据
+		$(document).ready(function() {
+			// function myFunction(){
+			console.log("zhifu")
+			$.ajax({
+				url: "http://47.112.98.24:8090/getPayInfo",
+				type: "post",
+				dataType: "json",
+				// contentType: "application/json",
+				data:{
+					
+				},
+				success: function(res) { // res就是后台接口返回的数据
+					console.log(res)
+				},
+			})
+			error: function data() {
+				console.log("dataerro", data);
+				console.log(111)
+			}
+		});
 	// 调用支付
 	var timestamp = (new Date()).getTime();
 	var rand = parseInt(Math.random() * (100 - 0 + 1) + 100);
