@@ -18,8 +18,8 @@
 			var obj = addr_obj()
 			
 			 console.log(obj.code)
-			if(obj.code==''||obj.code=='undefined'||obj.code=='null') {
-				
+			if(obj.code == ''|| obj.code == undefined || obj.code == 'null') {
+				console.log("123")
 				var Jumpurl = encodeURIComponent(window.location.href);
 				var appid = 'wx3837a50ccd30cf87';
 				window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
