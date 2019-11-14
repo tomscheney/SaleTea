@@ -36,7 +36,7 @@
 				// contentType: "application/json",
 				data:{
 					code:obj.code,
-					totalFee:Fee,
+					totalFee:'101',
 					orderNo:orde,
 				},
 				success: function(res) { // res就是后台接口返回的数据
