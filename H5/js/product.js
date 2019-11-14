@@ -20,7 +20,7 @@
 			if(obj.code == ''|| obj.code == undefined || obj.code == 'null') {
 				console.log("123")
 				var Jumpurl = encodeURIComponent(window.location.href);
-				var appid = 'wx3837a50ccd30cf87';
+				var appid = 'wx6e974f12e898a2ee';
 				window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
 				+ appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
 			}
