@@ -35,12 +35,12 @@
 				dataType: "json",
 				// contentType: "application/json",
 				data:{
-					code:code,
+					code:obj.code,
 					totalFee:Fee,
 					orderNo:orde,
 				},
 				success: function(res) { // res就是后台接口返回的数据
-					console.log(res.code)
+					console.log(res.obj.code)
 				},
 			})
 			error: function data() {

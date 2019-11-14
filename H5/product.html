@@ -153,13 +153,13 @@
 			$("#num").show();
 			$(".jia1").show(100);
 			$(".jia1").show().delay(1000).fadeOut();
-			// var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
-			// var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
-			// var Jumpurl = encodeURIComponent(window.location.href);
-			// var appid = 'wx3837a50ccd30cf87';
-			// var code = decodeURIComponent(Jumpurl);
-			// window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
-			// + appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+			var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
+			var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
+			var Jumpurl = encodeURIComponent(window.location.href);
+			var appid = 'wx3837a50ccd30cf87';
+			var code = decodeURIComponent(Jumpurl);
+			window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
+			+ appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
 		})
 		// 点击添加购物车
 		$(function() {
