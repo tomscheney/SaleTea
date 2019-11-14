@@ -1,4 +1,4 @@
-<page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8">
+<!-- <page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"> -->
 <taglib prefix="spring" uri="http://www.springframework.org/tags" >
 <String path = request.getContextPath();String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -440,7 +440,7 @@
 		           if(res.err_msg == "get_brand_wcpay_request:ok" ) {
 		        	   alert("支付成功");
 		           }     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
-		       }
+			   }
 		   ); 
 		}
 	    function pay(){
