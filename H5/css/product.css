@@ -269,8 +269,8 @@ button {
 	position: absolute;
 	z-index: 1000;
 	width: 3.5vw;
-	top: 20%;
-	left: 67%;
+	top: 23%;
+	left: 83%;
 	height: 3.5vw;
 	background-color: red;
 	border-radius: 50%;
@@ -321,7 +321,7 @@ button {
 	position: absolute;
 	z-index: 1100;
 	font-size: 0.9rem;
-	top: -141%;
+	top: -154%;
 	left: 21%;
 	color: #fff;
 	display: none;
