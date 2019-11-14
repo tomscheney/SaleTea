@@ -32,11 +32,11 @@
 			$.ajax({
 				url: "http://47.112.98.24:8090/getPayInfo",
 				type: "post",
+				// contentType: "application/json",
 				dataType: "json",
-				contentType: "application/json",
 				data:{
 					code:obj.code,
-					totalFee:'101',
+					totalFee:Fee,
 					orderNo:orde,
 				},
 				success: function(res) { // res就是后台接口返回的数据
