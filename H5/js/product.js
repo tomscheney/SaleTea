@@ -30,7 +30,7 @@
 			var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
 			
 			$.ajax({
-				url: "http://47.112.98.24:8090/getPayInfo",
+				url: "https://47.112.98.24:8090/getPayInfo",
 				type: "post",
 				// contentType: "application/json",
 				dataType: "json",
