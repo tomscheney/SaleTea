@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<script src="js/jquery-3.3.1.js"></script>
+		<link rel="stylesheet" href="js/bootstrap-3.3.7-dist/css/bootstrap.css">
+		<title>订单支付</title>
+		<style type="text/css">
+			@font-face {
+			font-family: 'iconfont';
+			src: url('font_family/iconfont.eot');
+			src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+			url('font_family/iconfont.woff2') format('woff2'),
+			url('font_family/iconfont.woff') format('woff'),
+			url('font_family/iconfont.ttf') format('truetype'),
+			url('font_family/iconfont.svg#iconfont') format('svg');
+			}
+			.iconfont{
+			font-family:"iconfont" !important;
+			font-size:8px;
+			font-style:normal;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			}
+			/* 右箭头 */
+			.indicator{
+				width: 5px;
+				height: 10px;
+				float: right;
+				margin-right: 1rem;
+			}
+			.i-icon{
+				float: left;
+			}
+			.iconfont{
+				font-size: 20px;
+				line-height: 25px;
+				height: auto;
+				background-color: transparent!important;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				width: 100%;
+			}
+			button{
+				border: 1px solid grey;
+				padding: 3vw 8.4vw;
+				background-color: transparent;
+			}
+			.pay_body{
+				text-align: center;
+				width: 80%;
+				font-size: 20px;
+				padding: 9vw 0 0 0;
+				margin: 0 auto;
+			}
+			.pay-p{
+				margin-bottom: 35px;
+			}
+			.wx-pay{
+				margin-bottom: 15px;
+			}
+			.wx-pay-l{
+				background-color: #31AB40;
+				border: none;
+				color: #FFFFFF;
+			}
+			.wx-pay-s{
+				width: 100%;
+			}
+			.payment{
+				width: 100%;
+				color: #31AB40;
+			}
+			.hr-4{
+				width: 100%;
+				margin: 0 auto;
+			}
+			/* 支付方式 */
+			.pay_{
+			    width: 100%;
+			    height: 100%;
+			    overflow-y: hidden;
+			    position: fixed;
+			    z-index: 100;
+			    top: 0;
+			    background: black;
+			    opacity: 0.5;
+				display: none;
+			}
+			.pay_content{
+			    width: 80%;
+				border-radius: 10px;
+				height: 200px;
+				position: fixed;
+				z-index: 101;
+				top: 25%;
+				left: 10%;
+				right: 10%;
+				background: #FFFFFF;
+				display: none;
+			}
+			.con{
+				width: 90%;
+				margin: 10% auto;
+				
+			}
+			.con>p{
+				text-align: center;
+				font-size: 16px;
+			}
+			.redpay{
+				color: red;
+				font-size: 30px !important;
+			}
+			.wei{
+				height: 25px;
+				margin: 10px auto;
+				font-size: 16px;
+				line-height: 25px;
+			}
+			.wei>.wei-img{
+				width: 25px;
+				height: 25px;
+				display: inline-block;
+			}
+			.wei>.wei-img>img{
+				width: 100%;
+			}
+			.c_btn>a{
+				color: #000000;
+			}
+			#close{
+				margin-top: -20px;
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="pay_body">
+			<p class="pay-p">订单支付</p>
+			<div class="wx-pay">
+				<button href="javascript:pay();" type="button" class="wx-pay-l">微信支付</button>
+				<button type="button" class="wx-cancel">取消订单</button>
+			</div>
+			<div class="wx-pay-s">
+				<button type="button" class="payment">支付完成</button>
+			</div>
+		</div>
+		<!-- 灰底 -->
+		<!-- <div class="pay_"></div> -->
+		<!-- 支付页面 -->
+		<div class="pay_content">
+			<div class="con">
+				<p id="close"><img src="img/close.png" ></p>
+				<p>支付订单</p>
+				<p class="redpay">￥<span>49.9</span></p>
+				<hr class="hr-4">
+				<div class="wei">
+					<div class="wei-img">
+						<img src="img/wx.png" >
+					</div>
+					<span>微信支付</span>
+					<span class="c_btn"><a href="javascript:pay();" class="btn_1"><span class="indicator i-icon1"><i class="iconfont">&#xe641;</i></span></a></span>
+				</div>
+				<hr class="hr-4">
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 调用支付
+		var timestamp = (new Date()).getTime();
+		var rand = parseInt(Math.random() * (100 - 0 + 1) + 100);
+		  function onBridgeReady(appId, timestamp, nonceStr, packages, signType, paySign) {
+			   WeixinJSBridge.invoke(
+			       'getBrandWCPayRequest', {
+			           "appId" : "wx3837a50ccd30cf87",     //公众号名称，由商户传入     
+			           "timeStamp": "1573721607",         //时间戳，自1970年以来的秒数     
+			           "nonceStr" : "IiSWZeCheW1fzgAojYLPYsFBJts9UN0A", //随机串     
+			           "package" : "prepay_id=wx20191114165321515089",     
+			           "signType" : "MD5",         //微信签名方式:     
+			           "paySign" : "72AAA2DD81715F546B36CB1BFCE85610"    //微信签名 
+			       },
+			       
+			       function(res){     
+			           if(res.err_msg == "get_brand_wcpay_request:ok" ) {
+			        	   alert("支付成功");
+			           }     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
+				   }
+			   ); 
+			}
+		    function pay(){
+				if (typeof WeixinJSBridge == "undefined"){
+				   if( document.addEventListener ){
+				       document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+				   }else if (document.attachEvent){
+				       document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+				       document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+				   }
+				}else{
+				   onBridgeReady();
+				} 
+		    	
+		    }
+			
+			// function wx-pay(){
+			// 	$(".pay_").show();
+			// 	$(".pay_content").show();
+			// }
+			
+			$("#close").click(function(){
+				$(".pay_").hide();
+				$(".pay_content").hide()
+			})
+	</script>
+</html>
