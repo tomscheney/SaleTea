@@ -56,7 +56,6 @@
 
 		function adCar() {
 			location.href = "address.html";
-			
 		}
 
 		function addCar() {
