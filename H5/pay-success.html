@@ -70,14 +70,16 @@
 			.wx-pay{
 				margin-bottom: 15px;
 			}
+			.wx-pay>a{
+				width: 100%;
+				height: 100%;
+				text-decoration: none;
+				color: white;
+			}
 			.wx-pay-l{
 				background-color: #31AB40;
 				border: none;
 				color: #FFFFFF;
-			}
-			.wx-pay-l>a{
-				width: 100%;
-				height: 100%;
 			}
 			.wx-pay-s{
 				width: 100%;
@@ -154,7 +156,7 @@
 		<div class="pay_body">
 			<p class="pay-p">订单支付</p>
 			<div class="wx-pay">
-				<button type="button" class="wx-pay-l"><a href="javascript:pay();">微信支付</a></button>
+				<a href="javascript:pay();"><button type="button" class="wx-pay-l">微信支付</button></a>
 				<button type="button" class="wx-cancel">取消订单</button>
 			</div>
 			<div class="wx-pay-s">
