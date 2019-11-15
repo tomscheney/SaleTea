@@ -295,9 +295,9 @@ body{
 		overflow:hidden;
 	}
 	.shopping-car>label{
-		width: 20%;
-		float:left;
-		height: 100%;
+		width: 30%;
+		float: left;
+		padding-left: 0;
 	}
 	.shopping-car,.shopping-car>label,.pay-money,#btn-car3{
 		border: 0;
