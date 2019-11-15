@@ -154,7 +154,7 @@
 		<div class="pay_body">
 			<p class="pay-p">订单支付</p>
 			<div class="wx-pay">
-				<button type="button" class="wx-pay-l"><a href="javascript:pay();"></a>微信支付</button>
+				<button type="button" class="wx-pay-l"><a href="javascript:pay();">微信支付</a></button>
 				<button type="button" class="wx-cancel">取消订单</button>
 			</div>
 			<div class="wx-pay-s">
@@ -182,7 +182,7 @@
 		</div> -->
 	</body>
 	<script src="http://testmecom.hhit.com.cn/mecom/micromall/page/wxPrePay.jsp" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript" src="../js/common.js"></script>
+		<!-- <script type="text/javascript" src="../js/common.js"></script> -->
 	<script type="text/javascript">
 		// 调用支付
 		var timestamp = (new Date()).getTime();
@@ -223,9 +223,8 @@
 			// 	$(".pay_content").show();
 			// }
 			
-			// $("#close").click(function(){
-			// 	$(".pay_").hide();
-			// 	$(".pay_content").hide()
+			// $(".wx-pay-l").click(function(){
+				
 			// })
 	</script>
 </html>
