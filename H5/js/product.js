@@ -55,11 +55,11 @@
 
 
 		function adCar() {
-			location.href = "adress.html";
+			location.href = "address.html";
 			
 		}
 
 		function addCar() {
-			location.href = "shop-car.html?userId=665466";
+			location.href = "shop-car.html";
 		}
 		
