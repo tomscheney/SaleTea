@@ -1,6 +1,7 @@
 // 获取后台数据
 		$(document).ready(function() {
 			// 获取地址栏中的字符串，并将其转化为对象
+			function onBridgeReady() {
 			function addr_obj() {
 			 var search = location.search;
 			 var obj = {};
@@ -45,7 +46,7 @@
 				console.log(res)
 					console.log(res.code)
 					console.log(res.appId)
-					function onBridgeReady() {
+					
 								   WeixinJSBridge.invoke(
 								       'getBrandWCPayRequest', {
 								           "appId" : "wx6e974f12e898a2ee",     //公众号名称，由商户传入     
