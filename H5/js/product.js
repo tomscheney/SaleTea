@@ -43,7 +43,7 @@
 					orderNo:orde,
 				},
 				success: function(res) { // res就是后台接口返回的数据
-					console.log(res.obj.code)
+					console.log(res.code)
 				},
 			})
 			error: function data() {
