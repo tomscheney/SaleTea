@@ -43,17 +43,17 @@
 				},
 				success: function(res) { // res就是后台接口返回的数据
 				console.log(res)
-					console.log(res.code)
-					console.log(res.appId)
+					console.log(res.data.code)
+					console.log(res.data.appId)
 					function onBridgeReady() {
 								   WeixinJSBridge.invoke(
 								       'getBrandWCPayRequest', {
 								           "appId" : "wx6e974f12e898a2ee",     //公众号名称，由商户传入     
 								           "timeStamp": res.timeStamp,         //时间戳，自1970年以来的秒数     
 								           "nonceStr" : res.randomString(), //随机串     
-								           "package" : "prepay_id=wx20191114165321515089",     
-								           "signType" : "MD5",         //微信签名方式:     
-								           "paySign" : wxSignFunc()    //微信签名 
+								           "package" : package,     
+								           "signType" : signType,         //微信签名方式:     
+								           "paySign" : paySign    //微信签名 
 								       },
 								       
 								       function(res){     
