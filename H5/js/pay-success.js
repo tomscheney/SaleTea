@@ -37,10 +37,12 @@
 			        // var value="766"+randStr;//此处的766是要求必须已766开头，如果不需要可以去掉并在for循环中填入你要的位数
 			        // document.getElementById("generateCom").value=(value);
 			    }
-			}generate()
+			}
+			
+			var orde = generate();
 			
 			var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
-			var orde = generate();
+			
 			
 			$.ajax({
 				url: "https://47.112.98.24/getPayInfo",
