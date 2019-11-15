@@ -19,10 +19,13 @@
 			 console.log(obj.code)
 			if(obj.code == ''|| obj.code == undefined || obj.code == 'null') {
 				console.log("123")
-				var Jumpurl = encodeURIComponent(window.location.href);
+				// var Jumpurl = encodeURIComponent(window.location.href);
 				var appid = 'wx6e974f12e898a2ee';
+				// https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6e974f12e898a2ee&redirect_uri=http://zxz.kidstoms.com/H5/product.html
+				// &response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
 				window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
-				+ appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+				+ appid + '&redirect_uri=http://zxz.kidstoms.com/H5/product.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
+			
 			}
 			console.log(obj.code)
 			
