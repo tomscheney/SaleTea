@@ -27,22 +27,14 @@
 			
 			}
 			console.log(obj.code)
-			function generate(){
-			    for(var j=0;j<10;j++){
-			        var randStr = "";
-			        for (var i = 0; i < 10; i++) {//此处的12为生成12位数字，可随即更改
-			            var randItem = Math.floor(Math.random() * 1000);
-			            randStr += randItem;
-			        }
-			        // var value="766"+randStr;//此处的766是要求必须已766开头，如果不需要可以去掉并在for循环中填入你要的位数
-			        // document.getElementById("generateCom").value=(value);
-			    }
-			}
-			
-			var orde = generate();
 			
 			var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
+			function randomn(n) {
+			  if (n > 10) return null
+			  return parseInt((Math.random() + 1) * Math.pow(10,n-1))
+			} console.log(randomn(10))
 			
+			var orderN = randomn(10);
 			
 			$.ajax({
 				url: "https://47.112.98.24/getPayInfo",
@@ -52,7 +44,7 @@
 				data:{
 					code:obj.code,
 					totalFee:Fee,
-					orderNo:orde,
+					orderNo:orderN,
 				},
 				success: function(res) { // res就是后台接口返回的数据
 				    console.log(res)
