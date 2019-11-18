@@ -66,7 +66,6 @@
 // });
 	// 支付调用
 	function onBridgeReady() {
-		console.log(appId);
 		console.log(aPay.appId);
 		WeixinJSBridge.invoke(
 			'getBrandWCPayRequest', {
