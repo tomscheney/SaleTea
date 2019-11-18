@@ -32,75 +32,76 @@
 // 支付调用
 function onBridgeReady() {
   
-    console.log("appId:",aPay.appId);
-   alert("appId:"+aPay.appId);
-   alert("package:"+aPay.package);
-   alert("timeStamp:"+ aPay.timeStamp);
-   alert("aPay.nonceStr:"+ aPay.nonceStr);
-   alert("timeStamp:"+ aPay.signTyp);
-   alert("timeStamp:"+ aPay.paySign);
-
-    WeixinJSBridge.invoke(
-                          'getBrandWCPayRequest', {
-                          "appId": aPay.appId, //公众号名称，由商户传入
-                          "timeStamp": aPay.timeStamp, //时间戳，自1970年以来的秒数
-                          "nonceStr": aPay.nonceStr, //随机串
-                          "package": aPay.package,
-                          "signType": aPay.signTyp, //微信签名方式:
-                          "paySign": aPay.paySign //微信签名
-                          },
-                          function(res) {
-                          if (res.err_msg == "get_brand_wcpay_request:ok") {
-                          alert("支付成功");
-                          } else{
-                          alert("pay fail."+res.err_msg)
-                          }
-                          
-                          // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
-                          }
-                          );
+    var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
+    function randomn(n) {
+        if (n > 10) return null
+            return parseInt((Math.random() + 1) * Math.pow(10, n - 1))
+            }
+    console.log(randomn(10))
+    var orderN = randomn(10);
+    var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
+    console.log("notifyUrl", notifyUrl)
+    var aPay = undefined;
+    
+    $.ajax({
+           url: "https://47.112.98.24/getPayInfo",
+           type: "post",
+           async:true,
+           // contentType: "application/json",
+           // dataType: "json",
+           data: {
+           code: obj.code,
+           totalFee: Fee,
+           orderNo: orderN,
+           notifyUrl: notifyUrl,
+           },
+           success: function(res) { // res就是后台接口返回的数据
+           console.log(res)
+           console.log(res.code)
+           aPay = res.data,
+           console.log("aPAy:", aPay)
+           alert("ajx:",JSON.stringify(res.code))
+           console.log("appId:",aPay.appId);
+           alert("appId:"+aPay.appId);
+           alert("package:"+aPay.package);
+           alert("timeStamp:"+ aPay.timeStamp);
+           alert("aPay.nonceStr:"+ aPay.nonceStr);
+           alert("timeStamp:"+ aPay.signTyp);
+           alert("timeStamp:"+ aPay.paySign);
+           
+           WeixinJSBridge.invoke(
+                                 'getBrandWCPayRequest', {
+                                 "appId": aPay.appId, //公众号名称，由商户传入
+                                 "timeStamp": aPay.timeStamp, //时间戳，自1970年以来的秒数
+                                 "nonceStr": aPay.nonceStr, //随机串
+                                 "package": aPay.package,
+                                 "signType": aPay.signTyp, //微信签名方式:
+                                 "paySign": aPay.paySign //微信签名
+                                 },
+                                 function(res) {
+                                 if (res.err_msg == "get_brand_wcpay_request:ok") {
+                                 alert("支付成功");
+                                 } else{
+                                 alert("pay fail."+res.err_msg)
+                                 }
+                                 
+                                 // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
+                                 }
+                                 );
+           },
+           error: function (error) {
+           console.log("dataerro", data);
+           console.log(111)
+           alert("ajaxerro:"+ error)
+           }
+           });
+    
+    
+    
 }
 
-	console.log(obj.code)
 
-	var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
-	function randomn(n) {
-		if (n > 10) return null
-		return parseInt((Math.random() + 1) * Math.pow(10, n - 1))
-	}
-	console.log(randomn(10))
-	var orderN = randomn(10);
-	var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
-	console.log("notifyUrl", notifyUrl)
-	var aPay = "";
 
-	$.ajax({
-			url: "https://47.112.98.24/getPayInfo",
-			type: "post",
-			async:true,
-			// contentType: "application/json",
-			// dataType: "json",
-			data: {
-				code: obj.code,
-				totalFee: Fee,
-				orderNo: orderN,
-				notifyUrl: notifyUrl,
-			},
-			success: function(res) { // res就是后台接口返回的数据
-				console.log(res)
-				console.log(res.code)
-				aPay = res.data,
-                console.log("aPAy:", aPay)
-                alert("ajx:",JSON.stringify(res.code))
-               onBridgeReady();
-			},
-			error: function (error) {
-				console.log("dataerro", data);
-				console.log(111)
-                alert("ajaxerro:"+ error)
-			}
-		});
-		
 
 
 
