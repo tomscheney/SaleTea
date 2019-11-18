@@ -250,7 +250,10 @@
         function onBridgeReady() {
             
             alert("obj.code:"+ obj.code)
-            
+            alert("Fee:"+ Fee)
+            alert("orderN:"+ orderN)
+            alert("notifyUrl:"+ notifyUrl)
+
             $.ajax({
                    url: "https://47.112.98.24/getPayInfo",
                    type: "post",
