@@ -1,5 +1,6 @@
 // 获取后台数据
 		$(document).ready(function() {
+			var aPay = ""
 			// 获取地址栏中的字符串，并将其转化为对象
 			function addr_obj() {
 			 var search = location.search;
@@ -37,7 +38,7 @@
 			var orderN = randomn(10);
 			var notifyUrl = "https://zxz.kidstoms.com/H5/address.html";
 			console.log("notifyUrl",notifyUrl)
-			var aPay = ""
+			
 			$.ajax({
 				url: "https://47.112.98.24/getPayInfo",
 				type: "post",
@@ -60,36 +61,36 @@
 				console.log("dataerro", data);
 				console.log(111)
 			},
-			var appId = aPay.appId
-			console.log(appId)
-			function onBridgeReady() {
-				WeixinJSBridge.invoke(
-					'getBrandWCPayRequest', {
-						"appId": aPay.appId, //公众号名称，由商户传入     
-						"timeStamp": aPay.timeStamp, //时间戳，自1970年以来的秒数     
-						"nonceStr": aPay.nonceStr, //随机串     
-						"package": aPay.package,
-						"signType": aPay.signType, //微信签名方式:     
-						"paySign": aPay.paySign //微信签名 
-					},
-					function(res) {
-						if (res.err_msg == "get_brand_wcpay_request:ok") {
-							alert("支付成功");
-						} // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
-					}
-				);
-			}
-			function pay() {
-				if (typeof WeixinJSBridge == "undefined") {
-					if (document.addEventListener) {
-						document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-					} else if (document.attachEvent) {
-						document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-						document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-					}
-				} else {
-					onBridgeReady();
-				}
-			}
+			
 		});
-		
+		var appId = aPay.appId
+		console.log(appId)
+		function onBridgeReady() {
+			WeixinJSBridge.invoke(
+				'getBrandWCPayRequest', {
+					"appId": aPay.appId, //公众号名称，由商户传入     
+					"timeStamp": aPay.timeStamp, //时间戳，自1970年以来的秒数     
+					"nonceStr": aPay.nonceStr, //随机串     
+					"package": aPay.package,
+					"signType": aPay.signType, //微信签名方式:     
+					"paySign": aPay.paySign //微信签名 
+				},
+				function(res) {
+					if (res.err_msg == "get_brand_wcpay_request:ok") {
+						alert("支付成功");
+					} // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
+				}
+			);
+		}
+		function pay() {
+			if (typeof WeixinJSBridge == "undefined") {
+				if (document.addEventListener) {
+					document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+				} else if (document.attachEvent) {
+					document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+					document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+				}
+			} else {
+				onBridgeReady();
+			}
+		}
