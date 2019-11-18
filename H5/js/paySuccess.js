@@ -54,7 +54,7 @@
 			console.log(res)
 			console.log(res.code)
 			aPay = res.data,
-				console.log("aPAy", aPay)
+			console.log("aPAy", aPay)
 		},
 	})
 	error: function data() {
@@ -66,24 +66,19 @@
 // });
 	// 支付调用
 	function onBridgeReady() {
-		console.log(appId) // shuchu  输出哥几把   东西来哪呢艹
-		console.log(aPay.appId) // 那怎么就反应不过来   niappid不是在aPay里呢吗  你直接输出appid能有啥
-		var appId = aPay.appId;
-		var timeStamp = aPay.timeStamp;
-		var nonceStr = aPay.nonceStr;
-		var package = aPay.package;
-		var signType = aPay.signType;//// 就这些有毛用不还是跟你港写的一样吗
-		var paySign = aPay.paySign;
+		console.log(appId);
+		console.log(aPay.appId) 
+		console.log("appId",appId)
 		WeixinJSBridge.invoke(
 			'getBrandWCPayRequest', {
-				"appId": appId, //公众号名称，由商户传入     
-				"timeStamp": timeStamp, //时间戳，自1970年以来的秒数     
-				"nonceStr": nonceStr, //随机串     
-				"package": package,
-				"signType": signType, //微信签名方式:     
-				"paySign": paySign //微信签名 
+				"appId": aPay.appId, //公众号名称，由商户传入     
+				"timeStamp": aPay.timeStamp, //时间戳，自1970年以来的秒数     
+				"nonceStr": aPay.nonceStr, //随机串     
+				"package": aPay.package,
+				"signType": aPay.signTyp, //微信签名方式:     
+				"paySign": aPay.paySign //微信签名 
 			},
-
+console.log("appId1",appId)
 			function(res) {
 				if (res.err_msg == "get_brand_wcpay_request:ok") {
 					alert("支付成功");
