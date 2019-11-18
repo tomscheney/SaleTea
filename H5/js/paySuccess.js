@@ -68,18 +68,7 @@
 									}
 								);
 								}
-								function pay() {
-									if (typeof WeixinJSBridge == "undefined") {
-										if (document.addEventListener) {
-											document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-										} else if (document.attachEvent) {
-											document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-											document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-										}
-									} else {
-										onBridgeReady();
-									}
-								}
+						
 				},
 			})
 			error: function data() {
@@ -87,5 +76,15 @@
 				console.log(111)
 			}
 		});
-		console.log(res)
-		console.log(res.data.appId)
+		function pay() {
+			if (typeof WeixinJSBridge == "undefined") {
+				if (document.addEventListener) {
+					document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+				} else if (document.attachEvent) {
+					document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+					document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+				}
+			} else {
+				onBridgeReady();
+			}
+		}
