@@ -33,6 +33,13 @@
 function onBridgeReady() {
   
     console.log("appId:",aPay.appId);
+   alert("appId:"+aPay.appId);
+   alert("package:"+aPay.package);
+   alert("timeStamp:"+ aPay.timeStamp);
+   alert("aPay.nonceStr:"+ aPay.nonceStr);
+   alert("timeStamp:"+ aPay.signTyp);
+   alert("timeStamp:"+ aPay.paySign);
+
     WeixinJSBridge.invoke(
                           'getBrandWCPayRequest', {
                           "appId": aPay.appId, //公众号名称，由商户传入
@@ -46,7 +53,7 @@ function onBridgeReady() {
                           if (res.err_msg == "get_brand_wcpay_request:ok") {
                           alert("支付成功");
                           } else{
-                          alert("pay fail.",res.err_msg)
+                          alert("pay fail."+res.err_msg)
                           }
                           
                           // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
