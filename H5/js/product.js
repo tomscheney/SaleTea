@@ -31,7 +31,8 @@
 			
 			var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
 			var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
-			var notifyUrl = "https://zxz.kidstoms.com/H5/payresult.html";
+			var notifyUrl = "https://zxz.kidstoms.com/H5/address.html";
+			console.log("notifyUrl",notifyUrl)
 			$.ajax({
 				url: "https://47.112.98.24/getPayInfo",
 				type: "post",
@@ -41,11 +42,12 @@
 					code:obj.code,
 					totalFee:Fee,
 					orderNo:orde,
-					notifyUrl:notifyUrl;
+					notifyUrl:notifyUrl,
 				},
 				success: function(res) { // res就是后台接口返回的数据
 					console.log(res.code)
 					console.log(res)
+					alert(1)
 				},
 			})
 			error: function data() {
