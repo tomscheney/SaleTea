@@ -2,36 +2,38 @@
 
 // $(document).ready(function() {
 	// 获取地址栏中的字符串，并将其转化为对象
-	function addr_obj() {
-		var search = location.search;
-		var obj = {};
-		var keyValues = search.slice(1).split("&");
-		keyValues.forEach(function(keyValue) {
-			var tempArr = keyValue.split("=");
-			var key = tempArr[0];
-			// var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
-			var value = tempArr[1];
-			obj[key] = value;
-		});
-		return obj;
-	}
-	var obj = addr_obj()
 
-	console.log(obj.code)
-	if (obj.code == '' || obj.code == undefined || obj.code == 'null') {
-		console.log("123")
-		var APPID = 'wx6e974f12e898a2ee';
-		// https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6e974f12e898a2ee&redirect_uri=http://zxz.kidstoms.com/H5/product.html
-		// &response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
-		window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' +
-			APPID +
-			'&redirect_uri=https://zxz.kidstoms.com/H5/paySuccess.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
-
-	}
 
 // 支付调用
 function onBridgeReady() {
-  
+  alert("onBridgeReady")
+    function addr_obj() {
+        var search = location.search;
+        var obj = {};
+        var keyValues = search.slice(1).split("&");
+        keyValues.forEach(function(keyValue) {
+                          var tempArr = keyValue.split("=");
+                          var key = tempArr[0];
+                          // var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
+                          var value = tempArr[1];
+                          obj[key] = value;
+                          });
+        return obj;
+    }
+    var obj = addr_obj()
+    
+    console.log(obj.code)
+    if (obj.code == '' || obj.code == undefined || obj.code == 'null') {
+        console.log("123")
+        var APPID = 'wx6e974f12e898a2ee';
+        // https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6e974f12e898a2ee&redirect_uri=http://zxz.kidstoms.com/H5/product.html
+        // &response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
+        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' +
+        APPID +
+        '&redirect_uri=https://zxz.kidstoms.com/H5/paySuccess.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
+        
+    }
+    
     var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
     function randomn(n) {
         if (n > 10) return null
