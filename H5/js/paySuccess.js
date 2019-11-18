@@ -18,7 +18,17 @@
 	var obj = addr_obj()
 
 	console.log(obj.code)
+	if (obj.code == '' || obj.code == undefined || obj.code == 'null') {
+		console.log("123")
+		var appid = 'wx6e974f12e898a2ee';
+		// https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6e974f12e898a2ee&redirect_uri=http://zxz.kidstoms.com/H5/product.html
+		// &response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
+		window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' +
+			appid +
+			'&redirect_uri=https://zxz.kidstoms.com/H5/paySuccess.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
 
+	}
+	console.log(obj.code)
 	var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
 	function randomn(n) {
 		if (n > 10) return null
@@ -58,9 +68,10 @@
 	function onBridgeReady() {
 		console.log(appId);
 		console.log(aPay.appId);
+		console.log("appId",appId);
 		WeixinJSBridge.invoke(
 			'getBrandWCPayRequest', {
-				"appId": aPay.appId, //公众号名称，由商户传入     
+				"appId": appid, //公众号名称，由商户传入     
 				"timeStamp": aPay.timeStamp, //时间戳，自1970年以来的秒数     
 				"nonceStr": aPay.nonceStr, //随机串     
 				"package": aPay.package,
@@ -87,14 +98,3 @@
 			onBridgeReady();
 		}
 	}
-	if (obj.code == '' || obj.code == undefined || obj.code == 'null') {
-		console.log("123")
-		// var appid = 'wx6e974f12e898a2ee';
-		// https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6e974f12e898a2ee&redirect_uri=http://zxz.kidstoms.com/H5/product.html
-		// &response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
-		window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appId=' +
-			aPay.appId +
-			'&redirect_uri=https://zxz.kidstoms.com/H5/paySuccess.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
-	
-	}
-	console.log(obj.code)
