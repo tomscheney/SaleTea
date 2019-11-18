@@ -45,6 +45,7 @@
 				},
 				success: function(res) { // res就是后台接口返回的数据
 					console.log(res.code)
+					console.log(res)
 				},
 			})
 			error: function data() {
