@@ -60,39 +60,38 @@
 				console.log("dataerro", data);
 				console.log(111)
 			}
-			
-		});
-		var wxPay = aPay;
-		console.log(wxPay)
-		function onBridgeReady() {
-			WeixinJSBridge.invoke(
-				'getBrandWCPayRequest', {
-					appId: wxPay.appId, //公众号名称，由商户传入     
-					timeStamp: wxPay.timeStamp, //时间戳，自1970年以来的秒数     
-					nonceStr: wxPay.nonceStr, //随机串     
-					package: wxPay.package,
-					signType: wxPay.signType, //微信签名方式:     
-					paySign: wxPay.paySign //微信签名 
-				},
-				function(res) {
-					if (res.err_msg == "get_brand_wcpay_request:ok") {
-						alert("支付成功");
-					} // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
-				}
-			);
-			console.log(appId,1)
-		}
-		
-		console.log(appId,2)
-		function pay() {
-			if (typeof WeixinJSBridge == "undefined") {
-				if (document.addEventListener) {
-					document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-				} else if (document.attachEvent) {
-					document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-					document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-				}
-			} else {
-				onBridgeReady();
+			console.log(aPay);
+			function onBridgeReady() {
+				WeixinJSBridge.invoke(
+					'getBrandWCPayRequest', {
+						appId: aPay.appId, //公众号名称，由商户传入     
+						timeStamp: aPay.timeStamp, //时间戳，自1970年以来的秒数     
+						nonceStr: aPay.nonceStr, //随机串     
+						package: aPay.package,
+						signType: aPay.signType, //微信签名方式:     
+						paySign: aPay.paySign //微信签名 
+					},
+					function(res) {
+						if (res.err_msg == "get_brand_wcpay_request:ok") {
+							alert("支付成功");
+						} // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
+					}
+				);
+				console.log(appId,1)
 			}
-		}
+			
+			console.log(appId,2)
+			function pay() {
+				if (typeof WeixinJSBridge == "undefined") {
+					if (document.addEventListener) {
+						document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+					} else if (document.attachEvent) {
+						document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+						document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+					}
+				} else {
+					onBridgeReady();
+				}
+			}
+		});
+		
