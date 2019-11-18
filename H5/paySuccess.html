@@ -259,7 +259,7 @@
                    type: "post",
                    async:true,
                    // contentType: "application/json",
-                   // dataType: "json",
+                   dataType: "json",
                    data: {
                    code: obj.code,
                    totalFee: Fee,
@@ -267,7 +267,7 @@
                    notifyUrl: notifyUrl,
                    },
                    success: function(res) { // res就是后台接口返回的数据
-                   alert("aPAy:"+ aPAy)
+                   alert("success:"+ res)
 
                    console.log(res)
                    console.log(res.code)
