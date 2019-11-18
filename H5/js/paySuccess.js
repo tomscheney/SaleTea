@@ -55,7 +55,7 @@
 				console.log(res.code)
 				aPay = res.data,
 				console.log("aPAy", aPay)
-		        
+		        alert("ajx",JSON.stringify(res.code))
 			},
 		})
 		error: function data() {
