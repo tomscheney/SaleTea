@@ -36,7 +36,7 @@
 	}
 	console.log(randomn(10))
 	var orderN = randomn(10);
-	var notifyUrl = "https://zxz.kidstoms.com/H5/address.html";
+	var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
 	console.log("notifyUrl", notifyUrl)
 	var aPay = "";
 	$.ajax({
