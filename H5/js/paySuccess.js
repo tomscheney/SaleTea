@@ -56,10 +56,10 @@
 				orderNo: orderN,
 				notifyUrl: notifyUrl,
 			},
-			success: function(re) { // res就是后台接口返回的数据
-				console.log(re)
-				console.log(re.code)
-				aPay = re.data,
+			success: function(res) { // res就是后台接口返回的数据
+				console.log(res)
+				console.log(res.code)
+				aPay = res.data,
 				console.log("aPAy", aPay)
 		        pay();
 			},
