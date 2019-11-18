@@ -102,6 +102,8 @@ function onBridgeReady() {
     
 }
 
+onBridgeReady();
+
 
 
 
