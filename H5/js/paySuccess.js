@@ -1,6 +1,6 @@
 // 获取后台数据
-var aPay = "";
-$(document).ready(function() {
+
+// $(document).ready(function() {
 	// 获取地址栏中的字符串，并将其转化为对象
 	function addr_obj() {
 		var search = location.search;
@@ -38,7 +38,7 @@ $(document).ready(function() {
 	var orderN = randomn(10);
 	var notifyUrl = "https://zxz.kidstoms.com/H5/address.html";
 	console.log("notifyUrl", notifyUrl)
-	
+	var aPay = "";
 	$.ajax({
 		url: "https://47.112.98.24/getPayInfo",
 		type: "post",
@@ -63,12 +63,12 @@ $(document).ready(function() {
 	}
 	console.log(aPay);
 
-});
+// });
 	// 支付调用
 	function onBridgeReady() {
 		console.log(appId) // shuchu  输出哥几把   东西来哪呢艹
 		console.log(aPay.appId) // 那怎么就反应不过来   niappid不是在aPay里呢吗  你直接输出appid能有啥
-		var appId = aPay.appId;
+		var appid = aPay.appId;
 		var timeStamp = aPay.timeStamp;
 		var nonceStr = aPay.nonceStr;
 		var package = aPay.package;
@@ -76,7 +76,7 @@ $(document).ready(function() {
 		var paySign = aPay.paySign;
 		WeixinJSBridge.invoke(
 			'getBrandWCPayRequest', {
-				"appId": appId, //公众号名称，由商户传入     
+				"appId": appid, //公众号名称，由商户传入     
 				"timeStamp": timeStamp, //时间戳，自1970年以来的秒数     
 				"nonceStr": nonceStr, //随机串     
 				"package": package,
