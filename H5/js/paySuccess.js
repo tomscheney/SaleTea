@@ -70,6 +70,7 @@ function onBridgeReady() {
 	$.ajax({
 			url: "https://47.112.98.24/getPayInfo",
 			type: "post",
+			async:true,
 			// contentType: "application/json",
 			// dataType: "json",
 			data: {
@@ -83,8 +84,6 @@ function onBridgeReady() {
 				console.log(res.code)
 				aPay = res.data,
 				console.log("aPAy", aPay)
-				var resu = JSON.parse(res);
-				console.log(resu)
 		        alert("ajx",JSON.stringify(res.code))
                onBridgeReady();
 			},
