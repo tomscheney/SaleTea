@@ -66,15 +66,13 @@
 // });
 	// 支付调用
 	function onBridgeReady() {
-		console.log(aPay);
-        alert(aPay.package);
 		WeixinJSBridge.invoke(
 			'getBrandWCPayRequest', {
 				"appId":aPay.appId, //公众号名称，由商户传入     
 				"timeStamp": aPay.timeStamp, //时间戳，自1970年以来的秒数     
 				"nonceStr": aPay.nonceStr, //随机串     
 				"package": aPay.package,
-				"signType": aPay.signTyp, //微信签名方式:     
+				"signType": aPay.signType, //微信签名方式:     
 				"paySign": aPay.paySign //微信签名 
 			},
 			function(res) {
@@ -84,9 +82,8 @@
 			}
 		);
 	}
-	
+	alert(aPay.package);
 	function pay() {
-		console.log(WeixinJSBridge)
 		if (typeof WeixinJSBridge == "undefined") {
 			if (document.addEventListener) {
 				document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
