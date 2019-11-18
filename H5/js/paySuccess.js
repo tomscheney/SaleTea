@@ -71,7 +71,7 @@
 						"signType": aPay.signType, //微信签名方式:     
 						"paySign": aPay.paySign //微信签名 
 					},
-					console.log(appId)
+					
 					function(res) {
 						if (res.err_msg == "get_brand_wcpay_request:ok") {
 							alert("支付成功");
