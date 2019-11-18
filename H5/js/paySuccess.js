@@ -69,7 +69,7 @@ console.log(aPay);
 function onBridgeReady() {
 	WeixinJSBridge.invoke(
 		'getBrandWCPayRequest', {
-			"appId": aPay.appId, //公众号名称，由商户传入     
+			"appid": aPay.appId,//公众号名称，由商户传入     
 			"timeStamp": aPay.timeStamp, //时间戳，自1970年以来的秒数     
 			"nonceStr": aPay.nonceStr, //随机串     
 			"package": aPay.package,
