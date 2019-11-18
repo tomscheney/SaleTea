@@ -51,10 +51,10 @@ $.ajax({
 		orderNo: orderN,
 		notifyUrl: notifyUrl,
 	},
-	success: function(res) { // res就是后台接口返回的数据
-		console.log(res)
-		console.log(res.code)
-		aPay = res.data,
+	success: function(resu) { // resu就是后台接口返回的数据
+		console.log(resu)
+		console.log(resu.code)
+		aPay = resu.data,
 		console.log("aPAy", aPay)
 	},
 })
