@@ -55,7 +55,13 @@
 			console.log(res.code)
 			aPay = res.data,
 			console.log("aPAy", aPay)
-           
+           alert(aPay.package);
+           alert(aPay.appId);
+           alert(aPay.timeStamp);
+           alert(aPay.nonceStr);
+           alert(aPay.signTyp);
+           alert(aPay.paySign);
+
            WeixinJSBridge.invoke(
                                  'getBrandWCPayRequest', {
                                  "appId":aPay.appId, //公众号名称，由商户传入
@@ -98,7 +104,6 @@
 			}
 		);
 	}
-	alert(aPay.package);
 	function pay() {
 		if (typeof WeixinJSBridge == "undefined") {
 			if (document.addEventListener) {
