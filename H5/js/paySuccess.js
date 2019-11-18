@@ -61,7 +61,7 @@
 				console.log(re.code)
 				aPay = re.data,
 				console.log("aPAy", aPay)
-		        // pay();
+		        pay();
 			},
 		})
 		error: function data() {
