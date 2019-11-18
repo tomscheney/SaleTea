@@ -67,6 +67,7 @@
 	// 支付调用
 	function onBridgeReady() {
 		console.log(aPay.appId);
+		console.log(aPay.package);
 		WeixinJSBridge.invoke(
 			'getBrandWCPayRequest', {
 				"appId":aPay.appId, //公众号名称，由商户传入     
@@ -83,6 +84,7 @@
 			}
 		);
 	}
+	
 	function pay() {
 		console.log(WeixinJSBridge)
 		if (typeof WeixinJSBridge == "undefined") {
