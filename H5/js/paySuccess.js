@@ -87,3 +87,5 @@
 				console.log(111)
 			}
 		});
+		console.log(res)
+		console.log(res.data.appId)
