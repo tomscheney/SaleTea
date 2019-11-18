@@ -46,6 +46,7 @@
 	$.ajax({
 			url: "https://47.112.98.24/getPayInfo",
 			type: "post",
+			async:true,
 			// contentType: "application/json",
 			// dataType: "json",
 			data: {
