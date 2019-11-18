@@ -39,10 +39,14 @@
 	var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
 	console.log("notifyUrl", notifyUrl)
 	var aPay = "";
+	alert(obj.code);
+	alert(Fee)
+	alert(orderN)
+	alert(notifyUrl)
 	$.ajax({
 			url: "https://47.112.98.24/getPayInfo",
 			type: "post",
-			// contentType: "application/json",
+			contentType: "application/json",
 			dataType: "json",
 			data: {
 				code: obj.code,
@@ -62,7 +66,7 @@
 				console.log(111)
 				alert("ajaxerro")
 			}
-		})
+		});
 		
 	console.log(aPay);
 
