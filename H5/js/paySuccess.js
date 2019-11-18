@@ -30,6 +30,48 @@
 	}
 	console.log(obj.code)
 
+	var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
+	function randomn(n) {
+		if (n > 10) return null
+		return parseInt((Math.random() + 1) * Math.pow(10, n - 1))
+	}
+	console.log(randomn(10))
+	var orderN = randomn(10);
+	var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
+	console.log("notifyUrl", notifyUrl)
+	var aPay = "";
+	alert(obj.code);
+	alert(Fee)
+	alert(orderN)
+	alert(notifyUrl)
+	$.ajax({
+			url: "https://47.112.98.24/getPayInfo",
+			type: "post",
+			// contentType: "application/json",
+			// dataType: "json",
+			data: {
+				code: obj.code,
+				totalFee: Fee,
+				orderNo: orderN,
+				notifyUrl: notifyUrl,
+			},
+			success: function(res) { // res就是后台接口返回的数据
+				console.log(res)
+				console.log(res.code)
+				aPay = res.data,
+				console.log("aPAy", aPay)
+				var resu = JSON.parse(res);
+				console.log(resu)
+		        alert("ajx",JSON.stringify(res.code))
+			},
+			error: function data() {
+				console.log("dataerro", data);
+				console.log(111)
+				alert("ajaxerro")
+			}
+		});
+		
+	console.log(aPay);
 
 // });
 	// 支付调用
