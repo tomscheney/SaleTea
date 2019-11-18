@@ -37,6 +37,7 @@
 			var orderN = randomn(10);
 			var notifyUrl = "https://zxz.kidstoms.com/H5/address.html";
 			console.log("notifyUrl",notifyUrl)
+			var aPay = ""
 			$.ajax({
 				url: "https://47.112.98.24/getPayInfo",
 				type: "post",
@@ -50,7 +51,9 @@
 				},
 				success: function(res) { // res就是后台接口返回的数据
 				    console.log(res)
-					console.log(res.code)	
+					console.log(res.code)
+						aPay = res.data
+						console.log("aPAy",aPay)
 							function onBridgeReady() {
 								WeixinJSBridge.invoke(
 									'getBrandWCPayRequest', {
@@ -67,8 +70,19 @@
 										} // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
 									}
 								);
+							}
+							function pay() {
+								if (typeof WeixinJSBridge == "undefined") {
+									if (document.addEventListener) {
+										document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+									} else if (document.attachEvent) {
+										document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+										document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+									}
+								} else {
+									onBridgeReady();
 								}
-						
+							}
 				},
 			})
 			error: function data() {
@@ -76,15 +90,4 @@
 				console.log(111)
 			}
 		});
-		function pay() {
-			if (typeof WeixinJSBridge == "undefined") {
-				if (document.addEventListener) {
-					document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-				} else if (document.attachEvent) {
-					document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-					document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-				}
-			} else {
-				onBridgeReady();
-			}
-		}
+		
