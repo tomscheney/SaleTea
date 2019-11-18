@@ -66,7 +66,8 @@
 // });
 	// 支付调用
 	function onBridgeReady() {
-		console.log(aPay.appId);
+		console.log(aPay);
+        alert(aPay.package);
 		WeixinJSBridge.invoke(
 			'getBrandWCPayRequest', {
 				"appId": "wx6e974f12e898a2ee", //公众号名称，由商户传入     
