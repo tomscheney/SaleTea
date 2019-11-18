@@ -241,7 +241,7 @@
         return parseInt((Math.random() + 1) * Math.pow(10, n - 1))
     }
     console.log(randomn(10))
-    var orderN = randomn(10);
+    var orderN = randomn(10) + "";
     var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
     console.log("notifyUrl", notifyUrl)
     var aPay = undefined;
@@ -254,15 +254,17 @@
             alert("orderN:"+ orderN)
             alert("notifyUrl:"+ notifyUrl)
 
+            Fee = Fee + ""
+            orderN = orderN + ""
             $.ajax({
                    url: "https://47.112.98.24/getPayInfo",
                    type: "post",
                    async:true,
-                   // contentType: "application/json",
+                   contentType: "application/json;charset=UTF-8",
                    dataType: "json",
                    data: {
                    code: obj.code,
-                   totalFee: Fee,
+                   totalFee: Fee ,
                    orderNo: orderN,
                    notifyUrl: notifyUrl,
                    },
