@@ -101,7 +101,6 @@ $(document).ready(function() {
 			}
 		} else {
 			onBridgeReady();
-			console.log(onBridgeReady();)
 		}
 	}
 });
