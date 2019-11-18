@@ -63,8 +63,7 @@
 			}
 			
 		});
-		var appId = aPay.appId;
-		console.log(appId)
+		
 		function onBridgeReady() {
 			WeixinJSBridge.invoke(
 				'getBrandWCPayRequest', {
@@ -82,6 +81,8 @@
 				}
 			);
 		}
+		var appId = aPay.appId;
+		console.log(appId)
 		function pay() {
 			if (typeof WeixinJSBridge == "undefined") {
 				if (document.addEventListener) {
