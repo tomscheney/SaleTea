@@ -39,13 +39,7 @@
 	var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
 	console.log("notifyUrl", notifyUrl)
 	var aPay = "";
-
-	console.log(aPay);
-
-// });
-	// 支付调用
-	function onBridgeReady() {
-		$.ajax({
+	$.ajax({
 			url: "https://47.112.98.24/getPayInfo",
 			type: "post",
 			// contentType: "application/json",
@@ -61,13 +55,19 @@
 				console.log(res.code)
 				aPay = res.data,
 				console.log("aPAy", aPay)
-		        pay();
+		        
 			},
 		})
 		error: function data() {
 			console.log("dataerro", data);
 			console.log(111)
 		}
+	console.log(aPay);
+
+// });
+	// 支付调用
+	function onBridgeReady() {
+	
 		alert(aPay.package);
 		alert(aPay.appId);
 		alert(aPay.timeStamp);
@@ -90,15 +90,4 @@
 			}
 		);
 	}
-	function pay() {
-		if (typeof WeixinJSBridge == "undefined") {
-			if (document.addEventListener) {
-				document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-			} else if (document.attachEvent) {
-				document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-				document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-			}
-		} else {
-			onBridgeReady();
-		}
-	}
+	
