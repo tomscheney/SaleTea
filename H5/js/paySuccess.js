@@ -1,4 +1,5 @@
 // 获取后台数据
+var aPay = "";
 $(document).ready(function() {
 	// 获取地址栏中的字符串，并将其转化为对象
 	function addr_obj() {
@@ -28,19 +29,16 @@ $(document).ready(function() {
 
 	}
 	console.log(obj.code)
-
 	var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
-
 	function randomn(n) {
 		if (n > 10) return null
 		return parseInt((Math.random() + 1) * Math.pow(10, n - 1))
 	}
 	console.log(randomn(10))
-
 	var orderN = randomn(10);
 	var notifyUrl = "https://zxz.kidstoms.com/H5/address.html";
 	console.log("notifyUrl", notifyUrl)
-	var aPay = "";
+	
 	$.ajax({
 		url: "https://47.112.98.24/getPayInfo",
 		type: "post",
