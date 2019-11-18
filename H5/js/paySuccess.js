@@ -60,6 +60,8 @@
 				console.log("dataerro", data);
 				console.log(111)
 			},
+			var appId = aPay.appId
+			console.log(appId)
 			function onBridgeReady() {
 				WeixinJSBridge.invoke(
 					'getBrandWCPayRequest', {
