@@ -61,8 +61,6 @@
 				console.log(res.code)
 				aPay = res.data,
 				console.log("aPAy", aPay)
-				var resu = JSON.parse(res);
-				console.log(resu)
 		        alert("ajx",JSON.stringify(res.code))
 			},
 			error: function data() {
