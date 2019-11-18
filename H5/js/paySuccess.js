@@ -50,23 +50,12 @@
 			orderNo: orderN,
 			notifyUrl: notifyUrl,
 		},
-		success: function(res) { // res就是后台接口返回的数据
-			console.log(res)
-			console.log(res.code)
-			aPay = res.data,
+		success: function(re) { // res就是后台接口返回的数据
+			console.log(re)
+			console.log(re.code)
+			aPay = re.data,
 			console.log("aPAy", aPay)
-            function pay() {
-            	if (typeof WeixinJSBridge == "undefined") {
-            		if (document.addEventListener) {
-            			document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-            		} else if (document.attachEvent) {
-            			document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-            			document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-            		}
-            	} else {
-            		onBridgeReady();
-            	}
-            }
+            // pay();
 		},
 	})
 	error: function data() {
@@ -100,4 +89,15 @@
 			}
 		);
 	}
-	
+	function pay() {
+		if (typeof WeixinJSBridge == "undefined") {
+			if (document.addEventListener) {
+				document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+			} else if (document.attachEvent) {
+				document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+				document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+			}
+		} else {
+			onBridgeReady();
+		}
+	}
