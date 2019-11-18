@@ -20,11 +20,11 @@
 	console.log(obj.code)
 	if (obj.code == '' || obj.code == undefined || obj.code == 'null') {
 		console.log("123")
-		var appId = 'wx6e974f12e898a2ee';
+		var appid = 'wx6e974f12e898a2ee';
 		// https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6e974f12e898a2ee&redirect_uri=http://zxz.kidstoms.com/H5/product.html
 		// &response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
-		window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appId=' +
-			appId +
+		window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' +
+			appid +
 			'&redirect_uri=https://zxz.kidstoms.com/H5/paySuccess.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
 
 	}
@@ -68,7 +68,7 @@
 	function onBridgeReady() {
 		console.log(appId) // shuchu  输出哥几把   东西来哪呢艹
 		console.log(aPay.appId) // 那怎么就反应不过来   niappid不是在aPay里呢吗  你直接输出appid能有啥
-		var appid = aPay.appId;
+		var appId = aPay.appId;
 		var timeStamp = aPay.timeStamp;
 		var nonceStr = aPay.nonceStr;
 		var package = aPay.package;
@@ -76,7 +76,7 @@
 		var paySign = aPay.paySign;
 		WeixinJSBridge.invoke(
 			'getBrandWCPayRequest', {
-				"appId": appid, //公众号名称，由商户传入     
+				"appId": appId, //公众号名称，由商户传入     
 				"timeStamp": timeStamp, //时间戳，自1970年以来的秒数     
 				"nonceStr": nonceStr, //随机串     
 				"package": package,
