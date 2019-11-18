@@ -20,11 +20,11 @@
 	console.log(obj.code)
 	if (obj.code == '' || obj.code == undefined || obj.code == 'null') {
 		console.log("123")
-		var appid = 'wx6e974f12e898a2ee';
+		// var appid = 'wx6e974f12e898a2ee';
 		// https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6e974f12e898a2ee&redirect_uri=http://zxz.kidstoms.com/H5/product.html
 		// &response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
-		window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' +
-			appid +
+		window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appId=' +
+			aPay.appId +
 			'&redirect_uri=https://zxz.kidstoms.com/H5/paySuccess.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
 
 	}
@@ -78,7 +78,6 @@
 				"signType": aPay.signTyp, //微信签名方式:     
 				"paySign": aPay.paySign //微信签名 
 			},
-console.log("appId1",appId)
 			function(res) {
 				if (res.err_msg == "get_brand_wcpay_request:ok") {
 					alert("支付成功");
