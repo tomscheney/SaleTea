@@ -57,11 +57,13 @@
 				console.log("aPAy", aPay)
 		        alert("ajx",JSON.stringify(res.code))
 			},
+			error: function data() {
+				console.log("dataerro", data);
+				console.log(111)
+				alert("ajaxerro")
+			}
 		})
-		error: function data() {
-			console.log("dataerro", data);
-			console.log(111)
-		}
+		
 	console.log(aPay);
 
 // });
