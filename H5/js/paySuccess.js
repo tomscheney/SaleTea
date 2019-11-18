@@ -1,6 +1,5 @@
 // 获取后台数据
 		$(document).ready(function() {
-			var aPay = ""
 			// 获取地址栏中的字符串，并将其转化为对象
 			function addr_obj() {
 			 var search = location.search;
@@ -38,7 +37,7 @@
 			var orderN = randomn(10);
 			var notifyUrl = "https://zxz.kidstoms.com/H5/address.html";
 			console.log("notifyUrl",notifyUrl)
-			
+			var aPay = "";
 			$.ajax({
 				url: "https://47.112.98.24/getPayInfo",
 				type: "post",
@@ -53,7 +52,7 @@
 				success: function(res) { // res就是后台接口返回的数据
 				    console.log(res)
 					console.log(res.code)
-					aPay = res.data
+					aPay = res.data,
 					console.log("aPAy",aPay)
 				},
 			})
