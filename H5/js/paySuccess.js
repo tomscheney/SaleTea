@@ -37,9 +37,8 @@ var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
 
 // 支付调用
 function onBridgeReady() {
-    console.log(appId);
-    console.log(aPay.appId);
-    console.log("appId",appId);
+  
+    console.log("appId",aPay.appId);
     WeixinJSBridge.invoke(
                           'getBrandWCPayRequest', {
                           "appId": aPay.appId, //公众号名称，由商户传入
