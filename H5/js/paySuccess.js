@@ -64,6 +64,8 @@ $(document).ready(function() {
 		console.log(111)
 	}
 	console.log(aPay);
+
+});
 	// 支付调用
 	function onBridgeReady() {
 		console.log(appId) // shuchu  输出哥几把   东西来哪呢艹
@@ -104,4 +106,3 @@ $(document).ready(function() {
 			onBridgeReady();
 		}
 	}
-});
