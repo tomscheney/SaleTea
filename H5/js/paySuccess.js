@@ -39,34 +39,35 @@
 	var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
 	console.log("notifyUrl", notifyUrl)
 	var aPay = "";
-	$.ajax({
-		url: "https://47.112.98.24/getPayInfo",
-		type: "post",
-		// contentType: "application/json",
-		dataType: "json",
-		data: {
-			code: obj.code,
-			totalFee: Fee,
-			orderNo: orderN,
-			notifyUrl: notifyUrl,
-		},
-		success: function(re) { // res就是后台接口返回的数据
-			console.log(re)
-			console.log(re.code)
-			aPay = re.data,
-			console.log("aPAy", aPay)
-            // pay();
-		},
-	})
-	error: function data() {
-		console.log("dataerro", data);
-		console.log(111)
-	}
+
 	console.log(aPay);
 
 // });
 	// 支付调用
 	function onBridgeReady() {
+		$.ajax({
+			url: "https://47.112.98.24/getPayInfo",
+			type: "post",
+			// contentType: "application/json",
+			dataType: "json",
+			data: {
+				code: obj.code,
+				totalFee: Fee,
+				orderNo: orderN,
+				notifyUrl: notifyUrl,
+			},
+			success: function(re) { // res就是后台接口返回的数据
+				console.log(re)
+				console.log(re.code)
+				aPay = re.data,
+				console.log("aPAy", aPay)
+		        // pay();
+			},
+		})
+		error: function data() {
+			console.log("dataerro", data);
+			console.log(111)
+		}
 		alert(aPay.package);
 		alert(aPay.appId);
 		alert(aPay.timeStamp);
