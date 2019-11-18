@@ -55,9 +55,7 @@ $.ajax({
 		console.log(res)
 		console.log(res.code)
 		aPay = res.data,
-			console.log("aPAy", aPay)
-
-		);
+		console.log("aPAy", aPay)
 	},
 })
 error: function data() {
