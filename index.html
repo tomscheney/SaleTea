@@ -5,7 +5,7 @@
     <!--<meta http-equiv="refresh" content="0;url=H5/product.html">-->
 
     <title>芷贤斋</title>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script language="javascript" type="text/javascript">
 		// 以下方式直接跳转
 		       // var appid = "wx3837a50ccd30cf87"
@@ -14,7 +14,27 @@
 		       // var state = "STATE#wechat_redirect"
 		       // var result = "appid+"+appid+"&redirect_uri="+redirect_uri+"&response_type="+response_type+"&state="+state
 		       // window.location.href="result";
-			   window.location.href="H5/index.html";
+			   //window.location.href="H5/index.html";
+               
+               $.ajax({
+                      type: 'POST',
+                      url: "https://47.112.98.24/getAllProduct",
+                      dataType: 'json',
+                      success: function (res) {
+                      if (res.code === 200) {
+                      alert( "共查询到"+res.data.length+"条数据")
+                      } else{
+                      alert( res.msg)
+
+                      }
+                      },
+                      error: function (error) {
+                      alert("error"+error)
+
+                      }
+                      })
+                      
+                     
 
     </script>
 
