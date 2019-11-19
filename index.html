@@ -35,6 +35,8 @@
                
                $.ajax({
                       url: "https://zxz.kidstoms.com/getAllProduct",
+					  dataType: "json",
+					  
                       success: function (res) {
                       if (res.code === 200) {
                       alert( "共查询到"+res.data.length+"条数据")
