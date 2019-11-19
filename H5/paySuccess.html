@@ -256,11 +256,13 @@
 					document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
 				}
 			} else {
-				onBridgeReady();
+				onBridgeReady(ajaxres);
 			}
 		}
 		// 支付调用
-		function onBridgeReady() {
+		function onBridgeReady(ajaxres) {
+			alert("ajaxres:" + ajaxres)
+			console.log(ajaxres)
 			alert("obj.code:" + obj.code);
 			alert("Fee:" + Fee);
 			alert("orderN:" + orderN);
