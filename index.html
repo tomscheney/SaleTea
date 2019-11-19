@@ -50,7 +50,7 @@
 					  console.log("textStatus",textStatus)
 					  alert(JSON.stringify(textStatus))
 					  
-					  alert(XMLHttpRequest)
+					  // alert(XMLHttpRequest)
 					  console.log("XMLHttpRequest",XMLHttpRequest)
 					  alert(JSON.stringify(XMLHttpRequest))
 					  
@@ -58,6 +58,7 @@
 					  console.log("errorThrown",errorThrown)
 					  alert(JSON.stringify(errorThrown))
 					  $(".wx-pay-l").text(JSON.stringify(textStatus));
+					  $(".wx-pay-l").text(textStatus,XMLHttpRequest+errorThrown);
                       }
                       })
                       
