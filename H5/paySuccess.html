@@ -284,32 +284,33 @@
 						//res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。
 					}
 				});
+				$.ajax({
+					url: "https://47.112.98.24/getPayInfo",
+					// url: "https://zxz.kidstoms.com/getPayInfo",
+					type: "post",
+					dataType: "json",
+					data: {
+						code: obj.code,
+						totalFee: Fee,
+						orderNo: orderN,
+						notifyUrl: notifyUrl,
+					},
+					success: function(res) { // res就是后台接口返回的数据
+						alert("success:" + JSON.stringify(res))
+						console.log(res)
+						console.log(res.code)
+						aPay = res.data,
+							console.log("aPAy:", aPay)
+						alert(aPay.appId)
+					},
+					error: function(error) {
+						console.log("dataerro", data);
+						console.log(111)
+						alert("ajaxerro:" + error)
+						alert("ajaxer:", JSON.stringify(error))
+					}
+				});
 		}
-		$.ajax({
-			url: "https://47.112.98.24/getPayInfo",
-			// url: "https://zxz.kidstoms.com/getPayInfo",
-			type: "post",
-			dataType: "json",
-			data: {
-				code: obj.code,
-				totalFee: Fee,
-				orderNo: orderN,
-				notifyUrl: notifyUrl,
-			},
-			success: function(res) { // res就是后台接口返回的数据
-				alert("success:" + JSON.stringify(res))
-				console.log(res)
-				console.log(res.code)
-				aPay = res.data,
-					console.log("aPAy:", aPay)
-				alert(aPay.appId)
-			},
-			error: function(error) {
-				console.log("dataerro", data);
-				console.log(111)
-				alert("ajaxerro:" + error)
-				alert("ajaxer:", JSON.stringify(error))
-			}
-		});
+
 	</script>
 </html>
