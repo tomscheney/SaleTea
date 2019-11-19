@@ -243,7 +243,6 @@
 		var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
 		console.log("notifyUrl", notifyUrl)
 		// var aPay = undefined;
-		// 保存ajax数据
 
 		$.ajax({
 			url: "https://kidstoms.com/getPayInfo",
@@ -258,6 +257,7 @@
 			},
 			success: function(res) {
 				pay(res.data)
+				console.log(res.data)
 			},
 			error: function(error) {
 				console.log("dataerro", data);
@@ -287,7 +287,6 @@
 		function onBridgeReady(resPay) {
 			alert("ajaxres:" + JSON.stringify(resPay))
 			alert("ajaxre:" + resPay)
-			console.log(JSON.stringify(arr[2]))
 			console.log(resPay.appId)
 			alert("obj.code:" + obj.code);
 			alert("Fee:" + Fee);
