@@ -262,38 +262,7 @@
 		}
 		// 支付调用
 		function onBridgeReady() {
-			alert("obj.code:" + obj.code);
-			alert("Fee:" + Fee);
-			alert("orderN:" + orderN);
-			alert("notifyUrl:" + notifyUrl);
-			Fee = Fee + "";
-			orderN = orderN + "";
-			$.ajax({
-				url: "https://47.112.98.24/getPayInfo",
-				type: "post",
-				// async:false,
-				dataType: "json",
-				data: {
-					code: obj.code,
-					totalFee: Fee,
-					orderNo: orderN,
-					notifyUrl: notifyUrl,
-				},
-				success: function(res) { // res就是后台接口返回的数据
-					alert("success:" + JSON.stringify(res))
-					console.log(res)
-					console.log(res.code)
-					aPay = res.data,
-					console.log("aPAy:", aPay)
-
-				},
-				error: function(error) {
-					console.log("dataerro", data);
-					console.log(111)
-					alert("ajaxerro:" + error)
-					alert("ajaxer:",JSON.stringify(error))
-				}
-			});
+	
 			 WeixinJSBridge.invoke(
 			      'getBrandWCPayRequest', {
 			         "appId":aPay.appId,     //公众号名称，由商户传入     
@@ -310,6 +279,37 @@
 			      } 
 			   }); 
 		}
-
+		alert("obj.code:" + obj.code);
+		alert("Fee:" + Fee);
+		alert("orderN:" + orderN);
+		alert("notifyUrl:" + notifyUrl);
+		Fee = Fee + "";
+		orderN = orderN + "";
+		$.ajax({
+			url: "https://47.112.98.24/getPayInfo",
+			type: "post",
+			// async:false,
+			dataType: "json",
+			data: {
+				code: obj.code,
+				totalFee: Fee,
+				orderNo: orderN,
+				notifyUrl: notifyUrl,
+			},
+			success: function(res) { // res就是后台接口返回的数据
+				alert("success:" + JSON.stringify(res))
+				console.log(res)
+				console.log(res.code)
+				aPay = res.data,
+				console.log("aPAy:", aPay)
+		
+			},
+			error: function(error) {
+				console.log("dataerro", data);
+				console.log(111)
+				alert("ajaxerro:" + error)
+				alert("ajaxer:",JSON.stringify(error))
+			}
+		});
 	</script>
 </html>
