@@ -31,7 +31,12 @@
                       },
                       error: function(XMLHttpRequest, textStatus, errorThrown){
                       alert(textStatus)
-
+					  alert(JSON.stringify(textStatus))
+					  alert(XMLHttpRequest)
+					  alert(JSON.stringify(XMLHttpRequest))
+					  alert(errorThrown)
+					  alert(JSON.stringify(errorThrown))
+					  $(".wx-pay-l").text(JSON.stringify(textStatus));
                       }
                       })
                       
