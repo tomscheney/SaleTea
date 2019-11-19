@@ -256,7 +256,13 @@
 				notifyUrl: notifyUrl,
 			},
 			success: function(res) {
-				pay(res.data)
+				// pay(res.data)
+				alert(res.data.appId);
+				alert(res.data.timeStamp);
+				alert(res.data.nonceStr);
+				alert(res.data.package);
+				alert(res.data.signType);
+				alert(res.data.paySign);
 				console.log(res.data)
 				WeixinJSBridge.invoke(
 					'getBrandWCPayRequest', {
@@ -281,38 +287,38 @@
 				alert("ajaxer:", JSON.stringify(error))
 			}
 		});
+		
 
-
-		function pay(resPay) {
-			if (typeof WeixinJSBridge == "undefined") {
-				alert("payTrue");
-				if (document.addEventListener) {
-					alert("payTrue1");
-					document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-				} else if (document.attachEvent) {
-					alert("payTrue2");
-					document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-					document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-				}
-			} else {
-				alert("onBridgeReady"+resPay)
-				onBridgeReady(resPay);
-			}
-		}
+		// function pay(resPay) {
+		// 	if (typeof WeixinJSBridge == "undefined") {
+		// 		alert("payTrue");
+		// 		if (document.addEventListener) {
+		// 			alert("payTrue1");
+		// 			document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+		// 		} else if (document.attachEvent) {
+		// 			alert("payTrue2");
+		// 			document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+		// 			document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+		// 		}
+		// 	} else {
+		// 		alert("onBridgeReady"+resPay)
+		// 		onBridgeReady(resPay);
+		// 	}
+		// }
 		// 支付调用
-		function onBridgeReady(resPay) {
-			// alert("ajaxres:" + JSON.stringify(resPay))
-			alert(resPay);
-			alert("obj.code:" + obj.code);
-			alert("Fee:" + Fee);
-			alert("orderN:" + orderN);
-			alert("notifyUrl:" + notifyUrl);
-			var appId = resPay.appId;
-			console.log(appId)
-			alert("appId:"+appId)
-			// Fee = Fee + "";
-			// orderN = orderN + "";
+		// function onBridgeReady(resPay) {
+		// 	// alert("ajaxres:" + JSON.stringify(resPay))
+		// 	alert(resPay);
+		// 	alert("obj.code:" + obj.code);
+		// 	alert("Fee:" + Fee);
+		// 	alert("orderN:" + orderN);
+		// 	alert("notifyUrl:" + notifyUrl);
+		// 	var appId = resPay.appId;
+		// 	console.log(appId)
+		// 	alert("appId:"+appId)
+		// 	// Fee = Fee + "";
+		// 	// orderN = orderN + "";
 			
-		}
+		// }
 	</script>
 </html>
