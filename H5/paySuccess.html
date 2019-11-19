@@ -245,7 +245,6 @@
 		// var aPay = undefined;
 
 		
-		
 
 		function pay() {
 			$.ajax({
@@ -269,21 +268,6 @@
 					alert(res.data.paySign);
 					console.log(res.data)
 					var resPay = res.data;
-					if (typeof WeixinJSBridge == "undefined") {
-						alert("payTrue");
-						if (document.addEventListener) {
-							alert("payTrue1");
-							document.addEventListener('WeixinJSBridgeReady', onBridgeReady(resPay), false);
-						} else if (document.attachEvent) {
-							alert("payTrue2");
-							document.attachEvent('WeixinJSBridgeReady', onBridgeReady(resPay));
-							document.attachEvent('onWeixinJSBridgeReady', onBridgeReady(resPay));
-						}
-					} else {
-						alert("onBridgeReady"+resPay)
-						onBridgeReady(resPay);
-					}
-			
 				},
 				error: function(error) {
 					console.log("dataerro", data);
@@ -292,7 +276,20 @@
 					alert("ajaxer:", JSON.stringify(error))
 				}
 			});
-			
+			if (typeof WeixinJSBridge == "undefined") {
+				alert("payTrue");
+				if (document.addEventListener) {
+					alert("payTrue1");
+					document.addEventListener('WeixinJSBridgeReady', onBridgeReady(resPay), false);
+				} else if (document.attachEvent) {
+					alert("payTrue2");
+					document.attachEvent('WeixinJSBridgeReady', onBridgeReady(resPay));
+					document.attachEvent('onWeixinJSBridgeReady', onBridgeReady(resPay));
+				}
+			} else {
+				alert("onBridgeReady"+resPay)
+				onBridgeReady(resPay);
+			}
 		}
 		// 支付调用
 		function onBridgeReady(resPay) {
