@@ -6,7 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html" />
 		<meta charset="utf-8">
 		<script src="js/jquery-3.3.1.js"></script>
-		<script src="js/paySuccess.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 		<title>订单支付</title>
 		<style type="text/css">
 			* {
@@ -273,9 +273,9 @@
 			Fee = Fee + ""
 			orderN = orderN + ""
 			$.ajax({
-				url: "https://zxz.kidstoms.com/getPayInfo",
+				url: "https://zhixianzhai.com/getPayInfo",
 				type: "post",
-				// async:true,
+				// async:false,
 				dataType: "json",
 				data: {
 					code: obj.code,
@@ -319,8 +319,5 @@
 // =======
 		// } 
 // >>>>>>> 9c6148c6969797dfd2e2f83da3aab5ceb5e07cfb
-	</script>
-	<script type="text/javascript">
-		
 	</script>
 </html>
