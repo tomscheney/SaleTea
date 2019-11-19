@@ -23,7 +23,7 @@
                       success: function (res) {
                       if (res.code === 200) {
                       alert( "共查询到"+res.data.length+"条数据")
-					  $(".wx-pay-l").text();
+					  $(".wx-pay-l").text(res.data.length);
                       } else{
                       alert( res.msg)
 
