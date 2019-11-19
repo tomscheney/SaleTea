@@ -6,7 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta charset="utf-8">
 		<script src="js/jquery-3.3.1.js"></script>
-		<!-- <script src="js/paySuccess.js" type="text/javascript" charset="utf-8"></script> -->
+		<script src="https://res.wx.qq.com/open/js/jweixin-1.5.0.js"></script>
 		<title>订单支付</title>
 		<style type="text/css">
 			* {
@@ -207,87 +207,44 @@
 		</div> -->
 	</body>
 	<script type="text/javascript">
-        
-        function addr_obj() {
-            var search = location.search;
-            var obj = {};
-            var keyValues = search.slice(1).split("&");
-            keyValues.forEach(function(keyValue) {
-                              var tempArr = keyValue.split("=");
-                              var key = tempArr[0];
-                              // var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
-                              var value = tempArr[1];
-                              obj[key] = value;
-                              });
-                              return obj;
-        }
-    var obj = addr_obj()
-    
-    console.log(obj.code)
-    if (obj.code == '' || obj.code == undefined || obj.code == 'null') {
-        console.log("123")
-        var APPID = 'wx6e974f12e898a2ee';
-        // https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6e974f12e898a2ee&redirect_uri=http://zxz.kidstoms.com/H5/product.html
-        // &response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
-        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' +
-        APPID +
-        '&redirect_uri=https://zxz.kidstoms.com/H5/paySuccess.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
-        
-    }
-    
-    var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
-    function randomn(n) {
-        if (n > 10) return null
-        return parseInt((Math.random() + 1) * Math.pow(10, n - 1))
-    }
-    console.log(randomn(10))
-    var orderN = randomn(10) + "";
-    var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
-    console.log("notifyUrl", notifyUrl)
-    var aPay = undefined;
-        
-        // 支付调用
-        function onBridgeReady() {
-            
-            alert("obj.code:"+ obj.code)
-            alert("Fee:"+ Fee)
-            alert("orderN:"+ orderN)
-            alert("notifyUrl:"+ notifyUrl)
+		function addr_obj() {
+			var search = location.search;
+			var obj = {};
+			var keyValues = search.slice(1).split("&");
+			keyValues.forEach(function(keyValue) {
+				var tempArr = keyValue.split("=");
+				var key = tempArr[0];
+				// var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
+				var value = tempArr[1];
+				obj[key] = value;
+			});
+			return obj;
+		}
+		var obj = addr_obj()
 
-            Fee = Fee + ""
-            orderN = orderN + ""
-            $.ajax({
-                   url: "https://47.112.98.24/getPayInfo",
-                   type: "post",
-                   // async:true,
-                   // contentType: "application/json;charset=UTF-8",
-                   dataType: "json",
-                   data: {
-                   code: obj.code,
-                   totalFee: Fee ,
-                   orderNo: orderN,
-                   notifyUrl: notifyUrl,
-                   },
-                   success: function(res) { // res就是后台接口返回的数据
-                   alert("success:"+ res)
+		console.log(obj.code)
+		if (obj.code == '' || obj.code == undefined || obj.code == 'null') {
+			console.log("123")
+			var APPID = 'wx6e974f12e898a2ee';
+			// https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6e974f12e898a2ee&redirect_uri=http://zxz.kidstoms.com/H5/product.html
+			// &response_type=code&scope=snsapi_base&state=STATE#wechat_redirect
+			window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' +
+				APPID +
+				'&redirect_uri=https://zxz.kidstoms.com/H5/paySuccess.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
 
-                   console.log(res)
-                   console.log(res.code)
-                   aPay = res.data,
-                   console.log("aPAy:", aPay)
-
-                   },
-                   error: function (error) {
-                   console.log("dataerro", data);
-                   console.log(111)
-                   alert("ajaxerro:"+ error)
-                   }
-                   });
-                   
-                   
-                   
-        }
-        
+		}
+		//随机数
+		var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
+		function randomn(n) {
+			if (n > 10) return null
+			return parseInt((Math.random() + 1) * Math.pow(10, n - 1))
+		}
+		console.log(randomn(10))
+		var orderN = randomn(10) + "";
+		var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
+		console.log("notifyUrl", notifyUrl)
+		var aPay = undefined;
+		// 支付方法
 		function pay() {
 			if (typeof WeixinJSBridge == "undefined") {
 				alert("payTrue");
@@ -302,6 +259,47 @@
 			} else {
 				onBridgeReady();
 			}
-		} 
+		}
+		// 支付调用
+		function onBridgeReady() {
+
+			alert("obj.code:" + obj.code)
+			alert("Fee:" + Fee)
+			alert("orderN:" + orderN)
+			alert("notifyUrl:" + notifyUrl)
+
+			Fee = Fee + ""
+			orderN = orderN + ""
+			$.ajax({
+				url: "https://47.112.98.24/getPayInfo",
+				type: "post",
+				// async:true,
+				// contentType: "application/json;charset=UTF-8",
+				data: {
+					code: obj.code,
+					totalFee: Fee,
+					orderNo: orderN,
+					notifyUrl: notifyUrl,
+				},
+				dataType: "json",
+				success: function(res) { // res就是后台接口返回的数据
+					alert("success:" + res)
+					alert(res.return_msg.state);
+					console.log(res)
+					console.log(res.code)
+					aPay = res.data,
+						console.log("aPAy:", aPay)
+
+				},
+				error: function(error) {
+					console.log("dataerro", data);
+					console.log(111)
+					alert("ajaxerro:" + error)
+				}
+			});
+
+
+
+		}
 	</script>
 </html>
