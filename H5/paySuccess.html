@@ -246,46 +246,6 @@
     console.log("notifyUrl", notifyUrl)
     var aPay = undefined;
         
-        // 支付调用
-        function onBridgeReady() {
-            
-            alert("obj.code:"+ obj.code)
-            alert("Fee:"+ Fee)
-            alert("orderN:"+ orderN)
-            alert("notifyUrl:"+ notifyUrl)
-
-            Fee = Fee + ""
-            orderN = orderN + ""
-            $.ajax({
-                   url: "https://47.112.98.24/getPayInfo",
-                   type: "post",
-                   // async:true,
-                   // contentType: "application/json;charset=UTF-8",
-                   dataType: "json",
-                   data: {
-                   code: obj.code,
-                   totalFee: Fee ,
-                   orderNo: orderN,
-                   notifyUrl: notifyUrl,
-                   },
-                   success: function(res) { // res就是后台接口返回的数据
-                   alert("success:"+ JSON.stringify(res))
-                   console.log(res.code)
-                   aPay = res.data,
-                   console.log("aPAy:", aPay)
-
-                   },
-                   error: function (error) {
-                   console.log("dataerro", data);
-                   console.log(111)
-                   alert("ajaxerro:"+ error)
-                   }
-                   });
-                   
-                   
-                   
-        }
-        
 		function pay() {
 			if (typeof WeixinJSBridge == "undefined") {
 				alert("payTrue");
@@ -300,7 +260,7 @@
 			} else {
 				onBridgeReady();
 			}
-<<<<<<< HEAD
+
 		}
 		// 支付调用
 		function onBridgeReady() {
@@ -316,7 +276,7 @@
 				url: "https://47.112.98.24/getPayInfo",
 				type: "post",
 				// async:true,
-								dataType: "json",
+				dataType: "json",
 				data: {
 					code: obj.code,
 					totalFee: Fee,
