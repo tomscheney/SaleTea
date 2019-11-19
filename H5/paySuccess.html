@@ -247,7 +247,7 @@
 				var arr=[];
 			    function aPay(arr){ 
 			    	$.ajax({
-		                url: "https://47.112.98.24/getPayInfo",
+		                url: "https://kidstoms.com/getPayInfo",
 		                // url: "https://zxz.kidstoms.com/getPayInfo",
 		                type: "post",
 		                async:false,
@@ -295,8 +295,8 @@
 		}
 		// 支付调用
 		function onBridgeReady(arr) {
-			alert("ajaxres:" + JSON.stringify(arr[]))
-			alert("ajaxr:" + arr[])
+			alert("ajaxres:" + JSON.stringify(arr))
+			alert("ajaxre:" + arr)
 			console.log(JSON.stringify(arr[2]))
 			console.log(arr[2].appId)
 			alert("obj.code:" + obj.code);
