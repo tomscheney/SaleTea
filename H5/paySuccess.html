@@ -243,6 +243,7 @@
 		var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
 		console.log("notifyUrl", notifyUrl)
 		// var aPay = undefined;
+		var aPay=new Array();//新建一个数组，用来保存接收的数据
 
 		function pay() {
 			if (typeof WeixinJSBridge == "undefined") {
@@ -288,6 +289,7 @@
 					url: "https://47.112.98.24/getPayInfo",
 					// url: "https://zxz.kidstoms.com/getPayInfo",
 					type: "post",
+					async:false;
 					dataType: "json",
 					data: {
 						code: obj.code,
@@ -296,12 +298,10 @@
 						notifyUrl: notifyUrl,
 					},
 					success: function(res) { // res就是后台接口返回的数据
-						alert("success:" + JSON.stringify(res))
-						console.log(res)
-						console.log(res.code)
-						aPay = res.data,
-							console.log("aPAy:", aPay)
-						alert(aPay.appId)
+						var i = 0;
+						$.each(res, function(key, value){//key和value分别保存的是res集合中的键和值
+                		aPay[i] = value;//将data集合中的值依次放进数组中
+                		i=i+1;
 					},
 					error: function(error) {
 						console.log("dataerro", data);
@@ -310,7 +310,10 @@
 						alert("ajaxer:", JSON.stringify(error))
 					}
 				});
+				alert(aPay);
+				return aPay;//返回数组
 		}
-
+				aPay = getTime(aPay);
+				alert(aPay[0]);
 	</script>
 </html>
