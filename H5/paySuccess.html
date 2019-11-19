@@ -262,14 +262,12 @@
 		}
 		// 支付调用
 		function onBridgeReady() {
-
-			alert("obj.code:" + obj.code)
-			alert("Fee:" + Fee)
-			alert("orderN:" + orderN)
-			alert("notifyUrl:" + notifyUrl)
-
-			Fee = Fee + ""
-			orderN = orderN + ""
+			alert("obj.code:" + obj.code);
+			alert("Fee:" + Fee);
+			alert("orderN:" + orderN);
+			alert("notifyUrl:" + notifyUrl);
+			Fee = Fee + "";
+			orderN = orderN + "";
 			$.ajax({
 				url: "https://47.112.98.24/getPayInfo",
 				type: "post",
@@ -298,7 +296,7 @@
 			});
 			 WeixinJSBridge.invoke(
 			      'getBrandWCPayRequest', {
-			         "appid":aPay.appId,     //公众号名称，由商户传入     
+			         "appId":aPay.appId,     //公众号名称，由商户传入     
 			         "timeStamp":aPay.timeStamp,         //时间戳，自1970年以来的秒数     
 			         "nonceStr":aPay.nonceStr, //随机串     
 			         "package":aPay.package,     
@@ -311,8 +309,6 @@
 			            //res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。
 			      } 
 			   }); 
-			alert("appid",JSON.stringify(appid));
-
 		}
 
 	</script>
