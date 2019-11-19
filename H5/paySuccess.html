@@ -262,8 +262,9 @@
 		}
 		// 支付调用
 		function onBridgeReady(aPay) {
-			alert("ajaxres:" + JSON.stringify(aPay))
+			alert("ajaxres:" + aPay)
 			console.log(aPay)
+			console.log(aPay[2].appId)
 			alert("obj.code:" + obj.code);
 			alert("Fee:" + Fee);
 			alert("orderN:" + orderN);
@@ -272,7 +273,7 @@
 			// orderN = orderN + "";
 			WeixinJSBridge.invoke(
 				'getBrandWCPayRequest', {
-					"appid": aPay.appId, //公众号名称，由商户传入     
+					"appid": aPay[2].appId, //公众号名称，由商户传入     
 					"timeStamp": aPay.timeStamp, //时间戳，自1970年以来的秒数     
 					"nonceStr": aPay.nonceStr, //随机串     
 					"package": aPay.package,
@@ -314,7 +315,6 @@
 				alert(aPay);
 				return aPay;//返回数组
 		}
-				aPay = getTime(aPay);
-				alert(aPay[0]);
+
 	</script>
 </html>
