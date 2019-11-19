@@ -39,17 +39,23 @@
                       if (res.code === 200) {
                       alert( "共查询到"+res.data.length+"条数据")
 					  $(".wx-pay-l").text(res.data.length);
+					  $("#btn_1").text(res.data.length);
                       } else{
                       alert( res.msg)
 
                       }
-                      },
+                    },
                       error: function(XMLHttpRequest, textStatus, errorThrown){
                       alert(textStatus)
+					  console.log("textStatus",textStatus)
 					  alert(JSON.stringify(textStatus))
+					  
 					  alert(XMLHttpRequest)
+					  console.log("XMLHttpRequest",XMLHttpRequest)
 					  alert(JSON.stringify(XMLHttpRequest))
+					  
 					  alert(errorThrown)
+					  console.log("errorThrown",errorThrown)
 					  alert(JSON.stringify(errorThrown))
 					  $(".wx-pay-l").text(JSON.stringify(textStatus));
                       }
