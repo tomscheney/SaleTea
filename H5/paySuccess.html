@@ -262,9 +262,8 @@
 		// 支付调用
 		function onBridgeReady() {
 			alert("obj.code");
-		
 			$.ajax({
-				url: "https://kidstoms.com/getPayInfo",
+				url: "https://zxz.kidstoms.com/getPayInfo",
 				type: "post",
 				dataType: "json",
 				data: {
@@ -303,12 +302,12 @@
 				},
 				error: function(XMLHttpRequest, textStatus, errorThrown) {
 					console.log(111)
-					alert("textStatus",textStatus)
-					alert(JSON.stringify(textStatus))
-					alert("XMLHttpRequest",XMLHttpRequest)
-					alert(JSON.stringify(XMLHttpRequest))
+					alert("textStatus",textStatus)//
+					alert(JSON.stringify(textStatus))//error
+					alert("XMLHttpRequest",XMLHttpRequest)//
+					alert(JSON.stringify(XMLHttpRequest))//"readyState":0,"status":0,"statusText":"error"
 					alert("errorThrown",errorThrown)
-					alert(JSON.stringify(errorThrown))
+					alert(JSON.stringify(errorThrown))//""
 				}
 			});
 		}
