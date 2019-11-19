@@ -274,21 +274,19 @@
 				url: "https://47.112.98.24/getPayInfo",
 				type: "post",
 				// async:true,
-				// contentType: "application/json;charset=UTF-8",
+								dataType: "json",
 				data: {
 					code: obj.code,
 					totalFee: Fee,
 					orderNo: orderN,
 					notifyUrl: notifyUrl,
 				},
-				dataType: "json",
 				success: function(res) { // res就是后台接口返回的数据
 					alert("success:" + res)
-					alert(res.return_msg.state);
 					console.log(res)
 					console.log(res.code)
 					aPay = res.data,
-						console.log("aPAy:", aPay)
+					console.log("aPAy:", aPay)
 
 				},
 				error: function(error) {
@@ -299,7 +297,7 @@
 			});
 			 WeixinJSBridge.invoke(
 			      'getBrandWCPayRequest', {
-			         "appid":aPay.appId,     //公众号名称，由商户传入     
+			         "appId":aPay.appId,     //公众号名称，由商户传入     
 			         "timeStamp":aPay.timeStamp,         //时间戳，自1970年以来的秒数     
 			         "nonceStr":aPay.nonceStr, //随机串     
 			         "package":aPay.package,     
