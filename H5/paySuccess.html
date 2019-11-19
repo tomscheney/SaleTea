@@ -243,7 +243,6 @@
 		var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
 		console.log("notifyUrl", notifyUrl)
 		// var aPay = undefined;
-		var aaPay=[];//新建一个数组，用来保存接收的数据
 
 		function pay() {
 			if (typeof WeixinJSBridge == "undefined") {
@@ -286,8 +285,9 @@
 						//res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。
 					}
 				});
-				
-				var arr=[];//新建一个数组，用来保存接收的数据
+				}
+				// 保存ajax数据
+				var arr=[];
 			    function aPay(arr){ 
 			    	$.ajax({
 		                url: "https://47.112.98.24/getPayInfo",
