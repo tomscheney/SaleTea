@@ -242,7 +242,7 @@
     var orderN = randomn(10) + "";
     var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
     console.log("notifyUrl", notifyUrl)
-    var aPay = undefined;
+    // var aPay = undefined;
         
 		function pay() {
 			if (typeof WeixinJSBridge == "undefined") {
@@ -256,13 +256,13 @@
 					document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
 				}
 			} else {
-				onBridgeReady(ajaxres);
+				onBridgeReady(aPay);
 			}
 		}
 		// 支付调用
-		function onBridgeReady(ajaxres) {
-			alert("ajaxres:" + ajaxres)
-			console.log(ajaxres)
+		function onBridgeReady(aPay) {
+			alert("ajaxres:" + aPay)
+			console.log(aPay)
 			alert("obj.code:" + obj.code);
 			alert("Fee:" + Fee);
 			alert("orderN:" + orderN);
