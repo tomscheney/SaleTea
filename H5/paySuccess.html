@@ -261,16 +261,8 @@
 		}
 		// 支付调用
 		function onBridgeReady() {
-			alert("obj.code:" + obj.code);
-			alert("Fee:" + Fee);
-			alert("orderN:" + orderN);
-			alert("notifyUrl:" + notifyUrl);
-			// 	var appId = resPay.appId;
-			// 	console.log(appId)
-			// 	alert("appId:"+appId)
-			// 	// Fee = Fee + "";
-			// 	// orderN = orderN + "";
-		$(function{
+			alert("obj.code");
+		
 			$.ajax({
 				url: "https://kidstoms.com/getPayInfo",
 				type: "post",
@@ -310,13 +302,11 @@
 						});
 				},
 				error: function(error) {
-					console.log("dataerro", data);
 					console.log(111)
 					alert("ajaxerro:" + error)
 					alert("ajaxer:", JSON.stringify(error))
 				}
 			});
-})
 		}
 	</script>
 </html>
