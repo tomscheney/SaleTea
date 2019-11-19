@@ -261,14 +261,14 @@
 		}
 		// 支付调用
 		function onBridgeReady(aPay) {
-			alert("ajaxres:" + aPay)
+			alert("ajaxres:" + JSON.stringify(aPay))
 			console.log(aPay)
 			alert("obj.code:" + obj.code);
 			alert("Fee:" + Fee);
 			alert("orderN:" + orderN);
 			alert("notifyUrl:" + notifyUrl);
-			Fee = Fee + "";
-			orderN = orderN + "";
+			// Fee = Fee + "";
+			// orderN = orderN + "";
 			WeixinJSBridge.invoke(
 				'getBrandWCPayRequest', {
 					"appid": aPay.appId, //公众号名称，由商户传入     
