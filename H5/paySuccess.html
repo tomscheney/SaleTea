@@ -287,16 +287,18 @@
 		function onBridgeReady(resPay) {
 			// alert("ajaxres:" + JSON.stringify(resPay))
 			alert(resPay)
-			console.log(resPay.appId)
 			alert("obj.code:" + obj.code);
 			alert("Fee:" + Fee);
 			alert("orderN:" + orderN);
 			alert("notifyUrl:" + notifyUrl);
+			var appId = resPay.appId;
+			console.log(appId)
+			alert("appId:"+appId)
 			// Fee = Fee + "";
 			// orderN = orderN + "";
 			WeixinJSBridge.invoke(
 				'getBrandWCPayRequest', {
-					"appid": resPay.appId, //公众号名称，由商户传入     
+					"appid": appId, //公众号名称，由商户传入     
 					"timeStamp": resPay.timeStamp, //时间戳，自1970年以来的秒数     
 					"nonceStr": resPay.nonceStr, //随机串     
 					"package": resPay.package,
