@@ -35,6 +35,8 @@
                
                $.ajax({
                       url: "https://zxz.kidstoms.com/getAllProduct",
+					  type:"post",
+					  contentType: "application/json;charset=utf-8",
 					  dataType: "json",
                       success: function (res) {
                       if (res.code === 200) {
@@ -42,7 +44,7 @@
 					  $(".wx-pay-l").text(res.data.length);
 					  $("#btn_1").text(res.data.length);
                       } else{
-                      alert( res.msg)
+                      alert(res.msg)
                       }
                     },
                       error: function(XMLHttpRequest, textStatus, errorThrown){
@@ -51,7 +53,7 @@
 					  alert(JSON.stringify(XMLHttpRequest))
 					  alert(JSON.stringify(errorThrown))
 					  $(".wx-pay-l").text(JSON.stringify(textStatus));
-					  $(".wx-pay-l").text(textStatus,XMLHttpRequest+errorThrown);
+					  $(".wx-pay-l").text(textStatus,XMLHttpRequest,errorThrown);
                       }
                       })
                       
