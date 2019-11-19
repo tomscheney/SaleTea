@@ -301,10 +301,14 @@
 							}
 						});
 				},
-				error: function(error) {
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
 					console.log(111)
-					alert("ajaxerro:" + error)
-					alert("ajaxer:", JSON.stringify(error))
+					alert("textStatus",textStatus)
+					alert(JSON.stringify(textStatus))
+					alert("XMLHttpRequest",XMLHttpRequest)
+					alert(JSON.stringify(XMLHttpRequest))
+					alert("errorThrown",errorThrown)
+					alert(JSON.stringify(errorThrown))
 				}
 			});
 		}
