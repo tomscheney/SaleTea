@@ -280,14 +280,14 @@
 					document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
 				}
 			} else {
-				alert("onBridgeReady")
+				alert("onBridgeReady"+resPay)
 				onBridgeReady(resPay);
 			}
 		}
 		// 支付调用
 		function onBridgeReady(resPay) {
 			// alert("ajaxres:" + JSON.stringify(resPay))
-			alert(resPay)
+			alert(resPay);
 			alert("obj.code:" + obj.code);
 			alert("Fee:" + Fee);
 			alert("orderN:" + orderN);
