@@ -300,7 +300,7 @@
 				console.log(res.code)
 				aPay = res.data,
 				console.log("aPAy:", aPay)
-				var appId = aPay.appId;
+				var appId = aPay.appId,
 				var timeStamp = aPay.timeStamp,         //时间戳，自1970年以来的秒数     
 				var nonceStr = aPay.nonceStr, //随机串     
 				var package = aPay.package,     
