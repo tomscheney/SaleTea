@@ -232,7 +232,6 @@
         window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' +
         APPID +
         '&redirect_uri=https://zxz.kidstoms.com/H5/paySuccess.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
-        
     }
     
     var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
@@ -242,8 +241,7 @@
     }
     console.log(randomn(10))
     var orderN = randomn(10) + "";
-    // var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
-	var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
+    var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
     console.log("notifyUrl", notifyUrl)
     var aPay = undefined;
         
@@ -274,7 +272,7 @@
 			Fee = Fee + ""
 			orderN = orderN + ""
 			$.ajax({
-				url: "https://zhixianzhai.com/getPayInfo",
+				url: "https://zxz.kidstoms.com/getPayInfo",
 				type: "post",
 				// async:false,
 				dataType: "json",
@@ -317,8 +315,6 @@
 			alert("appid",JSON.stringify(appid));
 
 		}
-// =======
-		// } 
-// >>>>>>> 9c6148c6969797dfd2e2f83da3aab5ceb5e07cfb
+
 	</script>
 </html>
