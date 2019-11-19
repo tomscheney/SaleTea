@@ -282,7 +282,7 @@
 					notifyUrl: notifyUrl,
 				},
 				success: function(res) { // res就是后台接口返回的数据
-					alert("success:" + res)
+					alert("success:" + JSON.stringify(res))
 					console.log(res)
 					console.log(res.code)
 					aPay = res.data,
@@ -297,7 +297,7 @@
 			});
 			 WeixinJSBridge.invoke(
 			      'getBrandWCPayRequest', {
-			         "appId":aPay.appId,     //公众号名称，由商户传入     
+			         "appid":aPay.appId,     //公众号名称，由商户传入     
 			         "timeStamp":aPay.timeStamp,         //时间戳，自1970年以来的秒数     
 			         "nonceStr":aPay.nonceStr, //随机串     
 			         "package":aPay.package,     
