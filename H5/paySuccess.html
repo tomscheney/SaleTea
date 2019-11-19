@@ -243,7 +243,7 @@
 		var notifyUrl = "https://zxz.kidstoms.com/H5/paySuccess.html";
 		console.log("notifyUrl", notifyUrl)
 		// var aPay = undefined;
-		var aPay=new Array();//新建一个数组，用来保存接收的数据
+		var aaPay=[];//新建一个数组，用来保存接收的数据
 
 		function pay() {
 			if (typeof WeixinJSBridge == "undefined") {
@@ -262,8 +262,8 @@
 		}
 		// 支付调用
 		function onBridgeReady(aPay) {
-			alert("ajaxres:" + aPay)
-			console.log(aPay)
+			alert("ajaxres:" + JSON.stringify(aPay))
+			console.log(JSON.stringify(aPay))
 			console.log(aPay[2].appId)
 			alert("obj.code:" + obj.code);
 			alert("Fee:" + Fee);
@@ -301,7 +301,7 @@
 					success: function(res) { // res就是后台接口返回的数据
 						var i = 0;
 						$.each(res, function(key, value){//key和value分别保存的是res集合中的键和值
-                		aPay[i] = value;//将data集合中的值依次放进数组中
+                		aaPay[i] = value;//将data集合中的值依次放进数组中
                 		i=i+1;
 						})
 					},
@@ -312,9 +312,9 @@
 						alert("ajaxer:", JSON.stringify(error))
 					}
 				});
-				alert(aPay);
-				return aPay;//返回数组
+				alert(aaPay);
+				return aaPay;//返回数组
 		}
-
+				var aPay = aaPay;
 	</script>
 </html>
