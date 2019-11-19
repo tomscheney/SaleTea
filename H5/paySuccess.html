@@ -6,7 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta charset="utf-8">
 		<script src="js/jquery-3.3.1.js"></script>
-		<script src="js/paySuccess.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="js/paySuccess.js" type="text/javascript" charset="utf-8"></script> -->
 		<title>订单支付</title>
 		<style type="text/css">
 			* {
@@ -259,8 +259,8 @@
             $.ajax({
                    url: "https://47.112.98.24/getPayInfo",
                    type: "post",
-                   async:true,
-                   contentType: "application/json;charset=UTF-8",
+                   // async:true,
+                   // contentType: "application/json;charset=UTF-8",
                    dataType: "json",
                    data: {
                    code: obj.code,
