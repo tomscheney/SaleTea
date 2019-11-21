@@ -183,7 +183,6 @@
 				success: function(res) { // res就是后台接口返回的数据
 					console.log(res)
 					console.log(100)
-					var fileList = "";
 					// 标题 价格
 					$(".tit-name").text(res.data.productDesc);
 					$(".tit-price").text(res.data.salePrice + '元 / 份');
@@ -191,7 +190,18 @@
 					$(".productPlace").text(res.data.productDetail.productPlace);
 					$(".wrapping").text(res.data.productDetail.wrapping);
 					$(".brand").text(res.data.productDetail.brand);
-					fileList += '<div class="swiper-slide"><img src="+'res.data.productImage'+"/></div>';
+					var len = res.data.productImage;
+					var fileList = "";
+					console.log(len)
+					      if(len > 0){
+					        for(var i = 0; i < len; i++){
+					          cm += '<tr data-id='+data[i]['id']+'>';
+							  fileList += '<div class="swiper-slide">'+'<img src="+'len[i]'+"/></div>';
+					          console.log(fileList);
+					          $('.swiper-wrapper').html(fileList);
+					        }
+					      }
+					
 					$(".swiper-wrapper").text(fileList);
 					$(".qualityPeriod").text(res.data.productDetail.qualityPeriod);
 					$(".standards").text(res.data.productDetail.standards);
