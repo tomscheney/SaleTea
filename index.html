@@ -42,7 +42,6 @@
 		type: "post",
 		// contentType: "application/json;charset=utf-8",
 		// dataType: "json",
-		async: false,
 		data: {},
 		success: function(res) {
 			if (res.code === 200) {
@@ -50,7 +49,7 @@
 				$(".wx-pay-l").text(res.data.length);
 				$("#btn_1").text(res.data.length);
 			} else {
-				alert(JSON.stringify(res.data));
+				alert(res.msg);
 			}
 
 		},
