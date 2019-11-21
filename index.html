@@ -7,6 +7,7 @@
     <!--<meta http-equiv="refresh" content="0;url=H5/product.html">-->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <title>芷贤斋</title>
+	</head>
 	<style type="text/css">
 		*{
 			margin: 0;
@@ -24,7 +25,7 @@
 	<body>
 		<a href="javascript:void(0);" id="btn_1"><button type="button" class="wx-pay-l"></button></a>
 	</body>
-    <script language="javascript" type="text/javascript">
+    <script>
 		// 以下方式直接跳转
 		       // var appid = "wx3837a50ccd30cf87"
 		       // var redirect_uri = "http://zhixianzhai.com/H5/product.html"
@@ -51,7 +52,7 @@
 					  
                     },
                       error: function(XMLHttpRequest, textStatus, errorThrown){
-					  // alert(XMLHttpRequest)
+					  alert(textStatus)
 					  console.log("XMLHttpRequest",XMLHttpRequest)
 					  alert(JSON.stringify(XMLHttpRequest))
 					  alert(JSON.stringify(errorThrown))
@@ -89,6 +90,5 @@
 // 　　}
 // });
     </script>
-
-</head>
+</html>
 
