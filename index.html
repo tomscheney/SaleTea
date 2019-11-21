@@ -36,7 +36,7 @@
 	// var result = "appid+"+appid+"&redirect_uri="+redirect_uri+"&response_type="+response_type+"&state="+state
 	// window.location.href="result";
 	//window.location.href="H5/index.html";
-	
+	$(document).ready(function(){
 	$.ajax({
 		url: "https://zxz.kidstoms.com/getAllProduct",
 		type: "post",
@@ -61,6 +61,7 @@
 			$(".wx-pay-l").text(JSON.stringify(textStatus));
 			$(".wx-pay-l").text(textStatus, XMLHttpRequest, errorThrown);
 		}
+	})
 	})
 </script>
 </html>
