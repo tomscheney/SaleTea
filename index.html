@@ -2,93 +2,65 @@
 <!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
 <!DOCTYPE html>
 <head>
-    <meta charset="utf-8"/>
+	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<meta http-equiv="refresh" content="0;url=H5/product.html">-->
+	<!--<meta http-equiv="refresh" content="0;url=H5/product.html">-->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <title>芷贤斋</title>
-	</head>
-	<style type="text/css">
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		.wx-pay-l{
-			font-size: 25px;
-			color: #000000;
-		}
-		#btn_1{
-			color: #000000;
-			text-decoration: none;
-		}
-	</style>
-	<body>
-		<a href="javascript:void(0);" id="btn_1"><button type="button" class="wx-pay-l"></button></a>
-	</body>
-    <script>
-		// 以下方式直接跳转
-		       // var appid = "wx3837a50ccd30cf87"
-		       // var redirect_uri = "http://zhixianzhai.com/H5/product.html"
-		       // var response_type = "code"
-		       // var state = "STATE#wechat_redirect"
-		       // var result = "appid+"+appid+"&redirect_uri="+redirect_uri+"&response_type="+response_type+"&state="+state
-		       // window.location.href="result";
-			   //window.location.href="H5/index.html";
-               
-               $.ajax({
-                      url: "https://zxz.kidstoms.com/getAllProduct",
-					  type:"post",
-					  // contentType: "application/json;charset=utf-8",
-					  dataType: "json",
-					  data:{};
-                      success: function (res) {
-                      if (res.code === 200) {
-                      alert( "共查询到"+res.data.length+"条数据")
-					  $(".wx-pay-l").text(res.data.length);
-					  $("#btn_1").text(res.data.length);
-                      } else{
-                      alert(JSON.stringify(res.data));
-                      }
-					  
-                    },
-                      error: function(XMLHttpRequest, textStatus, errorThrown){
-					  alert(textStatus)
-					  console.log("XMLHttpRequest",XMLHttpRequest)
-					  alert(JSON.stringify(XMLHttpRequest))
-					  alert(JSON.stringify(errorThrown))
-					  $(".wx-pay-l").text(JSON.stringify(textStatus));
-					  $(".wx-pay-l").text(textStatus,XMLHttpRequest,errorThrown);
-                      }
-                      })
-                      
-                     
-// $.ajax({
-// 　　url: "",//后台给你提供的接口
-// 　　type: "Post",
-// 　　data: "{ 'url': '"+link+"' }",
-// 　　async: false,
-// 　　contentType: "application/json; charset=utf-8",
-// 　　dataType: "json",
-// 　　success: function (data) {
-// 　　　　var datad = JSON.parse(data.d); //转译为Json字符串
-// 　　　　wx.config({
-// 　　　　　　debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来
-// 　　　　　　appId: datad.appid, // 必填，公众号的唯一标识
-// 　　　　　　timestamp: datad.timestamp, // 必填，生成签名的时间戳
-// 　　　　　　nonceStr: datad.noncestr, // 必填，生成签名的随机串
-// 　　　　　　signature: datad.signature,// 必填，签名，见附录1
-// 　　　　　　jsApiList: [
-// 　　　　　　　　"openLocation"
-// 　　　　　　] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-// 　　　　});
-// 　　　　wx.error(function (res) {
-// 　　　　　　layer.msg(res);
-// 　　　　});
-// 　　},
-// 　　error: function (error) {
-// 　　　　layer.msg(error)
-// 　　}
-// });
-    </script>
-</html>
+	<title>芷贤斋</title>
+</head>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
 
+	.wx-pay-l {
+		font-size: 25px;
+		color: #000000;
+	}
+
+	#btn_1 {
+		color: #000000;
+		text-decoration: none;
+	}
+</style>
+<body>
+	<a href="javascript:void(0);" id="btn_1"><button type="button" class="wx-pay-l"></button></a>
+</body>
+<script>
+	// 以下方式直接跳转
+	// var appid = "wx3837a50ccd30cf87"
+	// var redirect_uri = "http://zhixianzhai.com/H5/product.html"
+	// var response_type = "code"
+	// var state = "STATE#wechat_redirect"
+	// var result = "appid+"+appid+"&redirect_uri="+redirect_uri+"&response_type="+response_type+"&state="+state
+	// window.location.href="result";
+	//window.location.href="H5/index.html";
+	
+	$.ajax({
+		url: "https://zxz.kidstoms.com/getAllProduct",
+		type: "post",
+		// contentType: "application/json;charset=utf-8",
+		dataType: "json",
+		data: {},
+		success: function(res) {
+			if (res.code === 200) {
+				alert("共查询到" + res.data.length + "条数据")
+				$(".wx-pay-l").text(res.data.length);
+				$("#btn_1").text(res.data.length);
+			} else {
+				alert(JSON.stringify(res.data));
+			}
+
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			alert(textStatus)
+			console.log("XMLHttpRequest", XMLHttpRequest)
+			alert(JSON.stringify(XMLHttpRequest))
+			alert(JSON.stringify(errorThrown))
+			$(".wx-pay-l").text(JSON.stringify(textStatus));
+			$(".wx-pay-l").text(textStatus, XMLHttpRequest, errorThrown);
+		}
+	})
+</script>
+</html>
