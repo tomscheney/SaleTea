@@ -37,6 +37,7 @@
 	// window.location.href="result";
 	//window.location.href="H5/index.html";
 	$(document).ready(function(){
+		
 	$.ajax({
 		url: "https://zxz.kidstoms.com/getAllProduct",
 		type: "post",
@@ -51,7 +52,7 @@
 			} else {
 				alert(res.msg);
 			}
-			alert("666")
+			alert("666");
 		},
 		error: function(XMLHttpRequest) {
 			alert(textStatus)
