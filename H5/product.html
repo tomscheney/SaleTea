@@ -184,13 +184,13 @@
 					console.log(res)
 					console.log(100)
 					// 标题 价格
-					$(".tit-name").text(res.data.productDesc);
-					$(".tit-price").text(res.data.salePrice + '元 / 份');
+					$(".tit-name").text(res.data[0].productDesc);
+					$(".tit-price").text(res.data[0].salePrice + '元 / 份');
 					// 产品信息
-					$(".productPlace").text(res.data.productDetail.productPlace);
-					$(".wrapping").text(res.data.productDetail.wrapping);
-					$(".brand").text(res.data.productDetail.brand);
-					var len = res.data.productImages;
+					$(".productPlace").text(res.data[0].productDetail.productPlace);
+					$(".wrapping").text(res.data[0].productDetail.wrapping);
+					$(".brand").text(res.data[0].productDetail.brand);
+					var len = res.data[0].productImages;
 					var fileList = "";
 					console.log(len)			     
 					        for(var i = 0; i < len; i++){
@@ -203,10 +203,10 @@
 					        }
 
 					// $(".swiper-wrapper").text(fileList);
-					$(".qualityPeriod").text(res.data.productDetail.qualityPeriod);
-					$(".standards").text(res.data.productDetail.standards);
+					$(".qualityPeriod").text(res.data[0].productDetail.qualityPeriod);
+					$(".standards").text(res.data[0].productDetail.standards);
 					// 产品亮点
-					$(".Bright-spot-1-r>span").text(res.data.productFeatures.featureDesc)
+					$(".Bright-spot-1-r>span").text(res.data[0].productFeatures.featureDesc)
 				},
 			})
 			error: function data() {
