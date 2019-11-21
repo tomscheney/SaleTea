@@ -34,7 +34,7 @@
 			   //window.location.href="H5/index.html";
                
                $.ajax({
-                      url: "https://zxz.kidstoms.com/getAllProduct",
+                      url: "http://zxz.kidstoms.com/getAllProduct",
 					  type:"post",
 					  // contentType: "application/json;charset=utf-8",
 					  // dataType: "json",
@@ -44,7 +44,7 @@
 					  $(".wx-pay-l").text(res.data.length);
 					  $("#btn_1").text(res.data.length);
                       } else{
-                      alert(res.msg)
+                      alert(JSON.stringify(res.data));
                       }
                     },
                       error: function(XMLHttpRequest, textStatus, errorThrown){
