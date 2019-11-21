@@ -6,6 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
 		<script src="js/jquery-3.3.1.js"></script>
+		<script src="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#2" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="js/jquery-addShopping.js"></script>
 		<script src="js/swiper-5.0.4/package/js/swiper.min.js"></script>
 		<script src="js/jquery.fly.min.js"></script>
@@ -13,7 +14,7 @@
 		<!-- Link Swiper's CSS -->
 		<link rel="stylesheet" href="js/swiper-5.0.4/package/css/swiper.min.css">
 		<link rel="stylesheet" href="js/bootstrap-3.3.7-dist/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/product.css"/>
+		<link rel="stylesheet" type="text/css" href="css/product.css" />
 		<title>详情页</title>
 	</head>
 	<body>
@@ -21,9 +22,9 @@
 		<div class="swiper-top">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide"><img src="img/qing-(1).jpg" ></div>
-					<div class="swiper-slide"><img src="img/qing-(2).jpg" ></div>
-					<div class="swiper-slide"><img src="img/qing-(3).jpg" ></div>
+					<div class="swiper-slide"><img src="img/qing-(1).jpg"></div>
+					
+					<div class="swiper-slide"><img src="img/qing-(3).jpg"></div>
 				</div>
 				<div class="swiper-pagination"></div>
 			</div>
@@ -154,13 +155,6 @@
 			$("#num").show();
 			$(".jia1").show(100);
 			$(".jia1").show().delay(1000).fadeOut();
-			// var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
-			// var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
-			// var Jumpurl = encodeURIComponent(window.location.href);
-			// var appid = 'wx3837a50ccd30cf87';
-			// var code = decodeURIComponent(Jumpurl);
-			// window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
-			// + appid + '&redirect_uri=' + Jumpurl + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
 		})
 		// 点击添加购物车
 		$(function() {
@@ -179,16 +173,17 @@
 			// function myFunction(){
 			console.log("dianji le ")
 			$.ajax({
-				url: "https://47.112.98.24/getProductDetail",
+				url: "https://zxz.kidstoms.com/getAllProduct",
 				type: "post",
 				// contentType: "application/json",
 				dataType: "json",
 				data: {
-					productId: '88880001', 
+					productId: '88880001',
 				},
 				success: function(res) { // res就是后台接口返回的数据
-				console.log(res)
-				console.log(100)
+					console.log(res)
+					console.log(100)
+					var fileList = "";
 					// 标题 价格
 					$(".tit-name").text(res.data.productDesc);
 					$(".tit-price").text(res.data.salePrice + '元 / 份');
@@ -196,6 +191,8 @@
 					$(".productPlace").text(res.data.productDetail.productPlace);
 					$(".wrapping").text(res.data.productDetail.wrapping);
 					$(".brand").text(res.data.productDetail.brand);
+					fileList += '<div class="swiper-slide"><img src="+'res.data.productImage'+"/></div>';
+					$(".swiper-wrapper").text(fileList);
 					$(".qualityPeriod").text(res.data.productDetail.qualityPeriod);
 					$(".standards").text(res.data.productDetail.standards);
 					// 产品亮点
