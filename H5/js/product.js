@@ -31,7 +31,7 @@
 			
 			var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
 			var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
-			var notifyUrl = "https://zxz.kidstoms.com/H5/address.html";
+			var notifyUrl = "https://z.kidstoms.com/H5/product.html";
 			console.log("notifyUrl",notifyUrl)
 			$.ajax({
 				url: "https://47.112.98.24/getPayInfo",
