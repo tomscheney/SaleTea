@@ -155,17 +155,18 @@
 					<h3>为了您的账户安全，请及时绑定手机号</h3>
 					<div>
 						<span>手机号</span>
-						<input type="number" placeholder="请输入您的手机号" class="tel" id="mobile" name="mobile" maxlength="11">
+						<input type="text" placeholder="请输入您的手机号" class="tel" id="mobile" name="mobile" maxlength="11" oninput="test()">
+						<span class="hint_str"></span>
 					</div>
 					<div>
 						<span>验证码</span>
 						<div class="yanzheng">
 							<input type="text" placeholder="输入验证码" class="massage_1" name="code" maxlength="6">
-							<input type="button" class="fr massage_2" value="发送验证码" disabled="disabled" id="btn">
+							<input type="submit" class="fr massage_2" value="发送验证码" disabled="disabled" id="btn">
 						</div>
+						<p></p>
+						<input type="submit" value="绑定手机号" class="submit">
 					</div>
-					<p></p>
-					<input type="submit" value="绑定手机号" class="submit">
 				</form>
 			</div>
 		</div>
@@ -181,13 +182,6 @@
 			console.log(1)
 		});
 
-		function keyLogin() {
-			e = event ? event : (window.event ? window.event : null);
-			if (e.keyCode == 13) {
-				submitFun();
-			}
-		}
-
 		function submitFun() {
 			var tel = $("#register .blue form input.tel").val(); //手机号
 			var massage = $('#register .blue form input.massage_1').val(); //短信验证码
@@ -202,7 +196,8 @@
 				$('#register .blue form input.tel').css('borderColor', '#ed3e3e');
 				return false;
 			}
-
+			
+			
 			//短信验证码是否为数字
 			var massagepattern = /^\d{4,6}$/;
 			boolMassage = massagepattern.test(massage);
@@ -260,7 +255,9 @@
 				wait = 60;
 				return;
 			} else {
-				$('#btn').css({'background': '#EEEEEE','color': '#333333'
+				$('#btn').css({
+					'background': '#EEEEEE',
+					'color': '#333333'
 				});
 				o.setAttribute("disabled", "disabled");
 				o.value = wait + '秒后可重发';
@@ -283,7 +280,7 @@
 				type: "get",
 				data: {
 					"mobile": mobile,
-					"openId":openId,
+					"openId": openId,
 				},
 				dataType: "json",
 				success: function(result) {

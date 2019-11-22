@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<title></title>
+		<style type="text/css">
+			#btn{
+				width: 10px;
+				background-color: azure;
+				height: 10px;
+				font-size: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="mobile" maxlength="11" oninput="test()"/><span class="hint_str"></span>
+		<input type="button" name="" id="btn" value="" placeholder="发送验证码"/>
+	</body>
+	<script type="text/javascript">
+		// $("#btn").click(function(){
+		// 	test();
+		// })
+		var mobile = $('#mobile');
+					var booleanValue = true,value;
+					function test(){
+						value = mobile.val();
+						if(value==''){
+						booleanValue = true;
+						}
+						if(value.length>3){
+							subValue = value.substring(-1,3);
+							if(booleanValue&&subValue.length==3){
+							if(subValue.substring(1,2)=='3'||subValue.substring(1,2)=='5'||subValue.substring(1,2)=='8'){	
+							booleanValue = /^[1]{1}(([3]|[5]|[8]){1})([0-9]{1})$/.test(subValue);
+							}else if(subValue.substring(1,2)=='4'){	
+							booleanValue = /^[1]{1}[4]{1}(([5]|[7]){1})$/.test(subValue);	
+							}else if(subValue.substring(1,2)=='7'){		
+							booleanValue = /^[1]{1}[7]{1}(([0]|[1]|[3]|[5]|[6]|[7]|[8]){1})$/.test(subValue);		
+							}else{
+								booleanValue = false;
+							}
+						}
+						}else{
+						if(value.length==1){	
+						booleanValue = /^[1]{1}$/.test(value);	
+						}else if(value.length==2){
+						booleanValue = /^[1]{1}(([3]|[4]|[5]|[7]|[8]){1})$/.test(value);	
+						}else if(booleanValue&&value.length==3){
+							if(value.substring(1,2)=='3'||value.substring(1,2)=='5'||value.substring(1,2)=='8'){	
+							booleanValue = /^[1]{1}(([3]|[5]|[8]){1})([0-9]{1})$/.test(value);
+							}else if(value.substring(1,2)=='4'){	
+							booleanValue = /^[1]{1}[4]{1}(([5]|[7]){1})$/.test(value);	
+							}else if(value.substring(1,2)=='7'){		
+							booleanValue = /^[1]{1}[7]{1}(([0]|[1]|[3]|[5]|[6]|[7]|[8]){1})$/.test(value);		
+							}else{
+								booleanValue = false;
+							}
+						}	
+						}
+						if(!booleanValue||!/^\d*$/.test(value)||value.length<11){
+							//显示错误标志
+							$('.hint_str').css('display','block');
+							$('.hint_str').html('格式错误');
+							$('.hint_str').css('color','red');
+						}else{
+							//隐藏错误标志
+							$('.hint_str').css('display','none');
+						}
+						if(/^\d{11}$/.test(value)&&booleanValue){
+							//显示正确标志
+							$('.hint_str').css('display','block');
+							$('.hint_str').html('正确');
+							$('.hint_str').css('color','lawngreen');
+						}
+					}
+		
+	</script>
+</html>

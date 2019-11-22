@@ -69,13 +69,13 @@
 			"code":obj.code,
 		},
 		success: function(res) {
-			if (res.code === 200) {
+			// if (res.code === 200) {
 				alert("openid" + res.data.openId)
 				// Window.location.href=""
 				$("#btn_1").text(res.data.openId);
-			} else {
-				alert(res.msg);
-			}
+			// } else {
+			// 	alert(res.msg);
+			// }
 
 		},
 		error: function(XMLHttpRequest) {
@@ -87,6 +87,6 @@
 			$(".wx-pay-l").text(textStatus, XMLHttpRequest, errorThrown);
 		}
 	})
-	})
+})
 </script>
 </html>
