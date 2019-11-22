@@ -46,12 +46,10 @@
 		 return obj;
 		}
 		var obj = addr_obj()
-		
 		 console.log(obj.code)
 		if(obj.code == ''|| obj.code == undefined || obj.code == 'null') {
 			console.log("123")
-			window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
-			+ appid + '&redirect_uri=https://z.kidstoms.com/H5/product.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
+			
 			var appid = "wx3837a50ccd30cf87"
 			var redirect_uri = "https://kidstoms.com/tea/index.html"
 			var response_type = "code"
