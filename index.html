@@ -55,23 +55,22 @@
 			var state = "STATE#wechat_redirect"
 			var scope = "snsapi_base"
 			var result = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
-				+ appid + '&redirect_uri='+redirect_uri+'&response_type='+code+'&scope='+scope+'&state='+state
+				+ appid + '&redirect_uri='+redirect_uri+'&response_type='+response_type+'&scope='+scope+'&state='+state
 			window.location.href=result;
 		}
 		console.log(obj.code)
-		
+		var code = obj.code;
 	$.ajax({
 		url: "https://kidstoms.com/getOpenIdByCode",
 		type: "get",
 		dataType: "json",
 		data: {
-			"code":obj.code,
+			"code":code,
 		},
 		success: function(res) {
 			if (res.code === 200) {
 				alert("openid" + res.data.openId)
 				// Window.location.href=""
-				$("#btn_1").text(res.data.openId);
 			} else {
 				alert(res.msg);
 			}
