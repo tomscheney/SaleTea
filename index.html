@@ -46,10 +46,10 @@
 		}
 		else{
 		    console.log("不是来自微信内置浏览器");
-
-                      <!--       如果是微信站外，直接跳转               -->
-                      window.location.href="H5/product.html";
-                      return;
+		    <!--       如果是微信站外，直接跳转               -->
+            window.location.href="H5/product.html";
+            return;
+                      
 		}
 		// 获取地址栏中的字符串，并将其转化为对象
 		function addr_obj() {
@@ -80,10 +80,11 @@
 		}
 		console.log(obj.code)
 		var code = obj.code;
+
+		//code 无值，
+        if(code === undefined || code === '' || code === null){return;}              
                       
-                      if(code === undefined){
-                      return;
-                      }
+
 	$.ajax({
 		url: "https://kidstoms.com/getOpenIdByCode",
 		type: "get",
@@ -93,8 +94,9 @@
 		},
 		success: function(res) {
 			if (res.code === 200) {
-           alert("openid:" + res.data)
-                 Window.location.href="H5/product.html"
+				let result = JSON.parse(res.data)
+          	 	alert("openid:" + result.openid)
+                Window.location.href="H5/product.html"
 			} else {
 				alert(res.msg);
 			}
