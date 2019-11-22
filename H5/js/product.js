@@ -31,10 +31,10 @@
 			
 			var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
 			var orde = parseInt(Math.random() * (80 - 0 + 1) + 80);
-			var notifyUrl = "https://z.kidstoms.com/H5/product.html";
+			var notifyUrl = "https://kidstoms.com/H5/product.html";
 			console.log("notifyUrl",notifyUrl)
 			$.ajax({
-				url: "https://47.112.98.24/getPayInfo",
+				url: "https://kidstoms.com/getPayInfo",
 				type: "post",
 				// contentType: "application/json",
 				dataType: "json",
@@ -54,7 +54,7 @@
 					  timestamp: , // 必填，生成签名的时间戳
 					  nonceStr: '', // 必填，生成签名的随机串
 					  signature: '',// 必填，签名
-					  jsApiList: ["https://zxz.kidstoms.com/getAllProduct"] // 必填，需要使用的JS接口列表
+					  jsApiList: ["https://kidstoms.com/getAllProduct"] // 必填，需要使用的JS接口列表
 					});
 				},
 			})
