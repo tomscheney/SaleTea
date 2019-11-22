@@ -29,6 +29,8 @@
 <script>
 	// 以下方式直接跳转
 	$(document).ready(function(){
+
+                      
 		function isWeiXin() {
 		    var ua = window.navigator.userAgent.toLowerCase();
 		    console.log(ua);//mozilla/5.0 (iphone; cpu iphone os 9_1 like mac os x) applewebkit/601.1.46 (khtml, like gecko)version/9.0 mobile/13b143 safari/601.1
@@ -36,6 +38,7 @@
 		        return true;
 		    }
 		    else {
+
 		        return false;
 		    }
 		}
@@ -44,6 +47,9 @@
 		}
 		else{
 		    console.log("不是来自微信内置浏览器");
+                      <!--       如果是微信站外，直接跳转               -->
+                      window.location.href="H5/product.html";
+                      return;
 		}
 		// 获取地址栏中的字符串，并将其转化为对象
 		function addr_obj() {
@@ -68,7 +74,7 @@
 			var response_type = "code"
 			var state = "STATE#wechat_redirect"
 			var scope = "snsapi_base"
-			var result = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
+			var result = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
 				+ appid + '&redirect_uri='+redirect_uri+'&response_type='+response_type+'&scope='+scope+'&state='+state
 			window.location.href=result;
 		}
