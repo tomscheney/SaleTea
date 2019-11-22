@@ -56,7 +56,7 @@
 			var state = "STATE#wechat_redirect"
 			var scope = "snsapi_base"
 			var result = "appid+"+appid+"&redirect_uri="+redirect_uri+"&response_type="+response_type+"scope="+scope+"&state="+state
-			window.location.href="result";
+			window.location.href=result;
 		}
 		console.log(obj.code)
 		
@@ -64,7 +64,7 @@
 		url: "https://kidstoms.com/getOpenIdByCode",
 		type: "get",
 		// contentType: "application/json;charset=utf-8",
-		// dataType: "json",
+		dataType: "json",
 		data: {
 			"code":obj.code,
 		},
