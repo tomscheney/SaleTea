@@ -14,7 +14,7 @@
 		}
 		var obj = addr_obj()
 		 console.log(obj.openId)
-		 var openId = obj.openId
+		
 //获取手机验证码
 	// var InterValObj; //timer变量，控制时间
 	// var count = 60; //间隔函数，1秒执行
@@ -66,7 +66,7 @@
 	var AddInterValObj; //timer变量，控制时间
 	var adcount = 60; //间隔函数，1秒执行
 	var addCount;//当前剩余秒数
-	
+	 var openId = obj.openId;
 	function sendAddmes() {
 		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
 		if(!myreg.test($("#add_phone").val())) 
