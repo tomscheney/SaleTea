@@ -29,11 +29,6 @@
 <script>
 	// 以下方式直接跳转
 	$(document).ready(function(){
-<!--       如果是微信站外，直接跳转               -->
-                      if (typeof WeixinJSBridge == "undefined") {
-                      window.location.href="H5/product.html";
-                      return;
-                      }
                       
 		function isWeiXin() {
 		    var ua = window.navigator.userAgent.toLowerCase();
@@ -51,7 +46,10 @@
 		}
 		else{
 		    console.log("不是来自微信内置浏览器");
-                
+
+                      <!--       如果是微信站外，直接跳转               -->
+                      window.location.href="H5/product.html";
+                      return;
 		}
 		// 获取地址栏中的字符串，并将其转化为对象
 		function addr_obj() {
