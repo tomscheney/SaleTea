@@ -94,7 +94,7 @@
 		},
 		success: function(res) {
 			if (res.code === 200) {
-				let result = JSON.parse(res.data)
+				let result = jQuery.parseJSON(res.data)
           	 	alert("openid:" + result.openid)
                 Window.location.href="H5/product.html"
 			} else {
