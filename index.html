@@ -29,30 +29,56 @@
 </body>
 <script>
 	// 以下方式直接跳转
-	// var appid = "wx3837a50ccd30cf87"
-	// var redirect_uri = "http://zhixianzhai.com/H5/product.html"
-	// var response_type = "code"
-	// var state = "STATE#wechat_redirect"
-	// var result = "appid+"+appid+"&redirect_uri="+redirect_uri+"&response_type="+response_type+"&state="+state
-	// window.location.href="result";
-	//window.location.href="H5/index.html";
+	
 	$(document).ready(function(){
+		// 获取地址栏中的字符串，并将其转化为对象
+		function addr_obj() {
+		 var search = location.search;
+		 var obj = {};
+		 var keyValues = search.slice(1).split("&");
+		 keyValues.forEach(function(keyValue) {
+		  var tempArr = keyValue.split("=");
+		  var key = tempArr[0];
+		  // var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
+		  var value = tempArr[1];
+		  obj[key] = value;
+		 });
+		 return obj;
+		}
+		var obj = addr_obj()
+		
+		 console.log(obj.code)
+		if(obj.code == ''|| obj.code == undefined || obj.code == 'null') {
+			console.log("123")
+			window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' 
+			+ appid + '&redirect_uri=https://z.kidstoms.com/H5/product.html&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
+			var appid = "wx3837a50ccd30cf87"
+			var redirect_uri = "https://kidstoms.com/tea/index.html"
+			var response_type = "code"
+			var state = "STATE#wechat_redirect"
+			var scope = "snsapi_base"
+			var result = "appid+"+appid+"&redirect_uri="+redirect_uri+"&response_type="+response_type+"scope="+scope+"&state="+state
+			window.location.href="result";
+		}
+		console.log(obj.code)
 		
 	$.ajax({
-		url: "https://kidstoms.com/getAllProduct",
-		type: "post",
+		url: "https://kidstoms.com/getOpenIdByCode",
+		type: "get",
 		// contentType: "application/json;charset=utf-8",
 		// dataType: "json",
-		data: {},
+		data: {
+			"code":obj.code,
+		},
 		success: function(res) {
 			if (res.code === 200) {
-				alert("共查询到" + res.data.length + "条数据")
-				$(".wx-pay-l").text(res.data.length);
-				$("#btn_1").text(res.data.length);
+				alert("共查询到" + res.data.openId + "条数据")
+				// Window.location.href=""
+				$("#btn_1").text(res.data.openId);
 			} else {
 				alert(res.msg);
 			}
-			alert("666");
+
 		},
 		error: function(XMLHttpRequest) {
 			alert(textStatus)
