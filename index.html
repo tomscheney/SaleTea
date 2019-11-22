@@ -93,11 +93,12 @@
 		},
 		success: function(res) {
 			if (res.code === 200) {
-				alert("openid" + JSON.stringify(res.data.openId))
-				openId = res.data.openId;
+				alert("openid" + JSON.stringify(res.data.openId));
+				let result = jQuery.parseJSON(res.data)
+				openId = result.openId;
 				console.log(openId)
 				window.location.href="H5/phoneChecking.html?openId="+openId;
-				let result = jQuery.parseJSON(res.data)
+				
           	 	alert("openid:" + result.openId)
 			} else {
 				alert(res.msg);

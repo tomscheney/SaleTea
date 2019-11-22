@@ -49,8 +49,8 @@
 		 　　dataType: "JSON", //数据格式:JSON
 		 　　url: 'https://kidstoms.com/getSecurityCode', //目标地址
 		　　 data: {
-				"openId"= openId,
-				"phone" = phone,
+				openId = openId,
+				phone = phone,
 				   }
 		　　 error: function (data) { },
 		 　　success: function (msg){ 
