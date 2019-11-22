@@ -93,7 +93,7 @@
 		},
 		success: function(res) {
 			if (res.code === 200) {
-           alert("openid:" + res.data.openId)
+           alert("openid:" + res.data)
                  Window.location.href="H5/product.html"
 			} else {
 				alert(res.msg);
