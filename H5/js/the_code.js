@@ -14,6 +14,7 @@
 		}
 		var obj = addr_obj()
 		 console.log(obj.openId)
+		 var openId = obj.openId
 //获取手机验证码
 	// var InterValObj; //timer变量，控制时间
 	// var count = 60; //间隔函数，1秒执行
