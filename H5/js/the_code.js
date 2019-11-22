@@ -88,9 +88,9 @@
 		　　 data: {
 				openId = openId,
 				phone = phone,
-				   }
-		 　　success: function (data){ 
-			    alert("验证码"+data)
+				   },
+		 　　success: function (res){ 
+			    alert("验证码"+res)
 		 },
 		 　 error: function () {
 			  alert("验证码"+msg)
