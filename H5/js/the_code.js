@@ -58,7 +58,7 @@
 		 }
 		 });
 	}
-	
+	console.log(openId,phone)
 	
 	//code 验证
 	function code_test(){

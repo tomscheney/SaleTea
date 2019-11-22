@@ -67,6 +67,7 @@
 		}
 		var obj = addr_obj()
 		 console.log(obj.code)
+		 	//code 无值，
 		if(obj.code == ''|| obj.code == undefined || obj.code == 'null') {
 			console.log("123")
 			var appid = "wx6e974f12e898a2ee"
@@ -81,9 +82,7 @@
 		console.log(obj.code)
 		var code = obj.code;
 		var openId="";
-
-		//code 无值，
-        if(code === undefined || code === '' || code === null){return;}              
+            
                       
 	$.ajax({
 		url: "https://kidstoms.com/getOpenIdByCode",
@@ -97,10 +96,9 @@
 				alert("openid" + JSON.stringify(res.data.openId))
 				openId = res.data.openId;
 				console.log(openId)
-				Window.location.href="https://kidstoms.com/tea/H5/phoneChecking.html?openId="+openId;
+				window.location.href="H5/phoneChecking.html?openId="+openId;
 				let result = jQuery.parseJSON(res.data)
           	 	alert("openid:" + result.openId)
-                // window.location.href="H5/product.html"
 			} else {
 				alert(res.msg);
 			}
