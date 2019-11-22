@@ -29,7 +29,6 @@
 <script>
 	// 以下方式直接跳转
 	$(document).ready(function(){
-
                       
 		function isWeiXin() {
 		    var ua = window.navigator.userAgent.toLowerCase();
@@ -47,6 +46,7 @@
 		}
 		else{
 		    console.log("不是来自微信内置浏览器");
+
                       <!--       如果是微信站外，直接跳转               -->
                       window.location.href="H5/product.html";
                       return;
