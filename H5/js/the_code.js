@@ -19,29 +19,6 @@
 	var count = 60; //间隔函数，1秒执行
 	var curCount;//当前剩余秒数
 	var phone = "";
-	function sendMessage() {
-	  　curCount = count;
-	　　//设置button效果，开始计时
-		 $("#btnSendCode").attr("disabled", "true");
-		 $("#btnSendCode").val("" + curCount + "秒后重新获取");
-		 InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
-		 var openId = obj.openId;
-		 console.log(phone)
-	　　  //向后台发送处理数据
-		 $.ajax({
-		 　　type: "get", //用get方式传输
-		 　　dataType: "JSON", //数据格式:JSON
-		 　　url: 'https://zxz.kidstoms.com/getOpenIdByCode', //目标地址
-		　　 data: {
-				"openId"= openId,
-				"phone" = phone,
-				   }
-		　　 error: function (data) { },
-		 　　success: function (msg){ 
-			    alert("验证码"+msg)
-		 }
-		 });
-	}
 	function telphone(){
 		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
 		if(!myreg.test($("#add_phone").val())) 
@@ -58,6 +35,30 @@
 		telphone();
 		console.log(telphone())
 	});
+	function sendMessage() {
+	  　curCount = count;
+	　　//设置button效果，开始计时
+		 $("#btnSendCode").attr("disabled", "true");
+		 $("#btnSendCode").val("" + curCount + "秒后重新获取");
+		 InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+		 var openId = obj.openId;
+		 console.log(phone)
+	　　  //向后台发送处理数据
+		 $.ajax({
+		 　　type: "get", //用get方式传输
+		 　　dataType: "JSON", //数据格式:JSON
+		 　　url: 'https://kidstoms.com/getSecurityCode', //目标地址
+		　　 data: {
+				"openId"= openId,
+				"phone" = phone,
+				   }
+		　　 error: function (data) { },
+		 　　success: function (msg){ 
+			    alert("验证码"+msg)
+		 }
+		 });
+	}
+	
 	
 	//code 验证
 	function code_test(){
