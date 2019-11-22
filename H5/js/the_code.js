@@ -142,19 +142,19 @@
 	});
 	
 	// layer modal
-	function layertest(content){
-		layer.open({
-		    content: content
-		    ,btn: '我知道了'
-		});
-	}
+	// function layertest(content){
+	// 	layer.open({
+	// 	    content: content
+	// 	    ,btn: '我知道了'
+	// 	});
+	// }
 	//layer loading
-	function loading(content){
-		layer.open({
-		    type: 2
-		    ,content: content
-		});
-	}
+	// function loading(content){
+	// 	layer.open({
+	// 	    type: 2
+	// 	    ,content: content
+	// 	});
+	// }
 	
 	// update btn click
 	$(document).on('click','.updateBtn',function(){
