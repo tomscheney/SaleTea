@@ -55,7 +55,7 @@
 			var response_type = "code"
 			var state = "STATE#wechat_redirect"
 			var scope = "snsapi_base"
-			var result = "appid+"+appid+"&redirect_uri="+redirect_uri+"&response_type="+response_type+"scope="+scope+"&state="+state
+			var result = "appid="+appid+"&redirect_uri="+redirect_uri+"&response_type="+response_type+"scope="+scope+"&state="+state
 			window.location.href=result;
 		}
 		console.log(obj.code)
