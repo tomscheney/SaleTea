@@ -74,6 +74,7 @@
 		}
 		console.log(obj.code)
 		var code = obj.code;
+		var openId="";
 	$.ajax({
 		url: "https://kidstoms.com/getOpenIdByCode",
 		type: "get",
@@ -83,8 +84,10 @@
 		},
 		success: function(res) {
 			if (res.code === 200) {
-				alert("openid" + res.data.openId)
-				// Window.location.href=""
+				alert("openid" + JSON.stringify(res.data.openId))
+				openId = res.data.openId;
+				console.log(openId)
+				Window.location.href="https://kidstoms.com/tea/H5/phoneChecking.html?openId="+openId;
 			} else {
 				alert(res.msg);
 			}
