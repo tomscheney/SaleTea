@@ -80,6 +80,10 @@
 		}
 		console.log(obj.code)
 		var code = obj.code;
+                      
+                      if(code === undefined){
+                      return;
+                      }
 	$.ajax({
 		url: "https://kidstoms.com/getOpenIdByCode",
 		type: "get",
@@ -89,8 +93,8 @@
 		},
 		success: function(res) {
 			if (res.code === 200) {
-				alert("openid" + res.data.openId)
-				// Window.location.href=""
+           alert("openid:" + res.data.openId)
+                 Window.location.href="H5/product.html"
 			} else {
 				alert(res.msg);
 			}
