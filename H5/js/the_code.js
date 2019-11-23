@@ -91,7 +91,7 @@
 				phone : phone,
 				   },
 		 　　success: function (res){ 
-			    alert("验证码"+res)
+			    alert("验证码:"+res)
 		 },
 		 　 error: function () {
 			  
