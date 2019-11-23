@@ -95,8 +95,7 @@
 				let result = jQuery.parseJSON(res.data)
 				openId = result.openId;
 				console.log(openId)
-				window.location.href="H5/phoneChecking.html?openId="+openId;
-				
+				// window.location.href="H5/phoneChecking.html?openId="+openId;
           	 	alert("openid:" + result.openId)
 			} else {
 				alert(res.msg);
