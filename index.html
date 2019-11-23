@@ -87,6 +87,8 @@
 		// 判断openId是否存在
 		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
 			getOpenId();
+		}else{
+			window.location.href = "H5/product.html"
 		}
 		console.log(code)
     function getOpenId(){
@@ -106,6 +108,7 @@
     				var openId = result.openId;
     				console.log(openId)
     				window.localStorage.setItem('openId',openId);
+					window.location.href = "H5/product.html";
     	      	 	alert("openid:" + result.openId)
     			} else {
     				alert(res.msg);
