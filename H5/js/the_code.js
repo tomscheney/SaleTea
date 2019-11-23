@@ -103,7 +103,7 @@
 		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
 		if(!myreg.test($("#add_phone").val())) 
 		{ 
-			layertest('请输入有效的手机号码');
+			$("#add_phone").test('请输入有效的手机号码');
 			$('.login_ipt').addClass('error');
 		    return false;
 		}else{
@@ -131,7 +131,7 @@
 	//code 验证
 	function code_test(){
 		if($('#code').val()==''){
-			layertest('验证码不能为空');
+			$('#code').test('验证码不能为空');
 			$('#code').addClass('error');
 		}else{
 			$('#code').removeClass('error');
@@ -157,10 +157,10 @@
 	// }
 	
 	// update btn click
-	$(document).on('click','.updateBtn',function(){
-		if($('.error').length >0){
-			layertest('请您填写正确的资料')
-		}else{
-			loading('跳转中')
-		}
-	})
+	// $(document).on('click','.updateBtn',function(){
+	// 	if($('.error').length >0){
+	// 		test('请您填写正确的资料')
+	// 	}else{
+	// 		loading('跳转中')
+	// 	}
+	// })
