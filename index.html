@@ -48,6 +48,12 @@
             window.location.href="H5/product.html";
             return;              
 		}
+		
+		// 判断openId是否存在
+		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
+			getOpenId();
+		}
+		
 		// 获取地址栏中的字符串，并将其转化为对象
 		function addr_obj() {
 		 var search = location.search;
@@ -82,38 +88,35 @@
 		// 获取
 		var getOpenID=window.localStorage.getItem('openId');
         
-			// 判断openId是否存在
-		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
-			getOpenId();
-		}
-    
+	
+    function getOpenId(){
+    	
+    	// 查询openId
+    	$.ajax({
+    		url: "https://kidstoms.com/getOpenIdByCode",
+    		type: "get",
+    		dataType: "json",
+    		data: {
+    			"code":code,
+    		},
+    		success: function(res) {
+    			if (res.code === 200) {
+    				// alert("openid" + JSON.stringify(res.data.openId));
+    				let result = jQuery.parseJSON(res.data)
+    				var openId = result.openId;
+    				console.log(openId)
+    				window.localStorage.setItem('openId',openId);
+    	      	 	alert("openid:" + result.openId)
+    			} else {
+    				alert(res.msg);
+    			}
+    		},
+    		error: function() {
+    			console.log("XMLHttpRequest", XMLHttpRequest)
+    		}
+    	})
+    }
 })
-	function getOpenId(){
-		
-		// 查询openId
-		$.ajax({
-			url: "https://kidstoms.com/getOpenIdByCode",
-			type: "get",
-			dataType: "json",
-			data: {
-				"code":code,
-			},
-			success: function(res) {
-				if (res.code === 200) {
-					// alert("openid" + JSON.stringify(res.data.openId));
-					let result = jQuery.parseJSON(res.data)
-					var openId = result.openId;
-					console.log(openId)
-					window.localStorage.setItem('openId',openId);
-		      	 	alert("openid:" + result.openId)
-				} else {
-					alert(res.msg);
-				}
-			},
-			error: function() {
-				console.log("XMLHttpRequest", XMLHttpRequest)
-			}
-		})
-	}
+	
 </script>
 </html>
