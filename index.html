@@ -36,7 +36,6 @@
 		        return true;
 		    }
 		    else {
-
 		        return false;
 		    }
 		}
@@ -55,16 +54,16 @@
 		 var obj = {};
 		 var keyValues = search.slice(1).split("&");
 		 keyValues.forEach(function(keyValue) {
-		  var tempArr = keyValue.split("=");
-		  var key = tempArr[0];
+		 var tempArr = keyValue.split("=");
+		 var key = tempArr[0];
 		  // var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
-		  var value = tempArr[1];
-		  obj[key] = value;
+		 var value = tempArr[1];
+		 obj[key] = value;
 		 });
 		 return obj;
 		}
 		var obj = addr_obj()
-		 console.log(obj.code)
+		console.log(obj.code)
 		 	//code 无值，
 		if(obj.code == ''|| obj.code == undefined || obj.code == 'null') {
 			console.log("123")
@@ -76,65 +75,45 @@
 			var result = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
 				+ appid + '&redirect_uri='+redirect_uri+'&response_type='+response_type+'&scope='+scope+'&state='+state
 			window.location.href=result;
+			return;
 		}
 		console.log(obj.code)
 		var code = obj.code;
-		var openId="";
-            
-    // 查询openId
-	$.ajax({
-		url: "https://kidstoms.com/getOpenIdByCode",
-		type: "get",
-		dataType: "json",
-		data: {
-			"code":code,
-		},
-		success: function(res) {
-			if (res.code === 200) {
-				alert("openid" + JSON.stringify(res.data.openId));
-				let result = jQuery.parseJSON(res.data)
-				openId = result.openId;
-				console.log(openId)
-				// window.location.href="H5/phoneChecking.html?openId="+openId;
-          	 	alert("openid:" + result.openId)
-			} else {
-				alert(res.msg);
-			}
-		},
-		error: function(XMLHttpRequest) {
-			alert(textStatus)
-			console.log("XMLHttpRequest", XMLHttpRequest)
-			alert(JSON.stringify(XMLHttpRequest))
-			alert(JSON.stringify(errorThrown))
-			$(".wx-pay-l").text(JSON.stringify(textStatus));
-			$(".wx-pay-l").text(textStatus, XMLHttpRequest, errorThrown);
+		// 获取
+		var getOpenID=window.localStorage.getItem(openId);
+        
+			// 判断openId是否存在
+		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
+			getOpenId();
 		}
-	})
-	// 传递openId
-	$.ajax({
-		url: "https://kidstoms.com/bindOpenIdForUser",
-		type: "post",
-		dataType: "json",
-		data: {
-			"openId":openId,
-		},
-		success: function(res) {
-			if (res.code === 200) {
-	      	 	alert(res.msg)
-				console.log(res.msg)
-			} else {
-				alert(res.msg);
-			}
-		},
-		error: function(XMLHttpRequest) {
-			alert(textStatus)
-			console.log("XMLHttpRequest", XMLHttpRequest)
-			alert(JSON.stringify(XMLHttpRequest))
-			alert(JSON.stringify(errorThrown))
-			$(".wx-pay-l").text(JSON.stringify(textStatus));
-			$(".wx-pay-l").text(textStatus, XMLHttpRequest, errorThrown);
-		}
-	})
+    
 })
+	function getOpenId(){
+		
+		// 查询openId
+		$.ajax({
+			url: "https://kidstoms.com/getOpenIdByCode",
+			type: "get",
+			dataType: "json",
+			data: {
+				"code":code,
+			},
+			success: function(res) {
+				if (res.code === 200) {
+					// alert("openid" + JSON.stringify(res.data.openId));
+					let result = jQuery.parseJSON(res.data)
+					var openId = result.openId;
+					console.log(openId)
+					window.localStorage.setItem('openId',openId);
+		      	 	alert("openid:" + result.openId)
+				} else {
+					alert(res.msg);
+				}
+			},
+			error: function() {
+				console.log("XMLHttpRequest", XMLHttpRequest)
+			}
+		})
+	}
 </script>
 </html>
