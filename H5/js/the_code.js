@@ -83,7 +83,7 @@
 			 console.log(phone)
 			 // 向后台传输数据
 			 $.ajax({
-		 　　type: "get", //用get方式传输
+		 　　type: "post", //用post方式传输
 		 　　dataType: "JSON", //数据格式:JSON
 		 　　url: 'https://kidstoms.com/sms/getSecurityCode', //目标地址
 		　　 data: {
@@ -113,7 +113,7 @@
 	}
 	$(document).on('blur','.login_ipt',function(){
 		telphone();
-		console.log(telphone())
+		// console.log(telphone())
 	});
 	// timer处理函数
 	function SetAddnTime() {
