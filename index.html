@@ -49,10 +49,6 @@
             return;              
 		}
 		
-		// 判断openId是否存在
-		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
-			getOpenId();
-		}
 		
 		// 获取地址栏中的字符串，并将其转化为对象
 		function addr_obj() {
@@ -88,9 +84,13 @@
 		// 获取
 		var getOpenID=window.localStorage.getItem('openId');
         
-	
+		// 判断openId是否存在
+		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
+			getOpenId();
+		}
+		console.log(code)
     function getOpenId(){
-    	
+    	console.log(code)
     	// 查询openId
     	$.ajax({
     		url: "https://kidstoms.com/getOpenIdByCode",
