@@ -20,8 +20,6 @@
 		<div class="swiper-top">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
-					<!-- <div class="swiper-slide"><img src="img/qing-(1).jpg"></div> -->
-					<!-- <div class="swiper-slide"><img src="img/qing-(3).jpg"></div> -->
 				</div>
 				<div class="swiper-pagination"></div>
 			</div>
@@ -199,8 +197,8 @@
                                          + '</div>';
 					        }
 
-					$(".swiper-wrapper").html(html);
-					console.log($(".swiper-wrapper").html(html));
+					$(".swiper-wrapper").text(html);
+					console.log($(".swiper-wrapper").text(html));
 					$(".qualityPeriod").text(res.data[0].productDetail.qualityPeriod);
 					$(".standards").text(res.data[0].productDetail.standards);
 					// 产品亮点
