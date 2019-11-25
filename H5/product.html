@@ -8,7 +8,7 @@
 		<script src="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#2" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="js/jquery-addShopping.js"></script>
 		<script src="js/swiper-5.0.4/package/js/swiper.min.js"></script>
-		<script src="js/product.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/product.js"></script>
 		<script src="js/jquery.fly.min.js"></script>
 		<!-- Link Swiper's CSS -->
 		<link rel="stylesheet" href="js/swiper-5.0.4/package/css/swiper.min.css">
@@ -148,6 +148,7 @@
 			observeParents: true,//修改swiper的父元素时，自动初始化swiper
 		})
 		$("#btn-car2").click(function() {
+			AddShop();
 			$(".yuan").show();
 			$("#num").show();
 			$(".jia1").show(100);
@@ -164,9 +165,6 @@
 					console.log(element);
 					return false;
 				},
-			})
-			$('#btn-car2').click(function(){
-				AddShop();
 			})
 		})
 	
