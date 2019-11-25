@@ -189,7 +189,8 @@
 					$(".productPlace").text(res.data[0].productDetail.productPlace);
 					$(".wrapping").text(res.data[0].productDetail.wrapping);
 					$(".brand").text(res.data[0].productDetail.brand);
-					var len = res.data[0].productImages;
+					var len=[];
+					len = res.data[0].productImages;
 					var html = "";
 					console.log(len)			     
 					        for(var i = 0; i < len.length; i++){   
