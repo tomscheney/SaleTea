@@ -25,7 +25,7 @@
 		function addCar() {
 			location.href = "H5/shopCar.html";
 		}
-		function AddShop () {
+		function AddShop() {
 			$.ajax({
 				url: "https://kidstoms.com/addToShopCart",
 				type: "post",
@@ -40,4 +40,4 @@
 				},
 			})
 		}
-		
+		})
