@@ -190,17 +190,18 @@
 					$(".wrapping").text(res.data[0].productDetail.wrapping);
 					$(".brand").text(res.data[0].productDetail.brand);
 					var len = res.data[0].productImages;
-					var fileList = "";
+					var html = "";
 					console.log(len)			     
-					        for(var i = 0; i < len; i++){
-							  fileList += '<div class="swiper-slide">';
-							  fileList += '<img src="len[i]"/>';
-							  fileList += '</div>'
-					          console.log(fileList);
+					        for(var i = 0; i < len.length; i++){   
+					           html += '<div class="swiper-slide">' + 
+
+                                         + '<img src="len[i]"/>'
+
+                                         + '</div>';
 					        }
 
-					$(".swiper-wrapper").text(fileList);
-					console.log($(".swiper-wrapper").text());
+					$(".swiper-wrapper").html(html);
+					console.log($(".swiper-wrapper").html(html));
 					$(".qualityPeriod").text(res.data[0].productDetail.qualityPeriod);
 					$(".standards").text(res.data[0].productDetail.standards);
 					// 产品亮点
