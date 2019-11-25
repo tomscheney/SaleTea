@@ -195,9 +195,8 @@
                                          + '<img src='+imgI+'/>'
                                          + '</div>';
 					        }
-
-					$(".swiper-wrapper").text(html);
-					console.log($(".swiper-wrapper").text(html));
+					$(".swiper-wrapper").html(html);
+					console.log($(".swiper-wrapper").html(html));
 					$(".qualityPeriod").text(res.data[0].productDetail.qualityPeriod);
 					$(".standards").text(res.data[0].productDetail.standards);
 					// 产品亮点
