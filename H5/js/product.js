@@ -15,13 +15,29 @@
 			 return obj;
 			}
 			var obj = addr_obj()
-			console.log(obj.openId)
+			var openId = obj.openId;
+			console.log(openId)
 
 		function adCar() {
-			location.href = "address.html";
+			location.href = "H5/address.html";
 		}
 
 		function addCar() {
-			location.href = "shopCar.html";
+			location.href = "H5/shopCar.html";
+		}
+		function AddShop () {
+			$.ajax({
+				url: "https://kidstoms.com/addToShopCart",
+				type: "post",
+				// contentType: "application/json",
+				dataType: "json",
+				data: {
+					openId:openId,
+					productId: '88880001',
+				},
+				success: function(res) { // res就是后台接口返回的数据
+					console.log(res)
+				},
+			})
 		}
 		
