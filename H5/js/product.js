@@ -1,5 +1,5 @@
 // 获取后台数据
-		$(document).ready(function() {
+		// $(document).ready(function() {
 			// 获取地址栏中的字符串，并将其转化为对象
 			function addr_obj() {
 			 var search = location.search;
@@ -26,7 +26,7 @@
 			location.href = "H5/shopCar.html";
 		}
 	
-		})
+		// })
 		function AddShop() {
 			$.ajax({
 				url: "https://kidstoms.com/addToShopCart",
