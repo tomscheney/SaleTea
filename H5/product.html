@@ -20,8 +20,8 @@
 		<div class="swiper-top">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide"><img src="img/qing-(1).jpg"></div>
-					<div class="swiper-slide"><img src="img/qing-(3).jpg"></div>
+					<!-- <div class="swiper-slide"><img src="img/qing-(1).jpg"></div> -->
+					<!-- <div class="swiper-slide"><img src="img/qing-(3).jpg"></div> -->
 				</div>
 				<div class="swiper-pagination"></div>
 			</div>
@@ -168,7 +168,6 @@
 		})
 	
 		$(document).ready(function() {
-			// function myFunction(){
 			console.log("dianji le ")
 			$.ajax({
 				url: "https://kidstoms.com/getAllProduct",
@@ -194,10 +193,9 @@
 					var html = "";
 					console.log(len)			     
 					        for(var i = 0; i < len.length; i++){   
-					           html += '<div class="swiper-slide">' + 
-
-                                         + '<img src="len[i]"/>'
-
+								var imgI = len[i];
+					           html += '<div class="swiper-slide">'  
+                                         + '<img src="imgI" alt="imgI"/>'
                                          + '</div>';
 					        }
 

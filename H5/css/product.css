@@ -241,8 +241,6 @@ button {
 }
 
 #btn-car1 img {
-	/* width: 100%;
-				height: auto; */
 	width: 35px;
 	height: 35px;
 }
@@ -269,7 +267,7 @@ button {
 	position: absolute;
 	z-index: 1000;
 	width: 3.5vw;
-	top: 23%;
+	top: 22%;
 	left: 83%;
 	height: 3.5vw;
 	background-color: red;
@@ -322,7 +320,7 @@ button {
 	z-index: 1100;
 	font-size: 0.9rem;
 	top: -154%;
-	left: 21%;
+	left: 25%;
 	color: #fff;
 	display: none;
 }
