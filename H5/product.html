@@ -125,6 +125,7 @@
 	</body>
 	<script>
 		// 调用轮播图
+	function swiper_init(){
 		var mySwiper = new Swiper('.swiper-container', {
 			observer: true, //修改swiper自己或子元素时，自动初始化swiper
 			observeParents: true, //修改swiper的父元素时，自动初始化swiper
@@ -134,6 +135,8 @@
 				el: '.swiper-pagination' // 分页器
 			},
 		})
+		return swiper;
+	}
 		// 点击显示 添加数据到接口
 		$("#btn-car2").click(function() {
 			AddShop(); //添加产品
@@ -187,6 +190,8 @@
 							'</div>';
 					}
 					$(".swiper-wrapper").html(html);
+					// 动态获取数据后 渲染插件
+					swiper_init();
 					console.log($(".swiper-wrapper").html(html));
 					$(".qualityPeriod").text(res.data[0].productDetail.qualityPeriod);
 					$(".standards").text(res.data[0].productDetail.standards);

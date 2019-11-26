@@ -146,7 +146,7 @@ body {
 .shop_info {
 	padding-left: 40px;
 	height: 100%;
-	width: 100%;
+	width: 90%;
 }
 
 .shop_info .info_box {
@@ -174,7 +174,7 @@ body {
 .info_box .p_name {
 	line-height: 15px;
 	height: 30px;
-	width: 100%;
+	width: 80%;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
@@ -188,9 +188,11 @@ body {
 }
 
 .info_box .p_price {
+	    width: 100%;
 	padding: 5px 0;
 	color: #d8505c;
 	font-size: 12px;
+	
 }
 
 .p_opition .change_num button {
@@ -292,8 +294,8 @@ p {
 }
 
 .goods-check {
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 	margin-top: 5px;
 }
 
