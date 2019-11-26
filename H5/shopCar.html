@@ -32,9 +32,8 @@
 			    <input type="checkbox" class="goods-check GoodsCheck"> 
 			   </label>
 		     </div>
-		     <!-- <div class="shop_info clearfix">
-		         <a href="#" class="img_box f_left">
-				 </a>
+		     <div class="shop_info clearfix">
+		         <a href="#" class="img_box f_left"></a>
 		         <div class="info_box">
 		             <a class="p_name" href="#"></a>
 					 <p class="p_price">单价：￥<span class="shop-total-amount GoodsPrice"></span></p>
@@ -50,7 +49,7 @@
 		                </div>
 		             </div>
 		         </div>
-		     </div> -->
+		     </div>
 		</div>
 			 <!-- 店铺合计 -->
 			  <div class="shop-total total shopping-car pay"> 
@@ -96,7 +95,7 @@
 			console.log(res)
 			var menu = res.data.productList[0];
 			// 标题 价格
-			// $(".p_name").text(menu.productDesc);
+			$(".p_name").text(menu.productDesc);
 			$(".GoodsPrice").text(menu.salePrice);
 			var len = [];
 			len = menu.productImages;
@@ -104,27 +103,11 @@
 			console.log(len)
 			for (var i = 0; i < len.length; i++) {
 				var imgI = len[i];
-				html += '<div class="shop_info clearfix">' +
-				    '<a href="#" class="img_box f_left">'+'<img src=' + imgI  + '/>' + '</a>' +
-				    '<div class="info_box">' +
-				        '<a class="p_name" href="#">'+ menu.productDesc +'</a>' +
-						'<p class="p_price">'+ '单价:￥'+ '<span class="shop-total-amount GoodsPrice">'+ menu.salePrice +'</span>'+'</p>'
-				        +'<div class="p_opition">'+
-				           '<div class="change_num f_left">'+
-				               '<button type="button" class="minus">'+'-'+'</button>'+
-				               '<input type="text" class="am-num-text" value="1" />' +
-				               '<button type="button" class="plus">'+'+'+'</button>'+
-				           '</div>'+
-				           '<div class="delete_box f_right">'+
-				               '<span class="delete_up">'+'</span>'+
-				               '<span class="delete_down">'+'</span>'+
-				           '</div>'+
-				        '</div>'+
-				    '</div>'+
-				'</div>';
+				html += '<img src=' + imgI  + '/>';
+
 			}
 			console.log(imgI)
-			$(".product").after(html);
+			$(".img_box").html(html);
 		},
 	})
 </script>
