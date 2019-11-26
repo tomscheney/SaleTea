@@ -1,5 +1,21 @@
 
-
+// 获取地址栏中的字符串，并将其转化为对象
+	function addr_obj() {
+	 var search = location.search;
+	 var obj = {};
+	 var keyValues = search.slice(1).split("&");
+	 keyValues.forEach(function(keyValue) {
+	 var tempArr = keyValue.split("=");
+	 var key = tempArr[0];
+	 // var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
+	 var value = tempArr[1];
+	  obj[key] = value;
+	 });
+	 return obj;
+	}
+	var obj = addr_obj()
+	var openId = obj.openId;
+	console.log(openId)
     var that;
     $('.delete_box').on('click',function(){
             $(this).children('.delete_up').css(
@@ -13,14 +29,16 @@
             $('.jd_win').show();
             that = $(this);
     })
-
+	//取消删除
     $('.cancle').on('click',function(){
         $('.jd_win').hide();
         $('.delete_up').css('transform','none')
     })
+	//确认删除 
     $('.submit').on('click',function(){
         that.parent().parent().parent().parent().remove();
         $('.jd_win').hide();
+		DelShop();
     })
 
 
@@ -29,7 +47,6 @@
 	      var tt=$(this).parent('td').find('input[class*=text_box]');
 	      tt.val(0);
 	        
-	
 	      setTotal();
 	      t.hide();
 	    });
@@ -142,4 +159,18 @@
 	 }); 
 	 $("#AllTotal").text(allprice.toFixed(2)); //输出全部总价 
 	
-	
+// 删除接口数据
+	function DelShop() {
+			$.ajax({
+				url: "https://kidstoms.com/deleteProduct",
+				type: "post",
+				dataType: "json",
+				data: {
+					openId:openId,
+					productId: '88880001',
+				},
+				success: function(res) { // res就是后台接口返回的数据
+					console.log(res)
+				},
+			})
+		}

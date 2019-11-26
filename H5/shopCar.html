@@ -84,23 +84,7 @@
 </body>
 <script src="js/cartjs.js"></script>
 <script>
-	// 获取地址栏中的字符串，并将其转化为对象
-	function addr_obj() {
-	 var search = location.search;
-	 var obj = {};
-	 var keyValues = search.slice(1).split("&");
-	 keyValues.forEach(function(keyValue) {
-	 var tempArr = keyValue.split("=");
-	 var key = tempArr[0];
-	 // var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
-	 var value = tempArr[1];
-	  obj[key] = value;
-	 });
-	 return obj;
-	}
-	var obj = addr_obj()
-	var openId = obj.openId;
-	console.log(openId)
+	
 	// 获取数据渲染数据到页面
 	$.ajax({
 		url: "https://kidstoms.com/queryShopCart",
@@ -121,7 +105,7 @@
 			console.log(len)
 			for (var i = 0; i < len.length; i++) {
 				var imgI = len[i];
-				html += '<img src=' + imgI + '/>';
+				html += '<img src=' + imgI  + '/>';
 			}
 			console.log(imgI)
 			$(".img_box").html(html);
