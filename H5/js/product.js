@@ -17,7 +17,8 @@
 			var obj = addr_obj()
 			var openId = obj.openId;
 			console.log(openId)
-
+			var numVal = $("#num").val();
+			console.log(numVal);
 		function adCar() {
 			location.href = "address.html?openId="+openId;
 		}
