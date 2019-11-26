@@ -113,7 +113,7 @@
 			console.log(res)
 			var menu = res.data.productList[0];
 			// 标题 价格
-			$(".tit-name").text(menu.productDesc);
+			$(".p_name").text(menu.productDesc);
 			$(".GoodsPrice").text(menu.salePrice);
 			var len = [];
 			len = menu.productImages;
@@ -123,7 +123,8 @@
 				var imgI = len[i];
 				html += '<img src=' + imgI[0] + '/>';
 			}
-			$(".img_box").text(html);
+			console.log(imgI)
+			$(".img_box").html(html);
 		},
 	})
 </script>
