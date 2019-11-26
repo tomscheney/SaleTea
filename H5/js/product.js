@@ -19,19 +19,16 @@
 			console.log(openId)
 
 		function adCar() {
-			location.href = "H5/address.html";
+			location.href = "address.html?openId="+openId;
 		}
 
 		function addCar() {
-			location.href = "H5/shopCar.html";
+			location.href = "shopCar.html?openId="+openId;
 		}
-	
-		// })
 		function AddShop() {
 			$.ajax({
 				url: "https://kidstoms.com/addToShopCart",
 				type: "post",
-				// contentType: "application/json",
 				dataType: "json",
 				data: {
 					openId:openId,

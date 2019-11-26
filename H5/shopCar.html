@@ -37,8 +37,8 @@
 					 <img src="img/gushu%20(2).JPG" alt="">
 				 </a>
 		         <div class="info_box">
-		             <a class="p_name" href="#">芷贤斋 小心肝小青柑 产地福建福建</a>
-					 <p class="p_price">单价：￥<span class="shop-total-amount GoodsPrice">9.90</span></p>
+		             <a class="p_name" href="#"></a>
+					 <p class="p_price">单价：￥<span class="shop-total-amount GoodsPrice"></span></p>
 		             <div class="p_opition">
 		                <div class="change_num f_left">
 		                    <button type="button" class="minus">-</button>
@@ -81,6 +81,7 @@
 	 </div> 
 	
 </div>
+</body>
 <script src="js/cartjs.js"></script>
 <script>
 	// 获取地址栏中的字符串，并将其转化为对象
@@ -97,8 +98,23 @@
 	 });
 	 return obj;
 	}
-	var obj = addr_obj();
-	console.log(obj.userId);
+	var obj = addr_obj()
+	var openId = obj.openId;
+	console.log(openId)
+	// 获取数据渲染数据到页面
+	$.ajax({
+		url: "https://kidstoms.com/queryShopCart",
+		type: "post",
+		dataType: "json",
+		data: {
+			openId:openId,
+		},
+		success: function(res) { // res就是后台接口返回的数据
+			console.log(res)
+			// 标题 价格
+			$(".tit-name").text(res.data[0].productDesc);
+			$(".GoodsPrice").text(res.data.salePrice);
+		},
+	})
 </script>
-</body>
 </html>

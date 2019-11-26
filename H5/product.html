@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<script src="js/jquery-3.3.1.js"></script>
-		<script src="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#2" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#2" type="text/javascript" charset="utf-8"></script> -->
 		<script type="text/javascript" src="js/jquery-addShopping.js"></script>
 		<script src="js/swiper-5.0.4/package/js/swiper.min.js"></script>
 		<script src="js/product.js"></script>
@@ -74,30 +74,17 @@
 				<p>亮点</p>
 				<hr class="hr-4">
 			</div>
-			<div class="Bright-spot-1">
-				<div class="Bright-spot-1-l">
-					<img src="https://47.112.98.24/tea/images/001.jpg">
-				</div>
-				<div class="Bright-spot-1-r">
-					<span></span>
-				</div>
-			</div>
-			<div class="Bright-spot-1">
+			<div class="Bright-spot-1"></div>
+			<div class="Bright-spot-1"></div>
+			<div class="Bright-spot-1"></div>
+			<!-- 	<div class="Bright-spot-1">
 				<div class="Bright-spot-1-l">
 					<img src="https://47.112.98.24/tea/images/002.jpg">
 				</div>
 				<div class="Bright-spot-1-r">
 					<span></span>
 				</div>
-			</div>
-			<div class="Bright-spot-1">
-				<div class="Bright-spot-1-l">
-					<img src="https://47.112.98.24/tea/images/001.jpg">
-				</div>
-				<div class="Bright-spot-1-r">
-					<span></span>
-				</div>
-			</div>
+			</div> -->
 		</div>
 		<!-- 猜你喜欢 -->
 		<div class="like">
@@ -138,23 +125,25 @@
 		</div>
 	</body>
 	<script>
+		// 调用轮播图
 		var mySwiper = new Swiper('.swiper-container', {
 			loop: true, // 循环模式选项
 			autoplay: true, //等同于以下设置
 			pagination: {
 				el: '.swiper-pagination' // 分页器
 			},
-			observer: true,//修改swiper自己或子元素时，自动初始化swiper
-			observeParents: true,//修改swiper的父元素时，自动初始化swiper
+			observer: true, //修改swiper自己或子元素时，自动初始化swiper
+			observeParents: true, //修改swiper的父元素时，自动初始化swiper
 		})
+		// 点击显示 添加数据到接口
 		$("#btn-car2").click(function() {
-			AddShop();
+			AddShop(); //添加产品
 			$(".yuan").show();
 			$("#num").show();
 			$(".jia1").show(100);
 			$(".jia1").show().delay(1000).fadeOut();
 		})
-		// 点击添加购物车
+		// 点击添加购物车 动画
 		$(function() {
 			$('#btn-car2').shoping({
 				endElement: ".yuan",
@@ -167,13 +156,12 @@
 				},
 			})
 		})
-	
+		// 获取产品数据渲染
 		$(document).ready(function() {
-			console.log("dianji le ")
+			console.log("获取产品了!")
 			$.ajax({
 				url: "https://kidstoms.com/getAllProduct",
 				type: "post",
-				// contentType: "application/json",
 				dataType: "json",
 				data: {
 					productId: '88880001',
@@ -189,22 +177,40 @@
 					$(".productPlace").text(res.data[0].productDetail.productPlace);
 					$(".wrapping").text(res.data[0].productDetail.wrapping);
 					$(".brand").text(res.data[0].productDetail.brand);
-					var len=[];
+					var len = [];
 					len = res.data[0].productImages;
 					var html = "";
-					console.log(len)			     
-					        for(var i = 0; i < len.length; i++){   
-								var imgI = len[i];
-					           html += '<div class="swiper-slide">'  
-                                         + '<img src='+imgI+'/>'
-                                         + '</div>';
-					        }
+					console.log(len)
+					for (var i = 0; i < len.length; i++) {
+						var imgI = len[i];
+						html += '<div class="swiper-slide">' +
+							'<img src=' + imgI + '/>' +
+							'</div>';
+					}
 					$(".swiper-wrapper").html(html);
 					console.log($(".swiper-wrapper").html(html));
 					$(".qualityPeriod").text(res.data[0].productDetail.qualityPeriod);
 					$(".standards").text(res.data[0].productDetail.standards);
 					// 产品亮点
-					$(".Bright-spot-1-r>span").text(res.data[0].productFeatures.featureDesc)
+					var fea = [];
+					fea = res.data[0].productFeatures;
+					var featur = "";
+					console.log(fea)
+					for (var i = 0; i < fea.length; i++) {
+						var feaI = fea[i];
+						console.log(feaI);
+							featur += ' <div class="Bright-spot-1-l">' +
+								'<img src=' + feaI.featureImg + '/>' +
+								'</div>'+
+							' <div class="Bright-spot-1-r">' +
+								'<span>' + feaI.featureDesc + '</span>' +
+								'</div>';
+						
+
+					}
+					$(".Bright-spot-1").html(featur);
+					<!-- $(".Bright-spot-1-r>span").text(res.data[0].productFeatures[0].featureDesc) -->
+					<!-- $(".Bright-spot-1-l").text(res.data[0].productFeatures[0].featureImg) -->
 				},
 			})
 			error: function data() {
