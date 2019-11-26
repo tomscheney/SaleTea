@@ -13,6 +13,11 @@ body {
 	--swiper-theme-color: #fff;
 }
 
+.swiper-slide {
+	height: 251px;
+	overflow: hidden;
+}
+
 .swiper-slide>img {
 	width: 100%;
 	height: auto;
