@@ -141,7 +141,7 @@ body {
 	margin-bottom: 2rem;
 }
 
-.Bright-spot-1:nth-of-type(3) .Bright-spot-1-l {
+.Bright-spot-1:nth-of-type(2n) .Bright-spot-1-l {
 	float: right;
 }
 

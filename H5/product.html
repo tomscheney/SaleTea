@@ -126,13 +126,13 @@
 	<script>
 		// 调用轮播图
 		var mySwiper = new Swiper('.swiper-container', {
+			observer: true, //修改swiper自己或子元素时，自动初始化swiper
+			observeParents: true, //修改swiper的父元素时，自动初始化swiper
 			loop: true, // 循环模式选项
 			autoplay: true, //等同于以下设置
 			pagination: {
 				el: '.swiper-pagination' // 分页器
 			},
-			observer: true, //修改swiper自己或子元素时，自动初始化swiper
-			observeParents: true, //修改swiper的父元素时，自动初始化swiper
 		})
 		// 点击显示 添加数据到接口
 		$("#btn-car2").click(function() {
