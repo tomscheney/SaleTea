@@ -70,13 +70,12 @@
 		</div>
 		<!-- 亮点 -->
 		<div class="Bright-spot">
-			<div class="spot">
+			<div class="spot bling-spot">
 				<p>亮点</p>
 				<hr class="hr-4">
 			</div>
-			<div class="Bright-spot-1"></div>
-			<div class="Bright-spot-1"></div>
-			<div class="Bright-spot-1"></div>
+			<!-- <div class="Bright-spot-1"></div>
+			<div class="Bright-spot-1"></div> -->
 			<!-- 	<div class="Bright-spot-1">
 				<div class="Bright-spot-1-l">
 					<img src="https://47.112.98.24/tea/images/002.jpg">
@@ -88,21 +87,21 @@
 		</div>
 		<!-- 猜你喜欢 -->
 		<div class="like">
-			<div class="spot">
+			<div class="spot like-spot">
 				<p>猜你喜欢</p>
 				<hr class="hr-4">
 			</div>
-			<div class="like-1">
+			<!-- <div class="like-1">
 				<img src="img/gushu-(3).jpg" />
 				<p>芷贤斋 正山小种</p>
-				<p style="color: red;">547.3元/份</p>
-			</div>
-			<div class="like-1">
+				<p style="color: red;"></p>
+			</div> -->
+		<!-- 	<div class="like-1">
 				<img src="img/qing4-(6).jpg" />
-				<p>芷贤斋 正山小种</p>
-				<p style="color: red;">547.3元/份</p>
-			</div>
-			<div class="like-1">
+				<p></p>
+				<p style="color: red;"></p>
+			</div> -->
+			<!-- 	<div class="like-1">
 				<img src="img/qing4-(6).jpg" />
 				<p>芷贤斋 正山小种</p>
 				<p style="color: red;">547.3元/份</p>
@@ -111,7 +110,7 @@
 				<img src="img/qing4-(4).jpg" />
 				<p>芷贤斋 正山小种</p>
 				<p style="color: red;">547.3元/份</p>
-			</div>
+			</div> -->
 		</div>
 		<!-- 购物车 -->
 		<div class="shopping-car">
@@ -199,18 +198,34 @@
 					for (var i = 0; i < fea.length; i++) {
 						var feaI = fea[i];
 						console.log(feaI);
-							featur += ' <div class="Bright-spot-1-l">' +
-								'<img src=' + feaI.featureImg + '/>' +
-								'</div>'+
+						featur += ' <div class="Bright-spot-1">' +
+							' <div class="Bright-spot-1-l">' +
+							'<img src=' + feaI.featureImg + '/>' +
+							'</div>' +
 							' <div class="Bright-spot-1-r">' +
-								'<span>' + feaI.featureDesc + '</span>' +
-								'</div>';
-						
-
+							'<span>' + feaI.featureDesc + '</span>' +
+							'</div>' +
+							'</div>';
 					}
-					$(".Bright-spot-1").html(featur);
+					$(".bling-spot").after(featur);
+					// $(".Bright-spot-1").html(featur);
 					<!-- $(".Bright-spot-1-r>span").text(res.data[0].productFeatures[0].featureDesc) -->
 					<!-- $(".Bright-spot-1-l").text(res.data[0].productFeatures[0].featureImg) -->
+					// 猜你喜欢  
+					var recom = [];
+					recom = res.data[0].productRecommend;
+					var recomend = "";
+					console.log(recom)
+					for (var i = 0; i < recom.length; i++) {
+						var recomI = recom[i];
+						console.log(recomI);
+						recomend += '<div class="like-1">'
+							+'<img src=' + recomI.recommendCover + '/>'
+							+'<p>' + recomI.recommendDesc +'</p>' +
+							'<p style="color: red;">' + recomI.recommendPrice + '元/份' +'</p>'+
+							'</div>';
+					}
+					$(".like-spot").after(recomend);
 				},
 			})
 			error: function data() {
