@@ -111,7 +111,7 @@
 		},
 		success: function(res) { // res就是后台接口返回的数据
 			console.log(res)
-			var menu = res.data.productList;
+			var menu = res.data.productList[0];
 			// 标题 价格
 			$(".tit-name").text(menu.productDesc);
 			$(".GoodsPrice").text(menu.salePrice);
