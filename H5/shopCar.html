@@ -34,7 +34,7 @@
 		     </div>
 		     <div class="shop_info clearfix">
 		         <a href="#" class="img_box f_left">
-					 <img src="img/gushu%20(2).JPG" alt="">
+					<!-- <img src="img/gushu%20(2).JPG" alt=""> -->
 				 </a>
 		         <div class="info_box">
 		             <a class="p_name" href="#"></a>
@@ -111,9 +111,19 @@
 		},
 		success: function(res) { // res就是后台接口返回的数据
 			console.log(res)
+			var menu = res.data.productList;
 			// 标题 价格
-			$(".tit-name").text(res.data[0].productDesc);
-			$(".GoodsPrice").text(res.data.salePrice);
+			$(".tit-name").text(menu.productDesc);
+			$(".GoodsPrice").text(menu.salePrice);
+			var len = [];
+			len = menu.productImages;
+			var html = "";
+			console.log(len)
+			for (var i = 0; i < len.length; i++) {
+				var imgI = len[i];
+				html += '<img src=' + imgI[0] + '/>';
+			}
+			$(".img_box").text(html);
 		},
 	})
 </script>
