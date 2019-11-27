@@ -161,7 +161,7 @@
 		$(document).ready(function() {
 			console.log("获取产品了!")
 			$.ajax({
-				url: "https://kidstoms.com/getAllProduct",
+				url: "https://kidstoms.com/getProductDetail",
 				type: "post",
 				dataType: "json",
 				data: {
@@ -170,16 +170,15 @@
 				success: function(res) { // res就是后台接口返回的数据
 					console.log(res)
 					console.log(res.data)
-					console.log(res.data[0])
 					// 标题 价格
-					$(".tit-name").text(res.data[0].productDesc);
-					$(".tit-price").text(res.data[0].salePrice + '元 / 份');
+					$(".tit-name").text(res.data.productDesc);
+					$(".tit-price").text(res.data.salePrice + '元 / 份');
 					// 产品信息
-					$(".productPlace").text(res.data[0].productDetail.productPlace);
-					$(".wrapping").text(res.data[0].productDetail.wrapping);
-					$(".brand").text(res.data[0].productDetail.brand);
+					$(".productPlace").text(res.data.productDetail.productPlace);
+					$(".wrapping").text(res.data.productDetail.wrapping);
+					$(".brand").text(res.data.productDetail.brand);
 					var len = [];
-					len = res.data[0].productImages;
+					len = res.data.productImages;
 					var html = "";
 					console.log(len)
 					for (var i = 0; i < len.length; i++) {
@@ -192,11 +191,11 @@
 					// 动态获取数据后 渲染插件
 					swiper_init();
 					console.log($(".swiper-wrapper").html(html));
-					$(".qualityPeriod").text(res.data[0].productDetail.qualityPeriod);
-					$(".standards").text(res.data[0].productDetail.standards);
+					$(".qualityPeriod").text(res.data.productDetail.qualityPeriod);
+					$(".standards").text(res.data.productDetail.standards);
 					// 产品亮点
 					var fea = [];
-					fea = res.data[0].productFeatures;
+					fea = res.data.productFeatures;
 					var featur = "";
 					console.log(fea)
 					for (var i = 0; i < fea.length; i++) {
@@ -217,14 +216,16 @@
 					<!-- $(".Bright-spot-1-l").text(res.data[0].productFeatures[0].featureImg) -->
 					// 猜你喜欢  
 					var recom = [];
-					recom = res.data[0].productRecommend;
+					recom = res.data.productRecommend;
 					var recomend = "";
 					console.log(recom)
 					for (var i = 0; i < recom.length; i++) {
 						var recomI = recom[i];
 						console.log(recomI);
-						recomend += '<div class="like-1">'
-							+'<img src=' + recomI.recommendCover + '/>'
+						recomend += '<div class="like-1">'+
+							'<div class="like-1-img">'
+							+'<img src=' + recomI.recommendCover + '/>'+
+							'</div>'
 							+'<p>' + recomI.recommendDesc +'</p>' +
 							'<p style="color: red;">' + recomI.recommendPrice + '元/份' +'</p>'+
 							'</div>';
