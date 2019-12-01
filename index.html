@@ -29,10 +29,11 @@
 <script>
 	// 以下方式直接跳转
 	$(document).ready(function(){
+		//mozilla/5.0 (iphone; cpu iphone os 9_1 like mac os x) applewebkit/601.1.46 (khtml, like gecko)version/9.0 mobile/13b143 safari/601.1
 		function isWeiXin() {
-		    var ua = window.navigator.userAgent.toLowerCase();
-		    console.log(ua);//mozilla/5.0 (iphone; cpu iphone os 9_1 like mac os x) applewebkit/601.1.46 (khtml, like gecko)version/9.0 mobile/13b143 safari/601.1
-		    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+		    let ua = window.navigator.userAgent.toLowerCase();
+		    console.log(ua);
+		    if (ua.match(/MicroMessenger/i) === 'micromessenger') {
 		        return true;
 		    }
 		    else {
@@ -45,11 +46,11 @@
 		else{
 		    console.log("不是来自微信内置浏览器");
 		    <!--       如果是微信站外，直接跳转               -->
-            window.location.href="H5/product.html";
-            return;              
+            window.location.href="home.html";
+            return;
 		}
-		
-		
+
+
 		// 获取地址栏中的字符串，并将其转化为对象
 		function addr_obj() {
 		 var search = location.search;
@@ -83,12 +84,12 @@
 		var code = obj.code;
 		// 获取
 		var getOpenID=window.localStorage.getItem('openId');
-        
+
 		// 判断openId是否存在
 		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
 			getOpenId();
 		}else{
-			window.location.href = "H5/product.html"
+			window.location.href = "home.html"
 		}
 		console.log(code)
     function getOpenId(){
@@ -120,6 +121,6 @@
     	})
     }
 })
-	
+
 </script>
 </html>
