@@ -46,7 +46,7 @@
 		else{
 		    console.log("不是来自微信内置浏览器");
 		    <!--       如果是微信站外，直接跳转               -->
-            window.location.href="home.html";
+            window.location.href="H5/home.html";
             return;
 		}
 
@@ -89,7 +89,7 @@
 		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
 			getOpenId();
 		}else{
-			window.location.href = "home.html"
+			window.location.href = "H5/home.html"
 		}
 		console.log(code)
     function getOpenId(){
