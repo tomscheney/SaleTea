@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta http-equiv="Content-Type" content="text/html" />
 		<meta charset="utf-8">
 		<script src="js/jquery-3.3.1.js"></script>
+		<script src="js/paySuccess.js"></script>
+
 		<title>订单支付</title>
 		<style type="text/css">
 			* {
@@ -25,33 +27,6 @@
 					url('font_family/iconfont.woff') format('woff'),
 					url('font_family/iconfont.ttf') format('truetype'),
 					url('font_family/iconfont.svg#iconfont') format('svg');
-			}
-
-			.iconfont {
-				font-family: "iconfont" !important;
-				font-size: 8px;
-				font-style: normal;
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-			}
-
-			/* 右箭头 */
-			.indicator {
-				width: 5px;
-				height: 10px;
-				float: right;
-				margin-right: 1rem;
-			}
-
-			.i-icon {
-				float: left;
-			}
-
-			.iconfont {
-				font-size: 20px;
-				line-height: 25px;
-				height: auto;
-				background-color: transparent !important;
 			}
 
 			button {
@@ -104,53 +79,9 @@
 				margin: 0 auto;
 			}
 
-			/* 支付方式 */
-			.pay_ {
-				width: 100%;
-				height: 100%;
-				overflow-y: hidden;
-				position: fixed;
-				z-index: 100;
-				top: 0;
-				background: black;
-				opacity: 0.5;
-				display: none;
-			}
-
-			.pay_content {
-				width: 80%;
-				border-radius: 10px;
-				height: 200px;
-				position: fixed;
-				z-index: 101;
-				top: 25%;
-				left: 10%;
-				right: 10%;
-				background: #FFFFFF;
-				display: none;
-			}
-
-			.con {
-				width: 90%;
-				margin: 10% auto;
-
-			}
-
 			.con>p {
 				text-align: center;
 				font-size: 16px;
-			}
-
-			.redpay {
-				color: red;
-				font-size: 30px !important;
-			}
-
-			.wei {
-				height: 25px;
-				margin: 10px auto;
-				font-size: 16px;
-				line-height: 25px;
 			}
 
 			.wei>.wei-img {
@@ -167,17 +98,12 @@
 				color: #000000;
 			}
 
-			#close {
-				margin-top: -20px;
-				text-align: right;
-			}
 		</style>
 	</head>
 	<body>
 		<div class="pay_body">
 			<p class="pay-p">订单支付</p>
 			<div class="wx-pay cz_btn">
-				<!-- <a href="javascript:pay();" id="btn_1"><button type="button" class="wx-pay-l">微信支付</button></a> -->
 				<a href="javascript:pay();" id="btn_1"><button type="button" class="wx-pay-l">微信支付</button></a>
 				<button type="button" class="wx-cancel">取消订单</button>
 			</div>
@@ -185,106 +111,7 @@
 				<button type="button" class="payment">支付完成</button>
 			</div>
 		</div>
-		<!-- 灰底 -->
-		<!-- <div class="pay_"></div> -->
-		<!-- 支付页面 -->
-		<!-- <div class="pay_content">
-			<div class="con">
-				<p id="close"><img src="img/close.png" ></p>
-				<p>支付订单</p>
-				<p class="redpay">￥<span>49.9</span></p>
-				<hr class="hr-4">
-				<div class="wei">
-					<div class="wei-img">
-						<img src="img/wx.png" >
-					</div>
-					<span>微信支付</span>
-					<span class="c_btn"><a href="javascript:pay();" class="btn_1"><span class="indicator i-icon1"><i class="iconfont">&#xe641;</i></span></a></span>
-				</div>
-				<hr class="hr-4">
-			</div>
-		</div> -->
+
 	</body>
-	<script type="text/javascript">
 
-
-		var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
-
-		function randomn(n) {
-			if (n > 10) return null
-			return parseInt((Math.random() + 1) * Math.pow(10, n - 1))
-		}
-		console.log(randomn(10))
-		var orderN = randomn(10) + "";
-		var notifyUrl = "http://kidstoms.com/H5/paySuccess.html";
-		console.log("notifyUrl", notifyUrl)
-		// pay()
-		function pay() {
-			if (typeof WeixinJSBridge == "undefined") {
-
-				if (document.addEventListener) {
-					alert("payTrue1");
-					document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-				} else if (document.attachEvent) {
-					alert("payTrue2");
-					document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-					document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-				}
-			} else {
-				onBridgeReady();
-			}
-		}
-		// 支付调用
-		function onBridgeReady() {
-
-			alert("onBridgeReady  sss ");
-
-			$.ajax({
-				url: "https://kidstoms.com/getPayInfo",
-				type: "post",
-				dataType: "json",
-				data: {
-					openId: localStorage.getItem("openId"),
-					totalFee: Fee,
-					orderNo: orderN,
-					notifyUrl: notifyUrl,
-					body:"芷贤斋订单结算"
-				},
-				success: function(res) {
-					alert('pay success');
-					alert(res.msg);
-
-					let resPay = res.data;
-
-					// 支付
-					WeixinJSBridge.invoke(
-						'getBrandWCPayRequest', {
-							"appId": resPay.appId, //公众号名称，由商户传入
-							"timeStamp": resPay.timeStamp, //时间戳，自1970年以来的秒数
-							"nonceStr": resPay.nonceStr, //随机串
-							"package": resPay.package,
-							"signType": resPay.signType, //微信签名方式：
-							"paySign": resPay.paySign //微信签名
-						},
-						function(response) {
-							if (response.err_msg == "get_brand_wcpay_request:ok") {
-								// 使用以上方式判断前端返回,微信团队郑重提示：
-								//res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。
-							}
-						});
-				},
-				error: function(XMLHttpRequest, textStatus, errorThrown) {
-
-					alert('pay fail');
-					console.log(111)
-					alert("textStatus",textStatus)//
-					alert(JSON.stringify(textStatus))//error
-					alert("XMLHttpRequest",XMLHttpRequest)//
-					alert(JSON.stringify(XMLHttpRequest))//"readyState":0,"status":0,"statusText":"error"
-					alert("errorThrown",errorThrown)
-					alert(JSON.stringify(errorThrown))//""
-				}
-			});
-		}
-	</script>
 </html>
