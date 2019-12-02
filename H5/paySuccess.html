@@ -236,7 +236,8 @@
 		}
 		// 支付调用
 		function onBridgeReady() {
-			alert("onBridgeReady");
+
+			alert("onBridgeReady  sss ");
 
 			$.ajax({
 				url: "https://kidstoms.com/getPayInfo",
@@ -249,6 +250,7 @@
 					notifyUrl: notifyUrl,
 				},
 				success: function(res) {
+					alert('pay success');
 
 					let resPay = res.data;
 					alert(resPay.msg);
@@ -279,6 +281,8 @@
 						});
 				},
 				error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+					alert('pay fail');
 					console.log(111)
 					alert("textStatus",textStatus)//
 					alert(JSON.stringify(textStatus))//error
