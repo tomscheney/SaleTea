@@ -4,7 +4,7 @@ function ex(){
 function adda(){
     location.href="addAddress.html"
 }
-function wed(){
+function goPay(){
     $("#btn-car3").click(function(){
         var istrue=false;
         var inp=$(".checkbox-list-input");
@@ -18,7 +18,8 @@ function wed(){
             alert('该笔订单内包含不可退换货/款的商品。付款前请务必详阅并知晓相关政策，并勾选确认');
             return;
         }
-        window.location.href="payResult.html";
+        // orderNo
+        window.location.href="payResult.html?totalFee=";
         // window.open("product.html")
     })
 };

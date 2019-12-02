@@ -15,10 +15,8 @@ function pay() {
     if (typeof WeixinJSBridge == "undefined") {
 
         if (document.addEventListener) {
-            alert("payTrue1");
             document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
         } else if (document.attachEvent) {
-            alert("payTrue2");
             document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
             document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
         }

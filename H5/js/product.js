@@ -1,6 +1,7 @@
 
 		let search = location.search;
-		let productId = search.substr(1,8)
+        let list = search.split("=");
+		let productId = list[1]
 
 		function confirmOrder() {
 			location.href = "confirmOrder.html?productId="+productId;
