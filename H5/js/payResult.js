@@ -29,8 +29,6 @@ function pay() {
 // 支付调用
 function onBridgeReady() {
 
-    alert("onBridgeReady  sss ");
-
     $.ajax({
         url: "https://kidstoms.com/getPayInfo",
         type: "post",
@@ -43,8 +41,6 @@ function onBridgeReady() {
             body:"芷贤斋订单结算"
         },
         success: function(res) {
-            alert('pay success');
-            alert(res.msg);
 
             let resPay = res.data;
 

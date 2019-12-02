@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font_family/iconfont.eot');
+    src: url('../font_family/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font_family/iconfont.woff2') format('woff2'),
+    url('../font_family/iconfont.woff') format('woff'),
+    url('../font_family/iconfont.ttf') format('truetype'),
+    url('../font_family/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:8px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* 右箭头 */
+.indicator{
+    width: 5px;
+    height: 10px;
+    float: right;
+    margin-right: 1rem;
+}
+.i-icon{
+    float: left;
+}
+.iconfont{
+    font-size: 20px;
+    line-height: 25px;
+    height: auto;
+    background-color: transparent!important;
+}
+body{
+    width: 100%;
+}
+/* 分割线 */
+.hr-1{
+    width: 90%;
+    margin: 0 auto;
+}
+.hr-2{
+    margin: 0;
+    border-top: 7px solid #eee;
+}
+.hr-4{
+    width: 100%;
+    margin: 0 auto;
+}
+/* 收货地址 */
+.adress{
+    width: 90%;
+    margin: 0 auto;
+    color: #000;
+    padding: 1rem 0;
+    overflow: hidden;
+}
+.commodity{
+    width: 89%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    overflow: hidden;
+}
+.glyphicon{
+    font-size: 1rem;
+}
+.word{
+    font-size: 1.5rem;
+    padding-left: 1vw;
+}
+.word1{
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+.word-gery{
+    color: gray;
+    float: right;
+}
+.word-name,.amount{
+    width: 90%;
+    margin: 0 auto;
+}
+.word-name-top{
+    padding-top: 1rem;
+    font-size: 1.5rem;
+}
+.word-name-top>span:nth-of-type(2){
+    float: right;
+}
+.word-name-bottom{
+    padding-bottom: 1rem;
+}
+.word-name-bottom>span:nth-of-type(1),.word-name-bottom>span:nth-of-type(2){
+    color: gray;
+    font-size: 1rem;
+}
+.word-name-bottom>span:nth-of-type(3){
+    color: red;
+    font-size: 1rem;
+    float: right;
+}
+/* 商品金额 */
+.amount{
+    padding: 1rem 0;
+    overflow: hidden;
+}
+.amount span:nth-of-type(2){
+    float: right;
+}
+.form-inline{
+    /* width: 90%; */
+    /* margin: 0 auto; */
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+.sr-only{
+    position: static;
+    width: 23%;
+    height: auto;
+    line-height: 3rem;
+    float: left;
+    font-size: 15px;
+    white-space: nowrap;
+}
+.form-inline .form-control{
+    font-size: 1rem;
+    width: 77%;
+    border: 0;
+    outline: none;
+    float: left;
+    box-shadow: none;
+}
+.notic{
+    width: 100%;
+    height: -webkit-fill-available;
+    height: fill-available;
+    /* margin: 0 auto; */
+}
+.notic input[type="checkbox"]{
+    border-radius: 0.5rem;
+}
+/* 支付 */
+button{
+    outline:none;
+}
+.shopping-car{
+    left: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    line-height: 50px;
+    background-color: #fff;
+}
+.shopping-car>div{
+    width: 100%;
+    height: 100%;
+}
+.shopping-car,.pay-money,#btn-car3{
+    border: 0;
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    focus: none;
+}
+.pay-money{
+    width: 40%;
+    left: 20%;
+    color: red;
+    background-color: #FFFFFF;
+}
+#btn-car3{
+    width: 40%;
+    left: 60%;
+    background-color: #fd3a38;
+}
+.checkbox {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+form{
+    width: 100%;
+}
+form>div{
+    width: 90%;
+    margin: 0 auto;
+}
+form .hr-2{
+    width: 100%;
+    margin-top: 1rem;
+}
+.gift{
+    width: 90%;
+    /* height: 7rem; */
+    line-height: 3rem;
+    margin: 0 auto;
+}
+.gift>div{
+    width: 100%;
+    height: 4rem;
+}
+.vou{
+    line-height: 4rem;
+}
+.vou>span:nth-of-type(1)>img{
+    margin-right: 1rem;
+}
+.vou>span:nth-of-type(2){
+    float: right;
+    color: gray;
+}
+.vou>span:nth-of-type(2)>img{
+    padding-left: 0.5rem;
+}
+.vou>span:nth-of-type(2)>img:nth-of-type(2){
+    display: none;
+}
+.inp{
+    display: none;
+}
+.inp input{
+    width: 75%;
+    border:2px solid #999999;
+    outline: none;
+}
+.inp button{
+    width: 20%;
+    background-color: red;
+    border: none;
+    height: 3rem;
+    line-height: 3rem;
+    color: white;
+}
