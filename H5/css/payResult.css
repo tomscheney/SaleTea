@@ -1,0 +1,83 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font_family/iconfont.eot');
+    src: url('../font_family/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font_family/iconfont.woff2') format('woff2'),
+    url('../font_family/iconfont.woff') format('woff'),
+    url('../font_family/iconfont.ttf') format('truetype'),
+    url('../font_family/iconfont.svg#iconfont') format('svg');
+}
+
+button {
+    border: 1px solid grey;
+    padding: 3vw 6.2vw;
+    background-color: transparent;
+}
+
+.pay_body {
+    text-align: center;
+    width: 80%;
+    font-size: 20px;
+    padding: 9vw 0 0 0;
+    margin: 0 auto;
+}
+
+.pay-p {
+    margin-bottom: 35px;
+}
+
+.wx-pay {
+    margin-bottom: 15px;
+}
+
+.wx-pay>a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    padding: 3vw 1vw;
+}
+
+.wx-pay-l {
+    background-color: #31AB40;
+    border: none;
+    color: #FFFFFF;
+}
+
+.wx-pay-s {
+    width: 100%;
+}
+
+.payment {
+    width: 100%;
+    color: #31AB40;
+}
+
+.con>p {
+    text-align: center;
+    font-size: 16px;
+}
+
+.wei>.wei-img {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+}
+
+.wei>.wei-img>img {
+    width: 100%;
+}
+
+.c_btn>a {
+    color: #000000;
+}

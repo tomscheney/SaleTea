@@ -9,7 +9,7 @@ function randomn(n) {
 }
 console.log(randomn(10))
 var orderN = randomn(10) + "";
-var notifyUrl = "http://kidstoms.com/H5/paySuccess.html";
+var notifyUrl = "http://kidstoms.com/H5/payResult.html";
 
 function pay() {
     if (typeof WeixinJSBridge == "undefined") {
