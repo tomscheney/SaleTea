@@ -251,9 +251,9 @@
 				},
 				success: function(res) {
 					alert('pay success');
+					alert(res.msg);
 
 					let resPay = res.data;
-					alert(resPay.msg);
 
 					alert(resPay.appId);
 					alert(resPay.timeStamp);
