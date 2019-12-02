@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<script src="js/swiper-5.0.4/package/js/swiper.min.js"></script>
-		<script src="js/jquery-3.3.1.js"></script> 
+		<script src="js/jquery-3.3.1.js"></script>
 		<!-- Link Swiper's CSS -->
 		<link rel="stylesheet" href="js/swiper-5.0.4/package/css/swiper.min.css">
 		<link rel="stylesheet" href="js/bootstrap-3.3.7-dist/css/bootstrap.css">
@@ -48,7 +48,7 @@
 					}
 				/* 分割线 */
 				.hr-1{
-					width: 90%;	
+					width: 90%;
 					margin: 0 auto;
 				}
 				.hr-2{
@@ -193,7 +193,7 @@
 				    margin: 0 auto;
 				    margin-top: 10px;
 				    margin-bottom: 10px;
-				    
+
 				}
 				form{
 					width: 100%;
@@ -248,12 +248,12 @@
 					line-height: 3rem;
 					color: white;
 				}
-				
+
 			</style>
 	</head>
 	<body>
 		<!-- 收货地址 -->
-		<div  onclick="adda()" class="adress"> 
+		<div  onclick="adda()" class="adress">
 			<span class="indicator i-icon"><i class="iconfont">&#xec3f;</i></span>
 			<span class="word">添加收货地址</span>
 			<span class="indicator i-icon1"><i class="iconfont">&#xe641;</i></span>
@@ -332,14 +332,14 @@
 					<button onclick="wed()" type="button" id="btn-car3">去支付</button>
 				  </div>
 				</div>
-			</form>		
+			</form>
 			</div>
 		</div>
-	
+
 	</body>
 	<!-- <script src="http://testmecom.hhit.com.cn/mecom/micromall/page/wxPrePay.jsp" type="text/javascript" charset="utf-8"></script> -->
 	<!-- <script type="text/javascript" src="../js/common.js"></script> -->
-	<script type="text/javascript"> 
+	<script type="text/javascript">
 		function ex(){
 			location.href="exchange.html"
 		}
@@ -354,14 +354,13 @@
 			 				if(inp.eq(i).prop("checked")){
 			 					istrue=true;
 			 					break;
-			 				}	
+			 				}
 							}
 							if(!istrue){
 								 alert('该笔订单内包含不可退换货/款的商品。付款前请务必详阅并知晓相关政策，并勾选确认');
-								 return;	
+								 return;
 							}
-							alert('验证成功');
-						window.location.href="paySuccess.html";	
+						window.location.href="paySuccess.html";
 						// window.open("product.html")
 			 		})
 			 	};
@@ -379,21 +378,21 @@
 	   	// 	 				if(inp.eq(i).prop("checked")){
 	   	// 	 					istrue=true;
 	   	// 	 					break;
-	   	// 	 				}	
+	   	// 	 				}
 	   	// 	 			}
 	   	// 	 			if(!istrue){
 	   	// 	 				 alert('该笔订单内包含不可退换货/款的商品。付款前请务必详阅并知晓相关政策，并勾选确认');
-	   	// 	 				 return;	
+	   	// 	 				 return;
 	   	// 	 			}
 					// 	window.open("vphone.html")
 	   	// 	 			// alert('验证成功');
 	   	// 	 		})
 	   	// 	 	});
-		
+
 	  // wx.openAddress({
-	  //      success: function () { 
+	  //      success: function () {
 	  //           // 用户成功拉出地址 },
-	  //      cancel: function () { 
+	  //      cancel: function () {
 	  //           // 用户取消拉出地址
 	  // }});
 	   $("#liquan").click(function(){
