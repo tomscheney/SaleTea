@@ -231,12 +231,12 @@
 					document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
 				}
 			} else {
-				alert("onBridgeReady");
 				onBridgeReady();
 			}
 		}
 		// 支付调用
 		function onBridgeReady() {
+			alert("onBridgeReady");
 
 			$.ajax({
 				url: "https://kidstoms.com/getPayInfo",
@@ -249,14 +249,16 @@
 					notifyUrl: notifyUrl,
 				},
 				success: function(res) {
-					// pay(res.data)
-					var resPay = res.data();
-					alert(res.data.appId);
-					alert(res.data.timeStamp);
-					alert(res.data.nonceStr);
-					alert(res.data.package);
-					alert(res.data.signType);
-					alert(res.data.paySign);
+
+					let resPay = res.data;
+					alert(resPay.msg);
+
+					alert(resPay.appId);
+					alert(resPay.timeStamp);
+					alert(resPay.nonceStr);
+					alert(resPay.package);
+					alert(resPay.signType);
+					alert(resPay.paySign);
 					console.log(res.data)
 
 					// 支付
