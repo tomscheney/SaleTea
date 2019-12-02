@@ -256,18 +256,10 @@
 
 					let resPay = res.data;
 
-					alert(resPay.appId);
-					alert(resPay.timeStamp);
-					alert(resPay.nonceStr);
-					alert(resPay.package);
-					alert(resPay.signType);
-					alert(resPay.paySign);
-					console.log(res.data)
-
 					// 支付
 					WeixinJSBridge.invoke(
 						'getBrandWCPayRequest', {
-							"appid": resPay.appId, //公众号名称，由商户传入
+							"appId": resPay.appId, //公众号名称，由商户传入
 							"timeStamp": resPay.timeStamp, //时间戳，自1970年以来的秒数
 							"nonceStr": resPay.nonceStr, //随机串
 							"package": resPay.package,
