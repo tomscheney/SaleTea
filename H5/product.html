@@ -74,16 +74,7 @@
 				<p>亮点</p>
 				<hr class="hr-4">
 			</div>
-			<!-- <div class="Bright-spot-1"></div>
-			<div class="Bright-spot-1"></div> -->
-			<!-- 	<div class="Bright-spot-1">
-				<div class="Bright-spot-1-l">
-					<img src="https://47.112.98.24/tea/images/002.jpg">
-				</div>
-				<div class="Bright-spot-1-r">
-					<span></span>
-				</div>
-			</div> -->
+
 		</div>
 		<!-- 猜你喜欢 -->
 		<div class="like">
@@ -91,26 +82,7 @@
 				<p>猜你喜欢</p>
 				<hr class="hr-4">
 			</div>
-			<!-- <div class="like-1">
-				<img src="img/gushu-(3).jpg" />
-				<p>芷贤斋 正山小种</p>
-				<p style="color: red;"></p>
-			</div> -->
-		<!-- 	<div class="like-1">
-				<img src="img/qing4-(6).jpg" />
-				<p></p>
-				<p style="color: red;"></p>
-			</div> -->
-			<!-- 	<div class="like-1">
-				<img src="img/qing4-(6).jpg" />
-				<p>芷贤斋 正山小种</p>
-				<p style="color: red;">547.3元/份</p>
-			</div>
-			<div class="like-1">
-				<img src="img/qing4-(4).jpg" />
-				<p>芷贤斋 正山小种</p>
-				<p style="color: red;">547.3元/份</p>
-			</div> -->
+
 		</div>
 		<!-- 购物车 -->
 		<div class="shopping-car">
@@ -125,17 +97,17 @@
 	</body>
 	<script>
 		// 调用轮播图
-	function swiper_init(){
-		var mySwiper = new Swiper('.swiper-container', {
-			observer: true, //修改swiper自己或子元素时，自动初始化swiper
-			observeParents: true, //修改swiper的父元素时，自动初始化swiper
-			loop: true, // 循环模式选项
-			autoplay: true, //等同于以下设置
-			pagination: {
-				el: '.swiper-pagination' // 分页器
-			},
-		})
-	}
+		function swiper_init() {
+			var mySwiper = new Swiper('.swiper-container', {
+				observer: true, //修改swiper自己或子元素时，自动初始化swiper
+				observeParents: true, //修改swiper的父元素时，自动初始化swiper
+				loop: true, // 循环模式选项
+				autoplay: true, //等同于以下设置
+				pagination: {
+					el: '.swiper-pagination' // 分页器
+				},
+			})
+		}
 		// 点击显示 添加数据到接口
 		$("#btn-car2").click(function() {
 			AddShop(); //添加产品
@@ -159,13 +131,17 @@
 		})
 		// 获取产品数据渲染
 		$(document).ready(function() {
+			let search = location.search;
+
+			let productId = search.substr(1,8)
 			console.log("获取产品了!")
+			console.log(search)
 			$.ajax({
 				url: "https://kidstoms.com/getProductDetail",
 				type: "post",
 				dataType: "json",
 				data: {
-					productId: '88880001',
+					productId: productId,
 				},
 				success: function(res) { // res就是后台接口返回的数据
 					console.log(res)
@@ -214,7 +190,7 @@
 					// $(".Bright-spot-1").html(featur);
 					<!-- $(".Bright-spot-1-r>span").text(res.data[0].productFeatures[0].featureDesc) -->
 					<!-- $(".Bright-spot-1-l").text(res.data[0].productFeatures[0].featureImg) -->
-					// 猜你喜欢  
+					// 猜你喜欢
 					var recom = [];
 					recom = res.data.productRecommend;
 					var recomend = "";
