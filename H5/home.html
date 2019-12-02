@@ -148,22 +148,17 @@
 				url: "https://kidstoms.com/getAllProduct",
 				type: "post",
 				dataType: "json",
-				data: {
-					productId: '88880001',
-				},
 				success: function(res) { // res就是后台接口返回的数据
 					console.log(res)
 					console.log(res.data)
-					// 标题 
-					var zhi = [];
-					zhi = res.data;
-					var html = "";
-					var proId = [];
-					console.log(zhi)
-					for (var i = 0; i < zhi.length; i++) {
-						var zhiI = zhi[i];
-						var imgI = zhiI.productImages[1];
-						 
+					// 标题
+					let products =  res.data;
+					let html = "";
+
+					for (var i = 0; i < products.length; i++) {
+						let product = products[i];
+						let imgI = product.productImages[0];
+
 						html += '<li class="tea" id='+ zhiI.productId +'>' +
 							'<div class="tea-img">' +
 							'<img src=' + imgI + '/>' +
@@ -172,13 +167,13 @@
 							'<p class="tea_contect">' + zhiI.productDesc + '</p>' +
 							'<hr class="hr-1">' +
 							'</li>';
-							// for ( k=0;k<proId.length;k++){
-							// 	console.log(proId[k])
-							// }
+
 					}
 					$(".product_list>ul").html(html);
-						$('.product_list>ul>li').click(function() {
-							
+						$('.product_list>ul>li').click(function(e) {
+
+							alert(e)
+							window.location.href="product.html?"
 						});
 				},
 				error: function data() {
@@ -186,6 +181,6 @@
 				}
 			})
 		// })
-		
+
 	</script>
 </html>

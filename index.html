@@ -53,37 +53,37 @@
 
 		// 获取地址栏中的字符串，并将其转化为对象
 		function addr_obj() {
-		 var search = location.search;
-		 var obj = {};
-		 var keyValues = search.slice(1).split("&");
+		 let search = location.search;
+		 let obj = {};
+		 let keyValues = search.slice(1).split("&");
 		 keyValues.forEach(function(keyValue) {
-		 var tempArr = keyValue.split("=");
-		 var key = tempArr[0];
+		 let tempArr = keyValue.split("=");
+		 let key = tempArr[0];
 		  // var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
-		 var value = tempArr[1];
+		 let value = tempArr[1];
 		 obj[key] = value;
 		 });
 		 return obj;
 		}
-		var obj = addr_obj()
+		let obj = addr_obj()
 		console.log(obj.code)
 		 	//code 无值，
 		if(obj.code == ''|| obj.code == undefined || obj.code == 'null') {
 			console.log("123")
-			var appid = "wx6e974f12e898a2ee"
-			var redirect_uri = "https://kidstoms.com/tea/index.html"
-			var response_type = "code"
-			var state = "STATE#wechat_redirect"
-			var scope = "snsapi_base"
-			var result = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
+			let appid = "wx6e974f12e898a2ee"
+			let redirect_uri = "https://kidstoms.com/tea/index.html"
+			let response_type = "code"
+			let state = "STATE#wechat_redirect"
+			let scope = "snsapi_base"
+			let result = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
 				+ appid + '&redirect_uri='+redirect_uri+'&response_type='+response_type+'&scope='+scope+'&state='+state
 			window.location.href=result;
 			return;
 		}
 		console.log(obj.code)
-		var code = obj.code;
+		let code = obj.code;
 		// 获取
-		var getOpenID=window.localStorage.getItem('openId');
+		let getOpenID=window.localStorage.getItem('openId');
 
 		// 判断openId是否存在
 		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
