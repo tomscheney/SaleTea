@@ -221,7 +221,7 @@
 		// pay()
 		function pay() {
 			if (typeof WeixinJSBridge == "undefined") {
-				alert("payTrue");
+
 				if (document.addEventListener) {
 					alert("payTrue1");
 					document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
@@ -237,7 +237,7 @@
 		}
 		// 支付调用
 		function onBridgeReady() {
-			alert("obj.code");
+
 			$.ajax({
 				url: "https://kidstoms.com/getPayInfo",
 				type: "post",
@@ -250,7 +250,7 @@
 				},
 				success: function(res) {
 					// pay(res.data)
-					var resPay;
+					var resPay = res.data();
 					alert(res.data.appId);
 					alert(res.data.timeStamp);
 					alert(res.data.nonceStr);
@@ -258,7 +258,7 @@
 					alert(res.data.signType);
 					alert(res.data.paySign);
 					console.log(res.data)
-					resPay = res.data;
+
 					// 支付
 					WeixinJSBridge.invoke(
 						'getBrandWCPayRequest', {
