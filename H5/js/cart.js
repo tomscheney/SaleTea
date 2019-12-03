@@ -190,6 +190,8 @@ function getList() {
 			// 标题 价格
 			$(".p_name").text(menu.productDesc);
 			$(".GoodsPrice").text(menu.salePrice);
+			var menus = res.data.amounts;
+			$(".GoodsAmounts").text(menus);
 			var len = [];
 			len = menu.productImages;
 			var html = "";
