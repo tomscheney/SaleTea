@@ -54,4 +54,61 @@ function getProductList() {
 $(document).ready(function () {
     console.log("所有chanp!");
     getProductList();
+
+    let openId =  window.localStorage.getItem("openId");
+
+    if (openId === undefined || openId === null){
+        getOpenId()
+    }
+
 });
+
+
+function getOpenId() {
+
+    let search = location.search;
+    console.log(search);
+    let obj = {};
+    console.log(obj);
+    let keyValues = search.slice(1).split("&");
+    console.log(keyValues);
+    keyValues.forEach(function (keyValue) {
+        let tempArr = keyValue.split("=");
+        let key = tempArr[0];
+        let value = tempArr[1];
+        obj[key] = value;
+    });
+
+    console.log(obj.code);
+
+    //code 无值，
+    let code = obj.code;
+    // 判断openId是否存在
+        $.ajax({
+            url: "https://kidstoms.com/getOpenIdByCode",
+            type: "get",
+            dataType: "json",
+            data: {
+                openId: code
+            },
+            success: function(res) {
+                console.log(res);
+                if (res.code === "200") {
+                    let result = jQuery.parseJSON(res.data);
+                    var openId = result.openId;
+                    console.log(openId);
+                    window.localStorage.setItem("openId", openId);
+                    window.location.href = "H5/product.html?openId=" + openId;
+                    alert("openid:" + result.openId);
+                } else {
+                    alert(res.msg);
+                }
+            },
+            error: function() {
+                console.log("XMLHttpRequest", XMLHttpRequest);
+            }
+        });
+
+}
+
+
