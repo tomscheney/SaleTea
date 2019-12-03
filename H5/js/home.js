@@ -1,6 +1,24 @@
+let appid = "wx6e974f12e898a2ee";
+let redirect_uri = "https://kidstoms.com/tea/index.html";
+let response_type = "code";
+let state = "STATE#wechat_redirect";
+let scope = "snsapi_base";
+let result =
+  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" +
+  appid +
+  "&redirect_uri=" +
+  redirect_uri +
+  "&response_type=" +
+  response_type +
+  "&scope=" +
+  scope +
+  "&state=" +
+  state;
+window.location.href = result;
+return;
 // 获取openid 调getOpenId接口
 function getOpenId() {
-//   console.log(code);
+  //   console.log(code);
   // 查询openId
   $.ajax({
     url: "https://kidstoms.com/getOpenIdByCode",
@@ -10,14 +28,14 @@ function getOpenId() {
       openId: "openId"
     },
     success: function(res) {
-      if (res.code === 200) {
+      if (res.code === "200") {
         // alert("openid" + JSON.stringify(res.data.openId));
-        let result = jQuery.parseJSON(res.data);
-        var openId = result.openId;
-        console.log(openId);
+        // let result = jQuery.parseJSON(res.data);
+        // var openId = result.openId;
+        // console.log(openId);
         window.localStorage.setItem("openId", openId);
         window.location.href = "H5/product.html?openId=" + openId;
-        alert("openid:" + result.openId);
+        // alert("openid:" + result.openId);
       } else {
         alert(res.msg);
       }
