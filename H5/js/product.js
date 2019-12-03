@@ -19,8 +19,8 @@ function confirmOrder() {
 
 // 点击购物车图标
 function shopCart() {
-  // location.href = "shopCar.html?openId=" + window.localStorage.getItem("openId");
-  location.href = "shopCar.html";
+  location.href = "shopCar.html?openId=" + window.localStorage.getItem("openId");
+  // location.href = "shopCar.html";
 }
 
 // 点击加入购物车 调addToShopCart接口
