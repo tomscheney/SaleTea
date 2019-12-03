@@ -89,11 +89,11 @@ function getOpenId() {
             type: "get",
             dataType: "json",
             data: {
-                code: code
+                code:code
             },
             success: function(res) {
                 console.log(res);
-                if (res.code === 200) {
+                if (res.code === "200") {
                     let result = jQuery.parseJSON(res.data);
                     var openId = result.openId;
                     console.log(openId);
