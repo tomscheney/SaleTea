@@ -49,6 +49,65 @@
         } else {
             alert("不是微信");
         }
+// 获取全部数据
+function getProductList() {
+  // 获取地址栏中的字符串，并将其转化为对象
+  function addr_obj() {
+    let search = location.search;
+    console.log(search);
+    let obj = {};
+    console.log(obj);
+    let keyValues = search.slice(1).split("&");
+    console.log(keyValues);
+    keyValues.forEach(function(keyValue) {
+      let tempArr = keyValue.split("=");
+      let key = tempArr[0];
+      let value = tempArr[1];
+      obj[key] = value;
+    });
+    return obj;
+  }
+  let obj = addr_obj();
+  console.log(obj.code);
+
+  //code 无值，
+  let code = obj.code;
+  // 判断openId是否存在
+  if (openId == "" || openId == undefined || openId == "null") {
+    openId();
+  } else {
+    window.location.href = "H5/home.html";
+  }
+
+  function getopenId() {
+    let openId = window.localStorage.getItem("openId");
+    // 查询openId
+    $.ajax({
+      url: "https://kidstoms.com/getOpenIdByCode",
+      type: "get",
+      dataType: "json",
+      data: {
+        openId: "openId"
+      },
+      success: function(res) {
+        console.log(res);
+        if (res.code === 200) {
+          // alert("openid" + JSON.stringify(res.data.openId));
+          let result = jQuery.parseJSON(res.data);
+          var openId = result.openId;
+          console.log(openId);
+          window.localStorage.setItem("openId", openId);
+          window.location.href = "H5/product.html?openId=" + openId;
+          alert("openid:" + result.openId);
+        } else {
+          alert(res.msg);
+        }
+      },
+      error: function() {
+        console.log("XMLHttpRequest", XMLHttpRequest);
+      }
+    });
+  }
 
 
     })
