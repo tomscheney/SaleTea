@@ -41,7 +41,7 @@
 		    }
 		}
 		if(isWeiXin()){
-		    console.log("是来自微信内置浏览器");
+			alert("是来自微信内置浏览器");
 			let appid = "wx6e974f12e898a2ee"
 			let redirect_uri = "https://kidstoms.com/tea/H5/home.html"
 			let response_type = "code"
@@ -52,7 +52,7 @@
 			window.location.href=result;
 		}
 		else{
-		    console.log("不是来自微信内置浏览器");
+			alert("不是来自微信内置浏览器");
             window.location.href="H5/home.html";
             return;
 		}
