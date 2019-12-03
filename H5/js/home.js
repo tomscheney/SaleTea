@@ -15,7 +15,6 @@ let result =
   "&state=" +
   state;
 window.location.href = result;
-return;
 // 获取openid 调getOpenId接口
 function getOpenId() {
   //   console.log(code);
