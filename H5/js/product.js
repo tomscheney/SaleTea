@@ -2,19 +2,18 @@ let search = location.search;
 let list = search.split("=");
 let productId = list[1];
 let openId = window.localStorage.getItem("openId");
-console.log(search)
-console.log(list)
-console.log(productId)
-console.log(openId)
+console.log(search);
+console.log(list);
+console.log(productId);
+console.log(openId);
 
 // 点击立即购买
 function confirmOrder() {
   // location.href = "confirmOrder.html?productId=" + productId;
-  if(this.openId==""||this.openId==null){
-    location.href="phoneChecking.html"
+  if (this.openId == "" || this.openId == null) {
+    location.href = "phoneChecking.html";
   } else {
-    location.href="confirmOrder.html"
-
+    location.href = "confirmOrder.html";
   }
 }
 
@@ -32,14 +31,15 @@ function addShopCart() {
     dataType: "json",
     data: {
       openId: window.localStorage.getItem("openId"),
-      productId:location.search.substr(1, 8)
+      // productId:location.search.substr(1, 8)
+      productId: "productId"
     },
     success: function(res) {
-      console.log(res)
+      console.log(res);
       // res就是后台接口返回的数据
       if (res.code === "200") {
         // alert(res.data.msg);
-        console.log(13121212)
+        console.log(13121212);
       }
     }
   });
@@ -70,18 +70,17 @@ $("#btn-car2").click(function() {
 });
 // 点击添加购物车 动画
 $(function() {
-	$('#btn-car2').shoping({
-		endElement: ".yuan",
-		iconCSS: "",
-		iconImg: "img/l.JPG",
-		endFunction: function(element) {
-			$("#num").html(parseInt($("#num").html()) + 1);
-			// console.log(element);
-			return false;
-		},
-	})
-})
-
+  $("#btn-car2").shoping({
+    endElement: ".yuan",
+    iconCSS: "",
+    iconImg: "img/l.JPG",
+    endFunction: function(element) {
+      $("#num").html(parseInt($("#num").html()) + 1);
+      // console.log(element);
+      return false;
+    }
+  });
+});
 
 // 获取产品详情  getProductDetail接口
 $(document).ready(function() {
