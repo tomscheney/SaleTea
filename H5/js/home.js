@@ -19,28 +19,7 @@ function first() {
   }
   let obj = addr_obj();
   console.log(obj.code);
-  //code 无值，
-  if (obj.code == "" || obj.code == undefined || obj.code == "null") {
-    console.log("123");
-    let appid = "wx6e974f12e898a2ee";
-    let redirect_uri = "https://kidstoms.com/tea/index.html";
-    let response_type = "code";
-    let state = "STATE#wechat_redirect";
-    let scope = "snsapi_base";
-    let result =
-      "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" +
-      appid +
-      "&redirect_uri=" +
-      redirect_uri +
-      "&response_type=" +
-      response_type +
-      "&scope=" +
-      scope +
-      "&state=" +
-      state;
-    window.location.href = result;
-    return;
-  }
+
   console.log(obj.code);
   let code = obj.code;
   // 获取
@@ -48,9 +27,9 @@ function first() {
 
   // 判断openId是否存在
   if (openId == "" || openId == undefined || openId == "null") {
-    openId();
+    getopenId();
   } else {
-    window.location.href = "H5/home.html";
+   return;
   }
   console.log(code);
 
