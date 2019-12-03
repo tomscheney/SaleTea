@@ -85,5 +85,7 @@ function getProductList() {
 
 $(document).ready(function() {
   console.log("所有chanp!");
+  console.log(getOpenId());
   getProductList();
+  getOpenId();
 });
