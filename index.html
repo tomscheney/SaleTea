@@ -70,7 +70,7 @@
 		let obj = addr_obj()
 		console.log(obj.code)
 		 	//code 无值，
-		if(obj.code == ''|| obj.code == undefined || obj.code == 'null') {
+		if(obj.code === ''|| obj.code === undefined || obj.code === null) {
 			console.log("123")
 			let appid = "wx6e974f12e898a2ee"
 			let redirect_uri = "https://kidstoms.com/tea/index.html"
@@ -88,7 +88,7 @@
 		let openId=window.localStorage.getItem('openId');
 
 		// 判断openId是否存在
-		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
+		if (openId === '' || openId === undefined || openId === null) {
 			getOpenId();
 			alert('重新获取openId')
 		}else{
@@ -97,7 +97,7 @@
 		}
 		console.log(code)
 
-		function getopenId() {
+		function getOpenId() {
 			console.log(code)
 			// 查询openId
 			$.ajax({
