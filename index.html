@@ -51,35 +51,34 @@
             alert("不是微信");
         }
 
-	function addr_obj() {
-    let search = location.search;
-    console.log(search);
-    let obj = {};
-    console.log(obj);
-    let keyValues = search.slice(1).split("&");
-    console.log(keyValues);
-    keyValues.forEach(function(keyValue) {
-      let tempArr = keyValue.split("=");
-      let key = tempArr[0];
-      let value = tempArr[1];
-      obj[key] = value;
-    });
-    return obj;
-  }
-  let obj = addr_obj();
-  console.log(obj.code);
+// 	function addr_obj() {
+//     let search = location.search;
+//     console.log(search);
+//     let obj = {};
+//     console.log(obj);
+//     let keyValues = search.slice(1).split("&");
+//     console.log(keyValues);
+//     keyValues.forEach(function(keyValue) {
+//       let tempArr = keyValue.split("=");
+//       let key = tempArr[0];
+//       let value = tempArr[1];
+//       obj[key] = value;
+//     });
+//     return obj;
+//   }
+//   let obj = addr_obj();
+//   console.log(obj.code);
 
-  //code 无值，
-  let code = obj.code;
-  // 判断openId是否存在
-  if (openId == "" || openId == undefined || openId == "null") {
-    openId();
-  } else {
-    window.location.href = "H5/home.html";
-  }
+//   //code 无值，
+//   let code = obj.code;
+//   // 判断openId是否存在
+//   if (openId == "" || openId == undefined || openId == "null") {
+//     openId();
+//   } else {
+//     window.location.href = "H5/home.html";
+//   }
 
   function getopenId() {
-    let openId = window.localStorage.getItem("openId");
     // 查询openId
     $.ajax({
       url: "https://kidstoms.com/getOpenIdByCode",
