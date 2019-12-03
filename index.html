@@ -45,7 +45,7 @@
 		}
 		else{
 		    console.log("不是来自微信内置浏览器");
-            window.location.href="H5/home.html";
+            // window.location.href="H5/home.html";
             return;
 		}
 
@@ -94,7 +94,7 @@
 			alert('重新获取openId')
 		}else{
 			alert('openId已经存在')
-			window.location.href = "H5/home.html"
+			// window.location.href = "H5/home.html"
 		}
 		console.log(code)
 
@@ -115,7 +115,7 @@
 						var openId = result.openId;
 						console.log(openId)
 						window.localStorage.setItem('openId', openId);
-						window.location.href = "H5/product.html?openId=" + openId;
+						// window.location.href = "H5/product.html?openId=" + openId;
 						alert("openid:" + result.openId)
 					} else {
 						alert(res.msg);
