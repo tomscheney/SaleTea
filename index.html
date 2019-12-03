@@ -89,8 +89,7 @@
       },
       success: function(res) {
         console.log(res);
-        if (res.code === 200) {
-          // alert("openid" + JSON.stringify(res.data.openId));
+        if (res.code === "200") {
           let result = jQuery.parseJSON(res.data);
           var openId = result.openId;
           console.log(openId);
