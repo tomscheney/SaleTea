@@ -31,7 +31,7 @@ function addShopCart() {
     success: function(res) {
       console.log(res)
       // res就是后台接口返回的数据
-      if (res.data.code == "200") {
+      if (res.code === "200") {
         // alert(res.data.msg);
         console.log(13121212)
       }
@@ -62,6 +62,20 @@ $("#btn-car2").click(function() {
     .delay(1000)
     .fadeOut();
 });
+// 点击添加购物车 动画
+$(function() {
+	$('#btn-car2').shoping({
+		endElement: ".yuan",
+		iconCSS: "",
+		iconImg: "img/l.JPG",
+		endFunction: function(element) {
+			$("#num").html(parseInt($("#num").html()) + 1);
+			// console.log(element);
+			return false;
+		},
+	})
+})
+
 
 // 获取产品详情  getProductDetail接口
 $(document).ready(function() {

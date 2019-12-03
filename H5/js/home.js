@@ -1,6 +1,78 @@
+<<<<<<< HEAD
 // 获取全部数据
 function getProductList() {
   // 获取地址栏中的字符串，并将其转化为对象
+=======
+// // 方法
+function first() {
+    // 获取地址栏中的字符串，并将其转化为对象
+    function addr_obj() {
+        let {search} = location;
+        console.log(search);
+        let obj = {};
+        console.log(obj);
+        let keyValues = search.slice(1).split("&");
+        console.log(keyValues);
+        keyValues.forEach(function (keyValue) {
+            let tempArr = keyValue.split("=");
+            let key = tempArr[0];
+            // var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
+            let value = tempArr[1];
+            obj[key] = value;
+        });
+        return obj;
+    }
+
+    let obj = addr_obj();
+    console.log(obj.code);
+    let code = obj.code;
+    // 获取
+    let openId = window.localStorage.getItem("openId");
+
+    // 判断openId是否存在
+    if (openId == "" || openId == undefined || openId == "null") {
+        getOpenId();
+    } else {
+        return;
+    }
+    console.log(code);
+
+    function getOpenId() {
+        console.log(code);
+        // 查询openId
+        $.ajax({
+            url: "https://kidstoms.com/getOpenIdByCode",
+            type: "get",
+            dataType: "json",
+            data: {
+                openId: "openId"
+            },
+            success: function (res) {
+                if (res.code === 200) {
+                    // alert("openid" + JSON.stringify(res.data.openId));
+                    let result = jQuery.parseJSON(res.data);
+                    var openId = result.openId;
+                    console.log(openId);
+                    window.localStorage.setItem("openId", openId);
+                    window.location.href = "H5/product.html?openId=" + openId;
+                    alert("openid:" + result.openId);
+                } else {
+                    alert(res.msg);
+                }
+            },
+            error: function () {
+                console.log("XMLHttpRequest", XMLHttpRequest);
+            }
+        });
+    }
+}
+
+// 获取全部数据
+function getProductList() {
+  // 获取地址栏中的字符串，并将其转化为对象
+
+
+>>>>>>> b716f1d005ce9043ffc4aa0099ece9a9ad5f0636
   let openId = window.localStorage.getItem("openId");
   $.ajax({
     url: "https://kidstoms.com/getAllProduct",
