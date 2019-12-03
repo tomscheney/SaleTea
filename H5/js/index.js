@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 
     // 获取地址栏中的字符串，并将其转化为对象
-    function addr_obj() {
+    function getWXCode() {
         let search = location.search;
         cosnole.log(search)
         let obj = {};
@@ -38,7 +38,8 @@ $(document).ready(function(){
         });
         return obj;
     }
-    let obj = addr_obj()
+    let obj = getWXCode()
+    alert('code'+obj.code);
 
     console.log('code:'+obj.code)
     //code 无值，
