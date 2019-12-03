@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/jd_cart.css">
+	<script src="js/cart.js"></script>
 
 </head>
 <body>
@@ -79,41 +80,7 @@
 
 </div>
 </body>
-<script src="js/cart.js"></script>
 <script>
-	// 点击购物车  调queryShopCart接口
-	function getList() {
-		console.log(openId)
-		let openId= localStorage.getItem("openId");
-		// 获取数据渲染数据到页面
-		$.ajax({
-			url: "https://kidstoms.com/queryShopCart",
-			type: "post",
-			dataType: "json",
-			data: {
-				// openId:"openId",
-				openId: localStorage.getItem("openId"),
-			},
-			success: function(res) { // res就是后台接口返回的数据
-				console.log(res)
-				var menu = res.data.productList[0];
-				// 标题 价格
-				$(".p_name").text(menu.productDesc);
-				$(".GoodsPrice").text(menu.salePrice);
-				var len = [];
-				len = menu.productImages;
-				var html = "";
-				console.log(len)
-				for (var i = 0; i < len.length; i++) {
-					var imgI = len[i];
-					html += '<img src=' + imgI  + '/>';
 
-				}
-				console.log(imgI)
-				$(".img_box").html(html);
-				$(".jd_shop_con").css('display','block');
-			},
-		})
-	}
 	</script>
 </html>
