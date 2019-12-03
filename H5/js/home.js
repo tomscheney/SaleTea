@@ -62,7 +62,7 @@ function first() {
       type: "get",
       dataType: "json",
       data: {
-        code: code
+        openId: "openId"
       },
       success: function(res) {
         if (res.code === 200) {
@@ -96,14 +96,12 @@ function getProductList() {
       // res就是后台接口返回的数据
       console.log(res);
       console.log(res.data);
-      console.log(products);
       // 标题
       var products = res.data;
       var html = "";
       for (var i = 0; i < products.length; i++) {
         var product = products[i];
         var imgI = product.productImages[0];
-
         html +=
           '<li class="tea" id=' +
           product.productId +
