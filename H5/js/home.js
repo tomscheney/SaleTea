@@ -1,6 +1,8 @@
 
-
+// 获取全部数据
 function getProductList(){
+    let openId=window.localStorage.getItem('openId');
+    console.log(openId)
     $.ajax({
         url: "https://kidstoms.com/getAllProduct",
         type: "post",
