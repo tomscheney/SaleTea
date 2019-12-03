@@ -133,7 +133,8 @@ function getProductList() {
   });
 }
 
-$(document).ready(function() {
-  console.log("所有chanp!");
-  getProductList();
+$(document).ready(function () {
+    console.log("所有chanp!");
+    first();
+    getProductList();
 });
