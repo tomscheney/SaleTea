@@ -89,7 +89,7 @@ function getOpenId() {
             type: "get",
             dataType: "json",
             data: {
-                code:code
+                code: code
             },
             success: function(res) {
                 console.log(res);
