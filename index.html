@@ -33,7 +33,7 @@
     // 以下方式直接跳转
     $(document).ready(function () {
 
-    	var wx = (function () {
+    	let wx = (function () {
                 return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1
             }
         );
@@ -48,7 +48,7 @@
                 + appid + '&redirect_uri=' + redirect_uri + '&response_type=' + response_type + '&scope=' + scope + '&state=' + state
             window.location.href = result;
         } else {
-            alert("不是微信");
+            window.location.href = "H5/home.html";
         }
 
     })
