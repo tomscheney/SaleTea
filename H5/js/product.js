@@ -1,6 +1,8 @@
 let search = location.search;
 let list = search.split("=");
 let productId = list[1];
+let openId = localStorage.getItem("openId");
+console.log(openId)
 
 function confirmOrder() {
   location.href = "confirmOrder.html?productId=" + productId;
@@ -13,8 +15,7 @@ function shopCart() {
 }
 
 // 点击添加购物车 调addToShopCart接口
-let openId = localStorage.getItem("openId");
-console.log(openId)
+
 function addShopCart() {
   $.ajax({
     url: "https://kidstoms.com/addToShopCart",
