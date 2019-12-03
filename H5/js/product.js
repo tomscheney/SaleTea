@@ -7,18 +7,24 @@ console.log(list)
 console.log(productId)
 console.log(openId)
 
+// 点击立即购买
 function confirmOrder() {
-  location.href = "confirmOrder.html?productId=" + productId;
+  // location.href = "confirmOrder.html?productId=" + productId;
+  if(this.openId==""||this.openId==null){
+    location.href="phoneChecking.html"
+  } else {
+    location.href="confirmOrder.html"
+
+  }
 }
 
 // 点击购物车图标
 function shopCart() {
-  location.href = "shopCar.html?openId=" + window.localStorage.getItem("openId");
-  // location.href = "shopCar.html";
+  // location.href = "shopCar.html?openId=" + window.localStorage.getItem("openId");
+  location.href = "shopCar.html";
 }
 
 // 点击添加购物车 调addToShopCart接口
-
 function addShopCart() {
   $.ajax({
     url: "https://kidstoms.com/addToShopCart",
