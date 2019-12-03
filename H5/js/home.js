@@ -1,3 +1,10 @@
+// // 方法
+function first() {}
+
+// 获取全部数据
+function getProductList() {
+  // 获取地址栏中的字符串，并将其转化为对象
+  
 
   let openId = window.localStorage.getItem("openId");
   $.ajax({
