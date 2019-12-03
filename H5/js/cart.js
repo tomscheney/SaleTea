@@ -51,15 +51,13 @@ $(".minus").click(function() {
 // 数量加
 $(".plus").click(function() {
 	var t = $(this).parent().find('.am-num-text');
+	console.log(t)
 	t.val(parseInt(t.val()) + 1);
 	if (t.val() <= 1) {
 		t.val(1);
 	}
 	TotalPrice();
 });
-
-// background-size: 47px 100px;
-// background-position: 25px 0;
 // 点击商品按钮
 $(".GoodsCheck").click(function() {
 	var goods = $(this).closest(".one-shop").find(".GoodsCheck"); //获取本店铺的所有商品
