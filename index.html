@@ -45,7 +45,6 @@
 		}
 		else{
 		    console.log("不是来自微信内置浏览器");
-		    <!--       如果是微信站外，直接跳转               -->
             window.location.href="H5/home.html";
             return;
 		}
@@ -54,8 +53,11 @@
 		// 获取地址栏中的字符串，并将其转化为对象
 		function addr_obj() {
 		 let search = location.search;
+		 cosnole.log(search)
 		 let obj = {};
+		 cnsole.log(obj)
 		 let keyValues = search.slice(1).split("&");
+		 console.log(keyValues)
 		 keyValues.forEach(function(keyValue) {
 		 let tempArr = keyValue.split("=");
 		 let key = tempArr[0];
@@ -83,17 +85,17 @@
 		console.log(obj.code)
 		let code = obj.code;
 		// 获取
-		let getOpenID=window.localStorage.getItem('openId');
+		let openId=window.localStorage.getItem('openId');
 
 		// 判断openId是否存在
-		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
-			getOpenId();
+		if (openId == '' || openId == undefined || openId == 'null') {
+			openId();
 		}else{
 			window.location.href = "H5/home.html"
 		}
 		console.log(code)
 
-		function getOpenId() {
+		function getopenId() {
 			console.log(code)
 			// 查询openId
 			$.ajax({

@@ -9,6 +9,7 @@ function getProductList(){
         success: function (res) { // res就是后台接口返回的数据
             console.log(res)
             console.log(res.data)
+            console.log(products)
             // 标题
             var products = res.data;
             var html = "";
