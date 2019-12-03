@@ -1,7 +1,10 @@
 let search = location.search;
 let list = search.split("=");
 let productId = list[1];
-let openId = localStorage.getItem("openId");
+let openId = window.localStorage.getItem("openId");
+console.log(search)
+console.log(list)
+console.log(productId)
 console.log(openId)
 
 function confirmOrder() {
@@ -10,8 +13,8 @@ function confirmOrder() {
 
 // 点击购物车图标
 function shopCart() {
-  // location.href = "shopCar.html?openId=" + window.localStorage.getItem("openId");
-  location.href = "shopCar.html";
+  location.href = "shopCar.html?openId=" + window.localStorage.getItem("openId");
+  // location.href = "shopCar.html";
 }
 
 // 点击添加购物车 调addToShopCart接口
@@ -23,7 +26,6 @@ function addShopCart() {
     dataType: "json",
     data: {
       openId: "openId",
-      // productIsd: location.search.substr(1, 8)
       productId:location.search.substr(1, 8)
     },
     success: function(res) {
@@ -60,19 +62,6 @@ $("#btn-car2").click(function() {
     .delay(1000)
     .fadeOut();
 });
-// 点击添加购物车 动画
-// $(function() {
-// 	$('#btn-car2').shoping({
-// 		endElement: ".yuan",
-// 		iconCSS: "",
-// 		iconImg: "img/l.JPG",
-// 		endFunction: function(element) {
-// 			$("#num").html(parseInt($("#num").html()) + 1);
-// 			// console.log(element);
-// 			return false;
-// 		},
-// 	})
-// })
 
 // 获取产品详情  getProductDetail接口
 $(document).ready(function() {
