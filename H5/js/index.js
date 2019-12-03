@@ -7,7 +7,6 @@ $(document).ready(function () {
         }
     )();
     if (wx) {
-        alert("是微信");
         let appid = "wx6e974f12e898a2ee"
         let redirect_uri = "https://kidstoms.com/tea/H5/home.html"
         let response_type = "code"
@@ -17,7 +16,6 @@ $(document).ready(function () {
             + appid + '&redirect_uri=' + redirect_uri + '&response_type=' + response_type + '&scope=' + scope + '&state=' + state
         window.location.href = result;
     } else {
-        alert("不是微信");
     }
 
 })
