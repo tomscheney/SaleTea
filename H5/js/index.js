@@ -51,7 +51,7 @@ $(document).ready(function(){
         let scope = "snsapi_base"
         let result = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
             + appid + '&redirect_uri='+redirect_uri+'&response_type='+response_type+'&scope='+scope+'&state='+state
-        // window.location.href=result;
+        window.location.href=result;
         return;
     }
     console.log(obj.code)
@@ -65,7 +65,7 @@ $(document).ready(function(){
         alert('重新获取openId')
     }else{
         alert('openId已经存在')
-        // window.location.href = "H5/home.html"
+        window.location.href = "H5/home.html"
     }
     console.log(code)
 
@@ -86,7 +86,7 @@ $(document).ready(function(){
                     var openId = result.openId;
                     console.log(openId)
                     window.localStorage.setItem('openId', openId);
-                    // window.location.href = "H5/product.html?openId=" + openId;
+                    window.location.href = "H5/product.html?openId=" + openId;
                     alert("openid:" + result.openId)
                 } else {
                     alert(res.msg);
