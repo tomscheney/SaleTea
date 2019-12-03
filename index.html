@@ -88,9 +88,11 @@
 		let openId=window.localStorage.getItem('openId');
 
 		// 判断openId是否存在
-		if (openId == '' || openId == undefined || openId == 'null') {
-			openId();
+		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
+			getOpenId();
+			alert('重新获取openId')
 		}else{
+			alert('openId已经存在')
 			window.location.href = "H5/home.html"
 		}
 		console.log(code)
