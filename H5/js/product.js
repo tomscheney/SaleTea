@@ -33,7 +33,8 @@ function addShopCart() {
     dataType: "json",
     data: {
       openId: window.localStorage.getItem("openId"),
-      productId:productId
+      productId:location.search.substr(1, 8)
+      // productId: productId
     },
     success: function(res) {
       console.log(res);
