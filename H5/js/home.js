@@ -1,13 +1,13 @@
 // 获取openid 调getOpenId接口
 function getOpenId() {
-  console.log(code);
+//   console.log(code);
   // 查询openId
   $.ajax({
     url: "https://kidstoms.com/getOpenIdByCode",
     type: "get",
     dataType: "json",
     data: {
-      code: code
+      openId: "openId"
     },
     success: function(res) {
       if (res.code === 200) {
@@ -85,7 +85,6 @@ function getProductList() {
 
 $(document).ready(function() {
   console.log("所有chanp!");
-  console.log(getOpenId());
   getProductList();
   getOpenId();
 });
