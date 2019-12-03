@@ -1,32 +1,32 @@
-// // 获取地址栏中的字符串，并将其转化为对象
-// function addr_obj() {
-// 	var search = location.search;
-// 	var obj = {};
-// 	var keyValues = search.slice(1).split("&");
-// 	keyValues.forEach(function(keyValue) {
-// 		var tempArr = keyValue.split("=");
-// 		var key = tempArr[0];
-// 		// var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
-// 		var value = tempArr[1];
-// 		obj[key] = value;
-// 	});
-// 	return obj;
-// }
-// var obj = addr_obj()
-// var openId = obj.openId;
-// console.log(openId)
-// var that;
-// $('.delete_box').on('click', function() {
-// 	$(this).children('.delete_up').css({
-// 			transition: 'all 1s',
-// 			'transformOrigin': "0 5px",
-// 			transform: 'rotate(-30deg) translateY(2px)'
-// 		}
+// 获取地址栏中的字符串，并将其转化为对象
+function addr_obj() {
+	var search = location.search;
+	var obj = {};
+	var keyValues = search.slice(1).split("&");
+	keyValues.forEach(function(keyValue) {
+		var tempArr = keyValue.split("=");
+		var key = tempArr[0];
+		// var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
+		var value = tempArr[1];
+		obj[key] = value;
+	});
+	return obj;
+}
+var obj = addr_obj()
+var openId = obj.openId;
+console.log(openId)
+var that;
+$('.delete_box').on('click', function() {
+	$(this).children('.delete_up').css({
+			transition: 'all 1s',
+			'transformOrigin': "0 5px",
+			transform: 'rotate(-30deg) translateY(2px)'
+		}
 
-// 	)
-// 	$('.jd_win').show();
-// 	that = $(this);
-// })
+	)
+	$('.jd_win').show();
+	that = $(this);
+})
 //取消删除
 $('.cancle').on('click', function() {
 	$('.jd_win').hide();
