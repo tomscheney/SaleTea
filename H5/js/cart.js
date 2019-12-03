@@ -16,17 +16,7 @@ var obj = addr_obj()
 var openId = obj.openId;
 console.log(openId)
 var that;
-$('.delete_box').on('click', function() {
-	$(this).children('.delete_up').css({
-			transition: 'all 1s',
-			'transformOrigin': "0 5px",
-			transform: 'rotate(-30deg) translateY(2px)'
-		}
 
-	)
-	$('.jd_win').show();
-	that = $(this);
-})
 //取消删除
 $('.cancle').on('click', function() {
 	$('.jd_win').hide();
