@@ -26,13 +26,13 @@ function first() {
 
     // 判断openId是否存在
     if (openId == "" || openId == undefined || openId == "null") {
-        getopenId();
+        getOpenId();
     } else {
         return;
     }
     console.log(code);
 
-    function getopenId() {
+    function getOpenId() {
         console.log(code);
         // 查询openId
         $.ajax({
