@@ -8,7 +8,7 @@
 		}
 
 		function shopCart() {
-			location.href = "shopCar.html?openId="+localStorage.getItem("openId");
+			location.href = "shopCar.html?openId="+window.localStorage.getItem("openId");
 		}
 		function addShopCart() {
 			$.ajax({

@@ -88,7 +88,9 @@
 		// 判断openId是否存在
 		if (getOpenID == '' || getOpenID == undefined || getOpenID == 'null') {
 			getOpenId();
+			alert('重新获取openId')
 		}else{
+			alert('openId已经存在')
 			window.location.href = "H5/home.html"
 		}
 		console.log(code)
