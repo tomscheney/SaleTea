@@ -2,10 +2,10 @@
 function first() {
     // 获取地址栏中的字符串，并将其转化为对象
     function addr_obj() {
-        let search = location.search;
-        cosnole.log(search);
+        let {search} = location;
+        console.log(search);
         let obj = {};
-        cnsole.log(obj);
+        console.log(obj);
         let keyValues = search.slice(1).split("&");
         console.log(keyValues);
         keyValues.forEach(function (keyValue) {
