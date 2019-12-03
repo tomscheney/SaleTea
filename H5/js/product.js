@@ -24,14 +24,14 @@ function shopCart() {
   location.href = "shopCar.html";
 }
 
-// 点击添加购物车 调addToShopCart接口
+// 点击加入购物车 调addToShopCart接口
 function addShopCart() {
   $.ajax({
     url: "https://kidstoms.com/addToShopCart",
     type: "post",
     dataType: "json",
     data: {
-      openId: "openId",
+      openId: window.localStorage.getItem("openId"),
       productId:location.search.substr(1, 8)
     },
     success: function(res) {
