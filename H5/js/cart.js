@@ -185,7 +185,6 @@ function DelShop() {
 
 // 点击购物车  调queryShopCart接口
 function getList() {
-	console.log(openId)
 	let openId= localStorage.getItem("openId");
 	// 获取数据渲染数据到页面
 	$.ajax({
@@ -193,7 +192,7 @@ function getList() {
 		type: "post",
 		dataType: "json",
 		data: {
-			openId:"openId",
+			openId:openId,
 		},
 		success: function(res) { // res就是后台接口返回的数据
 			console.log(res)
