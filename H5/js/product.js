@@ -71,6 +71,23 @@ $("#btn-car2").click(function () {
         .delay(1000)
         .fadeOut();
 });
+<<<<<<< HEAD
+=======
+// 点击添加购物车 动画
+$(function () {
+    $("#btn-car2").shoping({
+        endElement: ".yuan",
+        iconCSS: "",
+        iconImg: "img/l.JPG",
+        endFunction: function (element) {
+            $("#num").html(parseInt($("#num").html()) + 1);
+            // console.log(element);
+            return false;
+        }
+    });
+});
+
+>>>>>>> 6d0e33acbcf2e2e3a169bcd28744ebad6f838d32
 // 获取产品详情  getProductDetail接口
 $(document).ready(function () {
     // console.log("获取产品了!")
