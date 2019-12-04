@@ -192,7 +192,6 @@ function getList() {
         console.log(result);
         var htmls = template("addressTpl", { "result": result });
         console.log(htmls);
-        htmls = '<html>hello</html>'
         var obj = $("#address_box>ul");
         console.log(obj);
         var results = $("#address_box>ul").html(htmls);
