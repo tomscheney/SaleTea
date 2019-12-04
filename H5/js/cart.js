@@ -186,16 +186,17 @@ function getList() {
       openId: openId
     },
     success: function(res) {
-      console.log(res);
-      var result = res.data.productList;
-      console.log(result);
-      var html = template("addressTpl", { result: result });
-      console.log(html);
-	  var t = $("#address-box").html(123);
-	  var s = $("#address-box").html();
-	  console.log(t);
-	  console.log(s);
-
+      if (res.data.code == "200") {
+        console.log(res);
+        var result = res.data.productList;
+        console.log(result);
+        var html = template("addressTpl", { result: result });
+        console.log(html);
+        var t = $("#address-box").html(123);
+        var s = $("#address-box").html();
+        console.log(t);
+        console.log(s);
+      }
     }
   });
 }
