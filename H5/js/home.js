@@ -56,9 +56,14 @@ $(document).ready(function () {
     getProductList();
 
     let openId =  window.localStorage.getItem("openId");
-
+    let wx = (function () {
+            return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1
+        }
+    )();
     if (openId === undefined || openId === null){
-        getOpenId()
+        if (wx){
+            getOpenId()
+        }
     }
 
 });
