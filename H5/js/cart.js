@@ -190,13 +190,10 @@ function getList() {
       if (res.code == "200") {
         var result = res.data.productList;
         console.log(result);
-        var htmls = template("addressTpl", { result: result });
+        var htmls = template("addressTpl", { "result": result });
         console.log(htmls);
         var obj = $("#address-box");
         console.log(obj);
-        var test = $("#tests")
-        console.log(test);
-
         var results = $("#address-box").html(result);
         console.log(results);
       }
