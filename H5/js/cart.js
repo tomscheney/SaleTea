@@ -187,14 +187,13 @@ function getList() {
     },
     success: function(res) {
       console.log(res);
-      if (res.code == "200") {
-        console.log("进来了");
+      if (res.data.code == "200") {
         var result = res.data.productList;
         console.log(result);
         var html = template("addressTpl", { result: result });
         console.log(html);
-        $("#address-box").click("11111111");
-        // document.getElementById("address-box").innerHTML = html;
+        // $("#address-box").html(html);
+        document.getElementById("address-box").innerHTML = html;
       }
     }
   });
