@@ -68,32 +68,32 @@
 <!--      </div>-->
 <!--    </div>-->
 
-<!--    <script type="text/html" id="addressTpl">-->
+    <script type="text/html" id="addressTpl">
 
-<!--      <% for(var i = 0; i < result.length; i++){ %>-->
-<!--      <div class="product-box">-->
-<!--          <div class="product-ckb"><em class="product-em product-xz"></em></div>-->
-<!--          <div class="product-sx">-->
-<!--              <a href="###">-->
-<!--                  <img :src="<%= result[i].productImages[i]%>" class="product-img" />-->
-<!--                  <span class="product-name"-->
-<!--                  ><%= result[i].productName%><%= result[i].productDesc%></span-->
-<!--                  >-->
-<!--              </a>-->
-<!--              <span class="product-price"-->
-<!--              >¥&thinsp;<span class="price"><%= result[i].productPrice%></span></span-->
-<!--              >-->
-<!--              <div class="product-amount">-->
-<!--                  <div class="product_gw">-->
-<!--                      <em class="product-jian">-</em>-->
-<!--                      <input type="text" value="1" class="product-num" />-->
-<!--                      <em class="product-add">+</em>-->
-<!--                  </div>-->
-<!--              </div>-->
-<!--              <div class="product-del"><img src="img/deleteico.png" /></div>-->
-<!--          </div>-->
-<!--      </div>-->
-<!--      <% } %>-->
-<!--    </script>-->
+      <% for(var i = 0; i < result.length; i++){ %>
+      <div class="product-box">
+          <div class="product-ckb"><em class="product-em product-xz"></em></div>
+          <div class="product-sx">
+              <a href="###">
+                  <img :src="<%= result[i].productImages[i]%>" class="product-img" />
+                  <span class="product-name"
+                  ><%= result[i].productName%><%= result[i].productDesc%></span
+                  >
+              </a>
+              <span class="product-price"
+              >¥&thinsp;<span class="price"><%= result[i].productPrice%></span></span
+              >
+              <div class="product-amount">
+                  <div class="product_gw">
+                      <em class="product-jian">-</em>
+                      <input type="text" value="1" class="product-num" />
+                      <em class="product-add">+</em>
+                  </div>
+              </div>
+              <div class="product-del"><img src="img/deleteico.png" /></div>
+          </div>
+      </div>
+      <% } %>
+    </script>
   </body>
 </html>
