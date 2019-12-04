@@ -193,8 +193,8 @@ function getList() {
         console.log(result);
         var html = template("addressTpl", { result: result });
         console.log(html);
-        $(html).append("#address-box");
-        // document.getElementById("address-box").innerHTML = html;
+        $("#address-box").appendTo(html);
+        document.getElementById("address-box").innerHTML = html;
       }
     }
   });
