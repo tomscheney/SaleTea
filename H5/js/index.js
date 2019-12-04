@@ -16,6 +16,7 @@ $(document).ready(function () {
             + appid + '&redirect_uri=' + redirect_uri + '&response_type=' + response_type + '&scope=' + scope + '&state=' + state
         window.location.href = result;
     } else {
+        window.location.href = "H5/home.html";
     }
 
 })
