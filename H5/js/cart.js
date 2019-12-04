@@ -186,25 +186,9 @@ function getList() {
       openId: openId
     },
     success: function(res) {
-      // res就是后台接口返回的数据
       console.log(res);
-      var menu = res.data.productList[0];
-      // 标题 价格
-      $(".p_name").text(menu.productDesc);
-      $(".GoodsPrice").text(menu.salePrice);
-      var menus = res.data.amounts;
-      $(".GoodsAmounts").text(menus);
-      var len = [];
-      len = menu.productImages;
-      var html = "";
-      console.log(len);
-      for (var i = 0; i < len.length; i++) {
-        var imgI = len[i];
-        html += "<img src=" + imgI + "/>";
-      }
-      console.log(imgI);
-      $(".img_box").html(html);
-      $(".jd_shop_con").css("display", "block");
+      var html = template("addressTpl", {});
+      console.log(html);
     }
   });
 }
