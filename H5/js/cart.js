@@ -183,10 +183,10 @@ function getList() {
     type: "post",
     dataType: "json",
     data: {
-      openId: openId
+      openId: "openId"
     },
     success: function(res) {
-        console.log(res);
+      console.log(res);
       if (res.data.code == "200") {
         var result = res.data.productList;
         console.log(result);
