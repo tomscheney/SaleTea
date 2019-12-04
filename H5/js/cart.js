@@ -192,9 +192,8 @@ function getList() {
         console.log(result);
         var htmls = template("addressTpl", { result: result });
         console.log(htmls);
-        $("#address-box").html(result);
-        // $(".product").html("132")
-        // html = document.getElementById("address-box").innerHTML
+        var results = $("#address-box").html(result);
+        console.log(results);
       }
     }
   });
