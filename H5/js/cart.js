@@ -194,7 +194,7 @@ function getList() {
         console.log(htmls);
         var obj = $("#address-box>ul");
         console.log(obj);
-        var results = $("#address-box>ul").html(result);
+        var results = $("#address-box>ul").html(htmls);
         console.log(results);
       }
     }
