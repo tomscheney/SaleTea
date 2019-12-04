@@ -187,7 +187,7 @@ function getList() {
     },
     success: function(res) {
       console.log(res);
-      var result = res.data.data.productList;
+      var result = res.data.productList;
       console.log(result);
       var html = template("addressTpl", {});
       console.log(html);
