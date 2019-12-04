@@ -187,8 +187,8 @@ function getList() {
     },
     success: function(res) {
       console.log(res);
-      if (res.data.code == "200") {
-		  console.log("进来了")
+      if (res.code == "200") {
+        console.log("进来了");
         var result = res.data.productList;
         console.log(result);
         var html = template("addressTpl", { result: result });
