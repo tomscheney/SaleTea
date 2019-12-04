@@ -194,7 +194,7 @@ function getList() {
         var html = template("addressTpl", { result: result });
         console.log(html);
         $("#address-box").appendTo(html);
-        document.getElementById("address-box").innerHTML = html;
+        // document.getElementById("address-box").innerHTML = html;
       }
     }
   });
