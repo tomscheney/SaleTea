@@ -194,6 +194,9 @@ function getList() {
         console.log(htmls);
         var obj = $("#address-box");
         console.log(obj);
+        var test = $("#tests")
+        console.log(test);
+
         var results = $("#address-box").html(result);
         console.log(results);
       }
