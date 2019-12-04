@@ -172,39 +172,27 @@ function DelShop() {
 
 // 点击购物车  调queryShopCart接口
 function getList() {
-    let openId= localStorage.getItem("openId");
-    // 获取数据渲染数据到页面
-    $.ajax({
-        url: "https://kidstoms.com/queryShopCart",
-        type: "post",
-        dataType: "json",
-        data: {
-            openId:openId,
-        },
-        success: function(res) { // res就是后台接口返回的数据
-            console.log(res)
-            if (res.code === 200) {
-                var menu = res.data.productList[0];
-                // 标题 价格
-                $(".p_name").text(menu.productDesc);
-                $(".GoodsPrice").text(menu.salePrice);
-                var len = [];
-                len = menu.productImages;
-                var html = "";
-                console.log(len)
-                for (var i = 0; i < len.length; i++) {
-                    var imgI = len[i];
-                    html += '<img src=' + imgI + '/>';
-
-                }
-                console.log(imgI)
-                $(".img_box").html(html);
-                $(".jd_shop_con").css('display', 'block');
-            } else {
-                alert(res.msg)
-            }
-        },
-    })
+  let openId = localStorage.getItem("openId");
+  // 获取数据渲染数据到页面
+  $.ajax({
+    url: "https://kidstoms.com/queryShopCart",
+    type: "post",
+    dataType: "json",
+    data: {
+      openId: openId
+    },
+    success: function(res) {
+      console.log(res);
+      if (res.code == "200") {
+        var result = res.data.productList;
+        console.log(result);
+        var html = template("addressTpl", { result: result });
+        console.log(html);
+        $("#address-box").html(html);
+        document.getElementById("address-box").innerHTML = html;
+      }
+    }
+  });
 }
 
 $(document).ready(function() {
