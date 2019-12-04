@@ -175,30 +175,28 @@ function DelShop() {
 }
 
 // 点击购物车  调queryShopCart接口
-function getList() {
-  let openId = localStorage.getItem("openId");
-  // 获取数据渲染数据到页面
-  $.ajax({
-    url: "https://kidstoms.com/queryShopCart",
-    type: "post",
-    dataType: "json",
-    data: {
-      openId: openId
-    },
-    success: function(res) {
-      console.log(res);
-      if (res.code == "200") {
-        var result = res.data.productList;
-        console.log(result);
-        var html = template("addressTpl", { result: result });
-        $(html).appendTo("#address-box");
-        // $("#address-box").append(html);
-        // html = document.getElementById("address-box").innerHTML
-      
-      }
-    }
-  });
-}
+// function getList() {
+//   let openId = localStorage.getItem("openId");
+//   // 获取数据渲染数据到页面
+//   $.ajax({
+//     url: "https://kidstoms.com/queryShopCart",
+//     type: "post",
+//     dataType: "json",
+//     data: {
+//       openId: openId
+//     },
+//     success: function(res) {
+//       console.log(res);
+//       if (res.code == "200") {
+//         var result = res.data.productList;
+//         console.log(result);
+//         var html = template("addressTpl", { result: result });
+//          $("#address-box").html(html);
+//         // html = document.getElementById("address-box").innerHTML
+//       }
+//     }
+//   });
+// }
 
 $(document).ready(function() {
     getList();
