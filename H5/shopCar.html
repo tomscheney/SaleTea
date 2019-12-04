@@ -26,10 +26,30 @@
       <p class="fadeInDown animated">您正在安全购物环境中，请放心购物</p>
     </div>
 
-    <!-- 模板字符串 -->
-    <ul id="address-box" class="body">
+    <div class="body">
+      <!-- 模板字符串 -->
+      <div id="address-box" class="body"></div>
 
-    </ul>
+      <div class="product-js">
+        <div class="product-al">
+          <div class="product-all">
+            <em class=""></em>
+          </div>
+          <div class="all-xz">
+            <span class="product-all-qx">全选</span>
+            <div class="all-sl" style="display: none;">
+              (<span class="product-all-sl">0</span>)
+            </div>
+          </div>
+        </div>
+        <a href="" class="product-sett product-sett-a">结算</a>
+        <div class="all-product">
+          <span class="all-product-a"
+            >¥&thinsp;<span class="all-price">296</span></span
+          >
+        </div>
+      </div>
+    </div>
 
     <!--购物车空-->
     <div class="kon-cat">
@@ -45,8 +65,11 @@
     </div>
 
     <script type="text/template" id="addressTpl">
+
       <% for(var i = 0; i < result.length; i++){ %>
-        <li class="product">
+
+        <div class="product">
+
           <div class="product-box">
             <div class="product-ckb"><em class="product-em product-xz"></em></div>
             <div class="product-sx">
@@ -69,26 +92,8 @@
               <div class="product-del"><img src="img/deleteico.png" /></div>
             </div>
           </div>
-        </li>
-        <div class="product-js">
-          <div class="product-al">
-            <div class="product-all">
-              <em class=""></em>
-            </div>
-            <div class="all-xz">
-              <span class="product-all-qx">全选</span>
-              <div class="all-sl" style="display: none;">
-                (<span class="product-all-sl">0</span>)
-              </div>
-            </div>
-          </div>
-          <a href="" class="product-sett product-sett-a">结算</a>
-          <div class="all-product">
-            <span class="all-product-a"
-              >¥&thinsp;<span class="all-price">296</span></span
-            >
-          </div>
-        </li>
+
+        </div>
       <% } %>
     </script>
   </body>
