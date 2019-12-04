@@ -55,22 +55,13 @@ $(document).ready(function () {
     console.log("所有chanp!");
     getProductList();
 
-<<<<<<< HEAD
     let openId =  window.localStorage.getItem("openId");
-=======
-    let openId = window.localStorage.getItem("openId");
->>>>>>> 6d0e33acbcf2e2e3a169bcd28744ebad6f838d32
     let wx = (function () {
             return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1
         }
     )();
-<<<<<<< HEAD
     if (openId === undefined || openId === null){
         if (wx){
-=======
-    if (openId === undefined || openId === null) {
-        if (wx) {
->>>>>>> 6d0e33acbcf2e2e3a169bcd28744ebad6f838d32
             getOpenId()
         }
     }
