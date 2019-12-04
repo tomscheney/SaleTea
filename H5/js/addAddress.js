@@ -1,3 +1,12 @@
+let search = location.search;
+let list = search.split("=");
+let productId = list[1];
+let openId = window.localStorage.getItem("openId");
+console.log(search);
+console.log(list);
+console.log(productId);
+console.log(openId);
+
 // 进入添加地址列表页面就 调getAllAddressByOpenId接口
 $(function() {
   let params = location.search.split("=");
