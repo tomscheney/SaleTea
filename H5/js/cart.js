@@ -191,9 +191,10 @@ function getList() {
         var result = res.data.productList;
         console.log(result);
         var html = template("addressTpl", { result: result });
+        var html = html;
+        // $("#address-box").append(html);
+        html = document.getElementById("address-box").innerHTML
         console.log(html);
-        $("#address-box").append(html);
-        document.getElementById("address-box").innerHTML = html;
       }
     }
   });
