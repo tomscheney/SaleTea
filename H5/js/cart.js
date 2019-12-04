@@ -1,173 +1,177 @@
 // 获取地址栏中的字符串，并将其转化为对象
-
-let openId = location.search.split("=")[1];
-console.log(openId)
-var that;
-$('.delete_box').on('click', function() {
-    $(this).children('.delete_up').css({
-            transition: 'all 1s',
-            'transformOrigin': "0 5px",
-            transform: 'rotate(-30deg) translateY(2px)'
-        }
-
-    )
-    $('.jd_win').show();
-    that = $(this);
-})
-//取消删除
-$('.cancle').on('click', function() {
-    $('.jd_win').hide();
-    $('.delete_up').css('transform', 'none')
-})
-//确认删除
-$('.submit').on('click', function() {
-    that.parent().parent().parent().parent().remove();
-    $('.jd_win').hide();
-    DelShop();
-})
-
-
-$('.delete').click(function() {
-    var t = $(this).parent('td').parent('tr');
-    var tt = $(this).parent('td').find('input[class*=text_box]');
-    tt.val(0);
-
-    // setTotal();
-    t.hide();
-});
-
-// 数量减
-$(".minus").click(function() {
-    var t = $(this).parent().find('.am-num-text');
-    t.val(parseInt(t.val()) - 1);
-    if (t.val() <= 1) {
-        t.val(1);
-    }
-    TotalPrice();
-});
-// 数量加
-$(".plus").click(function() {
-    var t = $(this).parent().find('.am-num-text');
-    t.val(parseInt(t.val()) + 1);
-    if (t.val() <= 1) {
-        t.val(1);
-    }
-    TotalPrice();
-});
-
-// background-size: 47px 100px;
-// background-position: 25px 0;
-// 点击商品按钮
-$(".GoodsCheck").click(function() {
-    var goods = $(this).closest(".one-shop").find(".GoodsCheck"); //获取本店铺的所有商品
-    var goodsC = $(this).closest(".one-shop").find(".GoodsCheck:checked"); //获取本店铺所有被选中的商品
-    var Shops = $(this).closest(".one-shop").find(".ShopCheck"); //获取本店铺的全选按钮
-    if (goods.length == goodsC.length) { //如果选中的商品等于所有商品
-        Shops.prop('checked', true); //店铺全选按钮被选中
-        if ($(".ShopCheck").length == $(".ShopCheck:checked").length) { //如果店铺被选中的数量等于所有店铺的数量
-            $("#AllCheck").prop('checked', true); //全选按钮被选中
-            TotalPrice();
-        } else {
-            $("#AllCheck").prop('checked', false); //else全选按钮不被选中
-            TotalPrice();
-        }
-    } else { //如果选中的商品不等于所有商品
-        Shops.prop('checked', false); //店铺全选按钮不被选中
-        $("#AllCheck").prop('checked', false); //全选按钮也不被选中
-        // 计算
-        TotalPrice();
-        // 计算
-    }
-});
-// 点击店铺按钮
-$(".ShopCheck").change(function() {
-    if ($(this).prop("checked") == true) { //如果店铺按钮被选中
-        $(this).parents(".one-shop").find(".goods-check").prop('checked', true); //店铺内的所有商品按钮也被选中
-        if ($(".ShopCheck").length == $(".ShopCheck:checked").length) { //如果店铺被选中的数量等于所有店铺的数量
-            $("#AllCheck").prop('checked', true); //全选按钮被选中
-            TotalPrice();
-        } else {
-            $("#AllCheck").prop('checked', false); //else全选按钮不被选中
-            TotalPrice();
-        }
-    } else { //如果店铺按钮不被选中
-        $(this).parents(".one-shop").find(".goods-check").prop('checked', false); //店铺内的所有商品也不被全选
-        $("#AllCheck").prop('checked', false); //全选按钮也不被选中
-        TotalPrice();
-    }
-});
-// 点击全选按钮
-$("#AllCheck").click(function() {
-    if ($(this).prop("checked") == true) { //如果全选按钮被选中
-        $(".goods-check").prop('checked', true); //所有按钮都被选中
-        TotalPrice();
-    } else {
-        $(".goods-check").prop('checked', false); //else所有按钮不全选
-        TotalPrice();
-    }
-    $(".ShopCheck").change(); //执行店铺全选的操作
-});
-
-function TotalPrice() {
-    var allprice = 0; //总价
-    $(".one-shop").each(function() { //循环每个店铺
-        var oprice = 0; //店铺总价
-        $(this).find(".GoodsCheck").each(function() { //循环店铺里面的商品
-            if ($(this).is(":checked")) { //如果该商品被选中
-                var num = parseInt($(this).parents(".one-goods").find(".am-num-text").val()); //得到商品的数量
-                var price = parseFloat($(this).parents(".one-goods").find(".GoodsPrice").text()); //得到商品的单价
-                var total = price * num; //计算单个商品的总价
-                oprice += total; //计算该店铺的总价
-            }
-            $(this).closest(".one-shop").find(".ShopTotal").text(oprice.toFixed(2)); //显示被选中商品的店铺总价
-        });
-        var oneprice = parseFloat($(this).find(".ShopTotal").text()); //得到每个店铺的总价
-        allprice += oneprice; //计算所有店铺的总价
-    });
-    $("#AllTotal").text(allprice.toFixed(2)); //输出全部总价
+function addr_obj() {
+  var search = location.search;
+  var obj = {};
+  var keyValues = search.slice(1).split("&");
+  keyValues.forEach(function(keyValue) {
+    var tempArr = keyValue.split("=");
+    var key = tempArr[0];
+    // var value = tempArr[1].indexOf("|") > 0 ? tempArr[1].split("|") : tempArr[1];
+    var value = tempArr[1];
+    obj[key] = value;
+  });
+  return obj;
 }
+var obj = addr_obj();
+var openId = obj.openId;
+console.log(openId);
+var that;
 
-var allprice = 0; //总价
-$(".one-shop").each(function() { //循环每个店铺
-    var oprice = 0; //店铺总价
-    $(this).find(".img_box").each(function() { //循环店铺里面的商品
-        if ($(this).is(":checked")) { //如果该商品被选中
-            var num = parseInt($(this).parents(".one-goods").find(".am-num-text").val()); //得到商品的数量
-            var price = parseFloat($(this).parents(".one-goods").find(".GoodsPrice").text()); //得到商品的单价
-            var total = price * num; //计算单个商品的总价
-            oprice += total; //计算该店铺的总价
-        }
-        $(this).closest(".one-shop").find(".ShopTotal").text(oprice.toFixed(2)); //显示被选中商品的店铺总价
-    });
-    var oneprice = parseFloat($(this).find(".ShopTotal").text()); //得到每个店铺的总价
-    allprice += oneprice; //计算所有店铺的总价
-});
-$("#AllTotal").text(allprice.toFixed(2)); //输出全部总价
-// 页面数据为空时 按钮为不可选中状态
-$('.p_name').change(function(event) {
-    /* Act on the event */
-    var txtVal=$(this).val();
-    if (txtVal==='') {
-        $('#btn-car3').attr('disabled',"true");
-    }else{
-        $('#btn-car3').attr('disabled',"false");
+$(function() {
+  //加的效果
+  $(".product-add").click(function() {
+    var n = $(this)
+      .prev()
+      .val();
+    var num = parseInt(n) + 1;
+    if (num == 99) {
+      return;
     }
+    $(this)
+      .prev()
+      .val(num);
+    TotalPrice();
+  });
+  //减的效果
+  $(".product-jian").click(function() {
+    var n = $(this)
+      .next()
+      .val();
+    var num = parseInt(n) - 1;
+    if (num == 0) {
+      return;
+    }
+    $(this)
+      .next()
+      .val(num);
+    TotalPrice();
+  });
+
+  $(".product-ckb").click(function() {
+    $(this)
+      .children("em")
+      .toggleClass("product-xz");
+    TotalPrice();
+    productxz();
+  });
+  //全选产品
+  $(".product-al").click(function() {
+    var fxk = $(".product-em");
+    var qx = $(".product-all em");
+    qx.toggleClass("product-all-on");
+    if (
+      $(this)
+        .find(".product-all em")
+        .is(".product-all-on")
+    ) {
+      fxk.addClass("product-xz");
+    } else {
+      fxk.removeClass("product-xz");
+    }
+    TotalPrice();
+    shuliang();
+  });
+  //删除产品
+  $(".product-del").click(function() {
+    if (confirm("您确定要删除当前商品？")) {
+      $(this)
+        .closest(".product-box")
+        .remove();
+    }
+
+    koncat();
+    TotalPrice();
+    shuliang();
+  });
+
+  TotalPrice();
+  shuliang();
+  koncat();
 });
+//选中产品
+function productxz() {
+  var xz = $(".product-em");
+  var xz1 = $(".product-xz");
+  if (xz1.length == xz.length) {
+    $(".product-all em").addClass("product-all-on");
+  } else {
+    $(".product-all em").removeClass("product-all-on");
+  }
+  shuliang();
+  TotalPrice();
+}
+//计算产品价格
+function TotalPrice() {
+  //总价
+  var total = 0;
+  $(".product-em").each(function() {
+    if ($(this).is(".product-xz")) {
+      var price = parseInt(
+        $(this)
+          .parents(".product-ckb")
+          .siblings()
+          .find(".price")
+          .text()
+      ); //得到产品单价
+      var slproice = parseInt(
+        $(this)
+          .parents(".product-ckb")
+          .siblings()
+          .find(".product-num")
+          .val()
+      ); //得到产品数量
+      var dgtotal = price * slproice;
+      total += dgtotal;
+    }
+    $(".all-price").text(total.toFixed(2)); //输出全部总价
+  });
+}
+//获取选择产品数量
+function shuliang() {
+  $(".product-all-sl").text("");
+  var cd = $(".product-xz").length;
+  $(".product-all-sl").text(cd);
+
+  if (cd > 0) {
+    $(".product-all-qx").text("已选");
+    $(".all-sl").css("display", "inline-block");
+    $(".product-sett").removeClass("product-sett-a");
+  } else {
+    $(".product-all-qx").text("全选");
+    $(".all-sl").css("display", "none");
+    $(".product-sett").addClass("product-sett-a");
+  }
+}
+//购物车空
+function koncat() {
+  var pic = $(".product-box").length;
+  if (pic <= 0) {
+    $(".all-price").text("0.00");
+    $(".product-all-qx").text("全选");
+    $(".all-sl").css("display", "none");
+    $(".product-sett").addClass("product-sett-a");
+    $(".product-all em").removeClass("product-all-on");
+    $(".kon-cat").css("display", "block");
+  } else {
+    $(".kon-cat").css("display", "none");
+  }
+}
 
 // 删除接口数据
 function DelShop() {
-    $.ajax({
-        url: "https://kidstoms.com/deleteProduct",
-        type: "post",
-        dataType: "json",
-        data: {
-            openId: "openId",
-            productId: '88880001',
-        },
-        success: function(res) { // res就是后台接口返回的数据
-            console.log(res)
-        },
-    })
+  $.ajax({
+    url: "https://kidstoms.com/deleteProduct",
+    type: "post",
+    dataType: "json",
+    data: {
+      openId: "openId",
+      productId: "88880001"
+    },
+    success: function(res) {
+      // res就是后台接口返回的数据
+      console.log(res);
+    }
+  });
 }
 
 // 点击购物车  调queryShopCart接口
@@ -188,7 +192,7 @@ function getList() {
         console.log(result);
         var html = template("addressTpl", { result: result });
         console.log(html);
-        $("#address-box").html(html);
+        $("#address-box").append(html);
         document.getElementById("address-box").innerHTML = html;
       }
     }
@@ -196,5 +200,5 @@ function getList() {
 }
 
 $(document).ready(function() {
-    getList();
-})
+  getList();
+});
