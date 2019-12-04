@@ -191,7 +191,7 @@ function getList() {
       console.log(result);
       var html = template("addressTpl", { result: result });
       var t = $("#address-box").html(html);
-      console.log(t);
+      console.log($("#address-box").html(html));
       console.log(html);
     }
   });
