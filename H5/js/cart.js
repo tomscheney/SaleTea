@@ -190,8 +190,6 @@ function getList() {
       var result = res.data.productList;
       console.log(result);
       var html = template("addressTpl", { result });
-      console.log(html);
-
       $("#address-box").html(html);
     }
   });
