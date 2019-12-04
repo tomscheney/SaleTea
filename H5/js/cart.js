@@ -192,9 +192,9 @@ function getList() {
         console.log(result);
         var htmls = template("addressTpl", { "result": result });
         console.log(htmls);
-        var obj = $("#address-box");
+        var obj = $("#address-box>ul");
         console.log(obj);
-        var results = $("#address-box").html(result);
+        var results = $("#address-box>ul").html(result);
         console.log(results);
       }
     }
