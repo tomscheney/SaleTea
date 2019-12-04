@@ -27,9 +27,7 @@
     </div>
 
     <!-- 模板字符串 -->
-    <div class="body" id="address-box">
-
-    </div>
+    <ul class="body" id="address-box"></ul>
 
     <!--购物车空-->
     <div class="kon-cat">
@@ -46,7 +44,7 @@
 
     <script type="text/template" id="addressTpl">
       <% for(var i = 0; i < result.length; i++){ %>
-        <div class="product">
+        <li class="product">
           <div class="product-box">
             <div class="product-ckb"><em class="product-em product-xz"></em></div>
             <div class="product-sx">
@@ -69,7 +67,7 @@
               <div class="product-del"><img src="img/deleteico.png" /></div>
             </div>
           </div>
-        </div>
+        </li>
         <div class="product-js">
           <div class="product-al">
             <div class="product-all">
@@ -88,9 +86,8 @@
               >¥&thinsp;<span class="all-price">296</span></span
             >
           </div>
-        </div>
+        </li>
       <% } %>
     </script>
-
   </body>
 </html>
