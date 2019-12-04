@@ -179,7 +179,7 @@ function getList() {
         type: "post",
         dataType: "json",
         data: {
-            openId:"openId",
+            openId:openId,
         },
         success: function(res) { // res就是后台接口返回的数据
             console.log(res)
