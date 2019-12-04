@@ -9,11 +9,29 @@ console.log(openId);
 
 // 点击立即购买
 function confirmOrder() {
+  //   let params = location.search.split("=");
+  // let productId = params[1];
+  $.ajax({
+    url: "https://kidstoms.com/getAllAddressByOpenId",
+    type: "post",
+    dataType: "json",
+    data: {
+      openId: window.localStorage.getItem("openId"),
+      // productId:location.search.substr(1, 8)
+    //   productId: productId.substr(0, 8)
+    },
+    success: function(res) {
+      console.log(res);
+      if (res.code === "200") {
+
+      }
+    }
+  });
   // // location.href = "confirmOrder.html?productId=" + productId;
   // if (this.openId == "" || this.openId == null) {
   //   location.href = "phoneChecking.html";
   // } else {
-    location.href = "confirmOrder.html";
+    // location.href = "confirmOrder.html";
   // }
 }
 
