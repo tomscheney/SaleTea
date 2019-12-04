@@ -9,12 +9,12 @@ console.log(openId);
 
 // 点击立即购买
 function confirmOrder() {
-  // location.href = "confirmOrder.html?productId=" + productId;
-  if (this.openId == "" || this.openId == null) {
-    location.href = "phoneChecking.html";
-  } else {
+  // // location.href = "confirmOrder.html?productId=" + productId;
+  // if (this.openId == "" || this.openId == null) {
+  //   location.href = "phoneChecking.html";
+  // } else {
     location.href = "confirmOrder.html";
-  }
+  // }
 }
 
 // 点击购物车图标
