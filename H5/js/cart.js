@@ -191,7 +191,7 @@ function getList() {
         console.log("进来了");
         var result = res.data.productList;
         console.log(result);
-        var html = template("addressTpl", { result: result });
+        var html = template("addressTpl", { result: res });
         console.log(html);
         $("#address-box").html(html);
         document.getElementById("address-box").innerHTML = html;
