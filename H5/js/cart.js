@@ -210,11 +210,11 @@ function getList() {
       for (var i = 0; i < len.length; i++) {
         var imgI = len[i];
         html += "<img src=" + imgI + "/>";
-        // html += "< img src=" + imgI + "/>";
       }
       console.log(imgI);
       console.log(html);
-      $(".productImages").html(html);
+      var a = $(".productImages").html(html);
+      console.log(a);
       $(".jd_shop_con").css("display", "block");
 
       // let productList = res.data.productList;
