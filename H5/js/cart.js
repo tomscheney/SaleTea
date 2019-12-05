@@ -159,9 +159,9 @@ function koncat() {
 
 // 删除接口 deleteProduct数据
 // 利用事件委托选择到删除按钮所在ul
-$('.address-box').on('tap','.product-del', function() {
-  alert(1)
-})
+$(".address-box").on("tap", ".product-del", function() {
+  alert(1);
+});
 
 // function DelShop() {
 //   $.ajax({
@@ -194,11 +194,9 @@ function getList() {
       console.log(res);
       if (res.code == "200") {
         var result = res.data.productList;
-        console.log(result);
         var amounts = res.data.amounts;
         console.log(amounts);
         var htmls = template("addressTpl", { result: result });
-        // console.log(htmls);
         $(".address-box").html(htmls);
       }
     }
