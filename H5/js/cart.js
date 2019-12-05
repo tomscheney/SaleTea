@@ -21,10 +21,10 @@ console.log(search);
 console.log(list);
 console.log(productId);
 console.log(openId);
-var obj = addr_obj();
-var openId = obj.openId;
-console.log(openId);
-var that;
+// var obj = addr_obj();
+// var openId = obj.openId;
+// console.log(openId);
+// var that;
 
 $(function() {
   //加的效果
