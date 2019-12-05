@@ -216,13 +216,23 @@ function getList() {
       //   console.log(a);
       // }
       // $(".jd_shop_con").css("display", "block");
-     $(".productImages").attr("src", "https://kidstoms.com/tea/img/xiaoqinggan-chenpipuer-98/xiaoqinggan_02.jpg");
+
       // console.log(imgses);
       let productList = res.data.productList;
       console.log(productList);
       let amounts = res.data.amounts;
       console.log(amounts);
       var html = "";
+      // 图片
+      var len = res.data.productList[0].productImages;
+      for (var i = 0; i < len.length; i++) {
+        console.log('图片',len[i]);
+
+      }
+      $(".productImages").attr(
+        "src",
+        "https://kidstoms.com/tea/img/xiaoqinggan-chenpipuer-98/xiaoqinggan_02.jpg"
+      );
 
       for (var i = 0; i < productList.length; i++) {
         let product = productList[i];
