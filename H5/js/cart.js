@@ -188,7 +188,8 @@ function getList() {
       //   var htmls = template("addressTpl", { result: result });
       //   $(".address-box").html(htmls);
       // }
-      列表
+      
+      // 列表
       var menu = res.data.productList;
       console.log(menu);
       // 数量
