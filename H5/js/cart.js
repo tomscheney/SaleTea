@@ -194,7 +194,7 @@ function getList() {
         console.log(htmls);
         var results = $("#template-box").html(htmls);
         console.log(results);
-        document.getElementById("#endregiontemplate-box").innerHTML = htmls
+        document.getElementById("template-box").innerHTML = htmls
       }
     }
   });
