@@ -190,14 +190,13 @@ function getList() {
       if (res.code == "200") {
         var result = res.data.productList;
         console.log(result);
-        var htmls = template("addressTpl", { "result": result });
+        var htmls = template("addressTpl", { result: result });
         console.log(htmls);
-        var obj = $(".address-box");
+        var obj = $("#template-box");
         console.log(obj);
-        var results = $(".address-box").html(htmls);
-        // document.getElementById("address-box").innerHTML = htmls
-
+        var results = $("#template-box").html(htmls);
         console.log(results);
+        // document.getElementById("address-box").innerHTML = htmls
       }
     }
   });
