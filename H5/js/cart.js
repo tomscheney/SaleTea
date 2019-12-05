@@ -204,7 +204,7 @@ function getList() {
         $(".productDesc").html(menu[i].productDesc);
         $(".salePrice").html(menu[i].salePrice);
         $(".amounts").html(menus);
-        $(".productImages").html(len[i]);
+        // $(".productImages").html(len[i]);
       }
       var html = "";
       for (var i = 0; i < len.length; i++) {
