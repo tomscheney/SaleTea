@@ -196,7 +196,7 @@ function getList() {
         console.log(obj);
         var results = $("#template-box").html(htmls);
         console.log(results);
-        // document.getElementById("address-box").innerHTML = htmls
+        document.getElementById("template-box").innerHTML = htmls
       }
     }
   });
