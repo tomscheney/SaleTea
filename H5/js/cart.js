@@ -1,5 +1,7 @@
 let openId = window.localStorage.getItem("openId");
 console.log(openId);
+let params = location.search.split("=");
+let productId = params[1];
 
 $(function() {
   //加的效果
@@ -157,7 +159,7 @@ function DelShop() {
     dataType: "json",
     data: {
       openId: localStorage.getItem("openId"),
-      productId: res.data.productList.productId
+      productId: productId.substr(0, 8)
     },
     success: function(res) {
       // res就是后台接口返回的数据
@@ -187,22 +189,22 @@ function getList() {
       //   $(".address-box").html(htmls);
       // }
       // 列表
-      var menu = res.data.productList;
-      console.log(menu);
-      // 数量
-      var menus = res.data.amounts;
-      console.log(menus);
-      // 图片
-      var len = res.data.productList[0].productImages;
-      console.log(len);
-      for (var i = 0; i < menu.length; i++) {
-        // 标题 簡介 价格 数量 图片
-        $(".productName").html(menu[i].productName);
-        $(".productDesc").html(menu[i].productDesc);
-        $(".salePrice").html(menu.salePrice);
-        $(".amounts").html(menus);
-        $(".productImages").html(len.productImages);
-      }
+      // var menu = res.data.productList;
+      // console.log(menu);
+      // // 数量
+      // var menus = res.data.amounts;
+      // console.log(menus);
+      // // 图片
+      // var len = res.data.productList[0].productImages;
+      // console.log(len);
+      // for (var i = 0; i < menu.length; i++) {
+      //   // 标题 簡介 价格 数量 图片
+      //   $(".productName").html(menu[i].productName);
+      //   $(".productDesc").html(menu[i].productDesc);
+      //   $(".salePrice").html(menu[i].salePrice);
+      //   $(".amounts").html(menus);
+      //   $(".productImages").html(len[i]);
+      // }
       // var html = "";
       // for (var i = 0; i < len.length; i++) {
       //   var imgI = len[i];
@@ -212,6 +214,31 @@ function getList() {
       // console.log(html);
       // $(".productImages").html(html);
       // $(".jd_shop_con").css("display", "block");
+      let productList = res.data.productList;
+      console.log(productList);
+      let amounts = res.data.amounts;
+      console.log(amounts);
+      var html = "";
+
+      for (var i = 0; i < productList.length; i++) {
+        let product = productList[i];
+        // 标题 簡介 价格 数量 图片
+        $(".productName").html(product.productName);
+        $(".productDesc").html(product.productDesc);
+        $(".salePrice").html(product.salePrice);
+        let amount = amounts[i];
+        $(".amounts").html(amount);
+
+        let productImages = product.productImages;
+        for (var i = 0; i < productImages.length; i++) {
+          let imgI = productImages[i];
+          html += "< img src=" + imgI + "/>";
+        }
+        $(".productImages").html(html);
+
+        console.log(html);
+      }
+      $(".jd_shop_con").css("display", "block");
     }
   });
 }
