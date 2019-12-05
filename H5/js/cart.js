@@ -209,11 +209,14 @@ function getList() {
       // 图片
       var len = res.data.productList[0].productImages;
       console.log(len);
-      // 标题 簡介  价格
-      $(".productName").html(menu.productName);
-      $(".productDesc").html(menu.productDesc);
-      $(".salePrice").html(menu.salePrice);
-      $(".amounts").html(menus);
+      for (var i = 0; i < len.length; i++) {
+        // 标题 簡介 价格 数量 图片
+        $(".productName").html(menu.productName);
+        $(".productDesc").html(menu.productDesc);
+        $(".salePrice").html(menu.salePrice);
+        $(".amounts").html(menus);
+        $(".productImages").html(len.productImages);
+      }
       // var html = "";
       // for (var i = 0; i < len.length; i++) {
       //   var imgI = len[i];
