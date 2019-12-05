@@ -200,16 +200,20 @@ function getList() {
       //   var htmls = template("addressTpl", { result: result });
       //   $(".address-box").html(htmls);
       // }
+      // 列表
       var menu = res.data.productList;
       console.log(menu);
+      // 数量
       var menus = res.data.amounts;
       console.log(menus);
+      // 图片
       var len = res.data.productList[0].productImages;
       console.log(len);
-      // 标题 价格
-      $(".productDesc").text(menu.productDesc);
-      $(".salePrice").text(menu.salePrice);
-      $(".GoodsAmounts").text(menus);
+      // 标题 簡介  价格
+      $(".productName").html(menu.productName);
+      $(".productDesc").html(menu.productDesc);
+      $(".salePrice").html(menu.salePrice);
+      $(".amounts").html(menus);
       // var html = "";
       // for (var i = 0; i < len.length; i++) {
       //   var imgI = len[i];
