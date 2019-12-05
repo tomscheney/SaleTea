@@ -200,22 +200,23 @@ function getList() {
       //   var htmls = template("addressTpl", { result: result });
       //   $(".address-box").html(htmls);
       // }
-      var menu = res.data.productList[0];
+      var menu = res.data.productList[i];
+      console.log(menu);
       // 标题 价格
       $(".productDesc").text(menu.productDesc);
       $(".salePrice").text(menu.salePrice);
       var menus = res.data.amounts;
       $(".GoodsAmounts").text(menus);
-      var len = menu.productImages[0];
+      var len = menu.productImages[i];
       console.log(len);
-      var html = "";
-      for (var i = 0; i < len.length; i++) {
-        var imgI = len[i];
-        html += "<img src=" + imgI + "/>";
-      }
-      console.log(imgI);
-      console.log(html);
-      $(".img_box").html(html);
+      // var html = "";
+      // for (var i = 0; i < len.length; i++) {
+      //   var imgI = len[i];
+      //   html += "<img src=" + imgI + "/>";
+      // }
+      // console.log(imgI);
+      // console.log(html);
+      // $(".productImages").html(html);
       // $(".jd_shop_con").css("display", "block");
     }
   });
