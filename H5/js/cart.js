@@ -190,7 +190,7 @@ function getList() {
       if (res.code == "200") {
         var result = res.data.productList;
         console.log(result);
-        var htmls = template("#addressTpl", { result: result });
+        var htmls = template("addressTpl", { "result": result });
         console.log(htmls);
         $(".address-box").html(htmls);
         // document.getElementById("template-box").innerHTML = htmls;
