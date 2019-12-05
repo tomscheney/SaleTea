@@ -159,7 +159,7 @@ function koncat() {
 
 // 删除接口 deleteProduct数据
 // 利用事件委托选择到删除按钮所在ul
-$(".address-box").on("tap", ".product-del", function() {
+$(".address-box").on("click", ".deletedImg", function() {
   alert(1);
 });
 
