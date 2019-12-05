@@ -28,9 +28,7 @@
 
     <div class="body">
       <!-- 模板字符串 -->
-      <div class="address-box">
-        
-      </div>
+      <ul class="address-box"></ul>
 
       <div id="tests" class="product-js">
         <div class="product-al">
@@ -55,7 +53,7 @@
 
     <script type="text/html" id="addressTpl">
       <% for(var i = 0; i < result.length; i++){ %>
-      <div class="product-box">
+      <li class="product-box">
           <div class="product-ckb"><em class="product-em product-xz"></em></div>
           <div class="product-sx">
               <a href="###">
@@ -76,7 +74,7 @@
               </div>
               <div class="product-del"><img src="img/deleteico.png" /></div>
           </div>
-      </div>
+      </li>
       <% } %>
     </script>
   </body>
