@@ -159,10 +159,10 @@ function koncat() {
 
 // 删除接口 deleteProduct数据
 // 利用事件委托选择到删除按钮所在ul
-$(".address-box").on("tap", ".deletedImg", function() {
-  alert(1);
-  console.log("进来删除操作了")
-});
+// $(".address-box").on("tap", ".deletedImg", function() {
+//   alert(1);
+//   console.log("进来删除操作了")
+// });
 
 // function DelShop() {
 //   $.ajax({
@@ -193,13 +193,30 @@ function getList() {
     },
     success: function(res) {
       console.log(res);
-      if (res.code == "200") {
-        var result = res.data.productList;
-        var amounts = res.data.amounts;
-        console.log(amounts);
-        var htmls = template("addressTpl", { result: result });
-        $(".address-box").html(htmls);
+      // if (res.code == "200") {
+      //   var result = res.data.productList;
+      //   var amounts = res.data.amounts;
+      //   console.log(amounts);
+      //   var htmls = template("addressTpl", { result: result });
+      //   $(".address-box").html(htmls);
+      // }
+      var menu = res.data.productList[0];
+      // 标题 价格
+      $(".p_name").text(menu.productDesc);
+      $(".GoodsPrice").text(menu.salePrice);
+      var menus = res.data.amounts;
+      $(".GoodsAmounts").text(menus);
+      var len = [];
+      len = menu.productImages;
+      var html = "";
+      console.log(len);
+      for (var i = 0; i < len.length; i++) {
+        var imgI = len[i];
+        html += "<img src=" + imgI + "/>";
       }
+      console.log(imgI);
+      $(".img_box").html(html);
+      $(".jd_shop_con").css("display", "block");
     }
   });
 }
