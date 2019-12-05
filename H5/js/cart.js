@@ -56,17 +56,17 @@ $(function() {
     shuliang();
   });
   //删除产品
-  $(".product-del").click(function() {
-    if (confirm("您确定要删除当前商品？")) {
-      $(this)
-        .closest(".product-box")
-        .remove();
-    }
+  // $(".product-del").click(function() {
+  //   if (confirm("您确定要删除当前商品？")) {
+  //     $(this)
+  //       .closest(".product-box")
+  //       .remove();
+  //   }
 
-    koncat();
-    TotalPrice();
-    shuliang();
-  });
+  //   koncat();
+  //   TotalPrice();
+  //   shuliang();
+  // });
 
   TotalPrice();
   shuliang();
@@ -149,15 +149,15 @@ function koncat() {
 // });
 
 function DelShop() {
-  let productId = res.data.productList.productId;
-  console.log(productId);
+  // let productId = res.data.productList.productId;
+  // console.log(productId);
   $.ajax({
     url: "https://kidstoms.com/deleteProduct",
     type: "post",
     dataType: "json",
     data: {
       openId: localStorage.getItem("openId"),
-      productId: "88880001"
+      productId: res.data.productList.productId
     },
     success: function(res) {
       // res就是后台接口返回的数据
