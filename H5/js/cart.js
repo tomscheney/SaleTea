@@ -1,13 +1,5 @@
-// let search = location.search;
-// console.log(search);
-// let list = search.split("=");
-// console.log(list);
-// let productId = list[1];
 let openId = window.localStorage.getItem("openId");
 console.log(openId);
-let params = location.search.split("=");
-let productId = params[1];
-console.log(productId);
 
 $(function() {
   //加的效果
@@ -157,6 +149,8 @@ function koncat() {
 // });
 
 function DelShop() {
+  let productId = res.data.productList.productId;
+  console.log(productId);
   $.ajax({
     url: "https://kidstoms.com/deleteProduct",
     type: "post",
