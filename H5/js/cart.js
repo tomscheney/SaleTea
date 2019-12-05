@@ -200,14 +200,14 @@ function getList() {
       //   var htmls = template("addressTpl", { result: result });
       //   $(".address-box").html(htmls);
       // }
-      var menu = res.data.productList[i];
+      var menu = res.data.productList;
       console.log(menu);
       // 标题 价格
       $(".productDesc").text(menu.productDesc);
       $(".salePrice").text(menu.salePrice);
       var menus = res.data.amounts;
       $(".GoodsAmounts").text(menus);
-      var len = menu.productImages[i];
+      var len = menu.productImages;
       console.log(len);
       // var html = "";
       // for (var i = 0; i < len.length; i++) {
