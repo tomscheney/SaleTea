@@ -216,7 +216,7 @@ function getList() {
       //   console.log(a);
       // }
       // $(".jd_shop_con").css("display", "block");
-      var imgses = $("productImages").attr("src", "len[0]");
+      var imgses = $(".productImages").attr("src", "len[0]");
       console.log(imgses);
       let productList = res.data.productList;
       console.log(productList);
