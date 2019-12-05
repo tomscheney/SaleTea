@@ -209,7 +209,7 @@ function getList() {
       // 图片
       var len = res.data.productList[0].productImages;
       console.log(len);
-      for (var i = 0; i < len.length; i++) {
+      for (var i = 0; i < menu.length; i++) {
         // 标题 簡介 价格 数量 图片
         $(".productName").html(menu.productName);
         $(".productDesc").html(menu.productDesc);
