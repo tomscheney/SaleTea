@@ -207,7 +207,7 @@ function getList() {
       var menus = res.data.amounts;
       $(".GoodsAmounts").text(menus);
       var len = [];
-      len = menu.productImages[0];
+      len = menu.productImages[i];
       var html = "";
       console.log(len);
       for (var i = 0; i < len.length; i++) {
