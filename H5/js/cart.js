@@ -12,6 +12,15 @@ function addr_obj() {
   });
   return obj;
 }
+
+let search = location.search;
+let list = search.split("=");
+let productId = list[1];
+let openId = window.localStorage.getItem("openId");
+console.log(search);
+console.log(list);
+console.log(productId);
+console.log(openId);
 var obj = addr_obj();
 var openId = obj.openId;
 console.log(openId);
@@ -164,21 +173,21 @@ function koncat() {
 //   console.log("进来删除操作了")
 // });
 
-// function DelShop() {
-//   $.ajax({
-//     url: "https://kidstoms.com/deleteProduct",
-//     type: "post",
-//     dataType: "json",
-//     data: {
-//       openId: "openId",
-//       productId: "88880001"
-//     },
-//     success: function(res) {
-//       // res就是后台接口返回的数据
-//       console.log(res);
-//     }
-//   });
-// }
+function DelShop() {
+  $.ajax({
+    url: "https://kidstoms.com/deleteProduct",
+    type: "post",
+    dataType: "json",
+    data: {
+      openId: localStorage.getItem("openId"),
+      productId: "88880001"
+    },
+    success: function(res) {
+      // res就是后台接口返回的数据
+      console.log(res);
+    }
+  });
+}
 
 // 点击购物车  调queryShopCart接口
 function getList() {
