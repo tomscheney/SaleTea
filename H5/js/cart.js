@@ -194,7 +194,7 @@ function getList() {
       console.log(menu);
       // 数量
       var menus = res.data.amounts;
-      console.log(menus);
+      console.log('测试',menus);
       // 图片
       var len = res.data.productList[0].productImages;
       console.log(len);
@@ -205,16 +205,16 @@ function getList() {
         $(".salePrice").html(menu[i].salePrice);
         $(".amounts").html(menus);
         // $(".productImages").html(len[i]);
+        var html = "";
+        for (var i = 0; i < len.length; i++) {
+          var imgI = len[i];
+          html += "<img src=" + imgI + "/>";
+        }
+        console.log(imgI);
+        console.log(html);
+        var a = $(".productImages").html(html);
+        console.log(a);
       }
-      var html = "";
-      for (var i = 0; i < len.length; i++) {
-        var imgI = len[i];
-        html += "<img src=" + imgI + "/>";
-      }
-      console.log(imgI);
-      console.log(html);
-      var a = $(".productImages").html(html);
-      console.log(a);
       $(".jd_shop_con").css("display", "block");
 
       // let productList = res.data.productList;
