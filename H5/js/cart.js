@@ -230,10 +230,9 @@ function getList() {
         $(".productName").html(product.productName);
         $(".productDesc").html(product.productDesc);
         $(".salePrice").html(product.salePrice);
-        let amount = amounts[i];
-        let productId = product.productId;
-        $(".amounts").html(amount[productId]);
-
+        // let amount = amounts[i];
+        // let productId = product.productId;
+        // $(".amounts").html(amount[productId]);
         let productImages = product.productImages;
         let imgI = productImages[0];
         html += "< img src=" + imgI + "/>";
