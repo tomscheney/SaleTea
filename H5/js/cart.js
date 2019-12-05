@@ -204,7 +204,7 @@ function getList() {
       console.log(menu);
       var menus = res.data.amounts;
       console.log(menus);
-      var len = res.data.productList.productImages;
+      var len = res.data.productList[0].productImages;
       console.log(len);
       // 标题 价格
       $(".productDesc").text(menu.productDesc);
