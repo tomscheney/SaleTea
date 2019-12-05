@@ -181,13 +181,13 @@ function getList() {
     },
     success: function(res) {
       console.log(res);
-      // if (res.code == "200") {
-      //   var result = res.data.productList;
-      //   var amounts = res.data.amounts;
-      //   console.log(amounts);
-      //   var htmls = template("addressTpl", { result: result });
-      //   $(".address-box").html(htmls);
-      // }
+      if (res.code == "200") {
+        var result = res.data.productList;
+        var amounts = res.data.amounts;
+        console.log(amounts);
+        var htmls = template("addressTpl", { result: result });
+        $(".address-box").html(htmls);
+      }
 
       // 列表
       // var menu = res.data.productList;
@@ -218,42 +218,42 @@ function getList() {
       // $(".jd_shop_con").css("display", "block");
 
       // console.log(imgses);
-      let productList = res.data.productList;
-      console.log(productList);
-      let amounts = res.data.amounts;
-      console.log(amounts);
-      var html = "";
-      // 图片
-      var len = res.data.productList[0].productImages;
-      for (var i = 0; i < len.length; i++) {
-        console.log('图片',len[i]);
+      // let productList = res.data.productList;
+      // console.log(productList);
+      // let amounts = res.data.amounts;
+      // console.log(amounts);
+      // var html = "";
+      // // 图片
+      // var len = res.data.productList[0].productImages;
+      // for (var i = 0; i < len.length; i++) {
+      //   console.log('图片',len[i]);
 
-      }
-      $(".productImages").attr(
-        "src",
-        "https://kidstoms.com/tea/img/xiaoqinggan-chenpipuer-98/xiaoqinggan_02.jpg"
-      );
+      // }
+      // $(".productImages").attr(
+      //   "src",
+      //   "https://kidstoms.com/tea/img/xiaoqinggan-chenpipuer-98/xiaoqinggan_02.jpg"
+      // );
 
-      for (var i = 0; i < productList.length; i++) {
-        let product = productList[i];
-        // 标题 簡介 价格 数量 图片
-        $(".productName").html(product.productName);
-        $(".productDesc").html(product.productDesc);
-        $(".salePrice").html(product.salePrice);
-        // let amount = amounts[i];
-        // let productId = product.productId;
-        // $(".amounts").html(amount[productId]);
-        let productImages = product.productImages;
-        let imgI = productImages[0];
-        html += "< img src=" + imgI + "/>";
-        $(".productImages").html(html);
-        console.log(html);
-        // for (var i = 0; i < productImages.length; i++) {
-        //   let imgI = productImages[i];
-        // }
-        // $(".productImages").html(html);
-      }
-      $(".jd_shop_con").css("display", "block");
+      // for (var i = 0; i < productList.length; i++) {
+      //   let product = productList[i];
+      //   // 标题 簡介 价格 数量 图片
+      //   $(".productName").html(product.productName);
+      //   $(".productDesc").html(product.productDesc);
+      //   $(".salePrice").html(product.salePrice);
+      //   // let amount = amounts[i];
+      //   // let productId = product.productId;
+      //   // $(".amounts").html(amount[productId]);
+      //   let productImages = product.productImages;
+      //   let imgI = productImages[0];
+      //   html += "< img src=" + imgI + "/>";
+      //   $(".productImages").html(html);
+      //   console.log(html);
+      //   // for (var i = 0; i < productImages.length; i++) {
+      //   //   let imgI = productImages[i];
+      //   // }
+      //   // $(".productImages").html(html);
+      // }
+      // $(".jd_shop_con").css("display", "block");
     }
   });
 }
