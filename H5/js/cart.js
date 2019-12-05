@@ -202,13 +202,14 @@ function getList() {
       // }
       var menu = res.data.productList;
       console.log(menu);
+      var menus = res.data.amounts;
+      console.log(menus);
+      var len = res.data.productList.productImages;
+      console.log(len);
       // 标题 价格
       $(".productDesc").text(menu.productDesc);
       $(".salePrice").text(menu.salePrice);
-      var menus = res.data.amounts;
       $(".GoodsAmounts").text(menus);
-      var len = menu.productImages;
-      console.log(len);
       // var html = "";
       // for (var i = 0; i < len.length; i++) {
       //   var imgI = len[i];
