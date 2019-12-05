@@ -202,8 +202,8 @@ function getList() {
       // }
       var menu = res.data.productList[0];
       // 标题 价格
-      $(".p_name").text(menu.productDesc);
-      $(".GoodsPrice").text(menu.salePrice);
+      $(".productDesc").text(menu.productDesc);
+      $(".salePrice").text(menu.salePrice);
       var menus = res.data.amounts;
       $(".GoodsAmounts").text(menus);
       var len = [];
