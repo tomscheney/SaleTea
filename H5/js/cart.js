@@ -188,7 +188,7 @@ function getList() {
       //   var htmls = template("addressTpl", { result: result });
       //   $(".address-box").html(htmls);
       // }
-      
+
       // 列表
       var menu = res.data.productList;
       console.log(menu);
@@ -206,14 +206,15 @@ function getList() {
         $(".amounts").html(menus);
         $(".productImages").html(len[i]);
       }
-      // var html = "";
-      // for (var i = 0; i < len.length; i++) {
-      //   var imgI = len[i];
-      //   html += "<img src=" + imgI + "/>";
-      // }
-      // console.log(imgI);
-      // console.log(html);
-      // $(".productImages").html(html);
+      var html = "";
+      for (var i = 0; i < len.length; i++) {
+        var imgI = len[i];
+        html += "<img src=" + imgI + "/>";
+        // html += "< img src=" + imgI + "/>";
+      }
+      console.log(imgI);
+      console.log(html);
+      $(".productImages").html(html);
       $(".jd_shop_con").css("display", "block");
 
       // let productList = res.data.productList;
