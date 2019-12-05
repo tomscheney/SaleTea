@@ -157,22 +157,27 @@ function koncat() {
   }
 }
 
-// 删除接口数据
-function DelShop() {
-  $.ajax({
-    url: "https://kidstoms.com/deleteProduct",
-    type: "post",
-    dataType: "json",
-    data: {
-      openId: "openId",
-      productId: "88880001"
-    },
-    success: function(res) {
-      // res就是后台接口返回的数据
-      console.log(res);
-    }
-  });
-}
+// 删除接口 deleteProduct数据
+// 利用事件委托选择到删除按钮所在ul
+$('.address-box').on('tap','.product-del', function() {
+  alert(1)
+})
+
+// function DelShop() {
+//   $.ajax({
+//     url: "https://kidstoms.com/deleteProduct",
+//     type: "post",
+//     dataType: "json",
+//     data: {
+//       openId: "openId",
+//       productId: "88880001"
+//     },
+//     success: function(res) {
+//       // res就是后台接口返回的数据
+//       console.log(res);
+//     }
+//   });
+// }
 
 // 点击购物车  调queryShopCart接口
 function getList() {
@@ -190,10 +195,11 @@ function getList() {
       if (res.code == "200") {
         var result = res.data.productList;
         console.log(result);
+        var amounts = res.data.amounts;
+        console.log(amounts);
         var htmls = template("addressTpl", { result: result });
-        console.log(htmls);
+        // console.log(htmls);
         $(".address-box").html(htmls);
-        // document.getElementById("template-box").innerHTML = htmls;
       }
     }
   });
