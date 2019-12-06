@@ -11,7 +11,6 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="js/cart.js"></script>
-    <script src="./js/jqAlert2.js"></script>
     <link
       rel="stylesheet"
       type="text/css"
@@ -117,7 +116,7 @@
                   </div>
               </div>
               <div class="product-del">
-                <img src="img/deleteico.png" class="deletedImg" onclick="alert3(<%= result[i].productId %>)"/>
+                <img src="img/deleteico.png" class="deletedImg" onclick="dels(<%= result[i].productId %>)"/>
               </div>
           </div>
       </li>
