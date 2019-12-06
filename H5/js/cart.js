@@ -259,7 +259,8 @@ function jia(productId) {
         },
         success: function(res) {
           if (res.code == "200") {
-            var vals = $(".input-num").val();
+            // var vals = document
+            var vals = $("#input-num").val();
             console.log(vals);
             var num = parseInt(vals) + 1;
             $(".input-num").val() = num;
