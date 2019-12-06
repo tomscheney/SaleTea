@@ -14,9 +14,6 @@ function buyNow(productId) {
     //   location.href = "phoneChecking.html";
     // } else {
     // }
-
-    let params = location.search.split("=")
-    let productId = params[1];
     $.ajax({
         url: "https://kidstoms.com/buyNow",
         type: "post",
