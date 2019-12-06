@@ -163,12 +163,13 @@ function dels(productId) {
             success: function(res) {
               console.log(res);
               if (res.code == "200") {
+                alert(res.data.msg);
               }
             }
           });
-          remove();
+          // remove();
         } else {
-          closest(".product-box");
+          // closest(".product-box");
         }
       });
       // if (confirm("您确定要删除当前商品？")) {
