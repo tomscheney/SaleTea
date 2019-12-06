@@ -201,11 +201,14 @@ function getList() {
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
-        var data = res.data;
-        // var result = res.data.productList;
+        // var data = res.data;
+        var result = res.data.productList;
         var amounts = res.data.amounts;
         console.log(amounts);
-        var htmls = template("addressTpl", { data: data });
+        var htmls = template("addressTpl", {
+          result: result,
+          amounts: amounts
+        });
         $(".address-box").html(htmls);
       }
 
