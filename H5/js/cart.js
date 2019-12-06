@@ -1,3 +1,4 @@
+
 let openId = window.localStorage.getItem("openId");
 console.log(openId);
 let params = location.search.split("=");
@@ -276,4 +277,5 @@ function add(index,productId) {
 
 $(document).ready(function() {
   getList();
+  selectProduct()
 });
