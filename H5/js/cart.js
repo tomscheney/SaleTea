@@ -241,7 +241,7 @@ function reduce(index,productId) {
 
         var num = parseInt(value) - 1;
 
-        document.getElementById("input-num").value = num;
+        ele.value = num;
         TotalPrice()
       }
     });
@@ -261,12 +261,12 @@ function add(index,productId) {
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
-        let elements =  document.getElementsByClassName("input-num");
+        let elements =  document.getElementsByClassName("product-num");
         let ele = elements[index]
         let value = ele.value
         let num = parseInt(value) + 1;
 
-        document.getElementById("input-num").value = num;
+        ele.value = num;
         TotalPrice()
 
       }
