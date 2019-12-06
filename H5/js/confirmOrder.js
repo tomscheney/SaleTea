@@ -20,7 +20,7 @@ function buyNow() {
         success: function (res) {
             console.log(res);
             // res就是后台接口返回的数据
-            if (res.code === "200") {
+            if (res.code === 200) {
                 alert(res.data.msg);
 
                 totalFee = res.data.totalFee;
