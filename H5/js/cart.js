@@ -249,7 +249,6 @@ function jia(productId) {
     "click",
     ".product-add ",
     function() {
-      alert('11111111')
       $.ajax({
         url: "https://kidstoms.com/addToShopCart",
         type: "post",
@@ -261,6 +260,7 @@ function jia(productId) {
         success: function(res) {
           console.log(res);
           if (res.code == "200") {
+            alert("11111111");
             var vals = document.getElementById("input-num").value;
             console.log(vals);
             var num = parseInt(vals) + 1;
