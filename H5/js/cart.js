@@ -261,10 +261,10 @@ function jia(productId) {
           console.log(res);
           if (res.code == "200") {
             // var value = document.getElementById("input-num").value;
-            var value = $(".input-num").val();
-            console.log(value);
-            var num = parseInt(value) + 1;
-            document.getElementById("input-num").value = num;
+            var vals = $(".input-num").val();
+            console.log(vals);
+            var num = parseInt(vals) + 1;
+            $(".input-num").val() = num;
             // $(".product-add").click(function() {
             //   var id = document.getElementById("id").value;
             //   console.log(id);
