@@ -93,21 +93,18 @@
     </div> -->
 
     <script type="text/html" id="addressTpl">
-      let result = data.productList
-      let amounts = data.amounts;
-      <% for(var i = 0; i < result.length; i++){ %>
-        
+      <% for(var i = 0; i < (data.productList).length; i++){ %>
       <li class="product-box">
           <div class="product-ckb"><em class="product-em product-xz"></em></div>
           <div class="product-sx">
               <a href="###">
-                  <img src="<%= result[i].productImages[i]%>" class="product-img" />
+                  <img src="<%= (data.productList)[i].productImages[i]%>" class="product-img" />
                   <span class="product-name"
-                  ><%= result[i].productName%><%= result[i].productDesc%></span
+                  ><%= (data.productList)[i].productName%><%= (data.productList)[i].productDesc%></span
                   >
               </a>
               <span class="product-price"
-              >¥&thinsp;<span class="price"><%= result[i].productPrice%></span></span
+              >¥&thinsp;<span class="price"><%= (data.productList)[i].productPrice%></span></span
               >
               <div class="product-amount">
                   <div class="product_gw">
@@ -117,7 +114,7 @@
                   </div>
               </div>
               <div class="product-del">
-                <img src="img/deleteico.png" class="deletedImg" onclick="dels(result[i].productId)"/>
+                <img src="img/deleteico.png" class="deletedImg" onclick="dels((data.productList)[i].productId)"/>
               </div>
           </div>
       </li>
