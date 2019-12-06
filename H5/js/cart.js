@@ -33,7 +33,7 @@ $(function() {
   //     .val(num);
   //   TotalPrice();
   // });
-  
+
 	//删除产品
   $(".product-ckb").click(function() {
     $(this)
@@ -248,7 +248,7 @@ function jian(productId) {
 function jia(productId) {
   $(".address-box  .product-box .product-amount").on(
     "click",
-    ".product-jia ",
+    ".product-add ",
     function() {
       $.ajax({
         url: "https://kidstoms.com/addToShopCart",
