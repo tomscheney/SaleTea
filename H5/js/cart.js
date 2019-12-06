@@ -72,10 +72,11 @@ let productId = params[1];
   //   shuliang();
   // });
 
-  TotalPrice();
-  shuliang();
-  koncat();
-});
+//   TotalPrice();
+//   shuliang();
+//   koncat();
+// });
+
 //选中产品
 function productxz() {
   var xz = $(".product-em");
