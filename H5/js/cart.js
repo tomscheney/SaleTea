@@ -119,17 +119,21 @@ function TotalPrice() {
 
 // 选中商品单个选择框
 function productxz() {
-  $(".address-box  .product-box ").on("click", ".product-ckb ", function() {
-    var xz = $(".product-em");
-    var xz1 = $(".product-xz");
-    if (xz1.length == xz.length) {
-      $(".product-all em").addClass("product-all-on");
-    } else {
-      $(".product-all em").removeClass("product-all-on");
+  $(".address-box  .product-box .product-ckb").on(
+    "click",
+    "product-em",
+    function() {
+      var xz = $(".product-em");
+      var xz1 = $(".product-xz");
+      if (xz1.length == xz.length) {
+        $(".product-all em").addClass("product-all-on");
+      } else {
+        $(".product-all em").removeClass("product-all-on");
+      }
+      shuliang();
+      TotalPrice();
     }
-    shuliang();
-    TotalPrice();
-  });
+  );
 }
 
 //获取选择产品数量
