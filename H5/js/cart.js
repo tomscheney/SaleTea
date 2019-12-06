@@ -236,9 +236,10 @@ function reduce(productId) {
       },
       success: function(res) {
 
-        var num = parseInt(vals) - 1;
+        var num = parseInt(value) - 1;
 
         document.getElementById("input-num").value = num;
+        TotalPrice()
       }
     });
 
@@ -257,14 +258,13 @@ function add(productId) {
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
-        alert("11111111");
         var vals = document.getElementById("input-num").value;
-        console.log(vals);
 
         var num = parseInt(vals) + 1;
-        console.log(num);
 
         document.getElementById("input-num").value = num;
+        TotalPrice()
+
       }
     }
   });
