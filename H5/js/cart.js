@@ -260,17 +260,21 @@ function jia(productId) {
         success: function(res) {
           console.log(res);
           if (res.code == "200") {
-            $(".product-add").click(function() {
-              var id = document.getElementById("id").value;
-              console.log(id);
-              var n = $(id).val();
-              var num = parseInt(n) + 1;
-              if (num == 99) {
-                return;
-              }
-              $(id).val(num);
-              TotalPrice();
-            });
+            var value = document.getElementById("input-num").value;
+            console.log(value);
+            var num = parseInt(value) + 1;
+            document.getElementById("input-num").value = num;
+            // $(".product-add").click(function() {
+            //   var id = document.getElementById("id").value;
+            //   console.log(id);
+            //   var n = $(id).val();
+            //   var num = parseInt(n) + 1;
+            //   if (num == 99) {
+            //     return;
+            //   }
+            //   $(id).val(num);
+            //   TotalPrice();
+            // });
           }
         }
       });
