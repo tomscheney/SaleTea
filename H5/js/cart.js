@@ -223,25 +223,23 @@ function jian(productId) {
         success: function(res) {
           console.log(res);
           if (res.code == "200") {
-            var id = document.getElementById("inputs").value;
-            console.log(id);
-            var id = parseInt(id) - 1;
-            if (id == 0) {
+            // var id = document.getElementById("inputs").value;
+            // console.log(id);
+            // var id = parseInt(id) - 1;
+            // if (id == 0) {
+            //   return;
+            // }
+            var n = $(this)
+              .next()
+              .val();
+            var num = parseInt(n) - 1;
+            console.log(num);
+            if (num == 0) {
               return;
             }
-            // $(".product-jian").click(function() {
-            //   var n = $(this)
-            //     .next()
-            //     .val();
-            //   var num = parseInt(n) - 1;
-            //   if (num == 0) {
-            //     return;
-            //   }
-            //   $(this)
-            //     .next()
-            //     .val(num);
-            //   // TotalPrice();
-            // });
+            $(this)
+              .next()
+              .val(num);
           }
         }
       });
