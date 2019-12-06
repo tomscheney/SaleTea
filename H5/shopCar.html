@@ -109,12 +109,12 @@
               <div class="product-amount">
                   <div class="product_gw">
                       <em class="product-jian">-</em>
-                      <input type="text" value="<%= (data.amounts)[i] %>" class="product-num" />
+                      <input type="text" value="<%= (data.amounts)[i].values %>" class="product-num" />
                       <em class="product-add">+</em>
                   </div>
               </div>
               <div class="product-del">
-                <img src="img/deleteico.png" class="deletedImg" onclick="dels((data.productList)[i].productId)"/>
+                <img src="img/deleteico.png" class="deletedImg" onclick="dels(<%=(data.productList)[i].productId %>)"/>
               </div>
           </div>
       </li>
