@@ -151,6 +151,7 @@ function dels(productId) {
     ".deletedImg ",
     function() {
       var r = confirm("您确定要删除当前商品？");
+      var x;
       if (r == true) {
         $.ajax({
           url: "https://kidstoms.com/deleteProduct",
@@ -164,9 +165,13 @@ function dels(productId) {
             // res就是后台接口返回的数据
             console.log(res);
             if (res.code == "200") {
+              remove();
+              location.reload();
             }
           }
         });
+      } else {
+        x = '你按下了"取消"按钮!';
       }
 
       // confirm({
