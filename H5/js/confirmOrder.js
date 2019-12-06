@@ -1,5 +1,5 @@
 // 进去立即购买页面 调buyNow接口
-function buyNow(productId) {
+$(document).ready(function() {
   $.ajax({
     url: "https://kidstoms.com/buyNow",
     type: "post",
@@ -22,7 +22,7 @@ function buyNow(productId) {
       }
     }
   });
-}
+});
 
 function ex() {
   location.href = "exchange.html";
@@ -65,3 +65,7 @@ function goPay() {
 //     }
 
 // })
+
+// $(document).ready(function() {
+//   buyNow();
+// });
