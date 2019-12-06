@@ -150,22 +150,23 @@ function dels(productId) {
     "click",
     ".deletedImg ",
     function() {
-      $.ajax({
-        url: "https://kidstoms.com/deleteProduct",
-        type: "post",
-        dataType: "json",
-        data: {
-          openId: localStorage.getItem("openId"),
-          productId: productId
-        },
-        success: function(res) {
-          // res就是后台接口返回的数据
-          console.log(res);
-          if(res.code == "200") {
+      alert("您确认删除吗？")
+      // $.ajax({
+      //   url: "https://kidstoms.com/deleteProduct",
+      //   type: "post",
+      //   dataType: "json",
+      //   data: {
+      //     openId: localStorage.getItem("openId"),
+      //     productId: productId
+      //   },
+      //   success: function(res) {
+      //     // res就是后台接口返回的数据
+      //     console.log(res);
+      //     if(res.code == "200") {
 
-          }
-        }
-      });
+      //     }
+      //   }
+      // });
     }
   );
 }
