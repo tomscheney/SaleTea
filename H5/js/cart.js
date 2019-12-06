@@ -226,72 +226,52 @@ function getList() {
 }
 
 // 点击减号（-）的时候 调 reduceProductAmount接口
-function jian(productId) {
-  $(".address-box  .product-box .product-amount").on(
-    "click",
-    ".product-jian ",
-    function() {
-      $.ajax({
-        url: "https://kidstoms.com/reduceProductAmount",
-        type: "post",
-        dataType: "json",
-        data: {
-          openId: localStorage.getItem("openId"),
-          productId: productId
-        },
-        success: function(res) {
-          console.log(res);
-          if (res.code == "200") {
-            $(".product-jian").click(function() {
-              var n = $(this)
-                .next()
-                .val();
-              var num = parseInt(n) - 1;
-              if (num == 0) {
-                return;
-              }
-              $(this)
-                .next()
-                .val(num);
-              // TotalPrice();
-            });
-          }
-        }
-      });
-    }
-  );
+function reduce(productId) {
+    $.ajax({
+      url: "https://kidstoms.com/reduceProductAmount",
+      type: "post",
+      dataType: "json",
+      data: {
+        openId: localStorage.getItem("openId"),
+        productId: productId
+      },
+      success: function(res) {
+        var vals = document.getElementById("input-num").value;
+        console.log(vals);
+
+        var num = parseInt(vals) + 1;
+        console.log(num);
+
+        document.getElementById("input-num").value = num;
+      }
+    });
+
 }
 
 // 点击加号（+）的时候 调 addToShopCart接口
-function jia(productId) {
-  $(".address-box  .product-box .product-amount").on(
-    "click",
-    ".product-add ",
-    function() {
-      $.ajax({
-        url: "https://kidstoms.com/addToShopCart",
-        type: "post",
-        dataType: "json",
-        data: {
-          openId: localStorage.getItem("openId"),
-          productId: productId
-        },
-        success: function(res) {
-          console.log(res);
-          if (res.code == "200") {
-            alert("11111111");
-            var vals = document.getElementById("input-num").value;
-            console.log(vals);
+function add(productId) {
+  $.ajax({
+    url: "https://kidstoms.com/addToShopCart",
+    type: "post",
+    dataType: "json",
+    data: {
+      openId: localStorage.getItem("openId"),
+      productId: productId
+    },
+    success: function(res) {
+      console.log(res);
+      if (res.code == "200") {
+        alert("11111111");
+        var vals = document.getElementById("input-num").value;
+        console.log(vals);
 
-            var num = parseInt(vals) + 1;
-            console.log(num);
+        var num = parseInt(vals) + 1;
+        console.log(num);
 
-            document.getElementById("input-num").value = num;
-          }
-        }
-      });
+        document.getElementById("input-num").value = num;
+      }
     }
-  );
+  });
 }
 
 $(document).ready(function() {
