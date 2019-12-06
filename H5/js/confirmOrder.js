@@ -57,7 +57,7 @@ function goPay() {
             return;
         }
         // orderNo
-        location.href = "confirmOrder.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
+        location.href = "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
     });
 }
 

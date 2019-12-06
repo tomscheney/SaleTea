@@ -27,14 +27,19 @@ function pay() {
 // 支付调用
 function onBridgeReady() {
 
+    let search = location.search;
+    let list = search.split("&");
+    let totalFee = (list[0].split("="))[1];
+    let orderNo = (list[1].split("="))[1];
+
     $.ajax({
         url: "https://kidstoms.com/getPayInfo",
         type: "post",
         dataType: "json",
         data: {
             openId: localStorage.getItem("openId"),
-            totalFee: Fee,
-            orderNo: orderN,
+            totalFee: totalFee,
+            orderNo: orderNo,
             notifyUrl: notifyUrl,
             body:"芷贤斋订单结算"
         },
