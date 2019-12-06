@@ -258,19 +258,24 @@ function jia(productId) {
           productId: productId
         },
         success: function(res) {
-          console.log(res);
           if (res.code == "200") {
-            $(".product-add").click(function() {
-              var id = document.getElementById(id).value;
-              console.log(id);
-              var n = $(this).val();
-              var num = parseInt(n) + 1;
-              if (num == 99) {
-                return;
-              }
-              $(this).val(num);
-              TotalPrice();
-            });
+            var vals = $(".input-num").val();
+            console.log(vals);
+            var num = parseInt(vals) + 1;
+            $(".input-num").val() = num;
+            console.log(res);
+            // if (res.code == "200") {
+            //   $(".product-add").click(function() {
+            //     var id = document.getElementById(id).value;
+            //     console.log(id);
+            //     var n = $(this).val();
+            //     var num = parseInt(n) + 1;
+            //     if (num == 99) {
+            //       return;
+            //     }
+            //     $(this).val(num);
+            //     TotalPrice();
+            //   });
           }
         }
       });
