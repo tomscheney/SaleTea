@@ -164,34 +164,15 @@ function dels(productId) {
             // res就是后台接口返回的数据
             console.log(res);
             if (res.code == "200") {
+              location.reload();
+              getList();
             }
           }
         });
-      } else {
       }
     }
   );
 }
-
-// function DelShop(productId) {
-// let productId = res.data.productList.productId;
-// console.log(productId);
-
-// $.ajax({
-//   url: "https://kidstoms.com/deleteProduct",
-//   type: "post",
-//   dataType: "json",
-//   data: {
-//     openId: localStorage.getItem("openId"),
-//     productId: productId.substr(0, 8)
-//   },
-//   success: function(res) {
-//     // res就是后台接口返回的数据
-//     console.log(res);
-
-//   }
-// });
-// }
 
 // 点击购物车  调queryShopCart接口
 function getList() {
@@ -217,8 +198,6 @@ function getList() {
         });
         $(".address-box").html(htmls);
       }
-
-
     }
   });
 }
