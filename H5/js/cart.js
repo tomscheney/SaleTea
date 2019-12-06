@@ -151,7 +151,7 @@ function dels(productId) {
     ".deletedImg ",
     function() {
       confirm("您确定要删除当前商品？", function(s) {
-        if (s) {
+        if (s == true) {
           $.ajax({
             url: "https://kidstoms.com/deleteProduct",
             type: "post",
