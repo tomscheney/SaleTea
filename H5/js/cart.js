@@ -220,8 +220,11 @@ function getList() {
 }
 
 // 点击减号（-）的时候 调 reduceProductAmount接口
-function reduce(productId) {
-  var value = document.getElementById("input-num").value;
+function reduce(index,productId) {
+
+  let elements =  document.getElementsByClassName("input-num");
+  let ele = elements[index]
+  let value = ele.value
 
   if (value <= 1){
     return;
@@ -246,7 +249,7 @@ function reduce(productId) {
 }
 
 // 点击加号（+）的时候 调 addToShopCart接口
-function add(productId) {
+function add(index,productId) {
   $.ajax({
     url: "https://kidstoms.com/addToShopCart",
     type: "post",
@@ -258,9 +261,10 @@ function add(productId) {
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
-        var vals = document.getElementById("input-num").value;
-
-        var num = parseInt(vals) + 1;
+        let elements =  document.getElementsByClassName("input-num");
+        let ele = elements[index]
+        let value = ele.value
+        let num = parseInt(value) + 1;
 
         document.getElementById("input-num").value = num;
         TotalPrice()
