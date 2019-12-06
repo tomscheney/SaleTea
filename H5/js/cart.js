@@ -34,7 +34,7 @@ $(function() {
   //   TotalPrice();
   // });
 
-	//删除产品
+  //删除产品
   $(".product-ckb").click(function() {
     $(this)
       .children("em")
@@ -77,7 +77,6 @@ $(function() {
   //   koncat();
   // });
 });
-
 
 //选中产品
 function productxz() {
@@ -262,16 +261,14 @@ function jia(productId) {
           console.log(res);
           if (res.code == "200") {
             $(".product-add").click(function() {
-              var n = $(this)
-                .prev()
-                .val();
+              var id = document.getElementById(id).value;
+              console.log(id);
+              var n = $(id).val();
               var num = parseInt(n) + 1;
               if (num == 99) {
                 return;
               }
-              $(this)
-                .prev()
-                .val(num);
+              $(id).val(num);
               TotalPrice();
             });
           }
