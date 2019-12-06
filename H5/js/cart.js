@@ -165,80 +165,12 @@ function dels(productId) {
             // res就是后台接口返回的数据
             console.log(res);
             if (res.code == "200") {
-              remove();
               location.reload();
             }
           }
         });
       } else {
-        x = '你按下了"取消"按钮!';
       }
-
-      // confirm({
-      //   confirm: function() {
-      //     $.ajax({
-      //       url: "https://kidstoms.com/deleteProduct",
-      //       type: "post",
-      //       dataType: "json",
-      //       data: {
-      //         openId: localStorage.getItem("openId"),
-      //         productId: productId
-      //       },
-      //       success: function(res) {
-      //         // res就是后台接口返回的数据
-      //         console.log(res);
-      //         if (res.code == "200") {
-      //         }
-      //       }
-      //     });
-      //   },
-      //   cancel: function() {
-      //     // closest(".product-box");
-      //   }
-      // });
-      // confirm("您确定要删除当前商品？", function(s) {
-      //   if (s == true) {
-      //     $.ajax({
-      //       url: "https://kidstoms.com/deleteProduct",
-      //       type: "post",
-      //       dataType: "json",
-      //       data: {
-      //         openId: localStorage.getItem("openId"),
-      //         productId: productId
-      //       },
-      //       success: function(res) {
-      //         console.log(res);
-      //         if (res.code == "200") {
-      //           alert(res.data.msg);
-      //         }
-      //       }
-      //     });
-      //     // remove();
-      //   } else {
-      //     // closest(".product-box");
-      //   }
-      // });
-      // if (confirm("您确定要删除当前商品？")) {
-      //   $(this)
-      //     .closest(".product-box")
-      //     .remove();
-      // }
-      // $.ajax({
-      //   url: "https://kidstoms.com/deleteProduct",
-      //   type: "post",
-      //   dataType: "json",
-      //   data: {
-      //     openId: localStorage.getItem("openId"),
-      //     productId: productId
-      //   },
-      //   success: function(res) {
-      //     // res就是后台接口返回的数据
-      //     console.log(res);
-      //     if(res.code == "200") {
-
-      //     }
-      //   }
-      // });
     }
   );
 }
