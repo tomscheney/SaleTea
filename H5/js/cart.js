@@ -164,7 +164,7 @@ function dels(productId) {
             // res就是后台接口返回的数据
             console.log(res);
             if (res.code == "200") {
-              // location.reload();
+              location.reload();
             }
           }
         });
