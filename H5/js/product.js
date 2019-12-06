@@ -9,7 +9,7 @@ console.log(openId);
 
 // 点击立即购买
 function buyNow() {
-    // // location.href = "confirmOrder.html?productId=" + productId;
+     location.href = "confirmOrder.html?productId=" + productId;
     // if (this.openId == "" || this.openId == null) {
     //   location.href = "phoneChecking.html";
     // } else {
