@@ -222,7 +222,7 @@ function getList() {
 // 点击减号（-）的时候 调 reduceProductAmount接口
 function reduce(index,productId) {
 
-  let elements =  document.getElementsByClassName("input-num");
+  let elements =  document.getElementsByClassName("product-num");
   let ele = elements[index]
   let value = ele.value
 
