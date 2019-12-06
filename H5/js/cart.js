@@ -18,20 +18,6 @@ $(function() {
       .val(num);
     TotalPrice();
   });
-  //减的效果
-  $(".product-jian").click(function() {
-    var n = $(this)
-      .next()
-      .val();
-    var num = parseInt(n) - 1;
-    if (num == 0) {
-      return;
-    }
-    $(this)
-      .next()
-      .val(num);
-    TotalPrice();
-  });
 
   $(".product-ckb").click(function() {
     $(this)
@@ -201,6 +187,60 @@ function getList() {
     }
   });
 }
+
+// 点击减号（-）的时候 调 reduceProductAmount接口
+function jian(productId) {
+  $(".address-box  .product-box .product-amount").on(
+    "click",
+    ".product-jian ",
+    function() {
+      $.ajax({
+        url: "https://kidstoms.com/reduceProductAmount",
+        type: "post",
+        dataType: "json",
+        data: {
+          openId: localStorage.getItem("openId"),
+          productId: productId
+        },
+        success: function(res) {
+          console.log(res);
+          if (res.code == "200") {
+            // location.reload();
+            // getList();
+            $(".product-jian").click(function() {
+              var n = $(this)
+                .next()
+                .val();
+              var num = parseInt(n) - 1;
+              if (num == 0) {
+                return;
+              }
+              $(this)
+                .next()
+                .val(num);
+              TotalPrice();
+            });
+          }
+        }
+      });
+    }
+  );
+}
+
+//减的效果
+// $(".product-jian").click(function() {
+//   var n = $(this)
+//     .next()
+//     .val();
+//   var num = parseInt(n) - 1;
+//   if (num == 0) {
+//     return;
+//   }
+//   $(this)
+//     .next()
+//     .val(num);
+//   TotalPrice();
+// });
 
 $(document).ready(function() {
   getList();
