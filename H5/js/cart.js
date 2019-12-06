@@ -145,25 +145,42 @@ function koncat() {
 
 // 删除接口 deleteProduct数据
 // 利用事件委托选择到删除按钮所在ul
-function dels(productId) {
+function alert3(productId) {
   $(".address-box  .product-box .product-del").on(
     "click",
     ".deletedImg ",
-    function() {
-      $.ajax({
-        url: "https://kidstoms.com/deleteProduct",
-        type: "post",
-        dataType: "json",
-        data: {
-          openId: localStorage.getItem("openId"),
-          productId: productId
+    function(e) {
+      //第一个参数是提示信息
+      //第二个参数是点击确定的回调函数，如果需要操作数据，必须传参数event
+      //第三个参数是获取当前事件的，不传获取不到节点
+      jqAlert.Confirm(
+        "确定删除吗？",
+        function(event) {
+          console.log($(event).attr("id"));
+          console.log(event.id);
+          console.log(e.target.id);
         },
-        success: function(res) {
-          // res就是后台接口返回的数据
-          console.log(res);
-        }
-      });
+        e
+      );
     }
+    // function() {
+    //   $.ajax({
+    //     url: "https://kidstoms.com/deleteProduct",
+    //     type: "post",
+    //     dataType: "json",
+    //     data: {
+    //       openId: localStorage.getItem("openId"),
+    //       productId: productId
+    //     },
+    //     success: function(res) {
+    //       // res就是后台接口返回的数据
+    //       console.log(res);
+    //       if(res.code == "200") {
+
+    //       }
+    //     }
+    //   });
+    // }
   );
 }
 
