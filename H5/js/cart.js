@@ -221,7 +221,12 @@ function getList() {
 
 // 点击减号（-）的时候 调 reduceProductAmount接口
 function reduce(productId) {
-    $.ajax({
+  var value = document.getElementById("input-num").value;
+
+  if (value <= 1){
+    return;
+  }
+  $.ajax({
       url: "https://kidstoms.com/reduceProductAmount",
       type: "post",
       dataType: "json",
@@ -230,11 +235,8 @@ function reduce(productId) {
         productId: productId
       },
       success: function(res) {
-        var vals = document.getElementById("input-num").value;
-        console.log(vals);
 
-        var num = parseInt(vals) + 1;
-        console.log(num);
+        var num = parseInt(vals) - 1;
 
         document.getElementById("input-num").value = num;
       }
