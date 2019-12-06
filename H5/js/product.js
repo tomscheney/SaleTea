@@ -31,7 +31,7 @@ function buyNow() {
             if (res.code === "200") {
                 // alert(res.data.msg);
                 console.log(13121212);
-                location.href = "confirmOrder.html?totalFee="+res.data.orderAmount + "&orderId=" + res.data.orderId;
+                location.href = "confirmOrder.html?totalFee="+res.data.totalFee + "&orderId=" + res.data.orderNo;
 
             }
         }
