@@ -145,7 +145,7 @@ function koncat() {
 
 // 删除接口 deleteProduct数据
 // 利用事件委托选择到删除按钮所在ul
-function alert3(productId) {
+function dels(productId) {
   $(".address-box  .product-box .product-del").on(
     "click",
     ".deletedImg ",
