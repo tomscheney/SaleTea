@@ -145,15 +145,16 @@ function koncat() {
 
 // 删除接口 deleteProduct数据
 // 利用事件委托选择到删除按钮所在ul
-
-$(".address-box  .product-box .product-del").on(
-  "click",
-  ".deletedImg ",
-  function() {
-    alert(1);
-    console.log("进来删除操作了");
-  }
-);
+function dels() {
+  $(".address-box  .product-box .product-del").on(
+    "click",
+    ".deletedImg ",
+    function() {
+      alert(1);
+      console.log("进来删除操作了");
+    }
+  );
+}
 
 function DelShop() {
   // let productId = res.data.productList.productId;
