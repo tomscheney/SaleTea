@@ -78,18 +78,18 @@ $(function() {
   // });
 });
 
-//选中产品
-function productxz() {
-  var xz = $(".product-em");
-  var xz1 = $(".product-xz");
-  if (xz1.length == xz.length) {
-    $(".product-all em").addClass("product-all-on");
-  } else {
-    $(".product-all em").removeClass("product-all-on");
-  }
-  shuliang();
-  TotalPrice();
-}
+// //选中产品
+// function productxz() {
+//   var xz = $(".product-em");
+//   var xz1 = $(".product-xz");
+//   if (xz1.length == xz.length) {
+//     $(".product-all em").addClass("product-all-on");
+//   } else {
+//     $(".product-all em").removeClass("product-all-on");
+//   }
+//   shuliang();
+//   TotalPrice();
+// }
 //计算产品价格
 function TotalPrice() {
   //总价
@@ -116,6 +116,22 @@ function TotalPrice() {
     $(".all-price").text(total.toFixed(2)); //输出全部总价
   });
 }
+
+// 选中商品单个选择框
+function productxz() {
+  $(".address-box  .product-box ").on("click", ".product-ckb ", function() {
+    var xz = $(".product-em");
+    var xz1 = $(".product-xz");
+    if (xz1.length == xz.length) {
+      $(".product-all em").addClass("product-all-on");
+    } else {
+      $(".product-all em").removeClass("product-all-on");
+    }
+    shuliang();
+    TotalPrice();
+  });
+}
+
 //获取选择产品数量
 function shuliang() {
   $(".product-all-sl").text("");
