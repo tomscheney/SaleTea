@@ -150,28 +150,47 @@ function dels(productId) {
     "click",
     ".deletedImg ",
     function() {
-      confirm({
-        confirm: function() {
-          $.ajax({
-            url: "https://kidstoms.com/deleteProduct",
-            type: "post",
-            dataType: "json",
-            data: {
-              openId: localStorage.getItem("openId"),
-              productId: productId
-            },
-            success: function(res) {
-              // res就是后台接口返回的数据
-              console.log(res);
-              if (res.code == "200") {
-              }
+      var r = confirm("您确定要删除当前商品？");
+      if (r == true) {
+        $.ajax({
+          url: "https://kidstoms.com/deleteProduct",
+          type: "post",
+          dataType: "json",
+          data: {
+            openId: localStorage.getItem("openId"),
+            productId: productId
+          },
+          success: function(res) {
+            // res就是后台接口返回的数据
+            console.log(res);
+            if (res.code == "200") {
             }
-          });
-        },
-        cancel: function() {
-          closest(".product-box");
-        }
-      });
+          }
+        });
+      }
+
+      // confirm({
+      //   confirm: function() {
+      //     $.ajax({
+      //       url: "https://kidstoms.com/deleteProduct",
+      //       type: "post",
+      //       dataType: "json",
+      //       data: {
+      //         openId: localStorage.getItem("openId"),
+      //         productId: productId
+      //       },
+      //       success: function(res) {
+      //         // res就是后台接口返回的数据
+      //         console.log(res);
+      //         if (res.code == "200") {
+      //         }
+      //       }
+      //     });
+      //   },
+      //   cancel: function() {
+      //     // closest(".product-box");
+      //   }
+      // });
       // confirm("您确定要删除当前商品？", function(s) {
       //   if (s == true) {
       //     $.ajax({
