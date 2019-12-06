@@ -3,38 +3,38 @@ console.log(openId);
 let params = location.search.split("=");
 let productId = params[1];
 
-// $(function() {
-//   //加的效果
-//   $(".product-add").click(function() {
-//     var n = $(this)
-//       .prev()
-//       .val();
-//     var num = parseInt(n) + 1;
-//     if (num == 99) {
-//       return;
-//     }
-//     $(this)
-//       .prev()
-//       .val(num);
-//     TotalPrice();
-//   });
+$(function() {
+  //   //加的效果
+  //   $(".product-add").click(function() {
+  //     var n = $(this)
+  //       .prev()
+  //       .val();
+  //     var num = parseInt(n) + 1;
+  //     if (num == 99) {
+  //       return;
+  //     }
+  //     $(this)
+  //       .prev()
+  //       .val(num);
+  //     TotalPrice();
+  //   });
 
   //减的效果
-// $(".product-jian").click(function() {
-//   var n = $(this)
-//     .next()
-//     .val();
-//   var num = parseInt(n) - 1;
-//   if (num == 0) {
-//     return;
-//   }
-//   $(this)
-//     .next()
-//     .val(num);
-//   TotalPrice();
-// });
-
-
+  // $(".product-jian").click(function() {
+  //   var n = $(this)
+  //     .next()
+  //     .val();
+  //   var num = parseInt(n) - 1;
+  //   if (num == 0) {
+  //     return;
+  //   }
+  //   $(this)
+  //     .next()
+  //     .val(num);
+  //   TotalPrice();
+  // });
+  
+	//删除产品
   $(".product-ckb").click(function() {
     $(this)
       .children("em")
@@ -72,10 +72,12 @@ let productId = params[1];
   //   shuliang();
   // });
 
-//   TotalPrice();
-//   shuliang();
-//   koncat();
-// });
+  //   TotalPrice();
+  //   shuliang();
+  //   koncat();
+  // });
+});
+
 
 //选中产品
 function productxz() {
@@ -222,8 +224,6 @@ function jian(productId) {
         success: function(res) {
           console.log(res);
           if (res.code == "200") {
-            // location.reload();
-            // getList();
             $(".product-jian").click(function() {
               var n = $(this)
                 .next()
@@ -264,7 +264,7 @@ function jia(productId) {
             $(".product-add").click(function() {
               var n = $(this)
                 .prev()
-                 .val();
+                .val();
               var num = parseInt(n) + 1;
               if (num == 99) {
                 return;
@@ -280,8 +280,6 @@ function jia(productId) {
     }
   );
 }
-
-
 
 $(document).ready(function() {
   getList();
