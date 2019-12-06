@@ -150,29 +150,42 @@ function dels() {
     "click",
     ".deletedImg ",
     function() {
-      alert(1);
-      console.log("进来删除操作了");
+      $.ajax({
+        url: "https://kidstoms.com/deleteProduct",
+        type: "post",
+        dataType: "json",
+        data: {
+          openId: localStorage.getItem("openId"),
+          productId: productId
+        },
+        success: function(res) {
+          // res就是后台接口返回的数据
+          console.log(res);
+        }
+      });
     }
   );
 }
 
-function DelShop() {
-  // let productId = res.data.productList.productId;
-  // console.log(productId);
-  $.ajax({
-    url: "https://kidstoms.com/deleteProduct",
-    type: "post",
-    dataType: "json",
-    data: {
-      openId: localStorage.getItem("openId"),
-      productId: productId.substr(0, 8)
-    },
-    success: function(res) {
-      // res就是后台接口返回的数据
-      console.log(res);
-    }
-  });
-}
+// function DelShop(productId) {
+// let productId = res.data.productList.productId;
+// console.log(productId);
+
+// $.ajax({
+//   url: "https://kidstoms.com/deleteProduct",
+//   type: "post",
+//   dataType: "json",
+//   data: {
+//     openId: localStorage.getItem("openId"),
+//     productId: productId.substr(0, 8)
+//   },
+//   success: function(res) {
+//     // res就是后台接口返回的数据
+//     console.log(res);
+
+//   }
+// });
+// }
 
 // 点击购物车  调queryShopCart接口
 function getList() {
@@ -188,10 +201,11 @@ function getList() {
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
-        var result = res.data.productList;
+        var data = res.data;
+        // var result = res.data.productList;
         var amounts = res.data.amounts;
         console.log(amounts);
-        var htmls = template("addressTpl", { result: result });
+        var htmls = template("addressTpl", { data: data });
         $(".address-box").html(htmls);
       }
 
