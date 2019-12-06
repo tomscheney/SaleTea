@@ -96,9 +96,7 @@
       let result = data.productList
       let amounts = data.amounts;
       <% for(var i = 0; i < result.length; i++){ %>
-        let item = amounts[i]
-        let productId = result[i].productId
-        let amount = item[productId]
+        
       <li class="product-box">
           <div class="product-ckb"><em class="product-em product-xz"></em></div>
           <div class="product-sx">
@@ -114,7 +112,7 @@
               <div class="product-amount">
                   <div class="product_gw">
                       <em class="product-jian">-</em>
-                      <input type="text" value="<%= amount %>" class="product-num" />
+                      <input type="text" value="<%= amount[i].values[0] %>" class="product-num" />
                       <em class="product-add">+</em>
                   </div>
               </div>
