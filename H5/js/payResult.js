@@ -47,6 +47,9 @@ function onBridgeReady() {
 
             let resPay = res.data;
 
+            if (res.code !== 200){
+                return;
+            }
             // 支付
             WeixinJSBridge.invoke(
                 'getBrandWCPayRequest', {
