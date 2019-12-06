@@ -3,21 +3,37 @@ console.log(openId);
 let params = location.search.split("=");
 let productId = params[1];
 
-$(function() {
-  //加的效果
-  $(".product-add").click(function() {
-    var n = $(this)
-      .prev()
-      .val();
-    var num = parseInt(n) + 1;
-    if (num == 99) {
-      return;
-    }
-    $(this)
-      .prev()
-      .val(num);
-    TotalPrice();
-  });
+// $(function() {
+//   //加的效果
+//   $(".product-add").click(function() {
+//     var n = $(this)
+//       .prev()
+//       .val();
+//     var num = parseInt(n) + 1;
+//     if (num == 99) {
+//       return;
+//     }
+//     $(this)
+//       .prev()
+//       .val(num);
+//     TotalPrice();
+//   });
+
+  //减的效果
+// $(".product-jian").click(function() {
+//   var n = $(this)
+//     .next()
+//     .val();
+//   var num = parseInt(n) - 1;
+//   if (num == 0) {
+//     return;
+//   }
+//   $(this)
+//     .next()
+//     .val(num);
+//   TotalPrice();
+// });
+
 
   $(".product-ckb").click(function() {
     $(this)
@@ -227,20 +243,44 @@ function jian(productId) {
   );
 }
 
-//减的效果
-// $(".product-jian").click(function() {
-//   var n = $(this)
-//     .next()
-//     .val();
-//   var num = parseInt(n) - 1;
-//   if (num == 0) {
-//     return;
-//   }
-//   $(this)
-//     .next()
-//     .val(num);
-//   TotalPrice();
-// });
+// 点击加号（+）的时候 调 addToShopCart接口
+function jia(productId) {
+  $(".address-box  .product-box .product-amount").on(
+    "click",
+    ".product-jia ",
+    function() {
+      $.ajax({
+        url: "https://kidstoms.com/addToShopCart",
+        type: "post",
+        dataType: "json",
+        data: {
+          openId: localStorage.getItem("openId"),
+          productId: productId
+        },
+        success: function(res) {
+          console.log(res);
+          if (res.code == "200") {
+            $(".product-add").click(function() {
+              var n = $(this)
+                .prev()
+                 .val();
+              var num = parseInt(n) + 1;
+              if (num == 99) {
+                return;
+              }
+              $(this)
+                .prev()
+                .val(num);
+              TotalPrice();
+            });
+          }
+        }
+      });
+    }
+  );
+}
+
+
 
 $(document).ready(function() {
   getList();
