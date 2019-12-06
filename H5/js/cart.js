@@ -1,36 +1,40 @@
 let openId = window.localStorage.getItem("openId");
 console.log(openId);
+let params = location.search.split("=");
+let productId = params[1];
 
 $(function() {
-  //加的效果
-  $(".product-add").click(function() {
-    var n = $(this)
-      .prev()
-      .val();
-    var num = parseInt(n) + 1;
-    if (num == 99) {
-      return;
-    }
-    $(this)
-      .prev()
-      .val(num);
-    TotalPrice();
-  });
-  //减的效果
-  $(".product-jian").click(function() {
-    var n = $(this)
-      .next()
-      .val();
-    var num = parseInt(n) - 1;
-    if (num == 0) {
-      return;
-    }
-    $(this)
-      .next()
-      .val(num);
-    TotalPrice();
-  });
+  //   //加的效果
+  //   $(".product-add").click(function() {
+  //     var n = $(this)
+  //       .prev()
+  //       .val();
+  //     var num = parseInt(n) + 1;
+  //     if (num == 99) {
+  //       return;
+  //     }
+  //     $(this)
+  //       .prev()
+  //       .val(num);
+  //     TotalPrice();
+  //   });
 
+  //减的效果
+  // $(".product-jian").click(function() {
+  //   var n = $(this)
+  //     .next()
+  //     .val();
+  //   var num = parseInt(n) - 1;
+  //   if (num == 0) {
+  //     return;
+  //   }
+  //   $(this)
+  //     .next()
+  //     .val(num);
+  //   TotalPrice();
+  // });
+  
+	//删除产品
   $(".product-ckb").click(function() {
     $(this)
       .children("em")
@@ -68,10 +72,13 @@ $(function() {
   //   shuliang();
   // });
 
-  TotalPrice();
-  shuliang();
-  koncat();
+  //   TotalPrice();
+  //   shuliang();
+  //   koncat();
+  // });
 });
+
+
 //选中产品
 function productxz() {
   var xz = $(".product-em");
@@ -143,27 +150,33 @@ function koncat() {
 
 // 删除接口 deleteProduct数据
 // 利用事件委托选择到删除按钮所在ul
-// $(".address-box").on("tap", ".deletedImg", function() {
-//   alert(1);
-//   console.log("进来删除操作了")
-// });
-
-function DelShop() {
-  // let productId = res.data.productList.productId;
-  // console.log(productId);
-  $.ajax({
-    url: "https://kidstoms.com/deleteProduct",
-    type: "post",
-    dataType: "json",
-    data: {
-      openId: localStorage.getItem("openId"),
-      productId: res.data.productList.productId
-    },
-    success: function(res) {
-      // res就是后台接口返回的数据
-      console.log(res);
+function dels(productId) {
+  $(".address-box  .product-box .product-del").on(
+    "click",
+    ".deletedImg ",
+    function() {
+      var r = confirm("您确定要删除当前商品？");
+      if (r == true) {
+        $.ajax({
+          url: "https://kidstoms.com/deleteProduct",
+          type: "post",
+          dataType: "json",
+          data: {
+            openId: localStorage.getItem("openId"),
+            productId: productId
+          },
+          success: function(res) {
+            // res就是后台接口返回的数据
+            console.log(res);
+            if (res.code == "200") {
+              location.reload();
+              getList();
+            }
+          }
+        });
+      }
     }
-  });
+  );
 }
 
 // 点击购物车  调queryShopCart接口
@@ -179,41 +192,93 @@ function getList() {
     },
     success: function(res) {
       console.log(res);
-      // if (res.code == "200") {
-      //   var result = res.data.productList;
-      //   var amounts = res.data.amounts;
-      //   console.log(amounts);
-      //   var htmls = template("addressTpl", { result: result });
-      //   $(".address-box").html(htmls);
-      // }
-      // 列表
-      var menu = res.data.productList;
-      console.log(menu);
-      // 数量
-      var menus = res.data.amounts;
-      console.log(menus);
-      // 图片
-      var len = res.data.productList[0].productImages;
-      console.log(len);
-      // for (var i = 0; i < menu.length; i++) {
-      //   // 标题 簡介 价格 数量 图片
-      //   $(".productName").html(menu.productName);
-      //   $(".productDesc").html(menu.productDesc);
-      //   $(".salePrice").html(menu.salePrice);
-      //   $(".amounts").html(menus);
-      //   $(".productImages").html(len.productImages);
-      // }
-      var html = "";
-      for (var i = 0; i < len.length; i++) {
-        var imgI = len[i];
-        html += "<img src=" + imgI + "/>";
+      if (res.code == "200") {
+        // var data = res.data;
+        var result = res.data.productList;
+        var amounts = res.data.amounts;
+        console.log(amounts);
+        var htmls = template("addressTpl", {
+          result: result,
+          amounts: amounts
+        });
+        $(".address-box").html(htmls);
       }
-      console.log(imgI);
-      console.log(html);
-      $(".productImages").html(html);
-      $(".jd_shop_con").css("display", "block");
     }
   });
+}
+
+// 点击减号（-）的时候 调 reduceProductAmount接口
+function jian(productId) {
+  $(".address-box  .product-box .product-amount").on(
+    "click",
+    ".product-jian ",
+    function() {
+      $.ajax({
+        url: "https://kidstoms.com/reduceProductAmount",
+        type: "post",
+        dataType: "json",
+        data: {
+          openId: localStorage.getItem("openId"),
+          productId: productId
+        },
+        success: function(res) {
+          console.log(res);
+          if (res.code == "200") {
+            $(".product-jian").click(function() {
+              var n = $(this)
+                .next()
+                .val();
+              var num = parseInt(n) - 1;
+              if (num == 0) {
+                return;
+              }
+              $(this)
+                .next()
+                .val(num);
+              TotalPrice();
+            });
+          }
+        }
+      });
+    }
+  );
+}
+
+// 点击加号（+）的时候 调 addToShopCart接口
+function jia(productId) {
+  $(".address-box  .product-box .product-amount").on(
+    "click",
+    ".product-jia ",
+    function() {
+      $.ajax({
+        url: "https://kidstoms.com/addToShopCart",
+        type: "post",
+        dataType: "json",
+        data: {
+          openId: localStorage.getItem("openId"),
+          productId: productId
+        },
+        success: function(res) {
+          console.log(res);
+          if (res.code == "200") {
+            $(".product-add").click(function() {
+              var n = $(this)
+                .prev()
+                .val();
+              var num = parseInt(n) + 1;
+              if (num == 99) {
+                return;
+              }
+              $(this)
+                .prev()
+                .val(num);
+              TotalPrice();
+            });
+          }
+        }
+      });
+    }
+  );
 }
 
 $(document).ready(function() {
