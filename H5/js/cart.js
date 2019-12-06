@@ -223,13 +223,10 @@ function jian(productId) {
         success: function(res) {
           console.log(res);
           if (res.code == "200") {
-            var n = $(this).next().val();
-            console.log(n);
             var id = document.getElementById("inputs").value;
             console.log(id);
-            // id.parseInt
-            var nums = parseInt(id) - 1;
-            if (nums == 0) {
+            var id = parseInt(id) - 1;
+            if (id == 0) {
               return;
             }
             // $(".product-jian").click(function() {
