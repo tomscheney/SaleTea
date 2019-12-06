@@ -33,8 +33,8 @@ $(function() {
   //     .val(num);
   //   TotalPrice();
   // });
-  
-	//删除产品
+
+  //删除产品
   $(".product-ckb").click(function() {
     $(this)
       .children("em")
@@ -78,19 +78,18 @@ $(function() {
   // });
 });
 
-
-//选中产品
-function productxz() {
-  var xz = $(".product-em");
-  var xz1 = $(".product-xz");
-  if (xz1.length == xz.length) {
-    $(".product-all em").addClass("product-all-on");
-  } else {
-    $(".product-all em").removeClass("product-all-on");
-  }
-  shuliang();
-  TotalPrice();
-}
+// //选中产品
+// function productxz() {
+//   var xz = $(".product-em");
+//   var xz1 = $(".product-xz");
+//   if (xz1.length == xz.length) {
+//     $(".product-all em").addClass("product-all-on");
+//   } else {
+//     $(".product-all em").removeClass("product-all-on");
+//   }
+//   shuliang();
+//   TotalPrice();
+// }
 //计算产品价格
 function TotalPrice() {
   //总价
@@ -117,6 +116,26 @@ function TotalPrice() {
     $(".all-price").text(total.toFixed(2)); //输出全部总价
   });
 }
+
+// 选中商品单个选择框
+function productxz() {
+  $(".address-box  .product-box .product-ckb").on(
+    "click",
+    ".product-em .product-xz .product-all .product-all-on",
+    function() {
+      var xz = $(".product-em");
+      var xz1 = $(".product-xz");
+      if (xz1.length == xz.length) {
+        $(".product-all em").addClass("product-all-on");
+      } else {
+        $(".product-all em").removeClass("product-all-on");
+      }
+      shuliang();
+      TotalPrice();
+    }
+  );
+}
+
 //获取选择产品数量
 function shuliang() {
   $(".product-all-sl").text("");
@@ -235,7 +254,7 @@ function jian(productId) {
               $(this)
                 .next()
                 .val(num);
-              TotalPrice();
+              // TotalPrice();
             });
           }
         }
@@ -248,7 +267,7 @@ function jian(productId) {
 function jia(productId) {
   $(".address-box  .product-box .product-amount").on(
     "click",
-    ".product-jia ",
+    ".product-add ",
     function() {
       $.ajax({
         url: "https://kidstoms.com/addToShopCart",
@@ -261,19 +280,11 @@ function jia(productId) {
         success: function(res) {
           console.log(res);
           if (res.code == "200") {
-            $(".product-add").click(function() {
-              var n = $(this)
-                .prev()
-                .val();
-              var num = parseInt(n) + 1;
-              if (num == 99) {
-                return;
-              }
-              $(this)
-                .prev()
-                .val(num);
-              TotalPrice();
-            });
+            alert("11111111");
+            var vals = document.getElementById("input-num").value;
+            console.log(vals);
+            var num = parseInt(vals) + 1;
+            document.getElementById("input-num").value = num;
           }
         }
       });

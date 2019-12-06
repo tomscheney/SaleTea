@@ -28,38 +28,7 @@
 
     <div class="body jd_shop_con">
       <!-- 模板字符串 -->
-      <ul class="product address-box">
-        
-      </ul>
-
-<!--       
-      <div class="product">
-        <div class="product-box">
-          <div class="product-ckb"><em class="product-em product-xz"></em></div>
-          <div class="product-sx">
-            <a href="###"> -->
-              <!-- 图片 -->
-              <!-- <img src="" class="product-img productImages" /> -->
-              <!-- <a href="#" class="img_box f_left"></a> -->
-              <!-- 名字 简介 -->
-              <!-- <span class="product-name productName productDesc"></span> -->
-            <!-- </a> -->
-            <!-- 单价 -->
-            <!-- <span class="product-price salePrice"
-              >¥&thinsp;<span class="price"></span
-            ></span>
-            <div class="product-amount">
-              <div class="product_gw">
-                <em class="product-jian">-</em> -->
-                <!-- 数量 -->
-                <!-- <input type="text" value="0" class="product-num amounts" />
-                <em class="product-add">+</em>
-              </div>
-            </div>
-            <div class="product-del" onclick="DelShop()"><img src="img/deleteico.png" /></div>
-          </div>
-        </div>
-      </div> -->
+      <ul class="product address-box"></ul>
 
       <div id="tests" class="product-js">
         <div class="product-al">
@@ -76,28 +45,20 @@
         <a href="" class="product-sett product-sett-a">结算</a>
         <div class="all-product">
           <span class="all-product-a"
-            >¥&thinsp;<span class="all-price"></span></span
-          >
+            >¥&thinsp;<span class="all-price"></span
+          ></span>
         </div>
       </div>
     </div>
-    <!--购物车空-->
-    <!-- <div class="kon-cat">
-      <div class="catkon">
-        <div class="kon-box">
-          <div class="kon-hz">
-            <img src="img/cart-air.png" />
-            <span class="kon-wz">购物车什么都没有</span>
-            <a href="###" class="kon-lj">去逛逛</a>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    
+
     <script type="text/html" id="addressTpl">
       <% for(var i = 0; i < result.length; i++){ %>
       <li class="product-box">
-          <div class="product-ckb"><em class="product-em product-xz"></em></div>
+        <!-- 选择 -->
+          <div class="product-ckb">
+            <em class="product-em product-xz" onclick="productxz()">
+            </em>
+          </div>
           <div class="product-sx">
               <a href="###">
                   <img src="<%= result[i].productImages[i]%>" class="product-img" />
@@ -111,7 +72,7 @@
               <div class="product-amount">
                   <div class="product_gw">
                       <em class="product-jian" onclick="jian(<%= result[i].productId %>)">-</em>
-                      <input type="text" value="<%= amounts[result[i].productId]%>" class="product-num" />
+                      <input name="name" id="input-num" type="text" value="<%= amounts[result[i].productId]%>" class="product-num" />
                       <em class="product-add" onclick="jia(<%= result[i].productId %>)">+</em>
                   </div>
               </div>
