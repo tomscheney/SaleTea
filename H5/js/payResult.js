@@ -1,15 +1,7 @@
 // 获取后台数据
 
 
-var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
-
-function randomn(n) {
-    if (n > 10) return null
-    return parseInt((Math.random() + 1) * Math.pow(10, n - 1))
-}
-console.log(randomn(10))
-var orderN = randomn(10) + "";
-var notifyUrl = "http://kidstoms.com/H5/payResult.html";
+let notifyUrl = "http://kidstoms.com/H5/payResult.html";
 
 function pay() {
     if (typeof WeixinJSBridge == "undefined") {

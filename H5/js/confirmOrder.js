@@ -21,11 +21,10 @@ function buyNow() {
             console.log(res);
             // res就是后台接口返回的数据
             if (res.code === 200) {
-                alert(res.data.msg);
 
                 totalFee = res.data.totalFee;
                 orderNo = res.data.orderNo;
-                document.getElementsByClassName("pay-money").value = "合计："+res.data.totalFee+"元"
+                document.getElementById("pay-money").value = "合计："+res.data.totalFee+"元"
 
             }
         }

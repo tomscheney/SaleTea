@@ -188,7 +188,6 @@ function dels(productId) {
             // res就是后台接口返回的数据
             console.log(res);
             if (res.code == "200") {
-              location.reload();
               getList();
             }
           }
@@ -283,7 +282,10 @@ function jia(productId) {
             alert("11111111");
             var vals = document.getElementById("input-num").value;
             console.log(vals);
+
             var num = parseInt(vals) + 1;
+            console.log(num);
+
             document.getElementById("input-num").value = num;
           }
         }
