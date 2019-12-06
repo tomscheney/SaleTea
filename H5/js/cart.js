@@ -261,7 +261,7 @@ function jia(productId) {
           console.log(res);
           if (res.code == "200") {
             $(".product-add").click(function() {
-              var id = document.getElementById(id).value;
+              var id = document.getElementById("id").value;
               console.log(id);
               var n = $(id).val();
               var num = parseInt(n) + 1;
