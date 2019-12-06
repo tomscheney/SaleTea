@@ -260,7 +260,8 @@ function jia(productId) {
         success: function(res) {
           console.log(res);
           if (res.code == "200") {
-            var value = document.getElementById("input-num").value;
+            // var value = document.getElementById("input-num").value;
+            var value = $(".input-num").val();
             console.log(value);
             var num = parseInt(value) + 1;
             document.getElementById("input-num").value = num;
