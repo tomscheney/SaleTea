@@ -1,7 +1,7 @@
 // 进去立即购买页面 调buyNow接口
 
-let totalFee = 0;
-let orderNo = 0;
+var totalFee = 0;
+var orderNo = 0;
 
 function buyNow() {
 
