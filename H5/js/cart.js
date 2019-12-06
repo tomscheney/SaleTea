@@ -249,6 +249,7 @@ function jia(productId) {
     "click",
     ".product-add ",
     function() {
+      alert('11111111')
       $.ajax({
         url: "https://kidstoms.com/addToShopCart",
         type: "post",
