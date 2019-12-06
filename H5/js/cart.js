@@ -150,11 +150,32 @@ function dels(productId) {
     "click",
     ".deletedImg ",
     function() {
-      if (confirm("您确定要删除当前商品？")) {
-        $(this)
-          .closest(".product-box")
-          .remove();
-      }
+      confirm("您确定要删除当前商品？", function(s) {
+        if (s) {
+          $.ajax({
+            url: "https://kidstoms.com/deleteProduct",
+            type: "post",
+            dataType: "json",
+            data: {
+              openId: localStorage.getItem("openId"),
+              productId: productId
+            },
+            success: function(res) {
+              console.log(res);
+              if (res.code == "200") {
+              }
+            }
+          });
+          remove();
+        } else {
+          closest(".product-box");
+        }
+      });
+      // if (confirm("您确定要删除当前商品？")) {
+      //   $(this)
+      //     .closest(".product-box")
+      //     .remove();
+      // }
       // $.ajax({
       //   url: "https://kidstoms.com/deleteProduct",
       //   type: "post",
