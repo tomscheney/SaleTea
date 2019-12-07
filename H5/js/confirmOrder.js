@@ -17,14 +17,14 @@ function buyNow() {
     },
     success: function(res) {
       console.log(res);
-      if (res.data.code === "200") {
+
         var menu = res.data.productList[0];
         console.log(menu);
         // 名字
         $(".productName").html(menu.productName);
         // 价格
         $(".productPrice").html(menu.productPrice);
-      }
+      
     }
   });
 }
