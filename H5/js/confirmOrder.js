@@ -19,6 +19,7 @@ function buyNow() {
       console.log(res);
       if (res.code === "200") {
         var menu = res.data.productList[0];
+        console.log(menu);
         // 名字
         $(".productName").text(menu.productName);
         // 价格
