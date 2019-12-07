@@ -14,13 +14,13 @@ $(function() {
     type: "post",
     dataType: "json",
     data: {
-      openId: window.localStorage.getItem("openId"),
+      openId: window.localStorage.getItem("openId")
     },
     success: function(res) {
       console.log(res);
-      if (res.code === "200") {
-        console.log(123)
-      }
+      var result = res.data.productList;
+      var html = template("addressTemplate", { result: result });
+      console.log(html);
     }
   });
 });
@@ -32,4 +32,3 @@ function ad() {
 function add() {
   location.href = "ReceivingAddress.html";
 }
-
