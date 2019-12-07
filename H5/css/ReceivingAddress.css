@@ -130,3 +130,10 @@ border: #F00 solid 1px;
         #btn-2 {
             background-color: #000;
         }
+
+        /* 省市区样式 */
+        .select-div select {
+            width: 32%;
+            height: auto;
+            font-size: 1rem;
+        }
