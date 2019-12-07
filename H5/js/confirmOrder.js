@@ -53,4 +53,6 @@ function goPay() {
   });
 }
 
-$(document).ready(function() {});
+$(document).ready(function() {
+  buyNow();
+});
