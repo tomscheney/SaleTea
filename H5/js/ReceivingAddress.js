@@ -6,7 +6,7 @@ function newAdd() {
   var city = $(".select-city").val();
   var area = $(".select-area").val();
   var address = $("#address").val();
-  let newAddtess = province + city + area + address;
+  let newAddtess = "province + city + area + address";
   console.log("用户名", userName);
   console.log("手机号", telephone);
   console.log("省", province);
