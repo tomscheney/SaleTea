@@ -17,7 +17,7 @@ function buyNow() {
     },
     success: function(res) {
       console.log(res);
-      if (res.code === "200") {
+      if (res.data.code === "200") {
         var menu = res.data.productList[0];
         console.log(menu);
         // 名字
