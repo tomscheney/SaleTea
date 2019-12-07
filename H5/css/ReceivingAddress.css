@@ -1,0 +1,132 @@
+		/*分别定义HTML中和标记之的距离样式*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*定义<body>标记样式*/
+        body {
+            background: #ffffff;
+            color: #111111;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /*定义付费内容的样式*/
+        form#payment {
+            width: 100%;
+        }
+
+        form fieldset {
+            width: 100%;
+            border: none;
+        }
+
+        form#payment fieldset:last-of-type {
+            margin-bottom: 0;
+        }
+
+        form#payment legend {
+            color: #384313;
+            font-size: 12px;
+            font-weight: bold;
+            padding-bottom: 10px;
+            text-shadow: 0 1px 1px #c0d576;
+        }
+
+        form#payment>fieldset>legend:before {
+            content: "Step "counter(fieldsets) ": ";
+            counter-increment: fieldsets;
+        }
+
+        form#payment fieldset fieldset legend {
+            color: #111111;
+            font-size: 12px;
+            font-weight: normal;
+            padding-bottom: 0;
+        }
+
+        form#payment ol li {
+            border-color: #fff;
+            line-height: 50px;
+            height: auto;
+            list-style: none;
+            margin-bottom: 2px;
+            border-bottom: 1px solid grey;
+        }
+
+        form#payment ol ol li {
+            background: none;
+            border: none;
+            float: left;
+        }
+
+        form#payment label {
+            float: left;
+            font-size: 12px;
+            width: 25%;
+            color: gray;
+        }
+
+        form#payment fieldset fieldset label {
+            background: none no-repeat left 50%;
+            line-height: 20px;
+            padding: 0 0 0 30px;
+            width: auto;
+        }
+
+        form#payment fieldset fieldset label:hover {
+            cursor: pointer;
+        }
+
+        form#payment input:not([type=radio]),
+        form#payment textarea {
+            background: #ffffff;
+            border: 0;
+            font-size: 12px;
+            outline: none;
+            padding: 5px;
+            width: 70%;
+        }
+
+        /* form#payment input:not([type=submit]):focus, form#payment textarea:focus {
+background: #eaeaea;
+border: #F00 solid 1px;
+} */
+        form#payment input[type=radio] {
+            float: left;
+            margin-right: 5px;
+        }
+
+        .selectList {
+            width: 90%;
+            margin: 5px auto;
+        }
+
+        .selectList select {
+            width: 32%;
+            height: 2.5rem;
+            margin-left: 0;
+            /* padding-left: 2%; */
+            font-size: 0.75rem;
+        }
+
+        select option {
+            font-size: 12px;
+        }
+
+        button {
+            display: inline-block;
+            width: 40%;
+            height: 35px;
+            color: #fff;
+            background-color: red;
+            border: none;
+            padding: 3px;
+            font-size: 12px;
+            margin: 30px 0 0 19px;
+        }
+
+        #btn-2 {
+            background-color: #000;
+        }
