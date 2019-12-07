@@ -18,13 +18,11 @@ function buyNow() {
     success: function(res) {
       console.log(res);
       if (res.code === "200") {
-        // template("", { res });
-        // console.log(13121212);
-        // location.href =
-        //   "confirmOrder.html?totalFee=" +
-        //   res.data.orderAmount +
-        //   "&orderId=" +
-        //   res.data.orderId;
+        var menu = res.data.productList[0];
+        // 名字
+        $(".productName").text(menu.productName);
+        // 价格
+        $(".productPrice").text(menu.productPrice);
       }
     }
   });
