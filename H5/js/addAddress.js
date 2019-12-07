@@ -21,6 +21,7 @@ $(function() {
       var result = res.data.productList;
       var html = template("addressTemplate", { result: result });
       console.log(html);
+      $(".address-box").html(html);
     }
   });
 });
