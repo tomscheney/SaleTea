@@ -1,3 +1,10 @@
+let search = location.search;
+let list = search.split("=");
+let productId = list[1];
+console.log(search);
+console.log(list);
+console.log(productId);
+
 // 进去立即购买页面 调buyNow接口
 function buyNow(productId) {
   $.ajax({
