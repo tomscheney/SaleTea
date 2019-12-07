@@ -27,13 +27,12 @@ function newAdd() {
       // postcode:,
       openId: localStorage.getItem("openId")
     }),
-    success: function(data) {
-      console.log(2);
-      if (userName != "" && telephone != "" && address != "") {
-        console.log(data);
-        console.log(1);
-        // location.href = "new-add.html";
-      }
+    success: function(res) {
+      console.log(res);
+      location.href = "addAddress.html";
+      // if (userName != "" && telephone != "" && address != "") {
+      //   // location.href = "new-add.html";
+      // }
     },
     error: function(data) {
       console.log(103);
