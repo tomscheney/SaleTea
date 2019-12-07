@@ -21,9 +21,9 @@ function buyNow() {
         var menu = res.data.productList[0];
         console.log(menu);
         // 名字
-        $(".productName").text(menu.productName);
+        $(".productName").html(menu.productName);
         // 价格
-        $(".productPrice").text(menu.productPrice);
+        $(".productPrice").html(menu.productPrice);
       }
     }
   });
