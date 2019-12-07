@@ -1,15 +1,7 @@
 // 获取后台数据
 
 
-var Fee = parseInt(Math.random() * (50 - 0 + 1) + 50);
-
-function randomn(n) {
-    if (n > 10) return null
-    return parseInt((Math.random() + 1) * Math.pow(10, n - 1))
-}
-console.log(randomn(10))
-var orderN = randomn(10) + "";
-var notifyUrl = "http://kidstoms.com/H5/payResult.html";
+let notifyUrl = "http://kidstoms.com/H5/payResult.html";
 
 function pay() {
     if (typeof WeixinJSBridge == "undefined") {
@@ -27,14 +19,19 @@ function pay() {
 // 支付调用
 function onBridgeReady() {
 
+    let search = location.search;
+    let list = search.split("&");
+    let totalFee = (list[0].split("="))[1];
+    let orderNo = (list[1].split("="))[1];
+
     $.ajax({
         url: "https://kidstoms.com/getPayInfo",
         type: "post",
         dataType: "json",
         data: {
             openId: localStorage.getItem("openId"),
-            totalFee: Fee,
-            orderNo: orderN,
+            totalFee: totalFee,
+            orderNo: orderNo,
             notifyUrl: notifyUrl,
             body:"芷贤斋订单结算"
         },
@@ -42,6 +39,9 @@ function onBridgeReady() {
 
             let resPay = res.data;
 
+            if (res.code !== 200){
+                return;
+            }
             // 支付
             WeixinJSBridge.invoke(
                 'getBrandWCPayRequest', {
