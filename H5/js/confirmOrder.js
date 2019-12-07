@@ -1,5 +1,4 @@
 // 进去立即购买页面 调buyNow接口
-<<<<<<< HEAD
 $(document).ready(function() {
   $.ajax({
     url: "https://kidstoms.com/buyNow",
@@ -24,39 +23,6 @@ $(document).ready(function() {
     }
   });
 });
-=======
-
-var totalFee = 0;
-var orderNo = 0;
-
-function buyNow() {
-
-    let search = location.search;
-    let list = search.split("=");
-    let productId = list[1];
-    let openId = window.localStorage.getItem("openId");
-    $.ajax({
-        url: "https://kidstoms.com/buyNow",
-        type: "post",
-        dataType: "json",
-        data: {
-            openId: openId,
-            productId: productId
-        },
-        success: function (res) {
-            console.log(res);
-            // res就是后台接口返回的数据
-            if (res.code === 200) {
-
-                totalFee = res.data.totalFee;
-                orderNo = res.data.orderNo;
-                document.getElementById("pay-money").value = "合计："+res.data.totalFee+"元"
-
-            }
-        }
-    });
-};
->>>>>>> eaa4b107d3bc747f456c7473ef777487e34f398a
 
 function ex() {
     location.href = "exchange.html";
