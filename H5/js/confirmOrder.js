@@ -10,15 +10,15 @@ $(document).ready(function() {
     },
     success: function(res) {
       console.log(res);
-      // res就是后台接口返回的数据
       if (res.code === "200") {
-        // alert(res.data.msg);
-        console.log(13121212);
-        location.href =
-          "confirmOrder.html?totalFee=" +
-          res.data.orderAmount +
-          "&orderId=" +
-          res.data.orderId;
+        template("", { res });
+
+        // console.log(13121212);
+        // location.href =
+        //   "confirmOrder.html?totalFee=" +
+        //   res.data.orderAmount +
+        //   "&orderId=" +
+        //   res.data.orderId;
       }
     }
   });
