@@ -267,7 +267,8 @@ function add(index,productId) {
         let num = parseInt(value) + 1;
 
         ele.value = num;
-        TotalPrice()
+        shuliang();
+        TotalPrice();
 
       }
     }
@@ -278,6 +279,3 @@ $(document).ready(function() {
   getList();
 });
 
-window.onload = (function() {
-  selectProduct();
-});
