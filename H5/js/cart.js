@@ -240,8 +240,7 @@ function reduce(index,productId) {
       },
       success: function(res) {
 
-        var num = parseInt(value) - 1;
-
+        let num = parseInt(value) - 1;
         ele.value = num;
         TotalPrice()
       }
@@ -277,5 +276,5 @@ function add(index,productId) {
 
 $(document).ready(function() {
   getList();
-  productxz();
+  selectProduct();
 });
