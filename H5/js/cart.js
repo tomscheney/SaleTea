@@ -277,5 +277,5 @@ function add(index,productId) {
 
 $(document).ready(function() {
   getList();
-  selectProduct()
+  productxz();
 });
