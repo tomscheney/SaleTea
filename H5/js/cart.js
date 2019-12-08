@@ -278,6 +278,6 @@ $(document).ready(function() {
   getList();
 });
 
-$(document).onload(function() {
+window.onload = (function() {
   selectProduct();
 });
