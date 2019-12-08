@@ -267,7 +267,6 @@ function add(index,productId) {
         let num = parseInt(value) + 1;
 
         ele.value = num;
-       selectProduct();
 
       }
     }
