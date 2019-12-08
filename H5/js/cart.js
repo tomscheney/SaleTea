@@ -81,12 +81,17 @@ $(function() {
 
 //选中产品
 function selectProduct() {
-  var xz = $(".product-em");
-  var xz1 = $(".product-xz");
-  if (xz1.length == xz.length) {
-    $(".product-all em").addClass("product-all-on");
+  var fxk = $(".product-em");
+  var qx = $(".product-all em");
+  qx.toggleClass("product-all-on");
+  if (
+      $(this)
+          .find(".product-all em")
+          .is(".product-xz")
+  ) {
+    fxk.addClass("product-xz");
   } else {
-    $(".product-all em").removeClass("product-all-on");
+    fxk.removeClass("product-xz");
   }
   shuliang();
   TotalPrice();

@@ -17,7 +17,7 @@ em{font-style:normal}
 .product-ckb .product-xz{background:url(../img/gouico.png) no-repeat 0 0;background-size:1.1rem;border:0;display:inline-block}
 .product-sx{float:left;height:5.8rem;padding:.6rem 0;border-bottom:1px solid #e1e1e1;padding-left:3rem;display:inline-block;width:100%;box-sizing:border-box;position:absolute;top:0;left:0}
 .product-sx .product-img{width:4.5rem;height:4rem;display:inline-block;float:left}
-.product-sx .product-name{font-size:.8rem;color:#000;max-width:70%;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;padding-left:10px}
+.product-sx .product-name{font-size:.9rem;color:#000;max-width:70%;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;padding-left:10px}
 .product-sx .product-price{font-size:1rem;color:#e46b7e;margin:5px 10px 10px 14px;display:inline-block;float:left}
 .product-amount{position:absolute;right:25px;bottom:10px}
 .product_gw{border:1px solid #dbdbdb;width:110px;line-height:25px;overflow:hidden;font-size:.6rem}
