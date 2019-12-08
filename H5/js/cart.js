@@ -276,6 +276,8 @@ function add(index,productId) {
 
 $(document).ready(function() {
   getList();
+});
+
+$(document).onloadend(function() {
   selectProduct();
-  shuliang();
 });
