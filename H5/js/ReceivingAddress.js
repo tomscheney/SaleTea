@@ -47,10 +47,7 @@ function newAdd() {
     }),
     success: function(res) {
       console.log(res);
-      location.href = "addAddress.html";
-      // if (userName != "" && telephone != "" && address != "") {
-      //   // location.href = "new-add.html";
-      // }
+      // location.href = "addAddress.html";
     },
     error: function(data) {
       console.log(103);
