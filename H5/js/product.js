@@ -7,9 +7,28 @@ console.log(list);
 console.log(productId);
 console.log(openId);
 
-// 点击立即购买
+// 点击立即购买 调buyNow接口
 function buyNow() {
-  location.href = "confirmOrder.html?productId=" + productId;
+  if (this.phone == "" || this.phone == null) {
+    location.href = "phoneChecking.html";
+  } else {
+    $.ajax({
+      url: "https://kidstoms.com/buyNow",
+      type: "post",
+      dataType: "json",
+      data: {
+        openId: window.localStorage.getItem("openId"),
+        // productId:location.search.substr(1, 8)
+        productId: productId.substr(0, 8)
+      },
+      success: function(res) {
+        console.log(res);
+        if (res.code === "200") {
+          location.href = "confirmOrder.html?productId=" + productId;
+        }
+      }
+    });
+  }
 }
 
 // 点击购物车图标

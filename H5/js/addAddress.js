@@ -26,6 +26,10 @@ $(function() {
   });
 });
 
+
+// 点击删除按钮 调deleteAddressByTelephone接口
+
+
 function ad() {
   location.href = "address.html";
 }

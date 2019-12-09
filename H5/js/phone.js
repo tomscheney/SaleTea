@@ -42,3 +42,5 @@ window.onresize = function() {
         viewPort(navigator.userAgent);
     }, 500);
 }
+
+// 
