@@ -17,21 +17,21 @@ function newAdd() {
   console.log("地址", address);
   console.log(newAddtess);
 
-  if (
-    this.userName == "0" ||
-    this.userName == null ||
-    this.userName == undefined
-  ) {
-    alert("请输入收货人姓名");
-    return;
-  } else if (
-    this.telephone == "0" ||
-    this.telephone == null ||
-    this.telephone == undefined
-  ) {
-    alert("请输入收货人手机号");
-    return;
-  }
+  // if (
+  //   this.userName == "" ||
+  //   this.userName == null ||
+  //   this.userName == undefined
+  // ) {
+  //   alert("请输入收货人姓名");
+  //   return;
+  // } else if (
+  //   this.telephone == "" ||
+  //   this.telephone == null ||
+  //   this.telephone == undefined
+  // ) {
+  //   alert("请输入收货人手机号");
+  //   return;
+  // }
 
   $.ajax({
     url: "https://47.112.98.24:8090/saveAddress",
