@@ -37,20 +37,20 @@ function newAdd() {
     url: "https://kidstoms.com/saveAddress",
     type: "post",
     dataType: "json",
-    data: JSON.stringify({
-      userName: userName,
-      telephone: telephone,
-      addressDetail: newAddtess,
-      postcode: postcode,
-      openId: localStorage.getItem("openId")
-    }),
-    // data: {
+    // data: JSON.stringify({
     //   userName: userName,
     //   telephone: telephone,
     //   addressDetail: newAddtess,
     //   postcode: postcode,
     //   openId: localStorage.getItem("openId")
-    // },
+    // }),
+    data: {
+      userName: userName,
+      telephone: telephone,
+      addressDetail: newAddtess,
+      postcode: postcode,
+      openId: localStorage.getItem("openId")
+    },
     success: function(res) {
       console.log(res);
       // location.href = "addAddress.html";
