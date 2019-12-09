@@ -34,7 +34,7 @@ function newAdd() {
   // }
 
   $.ajax({
-    url: "https://47.112.98.24:8090/saveAddress",
+    url: "https://kidstoms.com/saveAddress",
     type: "post",
     dataType: "json",
     data: JSON.stringify({
