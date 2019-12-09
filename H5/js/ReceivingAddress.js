@@ -7,7 +7,8 @@ function newAdd() {
   var city = $("#select-city").val();
   var area = $("#select-area").val();
   var address = $("#address").val();
-  let newAddtess = "province" + "city" + "area" + "address";
+  // let newAddtess = "province" + "city" + "area" + "address";
+  let newAddtess = province + city + area + address;
   console.log("用户名", userName);
   console.log("手机号", telephone);
   console.log("邮编", postcode);
@@ -37,13 +38,6 @@ function newAdd() {
     url: "https://kidstoms.com/saveAddress",
     type: "post",
     dataType: "json",
-    // data: JSON.stringify({
-    //   userName: userName,
-    //   telephone: telephone,
-    //   addressDetail: newAddtess,
-    //   postcode: postcode,
-    //   openId: localStorage.getItem("openId")
-    // }),
     data: {
       userName: userName,
       telephone: telephone,
