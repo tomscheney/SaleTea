@@ -18,7 +18,7 @@ $(function() {
     },
     success: function(res) {
       console.log(res);
-      var result = res.data.productList;
+      var result = res.data;
       var html = template("addressTemplate", { result: result });
       console.log(html);
       $(".address-box").html(html);
