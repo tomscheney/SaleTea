@@ -56,7 +56,7 @@ function newAdd() {
       // location.href = "addAddress.html";
     },
     error: function(res) {
-      console.log(103);
+      console.log(res);
       // $('#serverResponse').html(data.userName + " : " + data.telephone + " : " + data.address);
     }
   });
