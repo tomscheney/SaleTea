@@ -37,30 +37,30 @@ function newAdd() {
     url: "https://47.112.98.24:8090/saveAddress",
     type: "post",
     dataType: "json",
-    // data: JSON.stringify({
-    //   userName: userName,
-    //   telephone: telephone,
-    //   addressDetail: newAddtess,
-    //   postcode: postcode,
-    //   openId: localStorage.getItem("openId")
-    // }),
-    data: {
+    data: JSON.stringify({
       userName: userName,
       telephone: telephone,
       addressDetail: newAddtess,
       postcode: postcode,
       openId: localStorage.getItem("openId")
-    },
+    }),
+    // data: {
+    //   userName: userName,
+    //   telephone: telephone,
+    //   addressDetail: newAddtess,
+    //   postcode: postcode,
+    //   openId: localStorage.getItem("openId")
+    // },
     success: function(res) {
       console.log(res);
       // location.href = "addAddress.html";
     },
     error: function(res) {
       console.log(res);
-      // $('#serverResponse').html(data.userName + " : " + data.telephone + " : " + data.address);
     }
   });
 }
+
 function newADd() {
-  location.href = "add-address.html";
+  location.href = "addAddress.html";
 }
