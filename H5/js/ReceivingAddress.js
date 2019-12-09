@@ -55,7 +55,7 @@ function newAdd() {
       console.log(res);
       // location.href = "addAddress.html";
     },
-    error: function(data) {
+    error: function(res) {
       console.log(103);
       // $('#serverResponse').html(data.userName + " : " + data.telephone + " : " + data.address);
     }
