@@ -37,7 +37,6 @@ function newAdd() {
     url: "https://47.112.98.24:8090/saveAddress",
     type: "post",
     dataType: "json",
-    contentType: "application/json",
     // data: JSON.stringify({
     //   userName: userName,
     //   telephone: telephone,
