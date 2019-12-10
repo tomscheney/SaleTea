@@ -101,17 +101,12 @@ $(function () {
 
 //选中产品
 function selectProduct(index) {
-    $(".product-em").each(function (i) {
-        if ( index === i  ) {
 
-            if ($(this).is(".product-xz")){
-                $(this).removeClass(".product-xz")
-            } else {
-                $(this).addClass(".product-xz")
-            }
-        }
-
-    });
+    if ($(this).is(".product-xz")){
+        $(this).removeClass(".product-xz")
+    } else {
+        $(this).addClass(".product-xz")
+    }
 
     shuliang();
     TotalPrice();
