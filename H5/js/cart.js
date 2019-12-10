@@ -73,7 +73,10 @@ $(function () {
     });
 
     //单选
-    $(".address-box  .product-box .product-ckb .product-em").on("click",function () {
+    $("product-em").on(
+        "click",
+        ".product-em .product-xz .product-all .product-all-on",
+        function() {
             var xz = $(".product-em");
             var xz1 = $(".product-xz");
             if (xz1.length == xz.length) {
