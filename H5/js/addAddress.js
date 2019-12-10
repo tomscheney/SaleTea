@@ -23,7 +23,7 @@ function getAllAddressByOpenId() {
     },
     success: function(res) {
       console.log(res);
-
+      addressList = res;
 
 
       var result = res.data;
@@ -65,8 +65,8 @@ function add() {
 
 // 点击地址列表的时候进入列表详情 进行修改
 function enter() {
-  addressList = res;
   location.href = "enter-address.html";
+  console.log(addressList)
 }
 
 $(document).ready(function() {
