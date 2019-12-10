@@ -165,9 +165,10 @@ function productxz() {
             shuliang();
             TotalPrice();
 
+            $(".address-box  .product-box .product-ckb .product-em").off;
+
         }
     );
-    $(".address-box  .product-box .product-ckb .product-em").off;
 }
 
 //获取选择产品数量
