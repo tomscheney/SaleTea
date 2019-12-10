@@ -8,7 +8,7 @@ console.log(productId);
 console.log(openId);
 
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
-$(function() {
+function getAllAddressByOpenId() {
   $.ajax({
     url: "https://kidstoms.com/getAllAddressByOpenId",
     type: "post",
@@ -24,16 +24,41 @@ $(function() {
       $(".address-box").html(html);
     }
   });
-});
-
+}
 
 // 点击删除按钮 调deleteAddressByTelephone接口
-
+function deletes() {
+  // $(".address-box").on("click", ".b3", function() {
+  var r = confirm("您确定要删除当前商品？");
+  if (r == true) {
+    $.ajax({
+      url: "https://kidstoms.com/deleteAddressByTelephone",
+      type: "post",
+      dataType: "json",
+      data: {
+        openId: window.localStorage.getItem("openId"),
+        telephone: window.localStorage.getItem("telephone")
+      },
+      success: function(res) {
+        console.log(res);
+        if (res.code == "200") {
+          getAllAddressByOpenId();
+        }
+      }
+    });
+  }
+  // });
+}
 
 function ad() {
   location.href = "address.html";
 }
 
+// 点击添加新地址按钮跳转页面
 function add() {
   location.href = "ReceivingAddress.html";
 }
+
+$(document).ready(function() {
+  getAllAddressByOpenId();
+});
