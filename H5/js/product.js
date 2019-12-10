@@ -74,7 +74,7 @@ $("#btn-car2").click(function() {
     .fadeOut();
 });
 // 获取产品详情  getProductDetail接口
-$(document).ready(function() {
+function getProductDetail() {
   $.ajax({
     url: "https://kidstoms.com/getProductDetail",
     type: "post",
@@ -158,12 +158,16 @@ $(document).ready(function() {
       // console.log(recomend)
     }
   });
-  error: function data() {
-    // console.log("dataerro", data);
-  }
+}
+$(document).ready(function() {
+  getProductDetail();
 });
 
 // 点击猜你喜欢按钮
 function imgbtn() {
-  alert("可以的");
+  buyNow();
+  shopCart();
+  addShopCart();
+  swiper_init();
+  getProductDetail();
 }
