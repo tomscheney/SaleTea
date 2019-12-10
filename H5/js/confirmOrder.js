@@ -61,12 +61,7 @@ function goPay() {
     },
     success: function(res) {
       console.log(res);
-      var menu = numList;
-      console.log(menu);
-      // 名字
-      $(".productName").html(menu.productName);
-      // 价格
-      $(".productPrice").html(menu.productPrice);
+      location.href = "payResult.html";
     }
   });
 }
