@@ -75,8 +75,6 @@ $("#btn-car2").click(function() {
 });
 // 获取产品详情  getProductDetail接口
 $(document).ready(function() {
-  // console.log("获取产品了!")
-  // console.log(search)
   $.ajax({
     url: "https://kidstoms.com/getProductDetail",
     type: "post",
@@ -85,9 +83,7 @@ $(document).ready(function() {
       productId: productId
     },
     success: function(res) {
-      // res就是后台接口返回的数据
-      // console.log(res)
-      // console.log(res.data)
+      console.log(res);
       // 标题 价格
       $(".tit-name").text(res.data.productDesc);
       $(".tit-price").text(res.data.salePrice + "元 / 份");
@@ -143,7 +139,7 @@ $(document).ready(function() {
         var recomI = recom[i];
         // console.log(recomI);
         recomend +=
-          '<div class="like-1">' +
+          '<div class="like-1" onclick="imgbtn()">' +
           '<div class="like-1-img">' +
           "<img src=" +
           recomI.recommendCover +
@@ -166,3 +162,8 @@ $(document).ready(function() {
     // console.log("dataerro", data);
   }
 });
+
+// 点击猜你喜欢按钮
+function imgbtn() {
+  alert("可以的");
+}
