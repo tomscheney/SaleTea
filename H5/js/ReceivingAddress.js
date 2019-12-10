@@ -77,6 +77,6 @@ function newAdd() {
 }
 
 // 点击返回按钮
-function newADd() {
+function returns() {
   location.href = "addAddress.html";
 }
