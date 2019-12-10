@@ -7,11 +7,11 @@ console.log(search);
 console.log(list);
 console.log(productId);
 
+var numList = null;
+console.log(numList);
+
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
-  var numList = null;
-  console.log(numList);
-
   $.ajax({
     url: "https://kidstoms.com/buyNow",
     type: "post",
@@ -22,10 +22,13 @@ function buyNow() {
     },
     success: function(res) {
       console.log(res);
+
       numList = res.data.productList[0];
       console.log(numList);
+
       var menu = res.data.productList[0];
       console.log(menu);
+
       // 名字
       $(".productName").html(menu.productName);
       // 价格
@@ -44,6 +47,7 @@ function adda() {
 
 // 点击去支付 调getPayInfo接口
 function goPay() {
+  console.log(numList);
   $.ajax({
     url: "https://kidstoms.com/getPayInfo",
     type: "post",
@@ -57,7 +61,6 @@ function goPay() {
     },
     success: function(res) {
       console.log(res);
-      console.log(numList);
       var menu = res.data.productList[0];
       console.log(menu);
       // 名字
