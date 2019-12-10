@@ -85,7 +85,7 @@ function selectProduct() {
   fxk.toggleClass("product-xz")
   if (
       $(this)
-          .find(".product-ckb")
+          .find(".product-ckb .product-em")
           .is(".product-xz")
   ) {
     fxk.addClass("product-xz");
