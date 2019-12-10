@@ -16,7 +16,7 @@ function newAdd() {
   console.log("市", city);
   console.log("区", area);
   console.log("地址", address);
-  console.log(newAddtess);
+  console.log("具体地址",newAddtess);
 
   if (
     this.userName == "" ||
@@ -56,9 +56,6 @@ function newAdd() {
       console.log(res);
       location.href = "addAddress.html";
     },
-    error: function(res) {
-      console.log(res);
-    }
   });
 }
 
