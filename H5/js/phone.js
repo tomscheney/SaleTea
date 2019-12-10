@@ -52,11 +52,6 @@ function sendMessage(productId) {
   });
 }
 
-// 点击绑定手机号按钮跳转页面
-function btns(productId) {
-  window.location.href = " confirmOrder.html?productId=" + productId;
-}
-
 //timer处理函数
 function SetRemainTime() {
   if (curCount == 0) {
@@ -68,4 +63,8 @@ function SetRemainTime() {
     curCount--;
     $("#btnSendCode").val(+curCount + "秒再获取");
   }
+}
+// 点击绑定手机号按钮跳转页面
+function btns(productId) {
+  window.location.href = " confirmOrder.html?productId=" + productId;
 }
