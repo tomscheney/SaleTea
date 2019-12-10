@@ -1,3 +1,13 @@
+let telephone = window.localStorage.getItem("telephone");
+let search = location.search;
+let list = search.split("=");
+let productId = list[1];
+let openId = window.localStorage.getItem("openId");
+console.log(telephone);
+console.log(search);
+console.log(list);
+console.log(productId);
+console.log(openId);
 // 进去立即购买页面 调buyNow接口
 function buyNow(productId) {
   $.ajax({
