@@ -50,13 +50,15 @@ function deletes() {
   // });
 }
 
-function ad() {
-  location.href = "address.html";
-}
-
 // 点击添加新地址按钮跳转页面
 function add() {
   location.href = "ReceivingAddress.html";
+}
+
+
+// 点击地址列表的时候进入列表详情 进行修改
+function enter() {
+  location.href = "enter-address.html";
 }
 
 $(document).ready(function() {
