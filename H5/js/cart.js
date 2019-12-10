@@ -81,11 +81,11 @@ $(function() {
 
 //选中产品
 function selectProduct() {
-  var fxk = $(".product-em");
+  var fxk = $(".product-ckb em");
   fxk.toggleClass("product-xz")
   if (
       $(this)
-          .find(".product-em")
+          .find(".product-ckb")
           .is(".product-xz")
   ) {
     fxk.addClass("product-xz");
