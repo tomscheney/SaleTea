@@ -86,7 +86,7 @@ function getProductDetail() {
       productId: productId
     },
     success: function(res) {
-      descList = res.data.productDesc;
+      descList = res;
       console.log(res);
       // 标题 价格
       $(".tit-name").text(res.data.productDesc);
@@ -175,12 +175,14 @@ function imgbtn() {
     type: "post",
     dataType: "json",
     data: {
-      desc: descList
+      desc: res.data.productDesc
     },
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
-        window.location.href="product.html";
+        window.location.href = "product.html";
+        swiper_init();
+        getProductDetail();
       }
     }
   });
