@@ -18,45 +18,62 @@ function newAdd() {
   console.log("地址", address);
   console.log("具体地址", newAddtess);
 
-  if (
-    this.userName == "" ||
-    this.userName == null ||
-    this.userName == undefined
-  ) {
-    alert("请输入收货人姓名");
-    return;
-  } else if (
-    this.telephone == "" ||
-    this.telephone == null ||
-    this.telephone == undefined
-  ) {
-    alert("请输入收货人手机号");
-    return;
-  } else if (
-    this.address == "" ||
-    this.address == null ||
-    this.address == undefined
-  ) {
-    alert("请输入收货人手机号");
-    return;
-  } else {
-    $.ajax({
-      url: "https://kidstoms.com/saveAddress",
-      type: "post",
-      dataType: "json",
-      data: {
-        userName: userName,
-        telephone: telephone,
-        addressDetail: newAddtess,
-        postcode: postcode,
-        openId: localStorage.getItem("openId")
-      },
-      success: function(res) {
-        console.log(res);
-        location.href = "addAddress.html";
-      }
-    });
-  }
+  $.ajax({
+    url: "https://kidstoms.com/saveAddress",
+    type: "post",
+    dataType: "json",
+    data: {
+      userName: userName,
+      telephone: telephone,
+      addressDetail: newAddtess,
+      postcode: postcode,
+      openId: localStorage.getItem("openId")
+    },
+    success: function(res) {
+      console.log(res);
+      location.href = "addAddress.html";
+    }
+  });
+
+  // if (
+  //   this.userName == "" ||
+  //   this.userName == null ||
+  //   this.userName == undefined
+  // ) {
+  //   alert("请输入收货人姓名");
+  //   return;
+  // } else if (
+  //   this.telephone == "" ||
+  //   this.telephone == null ||
+  //   this.telephone == undefined
+  // ) {
+  //   alert("请输入收货人手机号");
+  //   return;
+  // } else if (
+  //   this.address == "" ||
+  //   this.address == null ||
+  //   this.address == undefined
+  // ) {
+  //   alert("请输入收货人手机号");
+  //   return;
+  // } else {
+  //   $.ajax({
+  //     url: "https://kidstoms.com/saveAddress",
+  //     type: "post",
+  //     dataType: "json",
+  //     data: {
+  //       userName: userName,
+  //       telephone: telephone,
+  //       addressDetail: newAddtess,
+  //       postcode: postcode,
+  //       openId: localStorage.getItem("openId")
+  //     },
+  //     success: function(res) {
+  //       console.log(res);
+  //       location.href = "addAddress.html";
+  //     }
+  //   });
+  // }
 }
 
 function newADd() {
