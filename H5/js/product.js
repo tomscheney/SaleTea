@@ -175,7 +175,7 @@ function imgbtn() {
     type: "post",
     dataType: "json",
     data: {
-      desc: res.data.productDesc
+      desc: descList.data.productDesc
     },
     success: function(res) {
       console.log(res);
