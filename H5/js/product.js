@@ -86,8 +86,9 @@ function getProductDetail() {
       productId: productId
     },
     success: function(res) {
-      descList = res;
       console.log(res);
+      descList = res;
+      console.log(descList);
       // 标题 价格
       $(".tit-name").text(res.data.productDesc);
       $(".tit-price").text(res.data.salePrice + "元 / 份");
