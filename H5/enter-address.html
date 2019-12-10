@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="js/bootstrap-3.3.7-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/ReceivingAddress.css" />
+    <title>地址编写</title>
+    <script type="text/javascript" src="./js/PCASClass.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="./js/ReceivingAddress.js"></script>
+  </head>
+  <body>
+    <form id="payment">
+      <fieldset>
+        <ol>
+          <li>
+            <label for="name">收货人姓名：</label>
+            <input
+              id="name"
+              name="userName"
+              type="text"
+              placeholder="请输入收货人姓名"
+              required
+              autofocus
+            />
+          </li>
+          <li>
+            <label for="phone">手机号：</label>
+            <input
+              id="phone"
+              name="telephone"
+              type="tel"
+              placeholder="请输入收货人手机号"
+              required
+            />
+          </li>
+        </ol>
+        <ol>
+          <li>
+            <label for="postcode">邮编(选填)：</label>
+            <input id="postcode" name="postcode" type="text" required />
+          </li>
+          <li>
+            <div class="select-div">
+              <!-- 省 -->
+              <select name="province" id="select-province"></select>
+              <!-- 市 -->
+              <select name="city" id="select-city"></select>
+              <!-- 区 -->
+              <select name="area" id="select-area"></select>
+            </div>
+          </li>
+          <li>
+            <label for="address">详细地址：</label>
+            <textarea id="address" name="address" rows="1" required></textarea>
+          </li>
+        </ol>
+        <button onclick="newAdd()" type="submit" id="btn-1">保存并返回</button>
+        <button onclick="returns()" type="submit" id="btn-2">返回</button>
+      </fieldset>
+    </form>
+  </body>
+  <script type="text/javascript">
+    new PCAS("province", "city", "area", "吉林省", "松原市", "宁江区");
+  </script>
+</html>
