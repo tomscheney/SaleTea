@@ -101,14 +101,15 @@ $(function () {
 
 //选中产品
 function selectProduct(index) {
-    var list = $(".product-em");
+    var list = $(".product-ckb").classList;
     if (
         $(this)
             .find(".product-em .product-xz")
     ) {
-        list[index].addClass(".product-xz");
+        list[index].removeClass("product-xz");
+
     } else {
-        list[index].removeClass(".product-xz");
+        list[index].addClass("product-xz");
     }
     shuliang();
     TotalPrice();
@@ -154,7 +155,7 @@ function productxz(index) {
                 $(".product-all em").removeClass("product-all-on");
             }
 
-            if($(this).prop()){
+            if($(this).prop("class","product-xz")){
                 $(this).prop()
             }else{
 
