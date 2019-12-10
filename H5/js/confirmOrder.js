@@ -22,7 +22,7 @@ function buyNow() {
     },
     success: function(res) {
       console.log(res);
-      numList = resdata.productList[0];
+      numList = res.data.productList[0];
       console.log(numList);
       var menu = res.data.productList[0];
       console.log(menu);
