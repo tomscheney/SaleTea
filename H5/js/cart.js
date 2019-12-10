@@ -102,14 +102,13 @@ $(function () {
 //选中产品
 function selectProduct(index) {
     var list = $(".product-em");
-    fxk.toggleClass("product-xz")
     if (
         $(this)
             .find(".product-em .product-xz")
     ) {
-        list[index].addClass("product-xz");
+        list[index].addClass(".product-xz");
     } else {
-        list[index].removeClass("product-xz");
+        list[index].removeClass(".product-xz");
     }
     shuliang();
     TotalPrice();
