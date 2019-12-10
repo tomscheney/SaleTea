@@ -106,10 +106,10 @@ function selectProduct(index) {
         $(this)
             .find(".product-em .product-xz")
     ) {
-        list[index].removeClass("product-xz");
+        $(".product-em")[index].removeClass("product-xz");
 
     } else {
-        list[index].addClass("product-xz");
+        $(".product-em")[index].addClass("product-xz");
     }
     shuliang();
     TotalPrice();
