@@ -10,9 +10,9 @@ console.log(openId);
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
 function getAllAddressByOpenId() {
 
-  // 存储收货地址
-  var addressList = null;
-  console.log(addressList);
+  // // 存储收货地址
+  // var addressList = null;
+  // console.log(addressList);
 
   $.ajax({
     url: "https://kidstoms.com/getAllAddressByOpenId",
@@ -23,9 +23,7 @@ function getAllAddressByOpenId() {
     },
     success: function(res) {
       console.log(res);
-      addressList = res;
-
-
+      // addressList = res;
       var result = res.data;
       var html = template("addressTemplate", { result: result });
       console.log(html);

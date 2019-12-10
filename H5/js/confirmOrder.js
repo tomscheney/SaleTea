@@ -39,27 +39,52 @@ function adda() {
   location.href = "addAddress.html";
 }
 
+// 点击去支付 调getPayInfo接口
 function goPay() {
-  $("#btn-car3").click(function() {
-    var istrue = false;
-    var inp = $(".checkbox-list-input");
-    for (var i = 0; i < inp.length; i++) {
-      if (inp.eq(i).prop("checked")) {
-        istrue = true;
-        break;
-      }
+  $.ajax({
+    url: "https://kidstoms.com/getPayInfo",
+    type: "post",
+    dataType: "json",
+    data: {
+      openId: window.localStorage.getItem("openId"),
+      orderNo: 333300001,
+      totalFee: menu.productPrice,
+      body: menu.productName,
+      notifyUrl: "https://kidstoms.com/tea/H5/payResult.html"
+    },
+    success: function(res) {
+      console.log(res);
+      var menu = res.data.productList[0];
+      console.log(menu);
+      // 名字
+      $(".productName").html(menu.productName);
+      // 价格
+      $(".productPrice").html(menu.productPrice);
     }
-    if (!istrue) {
-      alert(
-        "该笔订单内包含不可退换货/款的商品。付款前请务必详阅并知晓相关政策，并勾选确认"
-      );
-      return;
-    }
-    // orderNo
-    location.href =
-      "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
   });
 }
+
+// function goPay() {
+//   $("#btn-car3").click(function() {
+//     var istrue = false;
+//     var inp = $(".checkbox-list-input");
+//     for (var i = 0; i < inp.length; i++) {
+//       if (inp.eq(i).prop("checked")) {
+//         istrue = true;
+//         break;
+//       }
+//     }
+//     if (!istrue) {
+//       alert(
+//         "该笔订单内包含不可退换货/款的商品。付款前请务必详阅并知晓相关政策，并勾选确认"
+//       );
+//       return;
+//     }
+//     // orderNo
+//     location.href =
+//       "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
+//   });
+// }
 
 $(document).ready(function() {
   buyNow();
