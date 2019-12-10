@@ -55,8 +55,8 @@ function goPay() {
     data: {
       openId: window.localStorage.getItem("openId"),
       orderNo: 333300001,
-      totalFee: menu.productPrice,
-      body: menu.productName,
+      totalFee: numList.productPrice,
+      body: numList.productName,
       notifyUrl: "https://kidstoms.com/tea/H5/payResult.html"
     },
     success: function(res) {
