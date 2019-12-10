@@ -32,7 +32,15 @@ function newAdd() {
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
-        location.href = "addAddress.html";
+        location.href =
+          "addAddress.html?userName?telephone?postcode?province?city?area?address=" +
+          userName +
+          telephone +
+          postcode +
+          province +
+          city +
+          area +
+          address;
       }
     }
   });
