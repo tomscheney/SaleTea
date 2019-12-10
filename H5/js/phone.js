@@ -70,25 +70,25 @@ window.onresize = function() {
   }, 500);
 };
 
-// 点击获取手机验证码 调getSecurityCode接口
-function sendAddmes() {
-  var phone = $("#add_phone").val();
-  $.ajax({
-    url: "https://kidstoms.com/getSecurityCode",
-    type: "post",
-    dataType: "json",
-    data: {
-      phone: phone,
-      openId: localStorage.getItem("openId")
-    },
-    success: function(res) {
-      console.log(res);
-      window.localStorage.setItem("phone", phone);
-    }
-  });
-}
+// // 点击获取手机验证码 调getSecurityCode接口
+// function sendAddmes() {
+//   var phone = $("#add_phone").val();
+//   $.ajax({
+//     url: "https://kidstoms.com/getSecurityCode",
+//     type: "post",
+//     dataType: "json",
+//     data: {
+//       phone: phone,
+//       openId: localStorage.getItem("openId")
+//     },
+//     success: function(res) {
+//       console.log(res);
+//       window.localStorage.setItem("phone", phone);
+//     }
+//   });
+// }
 
-// 点击绑点手机号跳转页面
-function btn() {
-  location.href = "confirmOrder.html";
-}
+// // 点击绑点手机号跳转页面
+// function btn() {
+//   location.href = "confirmOrder.html";
+// }
