@@ -100,20 +100,18 @@ $(function () {
 });
 
 //选中产品
-function selectProduct() {
-    var fxk = $(".product-ckb em");
-    fxk.toggleClass("product-xz")
+function selectProduct(index) {
+    var list = $(".product-em");
     if (
         $(this)
-            .find(".product-ckb .product-em")
-            .is(".product-xz")
+            .find(".product-em .product-xz")
     ) {
-        fxk.addClass("product-xz");
+        list[index].addClass(".product-xz");
     } else {
-        fxk.removeClass("product-xz");
+        list[index].removeClass(".product-xz");
     }
-    // shuliang();
-    // TotalPrice();
+    shuliang();
+    TotalPrice();
 }
 
 //计算产品价格
@@ -144,8 +142,8 @@ function TotalPrice() {
 }
 
 // 选中商品单个选择框
-function productxz() {
-    $(".address-box  .product-box .product-ckb .product-em").on(
+function productxz(index) {
+    $(".address-box  .product-box .product-ckb").on(
         "click",
         function () {
             var xz = $(".product-em");
@@ -156,19 +154,30 @@ function productxz() {
                 $(".product-all em").removeClass("product-all-on");
             }
 
-            if ($(this).hasClass('product-xz')) {
-                $(this).removeClass("product-xz")
-            } else {
-                $(this).addClass("product-xz")
+            if($(this).prop()){
+                $(this).prop()
+            }else{
+
             }
 
             shuliang();
             TotalPrice();
 
-            $(".address-box  .product-box .product-ckb .product-em").off;
+
+
+            $('').on('click',function(){
+
+                if($(this).prop()){
+
+                }else{
+
+                }
+            })
 
         }
     );
+
+
 }
 
 //获取选择产品数量
