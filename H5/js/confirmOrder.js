@@ -61,7 +61,7 @@ function goPay() {
     },
     success: function(res) {
       console.log(res);
-      var menu = res.data.productList[0];
+      var menu = numList;
       console.log(menu);
       // 名字
       $(".productName").html(menu.productName);
