@@ -45,6 +45,7 @@ function sendMessage(productId) {
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
+        SetRemainTime();
         window.localStorage.setItem("telephone", telephone);
       }
     }
