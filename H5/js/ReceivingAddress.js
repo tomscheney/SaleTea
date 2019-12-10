@@ -31,7 +31,7 @@ function newAdd() {
     },
     success: function(res) {
       console.log(res);
-      location.href = "addAddress.html";
+      // location.href = "addAddress.html";
     }
   });
 
@@ -76,6 +76,7 @@ function newAdd() {
   // }
 }
 
+// 点击返回按钮
 function newADd() {
   location.href = "addAddress.html";
 }

@@ -52,6 +52,11 @@ function ad() {
   location.href = "address.html";
 }
 
+// 点击添加新地址按钮跳转页面
 function add() {
   location.href = "ReceivingAddress.html";
 }
+
+$(document).ready(function() {
+  getAllAddressByOpenId();
+});
