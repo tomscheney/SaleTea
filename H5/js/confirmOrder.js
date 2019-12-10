@@ -2,15 +2,16 @@ let telephone = window.localStorage.getItem("telephone");
 let search = location.search;
 let list = search.split("=");
 let productId = list[1];
-let openId = window.localStorage.getItem("openId");
 console.log(telephone);
 console.log(search);
 console.log(list);
 console.log(productId);
-console.log(openId);
 
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
+  var numList = null;
+  console.log(numList);
+
   $.ajax({
     url: "https://kidstoms.com/buyNow",
     type: "post",
@@ -21,6 +22,8 @@ function buyNow() {
     },
     success: function(res) {
       console.log(res);
+      numList = res;
+      console.log(numList);
       var menu = res.data.productList[0];
       console.log(menu);
       // 名字
