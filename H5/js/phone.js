@@ -58,7 +58,7 @@ function viewPort(userAgent, pageWidth) {
         scale +
         ", user-scalable=no, target-densitydpi=device-dpi";
     }
-    document.head.appendChild(creat_meta);
+    // document.head.appendChild(creat_meta);
   }
 }
 viewPort(navigator.userAgent);
