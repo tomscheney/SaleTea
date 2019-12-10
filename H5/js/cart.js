@@ -72,6 +72,29 @@ $(function () {
         shuliang();
     });
 
+    //单选
+    $(".address-box  .product-box .product-ckb .product-em").on(
+        "click",
+        function () {
+            var xz = $(".product-em");
+            var xz1 = $(".product-xz");
+            if (xz1.length == xz.length) {
+                $(".product-all em").addClass("product-all-on");
+            } else {
+                $(".product-all em").removeClass("product-all-on");
+            }
+
+            if ($(this).hasClass('product-xz')) {
+                $(this).removeClass("product-xz")
+            } else {
+                $(this).addClass("product-xz")
+            }
+
+            shuliang();
+            TotalPrice();
+
+        }
+    );
     TotalPrice();
     shuliang();
     koncat();
