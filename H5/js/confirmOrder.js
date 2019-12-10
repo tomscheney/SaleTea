@@ -1,5 +1,3 @@
-var totalFee = 0;
-var orderNo = 0;
 // 进去立即购买页面 调buyNow接口
 function buyNow(productId) {
   $.ajax({
@@ -12,8 +10,6 @@ function buyNow(productId) {
     },
     success: function(res) {
       console.log(res);
-      totalFee = res.data.totalFee;
-      orderNo = res.data.orderNo;
       var menu = res.data.productList[0];
       console.log(menu);
       // 名字
