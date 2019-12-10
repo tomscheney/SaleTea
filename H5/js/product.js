@@ -11,11 +11,11 @@ console.log(openId);
 
 // 点击立即购买
 function buyNow(productId) {
-  // if (this.telephone == "" || this.telephone == null) {
-  //   location.href = "phoneChecking.html";
-  // } else {
+  if (this.telephone == "" || this.telephone == null) {
+    location.href = "phoneChecking.html";
+  } else {
     location.href = "confirmOrder.html?productId=" + productId;
-  // }
+  }
 }
 
 // 点击购物车图标
