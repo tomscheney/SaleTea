@@ -126,7 +126,6 @@ function TotalPrice() {
 function productxz() {
   $(".address-box  .product-box .product-ckb").on(
     "click",
-    ".product-em .product-xz .product-all .product-all-on",
     function() {
       var xz = $(".product-em");
       var xz1 = $(".product-xz");
