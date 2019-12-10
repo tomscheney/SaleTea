@@ -73,7 +73,7 @@ $(function () {
     });
 
     //单选
-    $(".product-em").click(function () {
+    $(".product-ckb").click(function () {
             var xz = $(".product-em");
             var xz1 = $(".product-xz");
             if (xz1.length == xz.length) {
@@ -101,12 +101,13 @@ $(function () {
 
 //选中产品
 function selectProduct(index) {
-    var list = $(".product-ckb").classList;
     if (
         $(this)
             .find(".product-em .product-xz")
     ) {
-        $(".product-em")[index].removeClass("product-xz");
+        $(".product-em").each(function (i) {
+
+        })
 
     } else {
         $(".product-em")[index].addClass("product-xz");
