@@ -9,7 +9,7 @@ console.log(openId);
 
 // 点击立即购买 调buyNow接口
 function buyNow() {
-  if (this.phone == "" || this.phone == null) {
+  if (this.telephone == "" || this.telephone == null) {
     location.href = "phoneChecking.html";
   } else {
     $.ajax({
