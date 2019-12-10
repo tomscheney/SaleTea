@@ -116,11 +116,10 @@ function sendMessage() {
   $("#btnSendCode").attr("disabled", "true");
   $("#btnSendCode").val(+curCount + "秒再获取");
   InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
-  //向后台发送处理数据
   $.ajax({
-    type: "post", //用post方式传输
-    dataType: "JSON", //数据格式:JSON
-    url: "https://kidstoms.com/getSecurityCode", //目标地址
+    type: "post",
+    dataType: "JSON",
+    url: "https://kidstoms.com/getSecurityCode", 
     data: {
       openId: window.localStorage.getItem("openId"),
       phone: phone
