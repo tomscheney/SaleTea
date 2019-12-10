@@ -45,25 +45,25 @@ function adda() {
   location.href = "addAddress.html";
 }
 
-// 点击去支付 调getPayInfo接口
+// 点击去支付 跳转页面
 function goPay() {
-  console.log(numList);
-  $.ajax({
-    url: "https://kidstoms.com/getPayInfo",
-    type: "post",
-    dataType: "json",
-    data: {
-      openId: window.localStorage.getItem("openId"),
-      orderNo: 333300001,
-      totalFee: numList.productPrice,
-      body: numList.productName,
-      notifyUrl: "https://kidstoms.com/tea/H5/payResult.html"
-    },
-    success: function(res) {
-      console.log(res);
+  // console.log(numList);
+  // $.ajax({
+  //   url: "https://kidstoms.com/getPayInfo",
+  //   type: "post",
+  //   dataType: "json",
+  //   data: {
+  //     openId: window.localStorage.getItem("openId"),
+  //     orderNo: 333300001,
+  //     totalFee: numList.productPrice,
+  //     body: numList.productName,
+  //     notifyUrl: "https://kidstoms.com/tea/H5/payResult.html"
+  //   },
+  //   success: function(res) {
+  //     console.log(res);
       location.href = "payResult.html";
-    }
-  });
+  //   }
+  // });
 }
 
 // function goPay() {
