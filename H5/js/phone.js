@@ -4,7 +4,16 @@ var curCount; //当前剩余秒数
 var code = ""; //验证码
 var codeLength = 6; //验证码长度
 
-function sendMessage() {
+let telephone = window.localStorage.getItem("telephone");
+let search = location.search;
+let list = search.split("=");
+let productId = list[1];
+console.log(telephone);
+console.log(search);
+console.log(list);
+console.log(productId);
+
+function sendMessage(productId) {
   curCount = count;
   var dealType; //验证方式
   var telephone = $("#add_phone").val();
@@ -45,8 +54,8 @@ function sendMessage() {
 }
 
 // 点击绑定手机号按钮跳转页面
-function btns() {
-  window.location.href = " confirmOrder.html";
+function btns(productId) {
+  window.location.href = " confirmOrder.html?productId=" + productId;
 }
 
 //timer处理函数
