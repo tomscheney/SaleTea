@@ -85,15 +85,15 @@ function selectProduct() {
   fxk.toggleClass("product-xz")
   if (
       $(this)
-          .find(".product-ckb")
+          .find(".product-ckb .product-em")
           .is(".product-xz")
   ) {
     fxk.addClass("product-xz");
   } else {
     fxk.removeClass("product-xz");
   }
-  shuliang();
-  TotalPrice();
+  // shuliang();
+  // TotalPrice();
 }
 //计算产品价格
 function TotalPrice() {
