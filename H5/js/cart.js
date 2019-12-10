@@ -92,8 +92,8 @@ function selectProduct() {
   } else {
     fxk.removeClass("product-xz");
   }
-  shuliang();
-  TotalPrice();
+  // shuliang();
+  // TotalPrice();
 }
 //计算产品价格
 function TotalPrice() {
