@@ -1,7 +1,7 @@
 var totalFee = 0;
 var orderNo = 0;
 // 进去立即购买页面 调buyNow接口
-function buyNow() {
+function buyNow(productId) {
   $.ajax({
     url: "https://kidstoms.com/buyNow",
     type: "post",
