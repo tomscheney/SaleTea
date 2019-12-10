@@ -127,11 +127,11 @@ function productxz(index) {
     let list = $(".product-em");
 
     let ele = list[index];
-    if (ele.hasClass(".product-xz")){
-        ele.removeClass(".product-xz")
+    if (ele.contains("product-xz")){
+        ele.removeClass("product-xz")
 
     } else {
-        ele.addClass(".product-xz")
+        ele.addClass("product-xz")
 
     }
 
