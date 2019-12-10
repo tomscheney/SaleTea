@@ -5,15 +5,15 @@ var code = ""; //验证码
 var codeLength = 6; //验证码长度
 
 function sendMessage() {
-  
+
   curCount = count;
   var dealType; //验证方式
-  var phone = $("#add_phone").val();
+  var telephone = $("#add_phone").val();
   console.log(dealType);
-  console.log(phone);
+  console.log(telephone);
 
   if ($("#add_phone").attr("checked") == true) {
-    dealType = "phone";
+    dealType = "telephone";
   }
 
   //产生验证码
@@ -32,7 +32,7 @@ function sendMessage() {
     dataType: "json",
     data: {
       openId: window.localStorage.getItem("openId"),
-      phone: phone
+      telephone: telephone
     },
     success: function(res) {
       console.log(res);
