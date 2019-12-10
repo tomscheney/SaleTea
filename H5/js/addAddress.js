@@ -8,7 +8,7 @@ console.log(productId);
 console.log(openId);
 
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
-$(function() {
+function getAllAddressByOpenId() {
   $.ajax({
     url: "https://kidstoms.com/getAllAddressByOpenId",
     type: "post",
@@ -24,7 +24,7 @@ $(function() {
       $(".address-box").html(html);
     }
   });
-});
+}
 
 // 点击删除按钮 调deleteAddressByTelephone接口
 function deletes() {
@@ -41,7 +41,7 @@ function deletes() {
       success: function(res) {
         console.log(res);
         if (res.code == "200") {
-          getList();
+          getAllAddressByOpenId();
         }
       }
     });
