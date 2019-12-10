@@ -9,6 +9,9 @@ console.log(list);
 console.log(productId);
 console.log(openId);
 
+var descList = null;
+console.log(descList);
+
 // 点击立即购买
 function buyNow(productId) {
   if (this.telephone == "" || this.telephone == null) {
@@ -74,7 +77,7 @@ $("#btn-car2").click(function() {
     .fadeOut();
 });
 // 获取产品详情  getProductDetail接口
-$(document).ready(function() {
+function getProductDetail() {
   $.ajax({
     url: "https://kidstoms.com/getProductDetail",
     type: "post",
@@ -84,6 +87,8 @@ $(document).ready(function() {
     },
     success: function(res) {
       console.log(res);
+      descList = res;
+      console.log(descList);
       // 标题 价格
       $(".tit-name").text(res.data.productDesc);
       $(".tit-price").text(res.data.salePrice + "元 / 份");
@@ -158,12 +163,28 @@ $(document).ready(function() {
       // console.log(recomend)
     }
   });
-  error: function data() {
-    // console.log("dataerro", data);
-  }
+}
+$(document).ready(function() {
+  getProductDetail();
 });
 
-// 点击猜你喜欢按钮
+// 点击猜你喜欢按钮 调getProductByDesc接口
 function imgbtn() {
-  alert("可以的");
+  console.log(descList);
+  $.ajax({
+    url: "https://kidstoms.com/getProductByDesc",
+    type: "post",
+    dataType: "json",
+    data: {
+      desc: descList.data.productDesc
+    },
+    success: function(res) {
+      console.log(res);
+      if (res.code == "200") {
+        window.location.href = "product.html";
+        swiper_init();
+        getProductDetail();
+      }
+    }
+  });
 }
