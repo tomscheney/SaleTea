@@ -40,30 +40,12 @@ function deletes() {
       },
       success: function(res) {
         console.log(res);
-        var result = res.data;
-        var html = template("addressTemplate", { result: result });
-        console.log(html);
-        $(".address-box").html(html);
+        if (res.code == "200") {
+          getList();
+        }
       }
     });
   }
-
-  // $.ajax({
-  //   url: "https://kidstoms.com/deleteAddressByTelephone",
-  //   type: "post",
-  //   dataType: "json",
-  //   data: {
-  //     openId: window.localStorage.getItem("openId"),
-  //     telephone: window.localStorage.getItem("telephone")
-  //   },
-  //   success: function(res) {
-  //     console.log(res);
-  //     var result = res.data;
-  //     var html = template("addressTemplate", { result: result });
-  //     console.log(html);
-  //     $(".address-box").html(html);
-  //   }
-  // });
 }
 
 function ad() {
