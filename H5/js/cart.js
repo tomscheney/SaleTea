@@ -102,10 +102,10 @@ $(function () {
 //选中产品
 function selectProduct(index) {
 
-    if ($(this).is(".product-xz")){
-        $(this).removeClass(".product-xz")
+    if ($(this).is("product-xz")){
+        $(this).removeClass("product-xz")
     } else {
-        $(this).addClass(".product-xz")
+        $(this).addClass("product-xz")
     }
 
     shuliang();
