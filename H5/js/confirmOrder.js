@@ -22,7 +22,7 @@ function buyNow() {
     },
     success: function(res) {
       console.log(res);
-      numList = res;
+      numList = resdata.productList[0];
       console.log(numList);
       var menu = res.data.productList[0];
       console.log(menu);
@@ -57,6 +57,7 @@ function goPay() {
     },
     success: function(res) {
       console.log(res);
+      console.log(numList);
       var menu = res.data.productList[0];
       console.log(menu);
       // 名字
