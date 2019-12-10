@@ -100,17 +100,19 @@ $(function () {
 });
 
 //选中产品
-function selectProduct(index) {
+$(
+    function selectProduct(index) {
 
-    if ($(this).is("product-xz")){
-        $(this).removeClass("product-xz")
-    } else {
-        $(this).addClass("product-xz")
+        if ($(this).is("product-xz")) {
+            $(this).removeClass("product-xz")
+        } else {
+            $(this).addClass("product-xz")
+        }
+
+        shuliang();
+        TotalPrice();
     }
-
-    shuliang();
-    TotalPrice();
-}
+)
 
 //计算产品价格
 function TotalPrice() {
@@ -152,9 +154,9 @@ function productxz(index) {
                 $(".product-all em").removeClass("product-all-on");
             }
 
-            if($(this).prop("class","product-xz")){
+            if ($(this).prop("class", "product-xz")) {
                 $(this).prop()
-            }else{
+            } else {
 
             }
 
@@ -162,12 +164,11 @@ function productxz(index) {
             TotalPrice();
 
 
+            $('').on('click', function () {
 
-            $('').on('click',function(){
+                if ($(this).prop()) {
 
-                if($(this).prop()){
-
-                }else{
+                } else {
 
                 }
             })
