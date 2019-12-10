@@ -31,7 +31,9 @@ function newAdd() {
     },
     success: function(res) {
       console.log(res);
-      location.href = "addAddress.html";
+      if (res.code == "200") {
+        location.href = "addAddress.html";
+      }
     }
   });
 
