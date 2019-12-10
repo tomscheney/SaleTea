@@ -5,12 +5,12 @@ var code = ""; //验证码
 var codeLength = 6; //验证码长度
 
 function sendMessage() {
-
   curCount = count;
   var dealType; //验证方式
   var telephone = $("#add_phone").val();
+  var code = $("#code").val();
   console.log(dealType);
-  console.log(telephone);
+  console.log(code);
 
   if ($("#add_phone").attr("checked") == true) {
     dealType = "telephone";
@@ -32,7 +32,8 @@ function sendMessage() {
     dataType: "json",
     data: {
       openId: window.localStorage.getItem("openId"),
-      telephone: telephone
+      telephone: telephone,
+      code: code
     },
     success: function(res) {
       console.log(res);
