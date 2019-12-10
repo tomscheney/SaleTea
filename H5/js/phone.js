@@ -120,7 +120,7 @@ function sendMessage() {
   $.ajax({
     type: "post", //用post方式传输
     dataType: "JSON", //数据格式:JSON
-    url: "https://kidstoms.com/sms/getSecurityCode", //目标地址
+    url: "https://kidstoms.com/getSecurityCode", //目标地址
     data: {
       openId: window.localStorage.getItem("openId"),
       phone: phone
