@@ -134,8 +134,16 @@ function productxz() {
       } else {
         $(".product-all em").removeClass("product-all-on");
       }
-      shuliang();
+
+        if($(this).hasClass('.product-xz')){
+            $(this).removeClass(".product-xz")
+        }else{
+            $(this).addClass(".product-xz")
+        }
+
+        shuliang();
       TotalPrice();
+
     }
   );
 }
