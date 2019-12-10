@@ -104,8 +104,6 @@ function getOpenId() {
                 var openId = result.openId;
                 console.log(openId);
                 window.localStorage.setItem("openId", openId);
-                window.location.href = "H5/product.html?openId=" + openId;
-                alert("openid:" + result.openId);
             } else {
                 alert(res.msg);
             }
