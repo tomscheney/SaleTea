@@ -37,8 +37,16 @@ function sendMessage() {
     },
     success: function(res) {
       console.log(res);
+      if (res.code == "200") {
+        window.localStorage.setItem("telephone", telephone);
+      }
     }
   });
+}
+
+// 点击绑定手机号按钮跳转页面
+function btns() {
+  window.location.href = " confirmOrder.html";
 }
 
 //timer处理函数
