@@ -1,10 +1,3 @@
-let search = location.search;
-let list = search.split("=");
-let productId = list[1];
-console.log(search);
-console.log(list);
-console.log(productId);
-
 var totalFee = 0;
 var orderNo = 0;
 // 进去立即购买页面 调buyNow接口
@@ -19,16 +12,14 @@ function buyNow() {
     },
     success: function(res) {
       console.log(res);
-
       totalFee = res.data.totalFee;
       orderNo = res.data.orderNo;
-        var menu = res.data.productList[0];
-        console.log(menu);
-        // 名字
-        $(".productName").html(menu.productName);
-        // 价格
-        $(".productPrice").html(menu.productPrice);
-
+      var menu = res.data.productList[0];
+      console.log(menu);
+      // 名字
+      $(".productName").html(menu.productName);
+      // 价格
+      $(".productPrice").html(menu.productPrice);
     }
   });
 }
@@ -58,7 +49,8 @@ function goPay() {
       return;
     }
     // orderNo
-    location.href = "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
+    location.href =
+      "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
   });
 }
 

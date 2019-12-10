@@ -14,22 +14,7 @@ function buyNow() {
   if (this.telephone == "" || this.telephone == null) {
     location.href = "phoneChecking.html";
   } else {
-    $.ajax({
-      url: "https://kidstoms.com/buyNow",
-      type: "post",
-      dataType: "json",
-      data: {
-        openId: window.localStorage.getItem("openId"),
-        // productId:location.search.substr(1, 8)
-        productId: productId.substr(0, 8)
-      },
-      success: function(res) {
-        console.log(res);
-        if (res.code === "200") {
-          location.href = "confirmOrder.html?productId=" + productId;
-        }
-      }
-    });
+    location.href = "confirmOrder.html?productId=" + productId;
   }
 }
 
