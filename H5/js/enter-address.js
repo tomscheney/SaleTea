@@ -1,5 +1,7 @@
 // 保存并返回的时候 调saveAddress接口
 function newAdd() {
+
+
   var userName = $("#name").val();
   var telephone = $("#phone").val();
   var postcode = $("#postcode").val();
@@ -31,17 +33,16 @@ function newAdd() {
     },
     success: function(res) {
       console.log(res);
-      if (res.code == "200") {
-        location.href =
-          "addAddress.html?userName?telephone?postcode?province?city?area?address=" +
-          userName +
-          telephone +
-          postcode +
-          province +
-          city +
-          area +
-          address;
-      }
+
+      location.href =
+        "addAddress.html?userName?telephone?postcode?province?city?area?address=" +
+        userName +
+        telephone +
+        postcode +
+        province +
+        city +
+        area +
+        address;
     }
   });
 
