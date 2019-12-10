@@ -45,15 +45,11 @@ function sendMessage(productId) {
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
+        SetRemainTime();
         window.localStorage.setItem("telephone", telephone);
       }
     }
   });
-}
-
-// 点击绑定手机号按钮跳转页面
-function btns(productId) {
-  window.location.href = " confirmOrder.html?productId=" + productId;
 }
 
 //timer处理函数
@@ -67,4 +63,8 @@ function SetRemainTime() {
     curCount--;
     $("#btnSendCode").val(+curCount + "秒再获取");
   }
+}
+// 点击绑定手机号按钮跳转页面
+function btns(productId) {
+  window.location.href = " confirmOrder.html?productId=" + productId;
 }
