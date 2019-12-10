@@ -16,7 +16,7 @@ function newAdd() {
   console.log("市", city);
   console.log("区", area);
   console.log("地址", address);
-  console.log("具体地址",newAddtess);
+  console.log("具体地址", newAddtess);
 
   if (
     this.userName == "" ||
@@ -39,24 +39,24 @@ function newAdd() {
   ) {
     alert("请输入收货人手机号");
     return;
+  } else {
+    $.ajax({
+      url: "https://kidstoms.com/saveAddress",
+      type: "post",
+      dataType: "json",
+      data: {
+        userName: userName,
+        telephone: telephone,
+        addressDetail: newAddtess,
+        postcode: postcode,
+        openId: localStorage.getItem("openId")
+      },
+      success: function(res) {
+        console.log(res);
+        location.href = "addAddress.html";
+      }
+    });
   }
-
-  $.ajax({
-    url: "https://kidstoms.com/saveAddress",
-    type: "post",
-    dataType: "json",
-    data: {
-      userName: userName,
-      telephone: telephone,
-      addressDetail: newAddtess,
-      postcode: postcode,
-      openId: localStorage.getItem("openId")
-    },
-    success: function(res) {
-      console.log(res);
-      location.href = "addAddress.html";
-    },
-  });
 }
 
 function newADd() {
