@@ -10,7 +10,7 @@ console.log(productId);
 var numList = null;
 console.log(numList);
 
-let orderNo = orderNo;
+var orderNo = orderNo;
 console.log(orderNo);
 
 // 进去立即购买页面 调buyNow接口
