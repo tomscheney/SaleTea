@@ -9,10 +9,6 @@ console.log(productId);
 
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
-
-  var orderNo = null;
-  console.log(orderNo);
-  
   $.ajax({
     url: "https://kidstoms.com/buyNow",
     type: "post",
@@ -25,8 +21,7 @@ function buyNow() {
       console.log(res);
 
       // 订单编号
-      orderNo = res.data.orderNo;
-      console.log("订单编号" + orderNo);
+      window.orderNo = res.data.orderNo;
 
       var menu = res.data.productList[0];
       console.log(menu);
@@ -38,6 +33,7 @@ function buyNow() {
     }
   });
 }
+console.log("订单编号" +  window.orderNo);
 
 // 点击进入退换货政策
 function ex() {
