@@ -14,7 +14,11 @@ console.log(descList);
 
 // 点击立即购买
 function buyNow(productId) {
-  if (this.telephone == "" || this.telephone == null) {
+  if (
+    window.localStorage.getItem("telephone") == "" ||
+    window.localStorage.getItem("telephone") == null ||
+    window.localStorage.getItem("telephone") == undefined
+  ) {
     location.href = "phoneChecking.html?productId=" + productId;
   } else {
     location.href = "confirmOrder.html?productId=" + productId;
