@@ -66,31 +66,31 @@ function getAllAddressByOpenId() {
 }
 
 // 点击去支付 跳转页面
-function goPay() {
-  location.href = "payResult.html";
-}
-
 // function goPay() {
-//   $("#btn-car3").click(function() {
-//     var istrue = false;
-//     var inp = $(".checkbox-list-input");
-//     for (var i = 0; i < inp.length; i++) {
-//       if (inp.eq(i).prop("checked")) {
-//         istrue = true;
-//         break;
-//       }
-//     }
-//     if (!istrue) {
-//       alert(
-//         "该笔订单内包含不可退换货/款的商品。付款前请务必详阅并知晓相关政策，并勾选确认"
-//       );
-//       return;
-//     }
-//     // orderNo
-//     location.href =
-//       "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
-//   });
+//   location.href = "payResult.html";
 // }
+
+function goPay() {
+  $("#btn-car3").click(function() {
+    var istrue = false;
+    var inp = $(".checkbox-list-input");
+    for (var i = 0; i < inp.length; i++) {
+      if (inp.eq(i).prop("checked")) {
+        istrue = true;
+        break;
+      }
+    }
+    if (!istrue) {
+      alert(
+        "该笔订单内包含不可退换货/款的商品。付款前请务必详阅并知晓相关政策，并勾选确认"
+      );
+      return;
+    }
+    // orderNo
+    location.href =
+      "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
+  });
+}
 
 $(document).ready(function() {
   buyNow();
