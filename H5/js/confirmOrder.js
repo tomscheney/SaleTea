@@ -6,7 +6,8 @@ console.log(telephone);
 console.log(search);
 console.log(list);
 console.log(productId);
-
+var totalFee = 0;
+var orderNo = 0;
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
   $.ajax({
@@ -22,6 +23,8 @@ function buyNow() {
 
       // 订单编号
       var orderNo = res.data.orderNo;
+      orderNo = orderNo;
+      totalFee = res.data.totalFee;
       console.log(orderNo);
 
       var menu = res.data.productList[0];
@@ -87,6 +90,40 @@ function goPay() {
 }
 
 $(document).ready(function() {
-  buyNow();
   getAllAddressByOpenId();
+
+  if (productId === undefined || productId === null){//来自立即购买
+    buyNow();
+
+  } else {//来自购物车结算
+
+  }
 });
+
+function settleAccounts() {
+  function buyNow() {
+    $.ajax({
+      url: "https://kidstoms.com/buyNow",
+      type: "post",
+      dataType: "json",
+      data: {
+        openId: window.localStorage.getItem("openId"),
+      },
+      success: function(res) {
+        console.log(res);
+
+        // 订单编号
+         orderNo = res.data.orderNo;
+         totalFee = res.data.totalFee;
+
+        var menu = res.data.productList[0];
+        console.log(menu);
+
+        // 名字
+        $(".productName").html(menu.productName);
+        // 价格
+        $(".productPrice").html(menu.productPrice);
+      }
+    });
+  }
+}
