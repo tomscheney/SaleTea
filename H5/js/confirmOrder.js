@@ -26,6 +26,10 @@ function buyNow() {
       numList = res.data.productList[0];
       console.log(numList);
 
+      // 订单编号
+      var orderId = res.data.orderId;
+      console.log("订单编号" + orderId);
+
       var menu = res.data.productList[0];
       console.log(menu);
 
