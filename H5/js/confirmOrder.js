@@ -7,9 +7,12 @@ console.log(search);
 console.log(list);
 console.log(productId);
 
-
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
+
+  var orderNo = null;
+  console.log(orderNo);
+  
   $.ajax({
     url: "https://kidstoms.com/buyNow",
     type: "post",
@@ -66,10 +69,6 @@ function getAllAddressByOpenId() {
 }
 
 // 点击去支付 跳转页面
-// function goPay() {
-//   location.href = "payResult.html";
-// }
-
 function goPay() {
   $("#btn-car3").click(function() {
     var istrue = false;
@@ -86,7 +85,6 @@ function goPay() {
       );
       return;
     }
-    // orderNo
     location.href =
       "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
   });
