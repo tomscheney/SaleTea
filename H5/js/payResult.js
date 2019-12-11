@@ -19,7 +19,6 @@ function onBridgeReady() {
   let search = location.search;
   let list = search.split("&");
   let totalFee = list[0].split("=")[1];
-  let orderNo = list[1].split("=")[1];
   console.log(search);
   console.log(list);
   console.log(totalFee);
@@ -30,10 +29,10 @@ function onBridgeReady() {
     dataType: "json",
     data: {
       openId: localStorage.getItem("openId"),
-      totalFee: totalFee,
       orderNo: orderNo,
+      totalFee: totalFee,
+      body: "芷贤斋订单结算",
       notifyUrl: notifyUrl,
-      body: "芷贤斋订单结算"
     },
     success: function(res) {
       let resPay = res.data;
