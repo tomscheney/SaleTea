@@ -323,7 +323,13 @@ function add(index, productId) {
     });
 }
 
+function goProductPage(productId){
+    location.href = "product.html?productId=" + productId;
+}
+
 $(document).ready(function () {
     getList();
 });
+
+
 
