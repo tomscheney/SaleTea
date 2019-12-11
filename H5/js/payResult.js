@@ -21,6 +21,8 @@ function pay() {
 // 支付调用
 function onBridgeReady() {
   let totalFee = list[0].split("=")[1];
+  let orderNo = list[1].split("=")[1];
+
   console.log(totalFee);
   console.log(orderNo);
   $.ajax({
