@@ -37,12 +37,39 @@ function buyNow() {
   });
 }
 
+// 点击进入退换货政策
 function ex() {
   location.href = "exchange.html";
 }
 
+// 点击收货地址
 function adda() {
   location.href = "addAddress.html";
+}
+
+
+// 获取指定用户所有地址 调getAllAddressByOpenId接口
+function getAllAddressByOpenId() {
+  // 存储收货地址
+  // var addressList = null;
+  // console.log(addressList);
+
+  $.ajax({
+    url: "https://kidstoms.com/getAllAddressByOpenId",
+    type: "post",
+    dataType: "json",
+    data: {
+      openId: window.localStorage.getItem("openId")
+    },
+    success: function(res) {
+      console.log(res);
+      // addressList = res;
+      var result = res.data;
+      var html = template("addressTemplate", { result: result });
+      console.log(html);
+      $(".address-box").html(html);
+    }
+  });
 }
 
 // 点击去支付 跳转页面
@@ -61,7 +88,7 @@ function goPay() {
   //   },
   //   success: function(res) {
   //     console.log(res);
-      location.href = "payResult.html";
+  location.href = "payResult.html";
   //   }
   // });
 }
