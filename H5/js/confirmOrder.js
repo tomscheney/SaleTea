@@ -36,7 +36,7 @@ function buyNow() {
     }
   });
 }
-console.log("订单编号" + window.orderNo);
+console.log( window.orderNo);
 
 // 点击进入退换货政策
 function ex() {
