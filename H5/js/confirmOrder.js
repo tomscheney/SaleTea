@@ -36,6 +36,7 @@ function buyNow() {
   });
 }
 console.log(window.orderNo);
+console.log(orderNo);
 
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
 function getAllAddressByOpenId() {
@@ -58,7 +59,6 @@ function getAllAddressByOpenId() {
 
 // 点击去支付 跳转页面
 function goPay() {
-  console.log(orderNo);
   $("#btn-car3").click(function() {
     var istrue = false;
     var inp = $(".checkbox-list-input");
