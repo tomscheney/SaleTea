@@ -21,19 +21,21 @@ function buyNow() {
     success: function(res) {
       console.log(res);
 
-      // 订单编号
-      orderNo = res.data.orderNo;
-      totalFee = res.data.totalFee;
-      console.log(orderNo);
+      if (res.code === 200) {
+        // 订单编号
+        orderNo = res.data.orderNo;
+        totalFee = res.data.totalFee;
+        console.log(orderNo);
 
 
-      var menu = res.data.productList[0];
-      console.log(menu);
+        var menu = res.data.productList[0];
+        console.log(menu);
 
-      // 名字
-      $(".productName").html(menu.productName);
-      // 价格
-      $(".productPrice").html(menu.productPrice);
+        // 名字
+        $(".productName").html(menu.productName);
+        // 价格
+        $(".productPrice").html(menu.productPrice);
+      }
     }
   });
 }
@@ -93,12 +95,13 @@ $(document).ready(function() {
 
   getAllAddressByOpenId();
 
-  if (productId === undefined || productId === null){//来自立即购买
+  if (productId === undefined || productId === null){//来自购物车结算
+    settleAccounts()
+
+  } else {//来自立即购买
+
     buyNow();
 
-  } else {//来自购物车结算
-
-    settleAccounts()
   }
 });
 
@@ -114,17 +117,19 @@ function settleAccounts() {
       success: function(res) {
         console.log(res);
 
-        // 订单编号
-         orderNo = res.data.orderNo;
-         totalFee = res.data.totalFee;
+        if (res.code === 200) {
+          // 订单编号
+          orderNo = res.data.orderNo;
+          totalFee = res.data.totalFee;
 
-        var menu = res.data.productList[0];
-        console.log(menu);
+          var menu = res.data.productList[0];
+          console.log(menu);
 
-        // 名字
-        $(".productName").html(menu.productName);
-        // 价格
-        $(".productPrice").html(menu.productPrice);
+          // 名字
+          $(".productName").html(menu.productName);
+          // 价格
+          $(".productPrice").html(menu.productPrice);
+        }
       }
     });
   }
