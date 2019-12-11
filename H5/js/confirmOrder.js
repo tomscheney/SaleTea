@@ -13,7 +13,6 @@ console.log(numList);
 var orderNo = orderNo;
 console.log(orderNo);
 
-
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
   $.ajax({
@@ -28,7 +27,7 @@ function buyNow() {
       console.log(res);
 
       // 订单编号
-      var orderNo = res.data.orderNo;
+      orderNo = res.data.orderNo;
       console.log("订单编号" + orderNo);
 
       numList = res.data.productList[0];
