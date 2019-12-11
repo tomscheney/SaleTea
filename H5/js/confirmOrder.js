@@ -7,10 +7,9 @@ console.log(search);
 console.log(list);
 console.log(productId);
 
-var orderNo = null;
-
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
+  var orderNo = null;
   $.ajax({
     url: "https://kidstoms.com/buyNow",
     type: "post",
@@ -22,7 +21,7 @@ function buyNow() {
     success: function(res) {
       console.log(res);
       // 订单编号
-      orderNo = res;
+      orderNo = res.data.orderNo;
       console.log(orderNo);
 
       var menu = res.data.productList[0];
