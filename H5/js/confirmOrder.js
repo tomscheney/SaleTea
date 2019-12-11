@@ -7,6 +7,8 @@ console.log(search);
 console.log(list);
 console.log(productId);
 
+var orderNo = null;
+
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
   $.ajax({
@@ -19,12 +21,9 @@ function buyNow() {
     },
     success: function(res) {
       console.log(res);
-
       // 订单编号
-      var orderNo = res.data.orderNo;
+      orderNo = res;
       console.log(orderNo);
-      window.orderNo = orderNo;
-      console.log(window.orderNo);
 
       var menu = res.data.productList[0];
       console.log(menu);
@@ -36,17 +35,7 @@ function buyNow() {
     }
   });
 }
-console.log( window.orderNo);
-
-// 点击进入退换货政策
-function ex() {
-  location.href = "exchange.html";
-}
-
-// 点击收货地址
-function adda() {
-  location.href = "addAddress.html";
-}
+console.log(window.orderNo);
 
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
 function getAllAddressByOpenId() {
@@ -69,6 +58,7 @@ function getAllAddressByOpenId() {
 
 // 点击去支付 跳转页面
 function goPay() {
+  console.log(orderNo);
   $("#btn-car3").click(function() {
     var istrue = false;
     var inp = $(".checkbox-list-input");
@@ -87,6 +77,16 @@ function goPay() {
     location.href =
       "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
   });
+}
+
+// 点击进入退换货政策
+function ex() {
+  location.href = "exchange.html";
+}
+
+// 点击收货地址
+function adda() {
+  location.href = "addAddress.html";
 }
 
 $(document).ready(function() {
