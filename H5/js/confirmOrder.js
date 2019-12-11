@@ -21,7 +21,8 @@ function buyNow() {
       console.log(res);
 
       // 订单编号
-      window.orderNo = res.data.orderNo;
+      var orderNo = res.data.orderNo;
+      window.orderNo = orderNo;
 
       var menu = res.data.productList[0];
       console.log(menu);
@@ -33,7 +34,7 @@ function buyNow() {
     }
   });
 }
-console.log("订单编号" +  window.orderNo);
+console.log("订单编号" + window.orderNo);
 
 // 点击进入退换货政策
 function ex() {
