@@ -2,6 +2,7 @@ $(function() {
   // 存储totalFee orderNo
   var totalFee = null;
   var orderNo = null;
+  var listTest = null;
 
   // 进去立即购买页面 调buyNow接口
   $.ajax({
@@ -14,6 +15,7 @@ $(function() {
     },
     success: function(res) {
       console.log(res);
+      listTest = res;
 
       // 价格
       totalFee = res.data.totalFee;
@@ -38,6 +40,8 @@ $(function() {
 
   // 点击去支付 跳转页面
   $("#btn-car3").click(function() {
+    console.log(listTest);
+
     var istrue = false;
     var inp = $(".checkbox-list-input");
     for (var i = 0; i < inp.length; i++) {
