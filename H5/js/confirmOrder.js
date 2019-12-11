@@ -7,9 +7,6 @@ console.log(search);
 console.log(list);
 console.log(productId);
 
-var numList = null;
-console.log(numList);
-
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
   $.ajax({
@@ -23,8 +20,11 @@ function buyNow() {
     success: function(res) {
       console.log(res);
 
-      numList = res.data.productList[0];
-      console.log(numList);
+      // 订单编号
+      var orderNo = res.data.orderNo;
+      console.log(orderNo);
+      window.orderNo = orderNo;
+      console.log(window.orderNo);
 
       var menu = res.data.productList[0];
       console.log(menu);
@@ -36,58 +36,60 @@ function buyNow() {
     }
   });
 }
+console.log( window.orderNo);
 
+// 点击进入退换货政策
 function ex() {
   location.href = "exchange.html";
 }
 
+// 点击收货地址
 function adda() {
   location.href = "addAddress.html";
 }
 
-// 点击去支付 跳转页面
-function goPay() {
-  // console.log(numList);
-  // $.ajax({
-  //   url: "https://kidstoms.com/getPayInfo",
-  //   type: "post",
-  //   dataType: "json",
-  //   data: {
-  //     openId: window.localStorage.getItem("openId"),
-  //     orderNo: 333300001,
-  //     totalFee: numList.productPrice,
-  //     body: numList.productName,
-  //     notifyUrl: "https://kidstoms.com/tea/H5/payResult.html"
-  //   },
-  //   success: function(res) {
-  //     console.log(res);
-      location.href = "payResult.html";
-  //   }
-  // });
+// 获取指定用户所有地址 调getAllAddressByOpenId接口
+function getAllAddressByOpenId() {
+  $.ajax({
+    url: "https://kidstoms.com/getAllAddressByOpenId",
+    type: "post",
+    dataType: "json",
+    data: {
+      openId: window.localStorage.getItem("openId")
+    },
+    success: function(res) {
+      console.log(res);
+      var result = res.data;
+      var html = template("addressTemplate", { result: result });
+      console.log(html);
+      $(".address-box").html(html);
+    }
+  });
 }
 
-// function goPay() {
-//   $("#btn-car3").click(function() {
-//     var istrue = false;
-//     var inp = $(".checkbox-list-input");
-//     for (var i = 0; i < inp.length; i++) {
-//       if (inp.eq(i).prop("checked")) {
-//         istrue = true;
-//         break;
-//       }
-//     }
-//     if (!istrue) {
-//       alert(
-//         "该笔订单内包含不可退换货/款的商品。付款前请务必详阅并知晓相关政策，并勾选确认"
-//       );
-//       return;
-//     }
-//     // orderNo
-//     location.href =
-//       "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
-//   });
-// }
+// 点击去支付 跳转页面
+function goPay() {
+  $("#btn-car3").click(function() {
+    var istrue = false;
+    var inp = $(".checkbox-list-input");
+    for (var i = 0; i < inp.length; i++) {
+      if (inp.eq(i).prop("checked")) {
+        istrue = true;
+        break;
+      }
+    }
+    if (!istrue) {
+      alert(
+        "该笔订单内包含不可退换货/款的商品。付款前请务必详阅并知晓相关政策，并勾选确认"
+      );
+      return;
+    }
+    location.href =
+      "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
+  });
+}
 
 $(document).ready(function() {
   buyNow();
+  getAllAddressByOpenId();
 });

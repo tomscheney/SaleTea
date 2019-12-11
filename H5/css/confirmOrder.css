@@ -235,3 +235,35 @@ form .hr-2{
     line-height: 3rem;
     color: white;
 }
+
+/* 模板引擎样式 */
+.box {
+    width: 100%;
+    height: auto;
+    padding: 0.7rem 0;
+    margin-bottom: 0.5rem;
+    display: flex;
+    position: relative;
+  }
+  .b1 {
+    font-size: 13px;
+    margin-left: 0.6rem;
+  }
+
+  .b2 {
+    font-size: 13px;
+    position: absolute;
+    right: 4rem;
+    top: 1rem;
+  }
+  .b3 {
+    position: absolute;
+    right: 0.6rem;
+    top: 1.2rem;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  .b3 img {
+    width: 100%;
+    height: 100%;
+  }
