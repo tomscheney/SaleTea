@@ -49,10 +49,6 @@ function adda() {
 
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
 function getAllAddressByOpenId() {
-  // 存储收货地址
-  // var addressList = null;
-  // console.log(addressList);
-
   $.ajax({
     url: "https://kidstoms.com/getAllAddressByOpenId",
     type: "post",
@@ -62,7 +58,6 @@ function getAllAddressByOpenId() {
     },
     success: function(res) {
       console.log(res);
-      // addressList = res;
       var result = res.data;
       var html = template("addressTemplate", { result: result });
       console.log(html);
@@ -73,23 +68,7 @@ function getAllAddressByOpenId() {
 
 // 点击去支付 跳转页面
 function goPay() {
-  // console.log(numList);
-  // $.ajax({
-  //   url: "https://kidstoms.com/getPayInfo",
-  //   type: "post",
-  //   dataType: "json",
-  //   data: {
-  //     openId: window.localStorage.getItem("openId"),
-  //     orderNo: 333300001,
-  //     totalFee: numList.productPrice,
-  //     body: numList.productName,
-  //     notifyUrl: "https://kidstoms.com/tea/H5/payResult.html"
-  //   },
-  //   success: function(res) {
-  //     console.log(res);
   location.href = "payResult.html";
-  //   }
-  // });
 }
 
 // function goPay() {

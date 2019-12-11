@@ -1,3 +1,11 @@
+let search = location.search;
+let list = search.split("&");
+let totalFee = list[0].split("=")[1];
+let orderNo = list[1].split("=")[1];
+console.log(search);
+console.log(list);
+console.log(totalFee);
+console.log(orderNo);
 // 获取后台数据
 
 let notifyUrl = "http://kidstoms.com/H5/payResult.html";
@@ -16,14 +24,6 @@ function pay() {
 }
 // 支付调用
 function onBridgeReady() {
-  let search = location.search;
-  let list = search.split("&");
-  let totalFee = list[0].split("=")[1];
-  let orderNo = list[1].split("=")[1];
-  console.log(search);
-  console.log(list);
-  console.log(totalFee);
-  console.log(orderNo);
 
   $.ajax({
     url: "https://kidstoms.com/getPayInfo",
