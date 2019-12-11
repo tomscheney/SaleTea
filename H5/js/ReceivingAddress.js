@@ -45,6 +45,30 @@ function newAdd() {
     }
   });
 
+  // 点击删除按钮 调deleteAddressByTelephone接口
+  function deletes() {
+    // $(".address-box").on("click", ".b3", function() {
+    var r = confirm("您确定要删除当前商品？");
+    if (r == true) {
+      $.ajax({
+        url: "https://kidstoms.com/deleteAddressByTelephone",
+        type: "post",
+        dataType: "json",
+        data: {
+          openId: window.localStorage.getItem("openId"),
+          telephone: window.localStorage.getItem("telephone")
+        },
+        success: function(res) {
+          console.log(res);
+          if (res.code == "200") {
+            getAllAddressByOpenId();
+          }
+        }
+      });
+    }
+    // });
+  }
+
   // if (
   //   this.userName == "" ||
   //   this.userName == null ||

@@ -9,7 +9,6 @@ console.log(openId);
 
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
 function getAllAddressByOpenId() {
-
   // // 存储收货地址
   // var addressList = null;
   // console.log(addressList);
@@ -32,30 +31,6 @@ function getAllAddressByOpenId() {
   });
 }
 
-// 点击删除按钮 调deleteAddressByTelephone接口
-function deletes() {
-  // $(".address-box").on("click", ".b3", function() {
-  var r = confirm("您确定要删除当前商品？");
-  if (r == true) {
-    $.ajax({
-      url: "https://kidstoms.com/deleteAddressByTelephone",
-      type: "post",
-      dataType: "json",
-      data: {
-        openId: window.localStorage.getItem("openId"),
-        telephone: window.localStorage.getItem("telephone")
-      },
-      success: function(res) {
-        console.log(res);
-        if (res.code == "200") {
-          getAllAddressByOpenId();
-        }
-      }
-    });
-  }
-  // });
-}
-
 // 点击添加新地址按钮跳转页面
 function add() {
   location.href = "ReceivingAddress.html";
@@ -64,7 +39,7 @@ function add() {
 // 点击地址列表的时候进入列表详情 进行修改
 function enter() {
   location.href = "enter-address.html";
-  console.log(addressList)
+  console.log(addressList);
 }
 
 $(document).ready(function() {

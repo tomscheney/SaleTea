@@ -35,14 +35,14 @@
 
     <script type="text/html" id="addressTemplate">
       <% for(var i = 0; i < result.length; i++) { %>
-      <div class="box" onclick="enter()">
+      <div class="box">
         <div class="b1">
           <div><%= result[i].userName%></div>
           <div><%= result[i].addressDetail%></div>
         </div>
         <div class="b2"><%= result[i].telephone%></div>
-        <!-- 删除按钮 -->
-        <div class="b3" onclick="deletes()">
+        <!-- 编辑按钮 -->
+        <div class="b3"  onclick="enter()">
           <img src="./img/timg.jpg" alt="" />
         </div>
       </div>
