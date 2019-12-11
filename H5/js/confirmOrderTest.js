@@ -16,11 +16,11 @@ $(function() {
       console.log(res);
 
       // 价格
-      var totalFee = res.data.totalFee;
+      totalFee = res.data.totalFee;
       console.log(totalFee);
 
       // 订单编号
-      var orderNo = res.data.orderNo;
+      orderNo = res.data.orderNo;
       console.log(orderNo);
 
       var menu = res.data.productList[0];
@@ -33,8 +33,8 @@ $(function() {
     }
   });
 
+  console.log(totalFee);
   console.log(orderNo);
-  console.log(menu);
 
   // 点击去支付 跳转页面
   $("#btn-car3").click(function() {
