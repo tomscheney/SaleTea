@@ -9,7 +9,6 @@ console.log(productId);
 
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
-  var orderNo = null;
   $.ajax({
     url: "https://kidstoms.com/buyNow",
     type: "post",
@@ -20,8 +19,9 @@ function buyNow() {
     },
     success: function(res) {
       console.log(res);
+
       // 订单编号
-      orderNo = res.data.orderNo;
+      var orderNo = res.data.orderNo;
       console.log(orderNo);
 
       var menu = res.data.productList[0];
@@ -34,8 +34,16 @@ function buyNow() {
     }
   });
 }
-console.log(window.orderNo);
-console.log(orderNo);
+
+// 点击进入退换货政策
+function ex() {
+  location.href = "exchange.html";
+}
+
+// 点击收货地址
+function adda() {
+  location.href = "addAddress.html";
+}
 
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
 function getAllAddressByOpenId() {
@@ -76,16 +84,6 @@ function goPay() {
     location.href =
       "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
   });
-}
-
-// 点击进入退换货政策
-function ex() {
-  location.href = "exchange.html";
-}
-
-// 点击收货地址
-function adda() {
-  location.href = "addAddress.html";
 }
 
 $(document).ready(function() {
