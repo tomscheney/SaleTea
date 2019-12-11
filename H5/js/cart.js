@@ -76,7 +76,7 @@ $(function () {
     $(".product-ckb").on(
         "click",
         ".product-em .product-xz .product-all .product-all-on",
-        function() {
+        function () {
             var xz = $(".product-em");
             var xz1 = $(".product-xz");
             if (xz1.length == xz.length) {
@@ -104,19 +104,22 @@ $(function () {
 });
 
 //选中产品
-$(
-    function selectProduct(index) {
+function selectProduct(index) {
 
-        if ($(this).is("product-xz")) {
-            $(this).removeClass("product-xz")
-        } else {
-            $(this).addClass("product-xz")
-        }
+    let elems = document.getElementsByClassName("product-em");
+    let elem = elems[index];
+    elem.className = "product-em"
+    if (elem.classList.contains("product-xz")) {
 
-        shuliang();
-        TotalPrice();
+        elem.classList.remove("product-xz");
+    } else {
+        elem.classList.add("product-xz");
+
     }
-)
+    shuliang();
+    TotalPrice();
+}
+
 
 //计算产品价格
 function TotalPrice() {
