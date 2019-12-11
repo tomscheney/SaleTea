@@ -108,7 +108,6 @@ function selectProduct(index) {
 
     let elems = document.getElementsByClassName("product-em");
     let elem = elems[index];
-    elem.className = "product-em"
     if (elem.classList.contains("product-xz")) {
 
         elem.classList.remove("product-xz");
