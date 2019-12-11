@@ -106,9 +106,8 @@ $(document).ready(function() {
 });
 
 function settleAccounts() {
-  function buyNow() {
     $.ajax({
-      url: "https://kidstoms.com/buyNow",
+      url: "https://kidstoms.com/settleAccounts",
       type: "post",
       dataType: "json",
       data: {
@@ -132,5 +131,5 @@ function settleAccounts() {
         }
       }
     });
-  }
+
 }
