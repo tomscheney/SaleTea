@@ -22,10 +22,10 @@ function buyNow() {
       console.log(res);
 
       // 订单编号
-      var orderNo = res.data.orderNo;
-      orderNo = orderNo;
+      orderNo = res.data.orderNo;
       totalFee = res.data.totalFee;
       console.log(orderNo);
+
 
       var menu = res.data.productList[0];
       console.log(menu);
@@ -90,6 +90,7 @@ function goPay() {
 }
 
 $(document).ready(function() {
+
   getAllAddressByOpenId();
 
   if (productId === undefined || productId === null){//来自立即购买
@@ -97,6 +98,7 @@ $(document).ready(function() {
 
   } else {//来自购物车结算
 
+    settleAccounts()
   }
 });
 
