@@ -22,7 +22,9 @@ function buyNow() {
 
       // 订单编号
       var orderNo = res.data.orderNo;
+      console.log(orderNo);
       window.orderNo = orderNo;
+      console.log(window.orderNo);
 
       var menu = res.data.productList[0];
       console.log(menu);
