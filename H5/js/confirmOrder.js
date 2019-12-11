@@ -10,6 +10,10 @@ console.log(productId);
 var numList = null;
 console.log(numList);
 
+var orderNo = orderNo;
+console.log(orderNo);
+
+
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
   $.ajax({
