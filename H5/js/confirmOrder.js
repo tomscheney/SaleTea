@@ -68,6 +68,7 @@ function getAllAddressByOpenId() {
 
 // 点击去支付 跳转页面
 function goPay() {
+  console.log(numList);
   location.href = "payResult.html";
 }
 
