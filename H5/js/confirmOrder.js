@@ -47,7 +47,6 @@ function adda() {
   location.href = "addAddress.html";
 }
 
-
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
 function getAllAddressByOpenId() {
   // 存储收货地址
@@ -117,4 +116,5 @@ function goPay() {
 
 $(document).ready(function() {
   buyNow();
+  getAllAddressByOpenId();
 });
