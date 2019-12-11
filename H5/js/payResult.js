@@ -1,5 +1,9 @@
-// 获取后台数据
+let search = location.search;
+let list = search.split("&");
+console.log(search);
+console.log(list);
 
+// 获取后台数据
 let notifyUrl = "http://kidstoms.com/H5/payResult.html";
 
 function pay() {
@@ -16,11 +20,7 @@ function pay() {
 }
 // 支付调用
 function onBridgeReady() {
-  let search = location.search;
-  let list = search.split("&");
   let totalFee = list[0].split("=")[1];
-  console.log(search);
-  console.log(list);
   console.log(totalFee);
   console.log(orderNo);
   $.ajax({
@@ -32,7 +32,7 @@ function onBridgeReady() {
       orderNo: orderNo,
       totalFee: totalFee,
       body: "芷贤斋订单结算",
-      notifyUrl: notifyUrl,
+      notifyUrl: notifyUrl
     },
     success: function(res) {
       let resPay = res.data;

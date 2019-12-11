@@ -7,15 +7,9 @@ console.log(search);
 console.log(list);
 console.log(productId);
 
-var numList = null;
-console.log(numList);
-
-var orderNo = orderNo;
-console.log(orderNo);
 
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
-  console.log(numList);
   $.ajax({
     url: "https://kidstoms.com/buyNow",
     type: "post",
@@ -30,9 +24,6 @@ function buyNow() {
       // 订单编号
       orderNo = res.data.orderNo;
       console.log("订单编号" + orderNo);
-
-      numList = res.data.productList[0];
-      console.log(numList);
 
       var menu = res.data.productList[0];
       console.log(menu);
@@ -76,7 +67,6 @@ function getAllAddressByOpenId() {
 
 // 点击去支付 跳转页面
 function goPay() {
-  console.log(numList);
   location.href = "payResult.html";
 }
 
