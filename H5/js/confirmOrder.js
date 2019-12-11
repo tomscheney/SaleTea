@@ -22,10 +22,10 @@ function buyNow() {
     },
     success: function(res) {
       console.log(res);
-      
+
       // 订单编号
-      var orderId = res.data.orderId;
-      console.log("订单编号" + orderId);
+      var orderNo = res.data.orderNo;
+      console.log("订单编号" + orderNo);
 
       numList = res.data.productList[0];
       console.log(numList);
