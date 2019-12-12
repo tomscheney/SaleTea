@@ -323,5 +323,6 @@ form .hr-2 {
 }
 
 .product-box {
-    margin-left: -55px;
+    margin-left: -25px;
+    padding: 15px;
 }
