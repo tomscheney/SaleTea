@@ -145,8 +145,8 @@
     height: auto;
     /*line-height: 3.5rem;*/
     /*float: left;*/
-    font-size: 10px;
-    white-space: nowrap;
+    font-size: 1rem;
+    /*white-space: nowrap;*/
 }
 
 .form-group {
