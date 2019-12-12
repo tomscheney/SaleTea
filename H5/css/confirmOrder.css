@@ -1,12 +1,4 @@
-@font-face {
-    font-family: 'iconfont';
-    src: url('../font_family/iconfont.eot');
-    src: url('../font_family/iconfont.eot?#iefix') format('embedded-opentype'),
-    url('../font_family/iconfont.woff2') format('woff2'),
-    url('../font_family/iconfont.woff') format('woff'),
-    url('../font_family/iconfont.ttf') format('truetype'),
-    url('../font_family/iconfont.svg#iconfont') format('svg');
-}
+
 .iconfont{
     font-family:"iconfont" !important;
     font-size:8px;
@@ -40,7 +32,6 @@ body{
 }
 .hr-2{
     margin: 0;
-    border-top: 3px solid #eee;
 }
 .hr-4{
     width: 100%;
