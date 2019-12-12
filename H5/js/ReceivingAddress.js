@@ -8,10 +8,6 @@ function newAdd() {
   var area = $("#select-area").val();
   var address = $("#address").val();
   let addressDetail = province + city + area + address;
-  window.localStorage.setItem("userName", userName);
-  window.localStorage.setItem("telephone", telephone);
-  window.localStorage.setItem("addressDetail", addressDetail);
-  window.localStorage.setItem("postcode", postcode);
   console.log("用户名", userName);
   console.log("手机号", telephone);
   console.log("邮编", postcode);

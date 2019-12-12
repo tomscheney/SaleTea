@@ -17,6 +17,7 @@ function getAllAddressByOpenId() {
       openId: window.localStorage.getItem("openId")
     },
     success: function(res) {
+      console.log(res);
       var result = res.data;
       var html = template("addressTemplate", { result: result });
       $(".address-box").html(html);
