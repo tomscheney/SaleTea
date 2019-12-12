@@ -18,9 +18,6 @@ function getAllAddressByOpenId() {
     },
     success: function(res) {
       console.log(res);
-      // 地址的id
-      var addressId = this.getAttribute('data-id')
-      console.log(addressId);
       var result = res.data;
       var html = template("addressTemplate", { result: result });
       $(".address-box").html(html);
