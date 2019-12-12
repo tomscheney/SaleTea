@@ -67,6 +67,7 @@
     margin: 0 auto;
     padding: 1rem 0;
     overflow: hidden;
+    background-color: white;
 }
 
 .glyphicon {
@@ -91,6 +92,8 @@
 .word-name, .amount {
     width: 100%;
     margin: 0 auto;
+    background-color: white;
+
 }
 
 .word-name-top {
@@ -132,6 +135,8 @@
     /* margin: 0 auto; */
     overflow: hidden;
     padding: 0.2rem 0;
+    background-color: white;
+
 }
 
 .sr-only {
@@ -323,6 +328,7 @@ form .hr-2 {
 }
 
 .product-box {
+    margin-left: 10px;
     padding: 15px;
     background-color:#c8c8c8 ;
 }
