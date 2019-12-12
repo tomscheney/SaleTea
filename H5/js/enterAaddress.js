@@ -22,7 +22,7 @@ function newAdd() {
     type: "post",
     dataType: "json",
     data: {
-      userName: userName,
+      userName: window.localStorage.getItem("userName"),
       telephone: telephone,
       addressDetail: addressDetail,
       postcode: postcode,
