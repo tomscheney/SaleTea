@@ -23,6 +23,10 @@ function getAllAddressByOpenId() {
       var addressId = res.data[0].addressId;
       console.log(addressId);
       window.localStorage.setItem("addressId", addressId);
+      // 姓名
+      var userName = res.data[0].userName;
+      console.log(userName);
+      window.localStorage.setItem("userName", userName);
 
       var result = res.data;
       var html = template("addressTemplate", { result: result });
@@ -38,7 +42,7 @@ function add() {
 
 // 点击地址列表的时候进入列表详情 进行修改
 function enter() {
-  location.href = "enter-address.html?addressId=" + addressId;
+  location.href = "enter-address.html?userName=" + userName;
 }
 
 $(document).ready(function() {
