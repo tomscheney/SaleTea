@@ -1,13 +1,10 @@
 // 保存并返回的时候 调saveAddress接口
 function newAdd() {
-    var userName = $("#name").val();
-    var telephone = $("#phone").val();
-    var postcode = $("#postcode").val();
-    var province = $("#select-province").val();
-    var city = $("#select-city").val();
-    var area = $("#select-area").val();
-    var address = $("#address").val();
-    let newAddtess = province + city + area + address;
+    let userName = window.localStorage.getItem("userName");
+    let telephone = window.localStorage.getItem("telephone");
+    let addressDetail = window.localStorage.getItem("addressDetail");
+    let postcode = window.localStorage.getItem("postcode");
+
     console.log("用户名", userName);
     console.log("手机号", telephone);
     console.log("邮编", postcode);
@@ -24,17 +21,13 @@ function newAdd() {
       data: {
         userName: userName,
         telephone: telephone,
-        addressDetail: newAddtess,
+        addressDetail: addressDetail,
         postcode: postcode,
         openId: localStorage.getItem("openId")
       },
       success: function(res) {
         console.log(res);
         if (res.code == "200") {
-          window.localStorage.setItem("userName", userName);
-          window.localStorage.setItem("telephone", telephone);
-          window.localStorage.setItem("addressDetail", addressDetail);
-          window.localStorage.setItem("postcode", postcode);
           location.href = "addAddress.html";
         }
       }
