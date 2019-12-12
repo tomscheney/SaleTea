@@ -7,7 +7,7 @@ function newAdd() {
   var city = $("#select-city").val();
   var area = $("#select-area").val();
   var address = $("#address").val();
-  let newAddtess = province + city + area + address;
+  let addressDetail = province + city + area + address;
   console.log("用户名", userName);
   console.log("手机号", telephone);
   console.log("邮编", postcode);
@@ -15,7 +15,7 @@ function newAdd() {
   console.log("市", city);
   console.log("区", area);
   console.log("地址", address);
-  console.log("具体地址", newAddtess);
+  console.log("具体地址", addressDetail);
 
   $.ajax({
     url: "https://kidstoms.com/saveAddress",
@@ -24,22 +24,13 @@ function newAdd() {
     data: {
       userName: userName,
       telephone: telephone,
-      addressDetail: newAddtess,
+      addressDetail: addressDetail,
       postcode: postcode,
       openId: localStorage.getItem("openId")
     },
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
-        // location.href =
-        //   "addAddress.html?userName?telephone?postcode?province?city?area?address=" +
-        //   userName +
-        //   telephone +
-        //   postcode +
-        //   province +
-        //   city +
-        //   area +
-        //   address;
         location.href = "addAddress.html";
       }
     }

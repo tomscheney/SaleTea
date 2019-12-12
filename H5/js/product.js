@@ -1,4 +1,5 @@
 let telephone = window.localStorage.getItem("telephone");
+let desc = window.localStorage.getItem("recommendDesc");
 let search = location.search;
 let list = search.split("=");
 let productId = list[1];
@@ -192,9 +193,10 @@ function imgbtn() {
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
-        window.location.href = "product.html";
-        swiper_init();
-        getProductDetail();
+        var productIdDesc = res.data.productId;
+        console.log(productIdDesc);
+        window.localStorage.setItem("productIdDesc", productIdDesc);
+        location.href = "product.html?productIdDesc=" + productIdDesc;
       }
     }
   });
