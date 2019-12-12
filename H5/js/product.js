@@ -193,8 +193,10 @@ function imgbtn() {
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
-        // window.location.href = "product.html";
-        location.href = "product.html";
+        var productIdDesc = res.data.productId;
+        console.log(productIdDesc);
+        window.localStorage.setItem("productIdDesc", productIdDesc);
+        location.href = "product.html?productId=" + productId;
       }
     }
   });
