@@ -19,10 +19,10 @@ function newAdd() {
       type: "post",
       dataType: "json",
       data: {
-        userName: userName,
-        telephone: telephone,
-        addressDetail: addressDetail,
-        postcode: postcode,
+        userName: window.localStorage.getItem("userName"),
+        telephone:  window.localStorage.getItem("telephone"),
+        addressDetail:  window.localStorage.getItem("addressDetail"),
+        postcode:  window.localStorage.getItem("postcode"),
         openId: localStorage.getItem("openId")
       },
       success: function(res) {
