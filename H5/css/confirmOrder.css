@@ -151,9 +151,9 @@
 }
 
 .form-group {
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
-    justify-items: center;
+    align-items-items: center;
 }
 
 .form-inline .form-control {
