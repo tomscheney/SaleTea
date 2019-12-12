@@ -31,15 +31,10 @@ function newAdd() {
     success: function(res) {
       console.log(res);
       if (res.code == "200") {
-        // location.href =
-        //   "addAddress.html?userName?telephone?postcode?province?city?area?address=" +
-        //   userName +
-        //   telephone +
-        //   postcode +
-        //   province +
-        //   city +
-        //   area +
-        //   address;
+        window.localStorage.setItem("userName", userName);
+        window.localStorage.setItem("telephone", telephone);
+        window.localStorage.setItem("addressDetail", addressDetail);
+        window.localStorage.setItem("postcode", postcode);
         location.href = "addAddress.html";
       }
     }
