@@ -35,7 +35,6 @@ function buyNow() {
           amounts: res.data.amounts
         });
         $(".product-box").html(htmls);
-
         // 价格
         $(".pay-money").html("合计：" + menu.productPrice + "元");
       }
@@ -64,11 +63,13 @@ function getAllAddressByOpenId() {
     },
     success: function(res) {
       console.log(res);
-      var result = res.data[0];
-      console.log(result)
-      var html = template("addressTemplate", { result });
-      console.log(html);
-      $(".address-box").html(html);
+      if (res.code === 200) {
+        var result = res.data[0];
+        console.log(result)
+        var html = template("addressTemplate", {result});
+        console.log(html);
+        $(".address-box").html(html);
+      }
     }
   });
 }
