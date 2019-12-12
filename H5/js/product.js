@@ -80,6 +80,7 @@ $("#btn-car2").click(function() {
     .delay(1000)
     .fadeOut();
 });
+
 // 获取产品详情  getProductDetail接口
 function getProductDetail() {
   $.ajax({
@@ -93,6 +94,12 @@ function getProductDetail() {
       console.log(res);
       descList = res;
       console.log(descList);
+
+      // 商品简介
+      var recommendDesc = res.data.productRecommend[0].recommendDesc;
+      console.log(recommendDesc);
+      window.localStorage.setItem("recommendDesc", recommendDesc);
+
       // 标题 价格
       $(".tit-name").text(res.data.productDesc);
       $(".tit-price").text(res.data.salePrice + "元 / 份");
@@ -180,7 +187,7 @@ function imgbtn() {
     type: "post",
     dataType: "json",
     data: {
-      desc: descList.data.productDesc
+      desc: window.localStorage.getItem("recommendDesc")
     },
     success: function(res) {
       console.log(res);
