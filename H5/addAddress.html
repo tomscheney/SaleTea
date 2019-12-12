@@ -24,9 +24,7 @@
   </head>
   <body>
     <!-- 列表 -->
-    <div class="address-box">
-      
-    </div>
+    <div class="address-box"></div>
 
     <!-- 增加新地址按钮 -->
     <div class="wrap">
@@ -42,9 +40,11 @@
         </div>
         <div class="b2"><%= result[i].telephone%></div>
         <!-- 编辑按钮 -->
-        <div class="b3"  onclick="enter()">
-          <img src="./img/timg.jpg" alt="" />
-        </div>
+        <a href=""  data-id="<%= result[i].addressId%>">
+          <div class="b3"  onclick="enter()">
+            <img src="./img/timg.jpg" alt="" />
+          </div>
+        </a>
       </div>
       <% } %>
     </script>
