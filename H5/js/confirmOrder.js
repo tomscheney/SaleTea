@@ -35,13 +35,9 @@ function buyNow() {
           amounts: res.data.amounts
         });
         $(".product-box").html(htmls);
-<<<<<<< HEAD
-        // 总计
-        $(".pay-money").html("合计："+menu.productPrice+"元");
-=======
+
         // 价格
         $(".pay-money").html("合计：" + menu.productPrice + "元");
->>>>>>> 31929cf2d086800f74d880ad401107558fe2aec5
       }
     }
   });
