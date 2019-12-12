@@ -65,10 +65,10 @@
 
 .commodity {
     width: 100%;
-    margin: 0 auto;
     padding: 1rem 0;
     overflow: hidden;
     background-color: white;
+    margin: 15px auto 0;
 }
 
 .glyphicon {
@@ -331,8 +331,9 @@ form .hr-2 {
 .product-box {
     margin-left: 15px;
     padding: 15px;
-    /*background-color:#c8c8c8 ;*/
+    background-color:#c8c8c8 ;
 }
 .agree{
-    font-size: 12px;
+    font-size: 10px;
+    margin-left: 15px;
 }
