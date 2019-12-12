@@ -69,14 +69,14 @@ body{
 }
 .word1{
     font-size: 1.5rem;
-    margin-left: 1rem;
+    margin-left: 0rem;
 }
 .word-gery{
     color: gray;
     float: right;
 }
 .word-name,.amount{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 .word-name-top{
