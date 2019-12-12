@@ -169,7 +169,7 @@
     width: 100%;
     height: -webkit-fill-available;
     height: fill-available;
-    /* margin: 0 auto; */
+    margin: 0 auto;
 }
 
 .notic input[type="checkbox"] {
