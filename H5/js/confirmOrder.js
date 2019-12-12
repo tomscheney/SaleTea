@@ -32,11 +32,11 @@ function buyNow() {
 
         var htmls = template("productTemplate", {
           result: res.data.productList,
-          amounts:res.data.amounts
+          amounts: res.data.amounts
         });
         $(".product-box").html(htmls);
         // 价格
-        $(".pay-money").html("合计："+menu.productPrice+"元");
+        $(".pay-money").html("合计：" + menu.productPrice + "元");
       }
     }
   });
@@ -63,8 +63,8 @@ function getAllAddressByOpenId() {
     },
     success: function(res) {
       console.log(res);
-      var result = res.data;
-      var html = template("addressTemplate", { result: result[0] });
+      var result = res.data[0];
+      var html = template("addressTemplate", { result: result });
       console.log(html);
       $(".address-box").html(html);
     }
@@ -94,43 +94,40 @@ function goPay() {
 }
 
 $(document).ready(function() {
-
   getAllAddressByOpenId();
 
-  if (productId === undefined || productId === null){//来自购物车结算
-    settleAccounts()
-
-  } else {//来自立即购买
+  if (productId === undefined || productId === null) {
+    //来自购物车结算
+    settleAccounts();
+  } else {
+    //来自立即购买
 
     buyNow();
-
   }
 });
 
 function settleAccounts() {
-    $.ajax({
-      url: "https://kidstoms.com/settleAccounts",
-      type: "post",
-      dataType: "json",
-      data: {
-        openId: window.localStorage.getItem("openId"),
-      },
-      success: function(res) {
-        console.log(res);
+  $.ajax({
+    url: "https://kidstoms.com/settleAccounts",
+    type: "post",
+    dataType: "json",
+    data: {
+      openId: window.localStorage.getItem("openId")
+    },
+    success: function(res) {
+      console.log(res);
 
-        if (res.code === 200) {
-          // 订单编号
-          orderNo = res.data.orderNo;
-          totalFee = res.data.totalFee;
+      if (res.code === 200) {
+        // 订单编号
+        orderNo = res.data.orderNo;
+        totalFee = res.data.totalFee;
 
-          var htmls = template("productTemplate", {
-            result: res.data.productList,
-            amounts:res.data.amounts
-          });
-          $(".product-box").html(htmls);
-
-        }
+        var htmls = template("productTemplate", {
+          result: res.data.productList,
+          amounts: res.data.amounts
+        });
+        $(".product-box").html(htmls);
       }
-    });
-
+    }
+  });
 }
