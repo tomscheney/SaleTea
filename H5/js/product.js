@@ -196,7 +196,7 @@ function imgbtn() {
         var productIdDesc = res.data.productId;
         console.log(productIdDesc);
         window.localStorage.setItem("productIdDesc", productIdDesc);
-        location.href = "product.html?productId=" + productId;
+        location.href = "product.html?productIdDesc=" + productIdDesc;
       }
     }
   });
