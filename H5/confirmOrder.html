@@ -38,10 +38,10 @@
         <!-- //表单在进行提交的前一刻会调用onsubmit事件，这个事件会接受checkInput这个函数的返回值。 -->
         <form action="" onsubmit="return checkInput(this)">
           <div>
-            <label>
+            <span>
               <input class="checkbox-list-input" name="id" type="checkbox" />
               请详阅并知晓退换政策，同意后付款
-            </label>
+            </span>
             <!-- <input type="submit"> -->
             <span onclick="ex()" class="indicator i-icon2"
               ><i class="iconfont">&#xe641;</i></span
@@ -93,7 +93,7 @@
       <!-- 买家留言 -->
       <form class="form-inline">
         <div class="form-group">
-          <label class="sr-only" >买家留言：</label>
+          <span class="sr-only" >买家留言：</span>
           <input
                   type="email"
                   class="form-control"
@@ -102,6 +102,8 @@
           />
         </div>
       </form>
+      <hr class="hr-4" />
+
       <% } %>
     </script>
   </body>
