@@ -19,7 +19,6 @@ function getAllAddressByOpenId() {
     success: function(res) {
       console.log(res);
       var result = res.data;
-      window.localStorage.setItem(result);
       var html = template("addressTemplate", { result: result });
       $(".address-box").html(html);
     }
