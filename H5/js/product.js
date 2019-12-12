@@ -193,7 +193,7 @@ function imgbtn() {
       console.log(res);
       if (res.code == "200") {
         // window.location.href = "product.html";
-        location.href = "product.html?productId=" + productId;
+        location.href = "product.html?desc=" + desc;
         swiper_init();
         getProductDetail();
       }
