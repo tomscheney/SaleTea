@@ -7,111 +7,134 @@
     url('../font_family/iconfont.ttf') format('truetype'),
     url('../font_family/iconfont.svg#iconfont') format('svg');
 }
-.iconfont{
-    font-family:"iconfont" !important;
-    font-size:8px;
-    font-style:normal;
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 8px;
+    font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 /* 右箭头 */
-.indicator{
+.indicator {
     width: 5px;
     height: 10px;
     float: right;
     margin-right: 1.5rem;
 }
-.i-icon{
+
+.i-icon {
     float: left;
 }
-.iconfont{
+
+.iconfont {
     font-size: 16px;
     line-height: 25px;
     height: auto;
-    background-color: transparent!important;
+    background-color: transparent !important;
 }
+
 /*body{*/
 /*    width: 100%;*/
 /*}*/
 /* 分割线 */
-.hr-1{
+.hr-1 {
     width: 100%;
     margin: 0 auto;
 }
-.hr-2{
+
+.hr-2 {
     margin: 0;
 }
-.hr-4{
+
+.hr-4 {
     width: 100%;
     margin: 0 auto;
 }
+
 /* 收货地址 */
-.adress{
+.adress {
     width: 90%;
     margin: 0 auto;
     color: #000;
     padding: 1rem 0;
     overflow: hidden;
 }
-.commodity{
+
+.commodity {
     width: 100%;
     margin: 0 auto;
     padding: 1rem 0;
     overflow: hidden;
 }
-.glyphicon{
+
+.glyphicon {
     font-size: 1rem;
 }
-.word{
+
+.word {
     font-size: 1.0rem;
     padding-left: 1vw;
 }
-.word1{
+
+.word1 {
     font-size: 1.0rem;
     margin-left: 0rem;
 }
-.word-gery{
+
+.word-gery {
     color: gray;
     float: right;
 }
-.word-name,.amount{
+
+.word-name, .amount {
     width: 100%;
     margin: 0 auto;
 }
-.word-name-top{
+
+.word-name-top {
     padding-top: 1rem;
     font-size: 1rem;
 }
-.word-name-top>span:nth-of-type(2){
+
+.word-name-top > span:nth-of-type(2) {
     float: right;
 }
-.word-name-bottom{
+
+.word-name-bottom {
     padding-bottom: 1rem;
 }
-.word-name-bottom>span:nth-of-type(1),.word-name-bottom>span:nth-of-type(2){
+
+.word-name-bottom > span:nth-of-type(1), .word-name-bottom > span:nth-of-type(2) {
     color: gray;
     font-size: 1rem;
 }
-.word-name-bottom>span:nth-of-type(3){
+
+.word-name-bottom > span:nth-of-type(3) {
     color: red;
     font-size: 1rem;
     float: right;
 }
+
 /* 商品金额 */
-.amount{
+.amount {
     padding: 1rem 0;
     overflow: hidden;
 }
-.amount span:nth-of-type(2){
+
+.amount span:nth-of-type(2) {
     float: right;
 }
-.form-inline{
+
+.form-inline {
     /* width: 90%; */
     /* margin: 0 auto; */
     overflow: hidden;
     padding: 0.2rem 0;
 }
-.sr-only{
+
+.sr-only {
     position: relative;
     width: 60px;
     height: auto;
@@ -120,12 +143,14 @@
     font-size: 10px;
     white-space: nowrap;
 }
-.form-group{
-    display:flex;
+
+.form-group {
+    display: flex;
     flex-direction: row;
     align-items: center;
 }
-.form-inline .form-control{
+
+.form-inline .form-control {
     font-size: 1rem;
     /*width: 77%;*/
     border: 0;
@@ -133,20 +158,24 @@
     float: left;
     box-shadow: none;
 }
-.notic{
+
+.notic {
     width: 100%;
     height: -webkit-fill-available;
     height: fill-available;
     /* margin: 0 auto; */
 }
-.notic input[type="checkbox"]{
+
+.notic input[type="checkbox"] {
     border-radius: 0.5rem;
 }
+
 /* 支付 */
-button{
-    outline:none;
+button {
+    outline: none;
 }
-.shopping-car{
+
+.shopping-car {
     left: 0;
     width: 100%;
     height: 50px;
@@ -155,11 +184,13 @@ button{
     line-height: 50px;
     background-color: #fff;
 }
-.shopping-car>div{
+
+.shopping-car > div {
     width: 100%;
     height: 100%;
 }
-.shopping-car,.pay-money,#btn-car3{
+
+.shopping-car, .pay-money, #btn-car3 {
     border: 0;
     z-index: 1000;
     position: fixed;
@@ -167,17 +198,20 @@ button{
     height: 50px;
     focus: none;
 }
-.pay-money{
+
+.pay-money {
     width: 40%;
     left: 20%;
     color: red;
     background-color: #FFFFFF;
 }
-#btn-car3{
+
+#btn-car3 {
     width: 40%;
     left: 60%;
     background-color: #fd3a38;
 }
+
 .checkbox {
     position: relative;
     display: block;
@@ -186,52 +220,65 @@ button{
     margin-bottom: 10px;
 
 }
-form{
+
+form {
     width: 100%;
 }
-form>div{
+
+form > div {
     width: 90%;
     margin: 0 auto;
 }
-form .hr-2{
+
+form .hr-2 {
     width: 100%;
     margin-top: 1rem;
 }
-.gift{
+
+.gift {
     width: 90%;
     /* height: 7rem; */
     line-height: 3rem;
     margin: 0 auto;
 }
-.gift>div{
+
+.gift > div {
     width: 100%;
     height: 4rem;
 }
-.vou{
+
+.vou {
     line-height: 4rem;
 }
-.vou>span:nth-of-type(1)>img{
+
+.vou > span:nth-of-type(1) > img {
     margin-right: 1rem;
 }
-.vou>span:nth-of-type(2){
+
+.vou > span:nth-of-type(2) {
     float: right;
     color: gray;
 }
-.vou>span:nth-of-type(2)>img{
+
+.vou > span:nth-of-type(2) > img {
     padding-left: 0.5rem;
 }
-.vou>span:nth-of-type(2)>img:nth-of-type(2){
+
+.vou > span:nth-of-type(2) > img:nth-of-type(2) {
     display: none;
 }
-.inp{
+
+.inp {
     display: none;
 }
-.inp input{
+
+.inp input {
     width: 75%;
-    border:2px solid #999999;
+    border: 2px solid #999999;
     outline: none;
 }
-.inp button{
+
+.inp button {
     width: 20%;
     background-color: red;
     border: none;
@@ -248,29 +295,33 @@ form .hr-2{
     margin-bottom: 0.5rem;
     display: flex;
     position: relative;
-  }
-  .b1 {
+}
+
+.b1 {
     font-size: 13px;
     margin-left: 0.6rem;
-  }
+}
 
-  .b2 {
+.b2 {
     font-size: 13px;
     position: absolute;
     right: 4rem;
     top: 1rem;
-  }
-  .b3 {
+}
+
+.b3 {
     position: absolute;
     right: 0.6rem;
     top: 1.2rem;
     width: 1.2rem;
     height: 1.2rem;
-  }
-  .b3 img {
+}
+
+.b3 img {
     width: 100%;
     height: 100%;
-  }
-    .product-box{
-        margin-left: 15px;
-    }
+}
+
+.product-box {
+    margin-left: 15px;
+}
