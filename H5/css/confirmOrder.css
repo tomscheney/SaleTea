@@ -112,7 +112,7 @@ body{
     padding: 0.2rem 0;
 }
 .sr-only{
-    /*position: static;*/
+    position: relative;
     width: 60px;
     height: auto;
     /*line-height: 3.5rem;*/
