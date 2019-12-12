@@ -1,4 +1,6 @@
 let telephone = window.localStorage.getItem("telephone");
+let desc = window.localStorage.getItem("recommendDesc");
+
 let search = location.search;
 let list = search.split("=");
 let productId = list[1];
