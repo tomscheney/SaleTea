@@ -241,17 +241,6 @@ form .hr-2 {
     margin-top: 1rem;
 }
 
-.gift {
-    width: 90%;
-    /* height: 7rem; */
-    line-height: 3rem;
-    margin: 0 auto;
-}
-
-.gift > div {
-    width: 100%;
-    height: 4rem;
-}
 
 .vou {
     line-height: 4rem;
@@ -334,7 +323,7 @@ form .hr-2 {
 }
 .product-background{
     background-color: white;
-    /*margin-bottom: 5px;*/
+    margin-bottom: 1px;
     /*padding-bottom: 5px;*/
 }
 .product-cell{
