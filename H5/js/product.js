@@ -80,6 +80,7 @@ $("#btn-car2").click(function() {
     .delay(1000)
     .fadeOut();
 });
+
 // 获取产品详情  getProductDetail接口
 function getProductDetail() {
   $.ajax({
@@ -93,6 +94,11 @@ function getProductDetail() {
       console.log(res);
       descList = res;
       console.log(descList);
+
+      // 商品简介
+      var recommendCover = res.data.productRecommend[0].recommendCover;
+      console.log(recommendCover);
+
       // 标题 价格
       $(".tit-name").text(res.data.productDesc);
       $(".tit-price").text(res.data.salePrice + "元 / 份");
