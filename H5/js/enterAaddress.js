@@ -1,5 +1,6 @@
 var userName = window.localStorage.getItem("userName");
-$(".name").html(window.localStorage.getItem("userName"));
+var nameUsername =  $(".name").html(window.localStorage.getItem("userName"));
+console.log(nameUsername)
 
 var telephone = $("#phone").val();
 var postcode = $("#postcode").val();
