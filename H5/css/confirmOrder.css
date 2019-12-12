@@ -115,10 +115,14 @@ body{
     position: static;
     width: 60px;
     height: auto;
-    line-height: 3.5rem;
+    /*line-height: 3.5rem;*/
     float: left;
     font-size: 10px;
     white-space: nowrap;
+}
+.form-group{
+    flex-direction: row;
+    align-items: center;
 }
 .form-inline .form-control{
     font-size: 1rem;
