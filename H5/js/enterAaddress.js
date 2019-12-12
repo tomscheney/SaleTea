@@ -1,6 +1,6 @@
 var userName = window.localStorage.getItem("userName");
-var nameUsername =  $(".name").html(window.localStorage.getItem("userName"));
-console.log(nameUsername)
+var nameUsername = $(".name").html(window.localStorage.getItem("userName"));
+console.log(nameUsername);
 
 var telephone = $("#phone").val();
 var postcode = $("#postcode").val();
@@ -17,7 +17,6 @@ console.log("市", city);
 console.log("区", area);
 console.log("地址", address);
 console.log("具体地址", addressDetail);
-
 
 // 保存并返回的时候 调saveAddress接口
 function newAdd() {
