@@ -330,10 +330,12 @@ form .hr-2 {
 
 .product-box {
     background-color: #e6e6e6;
+    padding: 0;
 }
 .product-cell{
     margin-top: 15px;
     padding: 5px;
+
 }
 .agree{
     font-size: 10px;
