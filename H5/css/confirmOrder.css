@@ -48,8 +48,9 @@
     margin: 0;
 }
 
-.hr-4 {
-    width: 100%;
+.hr-3 {
+    width: 150%;
+    height: 15px;
     margin: 0 auto;
 }
 
@@ -331,4 +332,7 @@ form .hr-2 {
     margin-left: 15px;
     padding: 15px;
     /*background-color:#c8c8c8 ;*/
+}
+.agree{
+    font-size: 12px;
 }
