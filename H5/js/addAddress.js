@@ -8,6 +8,10 @@ console.log(list);
 console.log(productId);
 console.log(openId);
 
+let userName =  window.localStorage.getItem("userName");
+console.log(userName);
+
+
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
 function getAllAddressByOpenId() {
   $.ajax({
