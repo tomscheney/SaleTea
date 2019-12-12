@@ -63,11 +63,10 @@ function getAllAddressByOpenId() {
     },
     success: function(res) {
       console.log(res);
-      if (res.code === 200) {
+      if (res.code === 200 && res.data.length > 0) {
         let result = res.data[0];
         console.log(result)
-        let html = template("addressTemplate", {result});
-        console.log(html);
+
         $(".address-detail").html(result.addressDetail);
       }
     }
