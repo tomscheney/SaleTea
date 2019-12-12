@@ -113,11 +113,11 @@ body{
 }
 .sr-only{
     position: static;
-    width: 23%;
+    width: 60px;
     height: auto;
-    line-height: 3rem;
+    /*line-height: 3rem;*/
     float: left;
-    font-size: 12px;
+    font-size: 10px;
     white-space: nowrap;
 }
 .form-inline .form-control{
