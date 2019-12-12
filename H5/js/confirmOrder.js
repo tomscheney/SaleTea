@@ -123,7 +123,6 @@ function settleAccounts() {
           orderNo = res.data.orderNo;
           totalFee = res.data.totalFee;
 
-          console.log(menu);
           var htmls = template("productTemplate", {
             result: res.data.productList,
             amounts:res.data.amounts
