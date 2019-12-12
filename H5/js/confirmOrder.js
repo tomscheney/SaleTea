@@ -64,6 +64,7 @@ function getAllAddressByOpenId() {
     success: function(res) {
       console.log(res);
       var result = res.data[0];
+      console.log(result)
       var html = template("addressTemplate", { result: result });
       console.log(html);
       $(".address-box").html(html);
