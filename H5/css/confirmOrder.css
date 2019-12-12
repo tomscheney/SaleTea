@@ -329,9 +329,10 @@ form .hr-2 {
 }
 
 .product-box {
-    margin-left: 15px;
-    padding: 15px;
-    background-color:#c8c8c8 ;
+    background-color: #e6e6e6;
+}
+.product-cell{
+    margin:15px auto 0;
 }
 .agree{
     font-size: 10px;
