@@ -1,6 +1,5 @@
 let telephone = window.localStorage.getItem("telephone");
 let desc = window.localStorage.getItem("recommendDesc");
-
 let search = location.search;
 let list = search.split("=");
 let productId = list[1];
@@ -195,7 +194,7 @@ function imgbtn() {
       console.log(res);
       if (res.code == "200") {
         // window.location.href = "product.html";
-        location.href = "product.html?desc=" + desc;
+        location.href = "product.html?product=" + product;
         swiper_init();
         getProductDetail();
       }
