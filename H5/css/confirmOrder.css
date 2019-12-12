@@ -30,12 +30,12 @@
     height: auto;
     background-color: transparent!important;
 }
-body{
-    width: 100%;
-}
+/*body{*/
+/*    width: 100%;*/
+/*}*/
 /* 分割线 */
 .hr-1{
-    width: 100%;
+    width: 95%;
     margin: 0 auto;
 }
 .hr-2{
