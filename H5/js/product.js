@@ -187,7 +187,7 @@ function imgbtn() {
     type: "post",
     dataType: "json",
     data: {
-      desc: descList.data.productDesc
+      desc: window.localStorage.getItem("recommendDesc")
     },
     success: function(res) {
       console.log(res);
