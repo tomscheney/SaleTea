@@ -35,7 +35,7 @@ function buyNow() {
           amounts:res.data.amounts
         });
         $(".product-box").html(htmls);
-        // 价格
+        // 总计
         $(".pay-money").html("合计："+menu.productPrice+"元");
       }
     }
@@ -128,6 +128,7 @@ function settleAccounts() {
             amounts:res.data.amounts
           });
           $(".product-box").html(htmls);
+          $(".pay-money").html("合计："+totalFee+"元");
 
         }
       }
