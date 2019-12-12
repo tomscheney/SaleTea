@@ -68,7 +68,7 @@ function getAllAddressByOpenId() {
         console.log(result)
         let html = template("addressTemplate", {result});
         console.log(html);
-        $(".address-box").html(html);
+        $(".address-detail").html(result.addressDetail);
       }
     }
   });

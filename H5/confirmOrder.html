@@ -22,12 +22,10 @@
     <!-- 收货地址 -->
     <div onclick="adda()" class="adress">
       <span class="indicator i-icon"><i class="iconfont">&#xec3f;</i></span>
-      <span class="word">添加收货地址</span>
+      <span class="address-detail">添加收货地址</span>
       <span class="indicator i-icon1"><i class="iconfont">&#xe641;</i></span>
     </div>
 
-    <!-- 收货人信息 -->
-    <div class="address-box"></div>
 
     <!-- 叒一条没有感情的分割线 -->
     <hr class="hr-2" />
@@ -66,17 +64,7 @@
       </div>
     </div>
 
-    <script type="text/html" id="addressTemplate">
-      <% for(var i = 0; i < result.length; i++) { %>
-      <div class="box" onclick="enter()">
-        <div class="b1">
-          <div><%= result[i].userName%></div>
-          <div><%= result[i].addressDetail%></div>
-        </div>
-        <div class="b2"><%= result[i].telephone%></div>
-      </div>
-      <% } %>
-    </script>
+
 
     <script type="text/html" id="productTemplate">
       <% for(var i = 0; i < result.length; i++) { %>
@@ -99,7 +87,7 @@
         </div>
         <div class="word-name-bottom">
           <span>数量</span>
-          <span><%=amounts[result[i].productId] %>份</span>
+          <span><%=amounts[result[i].productId] %> 份</span>
           <span>不支持退款</span>
         </div>
       </div>
