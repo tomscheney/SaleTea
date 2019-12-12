@@ -42,17 +42,6 @@
 
     <!-- 一条没有感情的分割线 -->
     <hr class="hr-1" />
-    <div class="word-name">
-      <div class="word-name-top">
-        <span class="productName"></span>
-        <span class="productPrice"> <span>元/份 ×1</span></span>
-      </div>
-      <div class="word-name-bottom">
-        <span>数量</span>
-        <span>1份</span>
-        <span>不支持退款</span>
-      </div>
-    </div>
 
     <!-- 又一条没有感情的分割线 -->
     <hr class="hr-1" />
@@ -71,6 +60,9 @@
 
     <!-- 叒一条没有感情的分割线 -->
     <hr class="hr-2" />
+    <ul class="product-box">
+
+    </ul>
     <!-- 详情 -->
     <div class="notic">
       <div class="checkbox">
@@ -91,7 +83,7 @@
           <!-- 去支付 -->
           <div class="shopping-car pay">
             <div>
-              <span class="pay-money productPrice" id="pay-money"></span>
+              <span class="pay-money" id="pay-money"></span>
               <span>合计：元</span>
               <button onclick="goPay()" type="button" id="btn-car3">
                 去支付
@@ -110,6 +102,22 @@
           <div><%= result[i].addressDetail%></div>
         </div>
         <div class="b2"><%= result[i].telephone%></div>
+      </div>
+      <% } %>
+    </script>
+
+    <script type="text/html" id="productTemplate">
+      <% for(var i = 0; i < result.length; i++) { %>
+      <div class="word-name">
+        <div class="word-name-top">
+          <span class="productName"><%= result[i].productName%></span>
+          <span class="productPrice"> <%= result[i].productPrice%> 元/份  </span>
+        </div>
+        <div class="word-name-bottom">
+          <span>数量</span>
+          <span><%=amounts[result[i].productId] %>份</span>
+          <span>不支持退款</span>
+        </div>
       </div>
       <% } %>
     </script>

@@ -27,14 +27,16 @@ function buyNow() {
         totalFee = res.data.totalFee;
         console.log(orderNo);
 
-
         var menu = res.data.productList[0];
         console.log(menu);
 
-        // 名字
-        $(".productName").html(menu.productName);
+        var htmls = template("productTemplate", {
+          result: res.data.productList,
+          amounts:res.data.amounts
+        });
+        $(".product-box").html(htmls);
         // 价格
-        $(".productPrice").html(menu.productPrice);
+        $(".pay-money").html("合计："+menu.productPrice+"元");
       }
     }
   });
@@ -121,13 +123,13 @@ function settleAccounts() {
           orderNo = res.data.orderNo;
           totalFee = res.data.totalFee;
 
-          var menu = res.data.productList[0];
           console.log(menu);
+          var htmls = template("productTemplate", {
+            result: res.data.productList,
+            amounts:res.data.amounts
+          });
+          $(".product-box").html(htmls);
 
-          // 名字
-          $(".productName").html(menu.productName);
-          // 价格
-          $(".productPrice").html(menu.productPrice);
         }
       }
     });
