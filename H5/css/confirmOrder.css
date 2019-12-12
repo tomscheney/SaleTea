@@ -330,11 +330,12 @@ form .hr-2 {
 
 .product-box {
     background-color: #e6e6e6;
-    padding: 10px 0  0;
+    padding: 0px 0  0;
 }
 .product-background{
     background-color: white;
     margin-bottom: 15px;
+    padding-bottom: 15px;
 }
 .product-cell{
     margin-left: 30px;
