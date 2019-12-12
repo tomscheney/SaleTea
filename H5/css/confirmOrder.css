@@ -116,7 +116,7 @@ body{
     width: 60px;
     height: auto;
     /*line-height: 3.5rem;*/
-    float: left;
+    /*float: left;*/
     font-size: 10px;
     white-space: nowrap;
 }
