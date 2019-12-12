@@ -96,8 +96,9 @@ function getProductDetail() {
       console.log(descList);
 
       // 商品简介
-      var recommendCover = res.data.productRecommend[0].recommendCover;
-      console.log(recommendCover);
+      var recommendDesc = res.data.productRecommend[0].recommendDesc;
+      console.log(recommendDesc);
+      window.localStorage.setItem("recommendDesc", recommendDesc);
 
       // 标题 价格
       $(".tit-name").text(res.data.productDesc);
