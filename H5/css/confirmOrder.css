@@ -334,10 +334,10 @@ form .hr-2 {
 }
 .product-background{
     background-color: white;
+    margin-top: 15px;
 
 }
 .product-cell{
-    margin-top: 15px;
     margin-left: 25px;
     margin-right: 15px;
 }
