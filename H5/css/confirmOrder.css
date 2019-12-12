@@ -112,7 +112,7 @@ body{
     padding: 0.2rem 0;
 }
 .sr-only{
-    position: static;
+    /*position: static;*/
     width: 60px;
     height: auto;
     /*line-height: 3.5rem;*/
@@ -126,7 +126,7 @@ body{
 }
 .form-inline .form-control{
     font-size: 1rem;
-    width: 77%;
+    /*width: 77%;*/
     border: 0;
     outline: none;
     float: left;
