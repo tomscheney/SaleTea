@@ -11,17 +11,12 @@ let productId = list[1];
 console.log(telephone);
 console.log(productId);
 
-function sendMessage(productId) {
+function sendMessage() {
   curCount = count;
-  var dealType; //验证方式
   var telephone = $("#add_phone").val();
   var code = $("#code").val();
   console.log(dealType);
   console.log(code);
-
-  if ($("#add_phone").attr("checked") == true) {
-    dealType = "telephone";
-  }
 
   //产生验证码
   for (var i = 0; i < codeLength; i++) {
