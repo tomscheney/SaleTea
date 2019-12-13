@@ -28,11 +28,9 @@ function getAllAddressByOpenId() {
         // 地址的id
         var addressId = res.data[i].addressId;
         console.log(addressId);
-        window.localStorage.setItem("addressId", addressId);
         // 姓名
         var userName = res.data[i].userName;
         console.log(userName);
-        window.localStorage.setItem("userName", userName);
       }
 
       var result = res.data;
