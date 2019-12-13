@@ -8,9 +8,6 @@ function getProductList() {
         dataType: "json",
         data: {},
         success: function (res) {
-            // res就是后台接口返回的数据
-            console.log(res);
-            console.log(res.data);
             // 标题
             var products = res.data;
             var html = "";
@@ -34,13 +31,10 @@ function getProductList() {
                     "</p>" +
                     '<hr class="hr-1">' +
                     "</li>";
-                // for ( k=0;k<proId.length;k++){
-                // 	console.log(proId[k])
-                // }
+        
             }
             $(".product_list>ul").html(html);
             $(".product_list>ul>li").click(function (e) {
-                console.log("qqqqqqqq");
                 console.log(e.currentTarget.id);
                 window.location.href = "product.html?productId=" + e.currentTarget.id;
             });
@@ -52,7 +46,6 @@ function getProductList() {
 }
 
 $(document).ready(function () {
-    console.log("所有chanp!");
     getProductList();
 
     let openId =  window.localStorage.getItem("openId");
@@ -72,11 +65,8 @@ $(document).ready(function () {
 function getOpenId() {
 
     let search = location.search;
-    console.log(search);
     let obj = {};
-    console.log(obj);
     let keyValues = search.slice(1).split("&");
-    console.log(keyValues);
     keyValues.forEach(function (keyValue) {
         let tempArr = keyValue.split("=");
         let key = tempArr[0];
@@ -84,7 +74,6 @@ function getOpenId() {
         obj[key] = value;
     });
 
-    console.log(obj.code);
 
     //code 无值，
     let code = obj.code;
@@ -97,9 +86,7 @@ function getOpenId() {
             code: code
         },
         success: function (res) {
-            console.log(res);
             if (res.code == "200") {
-                console.log(123)
                 let result = jQuery.parseJSON(res.data);
                 var openId = result.openId;
                 console.log(openId);

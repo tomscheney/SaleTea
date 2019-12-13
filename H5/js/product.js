@@ -11,7 +11,6 @@ console.log(productId);
 console.log(openId);
 
 var descList = null;
-console.log(descList);
 
 // 点击立即购买
 function buyNow(productId) {
@@ -47,11 +46,7 @@ function addShopCart() {
       productId: productId.substr(0, 8)
     },
     success: function(res) {
-      console.log(res);
-      // res就是后台接口返回的数据
       if (res.code === "200") {
-        // alert(res.data.msg);
-        console.log(13121212);
       }
     }
   });
@@ -92,13 +87,10 @@ function getProductDetail() {
       productId: productId
     },
     success: function(res) {
-      console.log(res);
       descList = res;
-      console.log(descList);
 
       // 商品简介
       var recommendDesc = res.data.productRecommend[0].recommendDesc;
-      console.log(recommendDesc);
       window.localStorage.setItem("recommendDesc", recommendDesc);
 
       // 标题 价格
@@ -111,7 +103,6 @@ function getProductDetail() {
       var len = [];
       len = res.data.productImages;
       var html = "";
-      // console.log(len)
       for (var i = 0; i < len.length; i++) {
         var imgI = len[i];
         html +=
@@ -120,17 +111,14 @@ function getProductDetail() {
       $(".swiper-wrapper").html(html);
       // 动态获取数据后 渲染插件
       swiper_init();
-      // console.log($(".swiper-wrapper").html(html));
       $(".qualityPeriod").text(res.data.productDetail.qualityPeriod);
       $(".standards").text(res.data.productDetail.standards);
       // 产品亮点
       var fea = [];
       fea = res.data.productFeatures;
       var featur = "";
-      // console.log(fea)
       for (var i = 0; i < fea.length; i++) {
         var feaI = fea[i];
-        // console.log(feaI);
         featur +=
           ' <div class="Bright-spot-1">' +
           ' <div class="Bright-spot-1-l">' +
@@ -151,10 +139,8 @@ function getProductDetail() {
       var recom = [];
       recom = res.data.productRecommend;
       var recomend = "";
-      // console.log(recom)
       for (var i = 0; i < recom.length; i++) {
         var recomI = recom[i];
-        // console.log(recomI);
         recomend +=
           '<div class="like-1" onclick="imgbtn()">' +
           '<div class="like-1-img">' +
@@ -172,7 +158,6 @@ function getProductDetail() {
           "</div>";
       }
       $(".like-spot").after(recomend);
-      // console.log(recomend)
     }
   });
 }
@@ -182,7 +167,6 @@ $(document).ready(function() {
 
 // 点击猜你喜欢按钮 调getProductByDesc接口
 function imgbtn() {
-  console.log(descList);
   $.ajax({
     url: "https://kidstoms.com/getProductByDesc",
     type: "post",
@@ -191,10 +175,8 @@ function imgbtn() {
       desc: window.localStorage.getItem("recommendDesc")
     },
     success: function(res) {
-      console.log(res);
       if (res.code == "200") {
         var productIdDesc = res.data.productId;
-        console.log(productIdDesc);
         window.localStorage.setItem("productIdDesc", productIdDesc);
         location.href = "product.html?productIdDesc=" + productIdDesc;
       }

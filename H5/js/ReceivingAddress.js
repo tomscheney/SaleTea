@@ -29,7 +29,6 @@ function newAdd() {
       openId: localStorage.getItem("openId")
     },
     success: function(res) {
-      console.log(res);
       if (res.code == "200") {
         location.href = "addAddress.html";
       }
@@ -90,7 +89,6 @@ function deletes() {
         telephone: window.localStorage.getItem("telephone")
       },
       success: function(res) {
-        console.log(res);
         if (res.code == "200") {
           getAllAddressByOpenId();
         }

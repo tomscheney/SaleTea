@@ -19,7 +19,6 @@ function buyNow() {
       productId: productId
     },
     success: function(res) {
-      console.log(res);
 
       if (res.code === 200) {
         // 订单编号
@@ -62,7 +61,6 @@ function getAllAddressByOpenId() {
       openId: window.localStorage.getItem("openId")
     },
     success: function(res) {
-      console.log(res);
       if (res.code === 200 && res.data.length > 0) {
         let result = res.data[0];
         console.log(result)
@@ -117,8 +115,6 @@ function settleAccounts() {
       openId: window.localStorage.getItem("openId")
     },
     success: function(res) {
-      console.log(res);
-
       if (res.code === 200) {
         // 订单编号
         orderNo = res.data.orderNo;

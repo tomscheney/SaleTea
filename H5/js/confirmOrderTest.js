@@ -14,7 +14,6 @@ $(function() {
       productId: productId
     },
     success: function(res) {
-      console.log(res);
       listTest = res;
 
       // 价格

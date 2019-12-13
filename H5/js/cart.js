@@ -1,10 +1,9 @@
 let openId = window.localStorage.getItem("openId");
-console.log(openId);
 let params = location.search.split("=");
 let productId = params[1];
 
 $(function () {
-    //   //加的效果
+      //加的效果
     $(".product-add").click(function () {
         var n = $(this)
             .prev()
@@ -231,8 +230,6 @@ function dels(productId) {
                 productId: productId
             },
             success: function (res) {
-                // res就是后台接口返回的数据
-                console.log(res);
                 if (res.code == "200") {
                     getList();
                 }
@@ -253,12 +250,9 @@ function getList() {
             openId: openId
         },
         success: function (res) {
-            console.log(res);
             if (res.code == "200") {
-                // var data = res.data;
                 var result = res.data.productList;
                 var amounts = res.data.amounts;
-                console.log(amounts);
                 var htmls = template("addressTpl", {
                     result: result,
                     amounts: amounts
@@ -308,7 +302,6 @@ function add(index, productId) {
             productId: productId
         },
         success: function (res) {
-            console.log(res);
             if (res.code == "200") {
                 let elements = document.getElementsByClassName("product-num");
                 let ele = elements[index]

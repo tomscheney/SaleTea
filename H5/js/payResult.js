@@ -63,7 +63,6 @@ function onBridgeReady() {
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) {
       alert("pay fail");
-      console.log(111);
       alert("textStatus", textStatus); //
       alert(JSON.stringify(textStatus)); //error
       alert("XMLHttpRequest", XMLHttpRequest); //
