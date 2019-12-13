@@ -21,13 +21,8 @@
     <link rel="stylesheet" href="css/jd_cart.css" />
   </head>
   <body>
-
-
     <div class="body jd_shop_con">
-
-      <ul class="product address-box">
-
-      </ul>
+      <ul class="product address-box"></ul>
 
       <div id="tests" class="product-js">
         <div class="product-al">
@@ -58,12 +53,18 @@
             <em class="product-em product-xz" onclick="selectProduct(<%= i %>)"></em>
           </div>
           <div class="product-sx">
-              <a href="###">
+              <div>
+                  <img src="<%= result[i].productImages[i]%>" class="product-img" />
+                </div>
+                <span class="product-name" onclick="goProductPage(<%= result[i].productId%>)">
+                    <%= result[i].productName%><%= result[i].productDesc%></span
+                >
+              <!-- <a href="###">
                   <img src="<%= result[i].productImages[i]%>" class="product-img" />
                   <span class="product-name" onclick="goProductPage(<%= result[i].productId%>)">
                       <%= result[i].productName%><%= result[i].productDesc%></span
                   >
-              </a>
+              </a> -->
               <span class="product-price"
               >¥&thinsp;<span class="price"><%= result[i].productPrice%></span></span
               >
