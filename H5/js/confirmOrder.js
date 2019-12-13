@@ -93,7 +93,7 @@ function goPay() {
 }
 
 $(document).ready(function() {
-  getAllAddressByOpenId();
+  
 
   if (productId === undefined || productId === null) {
     //来自购物车结算
@@ -103,6 +103,17 @@ $(document).ready(function() {
 
     buyNow();
   }
+
+  let addressString = localStorage.getItem("addressObject");
+  if(addressString === undefined || addressString === null){
+    getAllAddressByOpenId();
+
+  } else{
+    let addressObject = JSON.parse(addressString);
+    $(".address-detail").val(addressObject.addressDetail);
+  }
+  
+
 });
 
 function settleAccounts() {
@@ -130,8 +141,4 @@ function settleAccounts() {
   });
 }
 
-$(document).ready(function() {
-  let addressString = localStorage.getItem("addressObject");
-  let addressObject = JSON.parse(addressString);
-  $(".address-detail").val(addressObject.addressDetail);
-});
+
