@@ -15,7 +15,7 @@ function sendMessage() {
   curCount = count;
   var telephone = $("#add_phone").val();
   var code = $("#code").val();
-  console.log(dealType);
+  console.log(telephone);
   console.log(code);
 
   //产生验证码
