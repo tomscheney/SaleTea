@@ -1,0 +1,33 @@
+.the-forms{
+    width: 100%;
+    height: auto;
+    padding: 1rem 0.5rem;
+}
+.login_ipt error {
+    width: 55%;
+    height: 1.5rem;
+    font-size: 1.2rem;
+}
+.close_tel {
+    width: 30%;
+    height: 1.8rem;
+    font-size: 1rem;
+    background-color: rgba(0, 176, 182, 1);
+    color: white;
+    border: none;
+}
+.code error {
+    width: 55%;
+    height: 1.5rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+.updateBtn button {
+    margin-top: 2.5rem;
+    width: 95%;
+    height: 2.5rem;
+    background-color: rgba(6, 179, 184, 1);
+    color: white;
+    border: none;
+    font-size: 1rem;
+}
