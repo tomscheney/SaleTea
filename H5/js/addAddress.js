@@ -57,6 +57,7 @@ function enter(i) {
 
 // 点击列表的某一个单元格
 function clickCell(i) {
+  let addressObject = addressList[i];
   window.localStorage.setItem("addressObject", JSON.stringify(addressObject));
   console.log("aaaaa:" + addressList[i].userName);
   location.href = "confirmOrder.html";
