@@ -34,8 +34,8 @@ function getAllAddressByOpenId() {
       // 储存信息的地址
       let addressList = res.data;
       for (var i = 0; i < addressList.length; i++) {
-        window.localStorage.setItem(addressList);
-        console.log(window.localStorage.setItem(addressList));
+        window.localStorage.setItem("addressList", Object);
+        console.log(window.localStorage.setItem("addressList", Object));
       }
 
       var result = res.data;
