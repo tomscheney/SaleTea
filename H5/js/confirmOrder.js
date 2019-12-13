@@ -63,11 +63,12 @@ function getAllAddressByOpenId() {
     },
     success: function(res) {
       console.log(res);
-      var result = res.data[0];
-      console.log(result)
-      var html = template("addressTemplate", { result });
-      console.log(html);
-      $(".address-box").html(html);
+      if (res.code === 200 && res.data.length > 0) {
+        let result = res.data[0];
+        console.log(result)
+
+        $(".address-detail").html(result.addressDetail);
+      }
     }
   });
 }
@@ -128,6 +129,8 @@ function settleAccounts() {
           amounts: res.data.amounts
         });
         $(".product-box").html(htmls);
+        $(".pay-money").html("合计："+totalFee+"元");
+
       }
     }
   });
