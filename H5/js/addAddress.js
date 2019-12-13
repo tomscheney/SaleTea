@@ -22,14 +22,18 @@ function getAllAddressByOpenId() {
     },
     success: function(res) {
       console.log(res);
-      // 地址的id
-      var addressId = res.data[i].addressId;
-      console.log(addressId);
-      window.localStorage.setItem("addressId", addressId);
-      // 姓名
-      var userName = res.data[0].userName;
-      console.log(userName);
-      window.localStorage.setItem("userName", userName);
+      var addressList = res.data;
+      console.log(addressList);
+      for (var i = 0; i < addressList.length; i++) {
+        // 地址的id
+        var addressId = res.data[i].addressId;
+        console.log(addressId);
+        window.localStorage.setItem("addressId", addressId);
+        // 姓名
+        var userName = res.data[i].userName;
+        console.log(userName);
+        window.localStorage.setItem("userName", userName);
+      }
 
       var result = res.data;
       var html = template("addressTemplate", { result: result });
