@@ -110,7 +110,7 @@ $(document).ready(function() {
 
   } else{
     let addressObject = JSON.parse(addressString);
-    $(".address-detail").val(addressObject.addressDetail);
+    $(".address-detail").html(addressObject.addressDetail);
   }
   
 
