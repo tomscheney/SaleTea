@@ -258,6 +258,7 @@ function getList() {
                     amounts: amounts
                 });
                 $(".address-box").html(htmls);
+                shuliang();
             }
         }
     });
