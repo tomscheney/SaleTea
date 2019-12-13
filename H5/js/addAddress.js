@@ -8,8 +8,7 @@ console.log(list);
 console.log(productId);
 console.log(openId);
 
-let userName = window.localStorage.getItem("userName");
-console.log(userName);
+var userName = "";
 
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
 function getAllAddressByOpenId() {
@@ -29,7 +28,7 @@ function getAllAddressByOpenId() {
         var addressId = res.data[i].addressId;
         console.log(addressId);
         // 姓名
-        var userName = res.data[i].userName;
+        userName = res.data[i].userName;
         console.log(userName);
       }
 
