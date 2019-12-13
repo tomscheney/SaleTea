@@ -65,10 +65,10 @@
 
 .commodity {
     width: 100%;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     overflow: hidden;
     background-color: white;
-    margin: 15px auto 0;
+    margin: 3px auto 0;
 }
 
 .glyphicon {
@@ -76,12 +76,12 @@
 }
 
 .word {
-    font-size: 1.0rem;
+    font-size: 1.5rem;
     padding-left: 1vw;
 }
 
 .word1 {
-    font-size: 1.0rem;
+    font-size: 1.5rem;
     margin-left: 0rem;
 }
 
@@ -99,7 +99,7 @@
 
 .word-name-top {
     padding-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .word-name-top > span:nth-of-type(2) {
@@ -112,12 +112,12 @@
 
 .word-name-bottom > span:nth-of-type(1), .word-name-bottom > span:nth-of-type(2) {
     color: gray;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .word-name-bottom > span:nth-of-type(3) {
     color: red;
-    font-size: 1rem;
+    font-size: 1.2rem;
     float: right;
 }
 
@@ -133,7 +133,7 @@
 
 .form-inline {
     /* width: 90%; */
-    /* margin: 0 auto; */
+    margin: -1.8rem;
     overflow: hidden;
     padding: 0.2rem 0;
     background-color: white;
@@ -142,11 +142,11 @@
 
 .sr-only {
     position: relative;
-    width: 60px;
+    width: 9rem;
     height: auto;
     /*line-height: 3.5rem;*/
     /*float: left;*/
-    font-size: 10px;
+    font-size: 1.5rem;
     white-space: nowrap;
 }
 
@@ -319,7 +319,7 @@ form .hr-2 {
 
 .product-box {
     background-color: #e6e6e6;
-    padding: .1rem 0  10px 0;
+    /* padding: .1rem 0  10px 0; */
 }
 .product-background{
     background-color: white;
