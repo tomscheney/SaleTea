@@ -19,7 +19,6 @@ function buyNow() {
       productId: productId
     },
     success: function(res) {
-
       if (res.code === 200) {
         // 订单编号
         orderNo = res.data.orderNo;
@@ -63,7 +62,7 @@ function getAllAddressByOpenId() {
     success: function(res) {
       if (res.code === 200 && res.data.length > 0) {
         let result = res.data[0];
-        console.log(result)
+        console.log(result);
 
         $(".address-detail").html(result.addressDetail);
       }
@@ -125,9 +124,14 @@ function settleAccounts() {
           amounts: res.data.amounts
         });
         $(".product-box").html(htmls);
-        $(".pay-money").html("合计："+totalFee+"元");
-
+        $(".pay-money").html("合计：" + totalFee + "元");
       }
     }
   });
 }
+
+$(document).ready(function() {
+  let addressString = localStorage.getItem("addressObject");
+  let addressObject = JSON.parse(addressString);
+  $("address-detail").val(addressObject.addressDetail);
+});

@@ -1,7 +1,24 @@
-var userName = window.localStorage.getItem("userName");
-var nameUsername = $(".name").html(window.localStorage.getItem("userName"));
-console.log(nameUsername);
+// let search = location.search;
+// let list = search.split("=");
+// let userName = list[1];
+// console.log(search);
+// console.log(list);
+// console.log(userName);
 
+$(document).ready(function() {
+  $("#name").val(addressObject.userName);
+  var telephone = $("#phone").val(addressObject.telephone);
+  var postcode = $("#postcode").val(addressObject.postcode);
+  var province = $("#select-province").val();
+  var city = $("#select-city").val();
+  var area = $("#select-area").val();
+  var address = $("#address").val(addressObject.addressDetail);
+  let addressDetail = province + city + area + address;
+});
+
+let addressString = localStorage.getItem("addressObject");
+let addressObject = JSON.parse(addressString);
+var userName = $("#name").val(addressObject.userName);
 var telephone = $("#phone").val();
 var postcode = $("#postcode").val();
 var province = $("#select-province").val();
@@ -9,7 +26,7 @@ var city = $("#select-city").val();
 var area = $("#select-area").val();
 var address = $("#address").val();
 let addressDetail = province + city + area + address;
-console.log("用户名", userName);
+console.log("用户名", addressObject.userName);
 console.log("手机号", telephone);
 console.log("邮编", postcode);
 console.log("省", province);
