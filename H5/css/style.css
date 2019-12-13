@@ -6,7 +6,7 @@
 #add_phone {
     width: 55%;
     height: 1.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .close_tel {
     width: 30%;
@@ -19,7 +19,7 @@
 #code{
     width: 55%;
     height: 1.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-top: 1rem;
 }
 .updateBtn button {
