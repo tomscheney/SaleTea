@@ -133,5 +133,5 @@ function settleAccounts() {
 $(document).ready(function() {
   let addressString = localStorage.getItem("addressObject");
   let addressObject = JSON.parse(addressString);
-  $("address-detail").val(addressObject.addressDetail);
+  $(".address-detail").val(addressObject.addressDetail);
 });
