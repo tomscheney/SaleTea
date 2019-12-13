@@ -2,15 +2,14 @@ let search = location.search;
 let list = search.split("=");
 let productId = list[1];
 let openId = window.localStorage.getItem("openId");
-let addressId =  window.localStorage.getItem("addressId");
+let addressId = window.localStorage.getItem("addressId");
 console.log(search);
 console.log(list);
 console.log(productId);
 console.log(openId);
 
-let userName =  window.localStorage.getItem("userName");
+let userName = window.localStorage.getItem("userName");
 console.log(userName);
-
 
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
 function getAllAddressByOpenId() {
@@ -31,6 +30,13 @@ function getAllAddressByOpenId() {
       var userName = res.data[0].userName;
       console.log(userName);
       window.localStorage.setItem("userName", userName);
+
+      // 储存信息的地址
+      let addressList = res.data;
+      for (var i = 0; i < addressList.length; i++) {
+        window.localStorage.setItem(addressList);
+        console.log(window.localStorage.setItem(addressList));
+      }
 
       var result = res.data;
       var html = template("addressTemplate", { result: result });
