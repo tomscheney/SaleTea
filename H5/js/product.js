@@ -139,7 +139,7 @@ function getProductDetail() {
             // 猜你喜欢
             var recom = [];
             recom = res.data.productRecommend;
-            var recomend = "";
+            var recomend = "<";
             for (var i = 0; i < recom.length; i++) {
                 var recomI = recom[i];
                 recomend +=
@@ -159,9 +159,20 @@ function getProductDetail() {
                     "</div>";
             }
             $(".like-spot").after(recomend);
+
+            let btnList = $("#recommendDesc")
+
+            for (var index = 0; index < btnList.length; index++) {
+
+              btnList[index].onclick = function () {
+                let recommendDesc = $(this).text()
+                getRecommendProductId(recommendDesc)
+              }
+            }
         }
     });
 }
+
 
 $(document).ready(function () {
     getProductDetail();
@@ -170,8 +181,8 @@ $(document).ready(function () {
 });
 
 // 点击猜你喜欢按钮 调getProductByDesc接口
-function imgbtn() {
-  let recommendDesc = $("#recommendDesc").text();
+function getRecommendProductId(recommendDesc) {
+
     $.ajax({
         url: "https://kidstoms.com/getProductByDesc",
         type: "post",
