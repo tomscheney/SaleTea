@@ -150,7 +150,7 @@ function getProductDetail() {
                     recomI.recommendCover +
                     "/>" +
                     "</div>" +
-                    "<p class='recommendDesc'>" +
+                    "<p >" +
                     recomI.recommendDesc +
                     "</p>" +
                     '<p style="color: red;">' +
