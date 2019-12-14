@@ -143,13 +143,13 @@ function getProductDetail() {
             for (var i = 0; i < recom.length; i++) {
                 var recomI = recom[i];
                 recomend +=
-                    '<div class="like-1">' +
+                    '<div class="like-1" onclick="imgbtn()">' +
                     '<div class="like-1-img">' +
                     "<img src=" +
                     recomI.recommendCover +
                     "/>" +
                     "</div>" +
-                    "<p id='recommendDesc'>" +
+                    "<p class='recommendDesc'>" +
                     recomI.recommendDesc +
                     "</p>" +
                     '<p style="color: red;">' +
@@ -160,7 +160,7 @@ function getProductDetail() {
             }
             $(".like-spot").after(recomend);
 
-            let btnList = $("#recommendDesc")
+            let btnList = $(".recommendDesc")
 
             for (var index = 0; index < btnList.length; index++) {
 
@@ -182,7 +182,7 @@ $(document).ready(function () {
 
 // 点击猜你喜欢按钮 调getProductByDesc接口
 function getRecommendProductId(recommendDesc) {
-
+    let recommendDesc = $("#recommendDesc").text();
     $.ajax({
         url: "https://kidstoms.com/getProductByDesc",
         type: "post",
