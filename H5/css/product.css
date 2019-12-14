@@ -189,8 +189,6 @@ body {
 }
 
 .like-1 {
-	display: flex;
-	flex-direction: row;
 	width: 47%;
 	float: left;
 }
