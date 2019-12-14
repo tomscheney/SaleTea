@@ -149,8 +149,7 @@ function getProductDetail() {
 $(document).ready(function () {
 
   getProductDetail();
-
-
+  
 });
 
 // 点击猜你喜欢按钮 调getProductByDesc接口
