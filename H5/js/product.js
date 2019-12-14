@@ -139,7 +139,7 @@ function getProductDetail() {
             // 猜你喜欢
             var recom = [];
             recom = res.data.productRecommend;
-            var recomend = "<";
+            var recomend = "";
             for (var index = 0; index < recom.length; index++) {
                 var recomI = recom[index];
                 recomend +=
