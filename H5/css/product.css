@@ -256,8 +256,7 @@ button {
 #btn-car1 {
 	left: 5px;
 	width: 15%;
-	background-color: #eee;
-	/*align-items: center;*/
+	background-color: #fff;
 }
 
 #btn-car1 img {
