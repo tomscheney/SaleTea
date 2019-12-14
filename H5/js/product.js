@@ -87,7 +87,7 @@ function getProductDetail() {
             productId: productId
         },
         success: function (res) {
-            descList = res;
+            descList = res.data.productRecommend;
 
             // 商品简介
             var recommendDesc = res.data.productRecommend[0].recommendDesc;
@@ -143,7 +143,7 @@ function getProductDetail() {
             for (var i = 0; i < recom.length; i++) {
                 var recomI = recom[i];
                 recomend +=
-                    '<div class="like-1" onclick="imgbtn()">' +
+                    '<div class="like-1" onclick="imgbtn(<%= i %>)">' +
                     '<div class="like-1-img">' +
                     "<img src=" +
                     recomI.recommendCover +
@@ -170,13 +170,13 @@ $(document).ready(function () {
 });
 
 // 点击猜你喜欢按钮 调getProductByDesc接口
-function imgbtn() {
+function imgbtn(index) {
     $.ajax({
         url: "https://kidstoms.com/getProductByDesc",
         type: "post",
         dataType: "json",
         data: {
-            desc: window.localStorage.getItem("recommendDesc")
+            desc: descList[index].recommendDesc
         },
         success: function (res) {
             if (res.code == "200") {
