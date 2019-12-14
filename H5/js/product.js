@@ -84,7 +84,7 @@ function getProductDetail() {
         type: "post",
         dataType: "json",
         data: {
-            productId: productId
+            productId: '88880001'
         },
         success: function (res) {
             descList = res.data.productRecommend;
