@@ -259,6 +259,7 @@ function getList() {
                 });
                 $(".address-box").html(htmls);
                 shuliang();
+                TotalPrice();
             }
         }
     });

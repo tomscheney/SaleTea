@@ -9,7 +9,7 @@ console.log(search);
 console.log(list);
 console.log(productId);
 console.log(openId);
-
+var linkUrl = ''
 var descList = null;
 
 // 点击立即购买
@@ -93,6 +93,7 @@ function getProductDetail() {
       var recommendDesc = res.data.productRecommend[0].recommendDesc;
       window.localStorage.setItem("recommendDesc", recommendDesc);
 
+      linkUrl = res.data.productImages[0];
       // 标题 价格
       $(".tit-name").text(res.data.productDesc);
       $(".tit-price").text(res.data.salePrice + "元 / 份");
@@ -163,6 +164,29 @@ function getProductDetail() {
 }
 $(document).ready(function() {
   getProductDetail();
+
+  wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
+    wx.updateAppMessageShareData({
+      title: '芷贤斋精选', // 分享标题
+      desc: '芷贤斋精选礼品,精心为您呈上', // 分享描述
+      link: 'https://kidstoms.com/tea/H5/product.html?productId='+productId, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      imgUrl: linkUrl, // 分享图标
+      success: function () {
+        // 设置成功
+      }
+    })
+  });
+
+  wx.ready(function () {      //需在用户可能点击分享按钮前就先调用
+    wx.updateTimelineShareData({
+      title: '芷贤斋精选', // 分享标题
+      link: 'https://kidstoms.com/tea/H5/product.html?productId='+productId, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      imgUrl: linkUrl, // 分享图标
+      success: function () {
+        // 设置成功
+      }
+    })
+  });
 });
 
 // 点击猜你喜欢按钮 调getProductByDesc接口
