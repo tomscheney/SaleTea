@@ -164,7 +164,7 @@ function getProductDetail() {
 
             for (var index = 0; index < btnList.length; index++) {
 
-              btnList[index].onclick = function () {
+              btnList[index].click = function () {
                 let recommendDesc = $(this).text()
                 getRecommendProductId(recommendDesc)
               }
