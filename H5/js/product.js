@@ -138,7 +138,7 @@ function getProductDetail() {
 
             // 猜你喜欢
             var productRecommend =  res.data.productRecommend;
-            let recomend = template(productRecommend)
+            let recomend = template("recommendTpl",productRecommend)
             $(".like-spot").after(recomend);
 
         }
@@ -149,7 +149,7 @@ function getProductDetail() {
 $(document).ready(function () {
 
   getProductDetail();
-  
+
 });
 
 // 点击猜你喜欢按钮 调getProductByDesc接口
