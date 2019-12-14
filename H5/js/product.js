@@ -137,28 +137,8 @@ function getProductDetail() {
             $(".bling-spot").after(featur);
 
             // 猜你喜欢
-            var recom = [];
-            recom = res.data.productRecommend;
-            var recomend = "";
-            for (var index = 0; index < recom.length; index++) {
-                var recomI = recom[index];
-                recomend +=
-                    "<div class='like-1' onclick='getRecommendProductId(" + index + ")'"+
-
-                    '<div class="like-1-img">' +
-                    "<img src=" +
-                    recomI.recommendCover +
-                    "/>" +
-                    "</div>" +
-                    "<p >" +
-                    recomI.recommendDesc +
-                    "</p>" +
-                    '<p style="color: red;">' +
-                    recomI.recommendPrice +
-                    "元/份" +
-                    "</p>" +
-                    "</div>";
-            }
+            var productRecommend =  res.data.productRecommend;
+            let recomend = template(productRecommend)
             $(".like-spot").after(recomend);
 
         }

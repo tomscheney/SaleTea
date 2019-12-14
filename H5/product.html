@@ -97,6 +97,17 @@
 			</div>
 		</div>
 
+		<script type="text/html" id="recommendTpl">
+			<% for(var index = 0; index < result.length; index++){ %>
+			<div class='like-1' onclick='getRecommendProductId(<%= index %>)'>
+				<div class="like-1-img">
+					<img src="result[index].recommendCover" />
+				</div>
+				<p > <%+result[index].recommendDesc %></p>
+				<p style="color: red;"><%= result[index].recommendPrice %>元/份</p>
+			</div>
+		</script>
+
 
 	</body>
 
