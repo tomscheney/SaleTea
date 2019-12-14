@@ -143,7 +143,7 @@ function getProductDetail() {
             for (var i = 0; i < recom.length; i++) {
                 var recomI = recom[i];
                 recomend +=
-                    '<div class="like-1" onclick="imgbtn(<%= i %>)">' +
+                    '<div class="like-1" onclick="imgbtn(i)">' +
                     '<div class="like-1-img">' +
                     "<img src=" +
                     recomI.recommendCover +
