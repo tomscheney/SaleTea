@@ -117,23 +117,7 @@ function getProductDetail() {
             // 产品亮点
             var fea = [];
             fea = res.data.productFeatures;
-            var featur = "";
-            for (var i = 0; i < fea.length; i++) {
-                var feaI = fea[i];
-                featur +=
-                    ' <div class="Bright-spot-1">' +
-                    ' <div class="Bright-spot-1-l">' +
-                    "<img src=" +
-                    feaI.featureImg +
-                    "/>" +
-                    "</div>" +
-                    ' <div class="Bright-spot-1-r">' +
-                    "<span>" +
-                    feaI.featureDesc +
-                    "</span>" +
-                    "</div>" +
-                    "</div>";
-            }
+            var featur = template("featureTpl",{result:fea})
             $(".bling-spot").after(featur);
 
             // 猜你喜欢
