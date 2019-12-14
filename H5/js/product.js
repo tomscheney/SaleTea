@@ -182,7 +182,6 @@ $(document).ready(function () {
 
 // 点击猜你喜欢按钮 调getProductByDesc接口
 function getRecommendProductId(recommendDesc) {
-    let recommendDesc = $("#recommendDesc").text();
     $.ajax({
         url: "https://kidstoms.com/getProductByDesc",
         type: "post",
