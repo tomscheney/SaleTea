@@ -84,7 +84,7 @@ function getProductDetail() {
         type: "post",
         dataType: "json",
         data: {
-            productId: '88880001'
+            productId: productId
         },
         success: function (res) {
             descList = res.data.productRecommend;
@@ -148,7 +148,7 @@ function getRecommendProductId(index) {
             desc: recommendDesc
         },
         success: function (res) {
-            if (res.code == "200") {
+            if (res.data.length > 0) {
                 var productIdDesc = res.data.productId;
                 window.localStorage.setItem("productIdDesc", productIdDesc);
                 location.href = "product.html?productIdDesc=" + productIdDesc;
