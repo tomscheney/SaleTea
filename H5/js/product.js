@@ -140,10 +140,10 @@ function getProductDetail() {
             var recom = [];
             recom = res.data.productRecommend;
             var recomend = "<";
-            for (var i = 0; i < recom.length; i++) {
-                var recomI = recom[i];
+            for (var index = 0; index < recom.length; index++) {
+                var recomI = recom[index];
                 recomend +=
-                    '<div class="like-1" >' +
+                    "<div class='like-1' onclick='getRecommendProductId('" + index + ")" +
                     '<div class="like-1-img">' +
                     "<img src=" +
                     recomI.recommendCover +
@@ -160,15 +160,6 @@ function getProductDetail() {
             }
             $(".like-spot").after(recomend);
 
-            let btnList = $(".recommendDesc")
-
-            for (var index = 0; index < btnList.length; index++) {
-
-              btnList[index].click = function () {
-                let recommendDesc = $(this).text()
-                getRecommendProductId(recommendDesc)
-              }
-            }
         }
     });
 }
