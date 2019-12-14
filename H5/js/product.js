@@ -138,7 +138,7 @@ function getProductDetail() {
 
             // 猜你喜欢
             var productRecommend =  res.data.productRecommend;
-            let recomend = template("recommendTpl",productRecommend)
+            let recomend = template("recommendTpl",{result:productRecommend})
             $(".like-spot").after(recomend);
 
         }
