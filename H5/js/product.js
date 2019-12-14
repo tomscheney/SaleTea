@@ -148,7 +148,7 @@ function getRecommendProductId(index) {
             desc: recommendDesc
         },
         success: function (res) {
-            if (res.data.length > 0) {
+            if (res.data != null) {
                 var productIdDesc = res.data.productId;
                 window.localStorage.setItem("productIdDesc", productIdDesc);
                 location.href = "product.html?productIdDesc=" + productIdDesc;
