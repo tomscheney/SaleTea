@@ -7,7 +7,7 @@ let telephone = window.localStorage.getItem("telephone");
 console.log(search);
 console.log(list);
 console.log(openId);
-console.log(telephones);
+console.log(telephone);
 
 var userName = "";
 var addressList = "";
