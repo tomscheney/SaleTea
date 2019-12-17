@@ -1,10 +1,3 @@
-// let search = location.search;
-// let list = search.split("=");
-// let userName = list[1];
-// console.log(search);
-// console.log(list);
-// console.log(userName);
-
 $(document).ready(function() {
   $("#name").val(addressObject.userName);
   var telephone = $("#phone").val(addressObject.telephone);
@@ -37,10 +30,6 @@ console.log("具体地址", addressDetail);
 
 // 保存并返回的时候 调saveAddress接口
 function newAdd() {
-  // let userName = window.localStorage.getItem("userName");
-  // let telephone = window.localStorage.getItem("telephone");
-  // let addressDetail = window.localStorage.getItem("addressDetail");
-  // let postcode = window.localStorage.getItem("postcode");
   var userName = $("#name").val();
   var telephone = $("#phone").val();
   var postcode = $("#postcode").val();
@@ -118,7 +107,7 @@ function newAdd() {
   // }
 }
 
-// 点击删除按钮 调deleteAddressByTelephone接口
+// 点击返回按钮
 function deletes() {
   location.href = "addAddress.html";
 }

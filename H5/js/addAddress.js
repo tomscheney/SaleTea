@@ -55,6 +55,8 @@ function clickCell(i) {
 
 // 点击删除按钮 调deleteAddressByTelephone接口
 function deleteBox(i) {
+  let addressObject = addressList[i];
+  window.localStorage.setItem("addressObject", JSON.stringify(addressObject));
   var r = confirm("您确定要删除当前商品？");
   if (r === true) {
     $.ajax({
@@ -67,9 +69,7 @@ function deleteBox(i) {
       },
       success: function(res) {
         console.log(res);
-        // getAllAddressByOpenId();
-        // if (res.code == "200") {
-        // }
+
       }
     });
   } else {
