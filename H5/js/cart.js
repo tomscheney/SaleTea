@@ -253,7 +253,7 @@ function goProductPage(productId) {
 }
 
 // 点击结算的时候判断手机号是否登录
-function Settlement() {
+function Settlement(productId) {
   if (
     window.localStorage.getItem("telephone") == "" ||
     window.localStorage.getItem("telephone") == null ||
