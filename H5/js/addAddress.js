@@ -55,21 +55,22 @@ function clickCell(i) {
 
 // 点击删除按钮 调deleteAddressByTelephone接口
 function deleteBox() {
-  var r = confirm("您确定要删除当前商品？");
-  if (r === true) {
-    $.ajax({
-      url: "https://kidstoms.com/deleteAddressByTelephone",
-      type: "post",
-      dataType: "json",
-      data: {
-        openId: window.localStorage.getItem("openId"),
-        telephone: window.localStorage.getItem("telephone")
-      },
-      success: function(res) {
-        console.log(res);
-      }
-    });
-  }
+  console.log(11111111111111111111111111111111111)
+  // var r = confirm("您确定要删除当前商品？");
+  // if (r === true) {
+  //   $.ajax({
+  //     url: "https://kidstoms.com/deleteAddressByTelephone",
+  //     type: "post",
+  //     dataType: "json",
+  //     data: {
+  //       openId: window.localStorage.getItem("openId"),
+  //       telephone: window.localStorage.getItem("telephone")
+  //     },
+  //     success: function(res) {
+  //       console.log(res);
+  //     }
+  //   });
+  // }
 }
 
 $(document).ready(function() {
