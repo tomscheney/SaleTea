@@ -91,9 +91,18 @@ function goPay() {
       );
       return;
     } else if (
-      addressObject.addressDetail == "" ||
-      addressObject.addressDetail == null ||
-      addressObject.addressDetail == undefined
+      window.localStorage.setItem(
+        "addressObject",
+        JSON.stringify(addressObject)
+      ) == "" ||
+      window.localStorage.setItem(
+        "addressObject",
+        JSON.stringify(addressObject)
+      ) == null ||
+      window.localStorage.setItem(
+        "addressObject",
+        JSON.stringify(addressObject)
+      ) == undefined
     ) {
       alert("请添加地址");
     } else {
