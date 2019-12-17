@@ -65,7 +65,7 @@ function deleteBox(i) {
       dataType: "json",
       data: {
         openId: window.localStorage.getItem("openId"),
-        phone: window.localStorage.getItem("telephone")
+        telephone: window.localStorage.getItem("telephone")
       },
       success: function(res) {
         console.log(res);
