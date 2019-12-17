@@ -67,6 +67,7 @@ function btns(productId) {
   ) {
     alert("手机号错误");
   } else {
-    window.location.href = " confirmOrder.html?productId=" + productId;
+    // window.location.href = " confirmOrder.html?productId=" + productId;
+    window.history.go(-1);
   }
 }
