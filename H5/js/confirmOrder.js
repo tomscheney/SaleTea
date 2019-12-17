@@ -91,13 +91,13 @@ function goPay() {
       );
       return;
     } else if (
-      window.localStorage.setItem(
+      window.localStorage.getItem(
         "addressObject"
       ) == "" ||
-      window.localStorage.setItem(
+      window.localStorage.getItem(
         "addressObject"
       ) == null ||
-      window.localStorage.setItem(
+      window.localStorage.getItem(
         "addressObject"
       ) == undefined
     ) {
