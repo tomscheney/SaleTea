@@ -5,8 +5,8 @@ $(document).ready(function() {
   var province = $("#select-province").val();
   var city = $("#select-city").val();
   var area = $("#select-area").val();
-  var address = $("#address").val(addressObject.addressDetail);
-  let addressDetail = province + city + area + address;
+  var addressDetail = $("#address").val(addressObject.addressDetail);
+  // let addressDetail = province + city + area + address;
 });
 
 let addressString = localStorage.getItem("addressObject");
@@ -14,38 +14,38 @@ let addressObject = JSON.parse(addressString);
 var userName = $("#name").val(addressObject.userName);
 var telephone = $("#phone").val();
 var postcode = $("#postcode").val();
-var province = $("#select-province").val();
-var city = $("#select-city").val();
-var area = $("#select-area").val();
-var address = $("#address").val();
-let addressDetail = province + city + area + address;
+var addressDetail = $("#address").val();
 console.log("用户名", addressObject.userName);
 console.log("手机号", telephone);
 console.log("邮编", postcode);
-console.log("省", province);
-console.log("市", city);
-console.log("区", area);
-console.log("地址", address);
 console.log("具体地址", addressDetail);
+// var province = $("#select-province").val();
+// var city = $("#select-city").val();
+// var area = $("#select-area").val();
+// let addressDetail = province + city + area + address;
+// console.log("省", province);
+// console.log("市", city);
+// console.log("区", area);
+// console.log("地址", address);
 
 // 保存并返回的时候 调saveAddress接口
 function newAdd() {
   var userName = $("#name").val();
   var telephone = $("#phone").val();
   var postcode = $("#postcode").val();
-  var province = $("#select-province").val();
-  var city = $("#select-city").val();
-  var area = $("#select-area").val();
-  var address = $("#address").val();
-  let addressDetail = province + city + area + address;
+  var addressDetail = $("#address").val();
   console.log("用户名", userName);
   console.log("手机号", telephone);
   console.log("邮编", postcode);
-  console.log("省", province);
-  console.log("市", city);
-  console.log("区", area);
-  console.log("地址", address);
   console.log("具体地址", addressDetail);
+  // var province = $("#select-province").val();
+  // var city = $("#select-city").val();
+  // var area = $("#select-area").val();
+  // let addressDetail = province + city + area + address;
+  // console.log("省", province);
+  // console.log("市", city);
+  // console.log("区", area);
+  // console.log("地址", address);
 
   $.ajax({
     url: "https://kidstoms.com/saveAddress",
