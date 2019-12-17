@@ -55,18 +55,7 @@ function clickCell(i) {
 
 // 点击删除按钮 调deleteAddressByTelephone接口
 function deleteBox() {
-  $.ajax({
-    url: "https://kidstoms.com/deleteAddressByTelephone",
-    type: "post",
-    dataType: "json",
-    data: {
-      telephone:"18032061441"
-    },
-    success: function(res) {
-      console.log(res);
-
-    }
-  });
+  console.log(11111111111111111111111111111111111)
   // var r = confirm("您确定要删除当前商品？");
   // if (r === true) {
   //   $.ajax({
