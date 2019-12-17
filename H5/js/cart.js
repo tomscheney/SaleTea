@@ -261,7 +261,7 @@ function Settlement() {
   ) {
     location.href = "phoneChecking.html?productId=" + productId;
   } else {
-    location.href = "confirmOrder.html";
+    location.href = "confirmOrder.html?productId=" + productId;
   }
 }
 
