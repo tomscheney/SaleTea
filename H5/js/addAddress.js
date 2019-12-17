@@ -2,10 +2,8 @@ let search = location.search;
 let list = search.split("=");
 let productId = list[1];
 let openId = window.localStorage.getItem("openId");
-let addressId = window.localStorage.getItem("addressId");
 console.log(search);
 console.log(list);
-console.log(productId);
 console.log(openId);
 
 var userName = "";
@@ -19,22 +17,11 @@ function getAllAddressByOpenId() {
     dataType: "json",
     data: {
       openId: window.localStorage.getItem("openId")
-      // openId: "oE4bxwFKH7Ir2VtPYTy-px3DMgeU"
     },
     success: function(res) {
       console.log(res);
-
       addressList = res.data;
       console.log(addressList);
-      // for (var i = 0; i < addressList.length; i++) {
-      //   // 地址的id
-      //   var addressId = res.data[i].addressId;
-      //   console.log(addressId);
-      //   // 姓名
-      //   userName = res.data[i].userName;
-      //   console.log(userName);
-      // }
-
       var result = res.data;
       var html = template("addressTemplate", { result: result });
       $(".address-box").html(html);
@@ -72,16 +59,18 @@ function deleteBox() {
       type: "post",
       dataType: "json",
       data: {
-        openId: window.localStorage.getItem("openId"),
+        // openId: window.localStorage.getItem("openId"),
         telephone: window.localStorage.getItem("telephone")
       },
       success: function(res) {
         console.log(res);
         if (res.code == "200") {
-          getAllAddressByOpenId();
+          // getAllAddressByOpenId();
         }
       }
     });
+  } else {
+    alert("失败");
   }
 }
 
