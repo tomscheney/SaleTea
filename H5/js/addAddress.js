@@ -64,7 +64,7 @@ function deleteBox() {
       },
       success: function(res) {
         console.log(res);
-        getAllAddressByOpenId();
+        // getAllAddressByOpenId();
         // if (res.code == "200") {
         // }
       }
