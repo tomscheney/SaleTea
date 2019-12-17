@@ -90,15 +90,20 @@ function goPay() {
         "该笔订单内包含不可退换货/款的商品。付款前请务必详阅并知晓相关政策，并勾选确认"
       );
       return;
+    } else if (
+      addressObject.addressDetail == "" ||
+      addressObject.addressDetail == null ||
+      addressObject.addressDetail == undefined
+    ) {
+      alert("请添加地址");
+    } else {
+      location.href =
+        "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
     }
-    location.href =
-      "payResult.html?totalFee=" + totalFee + "&orderNo=" + orderNo;
   });
 }
 
 $(document).ready(function() {
-  
-
   if (productId === undefined || productId === null) {
     //来自购物车结算
     settleAccounts();
@@ -109,19 +114,14 @@ $(document).ready(function() {
   }
 
   let addressString = localStorage.getItem("addressObject");
-  if(addressString === undefined || addressString === null){
+  if (addressString === undefined || addressString === null) {
     getAllAddressByOpenId();
-
-  } else{
+  } else {
     let addressObject = JSON.parse(addressString);
     $(".address-name").html(addressObject.userName);
-
     $(".address-tel").html(addressObject.telephone);
-
     $(".address-detail").html(addressObject.addressDetail);
   }
-  
-
 });
 
 function settleAccounts() {
@@ -148,5 +148,3 @@ function settleAccounts() {
     }
   });
 }
-
-
