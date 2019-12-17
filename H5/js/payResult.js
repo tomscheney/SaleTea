@@ -73,6 +73,11 @@ function onBridgeReady() {
   });
 }
 
+// 点击取消 和 完成 跳转页面
+function complete() {
+  window.location.href = " home.html";
+}
+
 $(document).ready(function() {
   pay();
 });
