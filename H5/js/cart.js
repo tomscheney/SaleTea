@@ -260,6 +260,8 @@ function Settlement() {
     window.localStorage.getItem("telephone") == undefined
   ) {
     location.href = "phoneChecking.html?productId=" + productId;
+  } else {
+    location.href = "confirmOrder.html";
   }
 }
 
