@@ -92,16 +92,13 @@ function goPay() {
       return;
     } else if (
       window.localStorage.setItem(
-        "addressObject",
-        JSON.stringify(addressObject)
+        "addressObject"
       ) == "" ||
       window.localStorage.setItem(
-        "addressObject",
-        JSON.stringify(addressObject)
+        "addressObject"
       ) == null ||
       window.localStorage.setItem(
-        "addressObject",
-        JSON.stringify(addressObject)
+        "addressObject"
       ) == undefined
     ) {
       alert("请添加地址");
