@@ -33,8 +33,8 @@
 
     <script type="text/html" id="addressTemplate">
       <% for(var i = 0; i < result.length; i++) { %>
-      <div class="box" onclick="clickCell(<%= i%>)">
-        <div class="b1">
+      <div class="box" >
+        <div class="b1"onclick="clickCell(<%= i%>)">
           <div><%= result[i].userName%></div>
           <div><%= result[i].addressDetail%></div>
         </div>

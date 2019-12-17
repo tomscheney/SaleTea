@@ -18,8 +18,8 @@ function getAllAddressByOpenId() {
     type: "post",
     dataType: "json",
     data: {
-      // openId: window.localStorage.getItem("openId")
-      openId: "oE4bxwFKH7Ir2VtPYTy-px3DMgeU"
+      openId: window.localStorage.getItem("openId")
+      // openId: "oE4bxwFKH7Ir2VtPYTy-px3DMgeU"
     },
     success: function(res) {
       console.log(res);
