@@ -59,18 +59,18 @@ function deleteBox() {
       type: "post",
       dataType: "json",
       data: {
-        // openId: window.localStorage.getItem("openId"),
+        openId: window.localStorage.getItem("openId"),
         telephone: window.localStorage.getItem("telephone")
       },
       success: function(res) {
         console.log(res);
-        if (res.code == "200") {
-          // getAllAddressByOpenId();
-        }
+        getAllAddressByOpenId();
+        // if (res.code == "200") {
+        // }
       }
     });
   } else {
-    alert("失败");
+    // alert("失败");
   }
 }
 
