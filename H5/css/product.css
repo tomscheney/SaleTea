@@ -186,15 +186,18 @@ body {
 	margin: 0 auto;
 	margin-top: 2rem;
 	overflow: hidden;
+	justify-items: center;
 }
 
 .like-1 {
 	width: 47%;
 	float: left;
+	justify-items: center;
+
 }
 .like-1-img{
-	width: 158px;
-	height: 158px;
+	width: 90%;
+	height: auto;
 	overflow: hidden;
 }
 .like-1:nth-of-type(2n-1) {
@@ -251,8 +254,8 @@ button {
 }
 
 #btn-car1 {
-	left: 4%;
-	width: 12%;
+	left: 5px;
+	width: 15%;
 	background-color: #fff;
 }
 

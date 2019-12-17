@@ -8,13 +8,16 @@
 		<!-- <script src="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#2" type="text/javascript" charset="utf-8"></script> -->
 		<script type="text/javascript" src="js/jquery-addShopping.js"></script>
 		<script src="js/swiper-5.0.4/package/js/swiper.min.js"></script>
+		<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 		<script src="js/product.js"></script>
 		<script src="js/jquery.fly.min.js"></script>
+		<script src="../lib/template-web.js"></script>
+
 		<!-- Link Swiper's CSS -->
 		<link rel="stylesheet" href="js/swiper-5.0.4/package/css/swiper.min.css">
 		<link rel="stylesheet" href="js/bootstrap-3.3.7-dist/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/product.css" />
-		<title>详情页</title>
+		<title>产品详情页</title>
 	</head>
 	<body>
 		<!-- 轮播图 -->
@@ -95,5 +98,32 @@
 				<button onclick="buyNow(productId)" id="btn-car3">立即购买</button>
 			</div>
 		</div>
+
+		<script type="text/html" id="featureTpl">
+			<% for(var index = 0; index < result.length; index++){ %>
+			<div class="Bright-spot-1">
+				 <div class="Bright-spot-1-l">
+					<img src= "<%= result[index].featureImg%>"/>
+				 </div>
+				 <div class="Bright-spot-1-r">
+					<span><%= result[index].featureDesc %></span>
+				 </div>
+			</div>
+			<% } %>
+		</script>
+
+		<script type="text/html" id="recommendTpl">
+			<% for(var index = 0; index < result.length; index++){ %>
+			<div class="like-1" onclick="getRecommendProductId(<%= index %>)">
+				<div class="like-1-img">
+					<img src="<%= result[index].recommendCover %>" />
+				</div>
+				<p > <%= result[index].recommendDesc %></p>
+				<p style="color: red;"><%= result[index].recommendPrice %>元/份</p>
+			</div>
+			<% } %>
+		</script>
+
 	</body>
+
 </html>

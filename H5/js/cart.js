@@ -71,30 +71,6 @@ $(function () {
         shuliang();
     });
 
-    //单选
-    $(".product-ckb").on(
-        "click",
-        ".product-em .product-xz .product-all .product-all-on",
-        function () {
-            var xz = $(".product-em");
-            var xz1 = $(".product-xz");
-            if (xz1.length == xz.length) {
-                $(".product-all em").addClass("product-all-on");
-            } else {
-                $(".product-all em").removeClass("product-all-on");
-            }
-
-            if ($(this).hasClass('product-xz')) {
-                $(this).removeClass("product-xz")
-            } else {
-                $(this).addClass("product-xz")
-            }
-
-            shuliang();
-            TotalPrice();
-
-        }
-    );
 
     TotalPrice();
     shuliang();
@@ -222,6 +198,9 @@ function getList() {
                 });
                 $(".address-box").html(htmls);
                 shuliang();
+                TotalPrice();
+                var qx = $(".product-all em");
+                qx.toggleClass("product-all-on");
             }
         }
     });
