@@ -114,6 +114,10 @@ $(document).ready(function() {
 
   } else{
     let addressObject = JSON.parse(addressString);
+    $(".address-name").html(addressObject.userName);
+
+    $(".address-tel").html(addressObject.telephone);
+
     $(".address-detail").html(addressObject.addressDetail);
   }
   
