@@ -59,7 +59,7 @@ function deleteBox() {
   if (r === true) {
     $.ajax({
       url: "https://kidstoms.com/deleteAddressByTelephone",
-      type: "get",
+      type: "post",
       dataType: "json",
       data: {
         openId: window.localStorage.getItem("openId"),
