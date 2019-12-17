@@ -63,7 +63,11 @@ function getAllAddressByOpenId() {
       if (res.code === 200 && res.data.length > 0) {
         let result = res.data[0];
         console.log(result);
-
+        // 姓名
+        $(".address-name").html(result.userName);
+        // 手机号
+        $(".address-tel").html(result.telephone);
+        // 地址
         $(".address-detail").html(result.addressDetail);
       }
     }
