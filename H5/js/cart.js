@@ -1,6 +1,11 @@
 let openId = window.localStorage.getItem("openId");
 let params = location.search.split("=");
 let productId = params[1];
+console.log(openId)
+console.log(params)
+console.log(productId)
+
+
 
 $(function() {
   //加的效果
