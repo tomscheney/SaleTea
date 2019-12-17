@@ -44,9 +44,7 @@
     margin: 0 auto;
 }
 
-.hr-2 {
-    margin: 0;
-}
+
 
 .hr-3 {
     width: 150%;
@@ -54,13 +52,19 @@
     margin: 0 auto;
 }
 
+body {
+    background-color: #f9f6f6;
+}
+
 /* 收货地址 */
 .adress {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
     color: #000;
-    padding: 1rem 0;
+    padding: 1.9rem 0;
     overflow: hidden;
+    background: white;
+    border-radius: 1.2rem;
 }
 
 .commodity {
@@ -166,10 +170,14 @@
 }
 
 .notic {
-    width: 100%;
-    height: -webkit-fill-available;
-    height: fill-available;
+    width: 95%;
+    height: auto;
     margin: 0 auto;
+    background: white;
+    padding: 1rem 0;
+    margin-top: 1rem;
+    overflow: hidden;
+    border-radius: 1.2rem;
 }
 
 .notic input[type="checkbox"] {
@@ -318,8 +326,16 @@ form .hr-2 {
 }
 
 .product-box {
-    background-color: #e6e6e6;
-    /* padding: .1rem 0  10px 0; */
+
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 1.2rem;
+    width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: white;
+    border-radius: 1.2rem;
+    margin-top: 1rem;
 }
 .product-background{
     background-color: white;
