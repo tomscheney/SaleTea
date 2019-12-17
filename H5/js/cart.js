@@ -1,11 +1,6 @@
 let openId = window.localStorage.getItem("openId");
 let params = location.search.split("=");
 let productId = params[1];
-console.log(openId)
-console.log(params)
-console.log(productId)
-
-
 
 $(function() {
   //加的效果
@@ -258,17 +253,15 @@ function goProductPage(productId) {
 }
 
 // 点击结算的时候判断手机号是否登录
-function Settlement(productId) {
-  if (
-    window.localStorage.getItem("telephone") == "" ||
-    window.localStorage.getItem("telephone") == null ||
-    window.localStorage.getItem("telephone") == undefined
-  ) {
-    location.href = "phoneChecking.html?productId=" + productId;
-  } else {
-    location.href = "confirmOrder.html?productId=" + productId;
-  }
-}
+// function Settlement() {
+//   if (
+//     window.localStorage.getItem("telephone") == "" ||
+//     window.localStorage.getItem("telephone") == null ||
+//     window.localStorage.getItem("telephone") == undefined
+//   ) {
+//     location.href = "phoneChecking.html?productId=" + productId;
+//   }
+// }
 
 $(document).ready(function() {
   getList();
