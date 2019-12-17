@@ -252,7 +252,7 @@ function goProductPage(productId) {
   location.href = "product.html?productId=" + productId;
 }
 
-点击结算的时候判断手机号是否登录;
+// 点击结算的时候判断手机号是否登录;
 function Settlement() {
   if (
     window.localStorage.getItem("telephone") == "" ||
