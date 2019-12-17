@@ -19,7 +19,7 @@ function buyNow(productId) {
     window.localStorage.getItem("telephone") == null ||
     window.localStorage.getItem("telephone") == undefined
   ) {
-    location.href = "phoneChecking.html?productId=" + productId;
+    location.href = "phoneChecking.html?";
   } else {
     location.href = "confirmOrder.html?productId=" + productId;
   }
