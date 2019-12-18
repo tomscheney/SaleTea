@@ -69,10 +69,11 @@ function deleteBox(i) {
       type: "post",
       dataType: "json",
       data: {
-        telephone: addressObject.telephone,
+        telephone: addressObject.telephone
       },
       success: function(res) {
         console.log(res);
+        getAllAddressByOpenId();
       }
     });
   }
