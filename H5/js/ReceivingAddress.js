@@ -32,7 +32,7 @@ function newAdd() {
     },
     success: function(res) {
       console.log(res);
-      location.href = "addAddress.html";
+      // location.href = "addAddress.html";
     }
   });
 }
