@@ -1,12 +1,8 @@
 $(document).ready(function() {
   $("#name").val(addressObject.userName);
-  var telephone = $("#phone").val(addressObject.telephone);
-  var postcode = $("#postcode").val(addressObject.postcode);
-  var province = $("#select-province").val();
-  var city = $("#select-city").val();
-  var area = $("#select-area").val();
-  var addressDetail = $("#address").val(addressObject.addressDetail);
-  // let addressDetail = province + city + area + address;
+  $("#phone").val(addressObject.telephone);
+  $("#postcode").val(addressObject.postcode);
+  $("#address").val(addressObject.addressDetail);
 });
 
 let addressString = localStorage.getItem("addressObject");
