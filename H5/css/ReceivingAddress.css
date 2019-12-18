@@ -63,8 +63,8 @@
 
         form#payment label {
             float: left;
-            font-size: 12px;
-            width: 26%;
+            font-size: 1.4rem;
+            width: 30%;
             color: gray;
         }
 
@@ -83,7 +83,7 @@
         form#payment textarea {
             background: #ffffff;
             border: 0;
-            font-size: 12px;
+            font-size: 1.4rem;
             outline: none;
             padding: 5px;
             width: 70%;
