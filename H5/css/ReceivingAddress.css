@@ -88,11 +88,6 @@
             padding: 5px;
             width: 70%;
         }
-
-        /* form#payment input:not([type=submit]):focus, form#payment textarea:focus {
-background: #eaeaea;
-border: #F00 solid 1px;
-} */
         form#payment input[type=radio] {
             float: left;
             margin-right: 5px;

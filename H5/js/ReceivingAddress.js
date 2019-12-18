@@ -24,6 +24,24 @@ function newAdd() {
     this.userName == undefined
   ) {
     alert("请添加收货人姓名");
+  } else if (
+    this.telephone == "" ||
+    this.telephone == null ||
+    this.telephone == undefined
+  ) {
+    alert("请添加收货人手机号");
+  } else if (
+    this.postcode == "" ||
+    this.postcode == null ||
+    this.postcode == undefined
+  ) {
+    alert("请添加收货人邮编");
+  } else if (
+    this.addressDetail == "" ||
+    this.addressDetail == null ||
+    this.addressDetail == undefined
+  ) {
+    alert("请添加收货人详细地址");
   } else {
     $.ajax({
       url: "https://kidstoms.com/saveAddress",
