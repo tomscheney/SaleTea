@@ -4,11 +4,15 @@ let search = location.search;
 let list = search.split("=");
 let productId = list[1];
 let openId = window.localStorage.getItem("openId");
+let href = window.location.href;
 console.log(telephone);
+console.log(desc);
 console.log(search);
 console.log(list);
 console.log(productId);
 console.log(openId);
+console.log(href);
+
 var linkUrl = "";
 var descList = null;
 
@@ -151,6 +155,9 @@ function getRecommendProductId(index) {
     }
   });
 }
+
+
+
 
 $(function() {
   $.ajax({
