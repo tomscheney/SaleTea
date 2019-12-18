@@ -156,9 +156,6 @@ function getRecommendProductId(index) {
   });
 }
 
-
-
-
 $(function() {
   $.ajax({
     url: "https://kidstoms.com/getShareConfiguration",
@@ -172,18 +169,19 @@ $(function() {
       console.log(res);
 
       let timestamp = res.data.timestamp;
-      console.log(timestamp)
+      console.log(timestamp);
       let nonceStr = res.data.nonceStr;
-      console.log(nonceStr)
+      console.log(nonceStr);
       let signature = res.data.signature;
-      console.log(signature)
+      console.log(signature);
       wx.config({
         debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-        appId:"wx6e974f12e898a2ee", // 必填，公众号的唯一标识
-        timestamp: timestamp, // 必填，生成签名的时间戳
-        nonceStr: nonceStr, // 必填，生成签名的随机串
-        signature: signature, // 必填，签名
-        jsapi_ticket: res.data.jsapi_ticket
+        appId: "wx6e974f12e898a2ee", // 必填，公众号的唯一标识
+        timestamp: "1576648484", // 必填，生成签名的时间戳
+        nonceStr: "f90e6ef6-7e7e-4009-a75a-11e5f111c11f", // 必填，生成签名的随机串
+        signature: "e63728b68de4b32badb0645beb797207eb38846a", // 必填，签名
+        jsapi_ticket:
+          "kgt8ON7yVITDhtdwci0qeYWhxHioB8Jef0tOzS_mprYIAR2mbVGqXc9K8nQ8Drw6zErlXT0VquUR4v6iLzvzaQ"
         // jsApiList: [
         //   "onMenuShareTimeline",
         //   "onMenuShareQQ",
