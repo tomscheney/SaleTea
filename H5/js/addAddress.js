@@ -69,7 +69,7 @@ function deleteBox(i) {
       type: "post",
       dataType: "json",
       data: {
-        telephone: window.localStorage.getItem("telephone")
+        telephone: addressObject.telephone,
       },
       success: function(res) {
         console.log(res);
