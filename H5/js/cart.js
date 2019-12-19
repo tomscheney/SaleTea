@@ -254,14 +254,20 @@ function goProductPage(productId) {
 
 // 点击结算的时候判断手机号是否登录;
 function Settlement() {
-  if (
-    window.localStorage.getItem("telephone") == "" ||
-    window.localStorage.getItem("telephone") == null ||
-    window.localStorage.getItem("telephone") == undefined
-  ) {
-    location.href = "phoneChecking.html";
+  var ua = navigator.userAgent.toLowerCase();
+  var isWeixin = ua.indexOf("micromessenger") != -1;
+  if (isWeixin) {
+    location.href = "confirmOrder.html?productId=" + productId;
   } else {
-    location.href = "confirmOrder.html";
+    if (
+      window.localStorage.getItem("telephone") == "" ||
+      window.localStorage.getItem("telephone") == null ||
+      window.localStorage.getItem("telephone") == undefined
+    ) {
+      location.href = "phoneChecking.html?";
+    } else {
+      location.href = "confirmOrder.html?productId=" + productId;
+    }
   }
 }
 
