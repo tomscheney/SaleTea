@@ -37,7 +37,7 @@ em{font-style:normal}
 .product-all-sl{position:relative;top:1px}
 .all-product{text-align:right;float:right}
 .all-product .all-product-a{font-size:1.5rem;color:#f41638;font-weight:bolder;display:inline-block;margin-right:10px; margin-right: 1.8rem; margin-top: 0.6rem;}
-.product-sett{float:right;width:6.5rem;text-align:center;color:#fff;background:#ed535f; border-radius: 2rem; margin-right: 1rem; margin-top: 0.6rem;}
+.product-sett{float:right;width:7.5rem; font-size: 1.4rem; text-align:center;color:#fff;background:#ed535f; border-radius: 2rem; margin-right: 1rem; margin-top: 0.6rem;}
 .product-sett-a{background:#b2b2b2;pointer-events:none}
 .kon-cat{display:none}
 .catkon{position:absolute;top:0;left:0;width:100%;height:100%;padding-bottom:3.2rem;box-sizing:border-box;text-align:center;background:#f4f4f4;display:table;z-index:100}

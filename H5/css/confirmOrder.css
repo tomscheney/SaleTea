@@ -26,6 +26,7 @@
 
 .i-icon {
     float: left;
+    margin-left: 0.5rem;
 }
 
 .iconfont {
@@ -213,7 +214,7 @@ button {
 
 .pay-money {
     width: 40%;
-    left: 20%;
+    left: 25%;
     color: red;
     background-color: #FFFFFF;
 }
