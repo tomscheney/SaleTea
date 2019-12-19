@@ -5,7 +5,7 @@ let list = search.split("=");
 let productId = list[1];
 let openId = window.localStorage.getItem("openId");
 let href = window.location.href;
-let hrefDemo = (window.location.href).split('#')[0];
+let hrefDemo = window.location.href.split("#")[0];
 
 console.log(telephone);
 console.log(desc);
@@ -14,7 +14,7 @@ console.log(list);
 console.log(productId);
 console.log(openId);
 console.log(href);
-console.log(hrefDemo)
+console.log(hrefDemo);
 
 var linkUrl = "";
 var descList = null;
