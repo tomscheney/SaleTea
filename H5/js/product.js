@@ -178,7 +178,7 @@ $(function() {
         appId: "wx6e974f12e898a2ee", // 必填，公众号的唯一标识
         timestamp: timestamp, // 必填，生成签名的时间戳
         nonceStr: nonceStr, // 必填，生成签名的随机串
-        signature: "f33d51ef6649cbf111ccc597e058e64bcc1b9366", // 必填，签名
+        signature: signature, // 必填，签名
         jsapi_ticket: res.data.jsapi_ticket,
         jsApiList: [
           "onMenuShareTimeline",
