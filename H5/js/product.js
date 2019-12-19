@@ -98,8 +98,8 @@ function getProductDetail() {
       productId: productId
     },
     success: function(res) {
+      console.log(res);
       descList = res.data.productRecommend;
-
       // 商品简介
       var recommendDesc = res.data.productRecommend[0].recommendDesc;
       window.localStorage.setItem("recommendDesc", recommendDesc);
