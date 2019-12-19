@@ -25,30 +25,11 @@ var descList = null;
 
 // 点击立即购买
 function buyNow(productId) {
-  let wx = (function() {
-    return navigator.userAgent.toLowerCase().indexOf("micromessenger") !== -1;
-  })();
-  if (wx) {
-    let appid = "wx6e974f12e898a2ee";
-    let redirect_uri = "https://kidstoms.com/tea/H5/home.html";
-    let response_type = "code";
-    let state = "STATE#wechat_redirect";
-    let scope = "snsapi_base";
-    let result =
-      "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" +
-      appid +
-      "&redirect_uri=" +
-      redirect_uri +
-      "&response_type=" +
-      response_type +
-      "&scope=" +
-      scope +
-      "&state=" +
-      state;
-    window.location.href = result;
+  var ua = navigator.userAgent.toLowerCase();
+  var isWeixin = ua.indexOf("micromessenger") != -1;
+  if (isWeixin) {
+    location.href = "confirmOrder.html?productId=" + productId;
   } else {
-    // window.location.href = "H5/home.html";
-
     if (
       window.localStorage.getItem("telephone") == "" ||
       window.localStorage.getItem("telephone") == null ||
@@ -59,22 +40,13 @@ function buyNow(productId) {
       location.href = "confirmOrder.html?productId=" + productId;
     }
   }
-
-  if (
-    window.localStorage.getItem("telephone") == "" ||
-    window.localStorage.getItem("telephone") == null ||
-    window.localStorage.getItem("telephone") == undefined
-  ) {
-    location.href = "phoneChecking.html?";
-  } else {
-    location.href = "confirmOrder.html?productId=" + productId;
-  }
 }
 
 // 点击购物车图标
 function shopCart() {
   location.href =
     "shopCar.html?openId=" + window.localStorage.getItem("openId");
+  // location.href = "shopCar.html";
 }
 
 // 点击加入购物车 调addToShopCart接口
@@ -91,7 +63,8 @@ function addShopCart() {
       productId: productId.substr(0, 8)
     },
     success: function(res) {
-      console.log(res);
+      if (res.code === "200") {
+      }
     }
   });
 }
@@ -176,6 +149,10 @@ function getProductDetail() {
     }
   });
 }
+
+$(document).ready(function() {
+  getProductDetail();
+});
 
 // 点击猜你喜欢按钮 调getProductByDesc接口
 function getRecommendProductId(index) {
@@ -278,8 +255,4 @@ $(function() {
       }
     });
   });
-});
-
-$(document).ready(function() {
-  getProductDetail();
 });
