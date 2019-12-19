@@ -59,7 +59,7 @@ function SetRemainTime() {
   }
 }
 // 点击绑定手机号按钮跳转页面
-function btns(productId) {
+function btns() {
   if (
     window.localStorage.getItem("telephone") == "" ||
     window.localStorage.getItem("telephone") == null ||
@@ -67,7 +67,6 @@ function btns(productId) {
   ) {
     alert("手机号错误");
   } else {
-    // window.location.href = " confirmOrder.html?productId=" + productId;
     window.history.go(-1);
   }
 }
