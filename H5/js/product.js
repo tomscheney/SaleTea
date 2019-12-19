@@ -1,19 +1,23 @@
 let telephone = window.localStorage.getItem("telephone");
-let desc = window.localStorage.getItem("recommendDesc");
-let search = location.search;
-let list = search.split("=");
-let productId = list[1];
-let openId = window.localStorage.getItem("openId");
-let href = window.location.href;
-let hrefDemo = window.location.href.split("#")[0];
-
 console.log(telephone);
+let desc = window.localStorage.getItem("recommendDesc");
 console.log(desc);
+// let search = location.search;
+// let list = search.split("=");
+// let productId = list[1];
+let search = location.search;
 console.log(search);
+let list = search.split("&");
 console.log(list);
+let product = list[0];
+console.log(product);
+let productId = product.split("=")[1];
 console.log(productId);
+let openId = window.localStorage.getItem("openId");
 console.log(openId);
+let href = window.location.href;
 console.log(href);
+let hrefDemo = window.location.href.split("#")[0];
 console.log(hrefDemo);
 
 var linkUrl = "";
