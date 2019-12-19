@@ -191,7 +191,7 @@ $(function() {
 
   wx.ready(function() {
     //需在用户可能点击分享按钮前就先调用
-    wx.updateAppMessageShareData({
+    wx.onMenuShareAppMessage({
       title: "芷贤斋精选", // 分享标题
       desc: "芷贤斋精选礼品,精心为您呈上", // 分享描述
       link: "https://kidstoms.com/tea/H5/product.html?productId=" + productId, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
@@ -217,7 +217,7 @@ $(function() {
 
   wx.ready(function() {
     //需在用户可能点击分享按钮前就先调用
-    wx.updateTimelineShareData({
+    wx.onMenuShareTimeline({
       title: "芷贤斋精选", // 分享标题
       link: "https://kidstoms.com/tea/H5/product.html?productId=" + productId, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
       imgUrl: linkUrl, // 分享图标
