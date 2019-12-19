@@ -7,6 +7,10 @@
     width: 55%;
     height: 1.5rem;
     font-size: 1rem;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 0.01rem solid #eae1e1;
 }
 .close_tel {
     width: 30%;
@@ -20,13 +24,15 @@
     width: 55%;
     height: 1.5rem;
     font-size: 1rem;
-    margin-top: 1rem;
+    padding: 1rem 0;
+    border: none;
+    border-bottom: 0.01rem solid #eae1e1;
 }
 .updateBtn button {
     margin-top: 2.5rem;
     width: 95%;
     height: 2.5rem;
-    background-color: #F0AD4E;
+    background-color: red;
     color: white;
     border: none;
     font-size: 1rem;
