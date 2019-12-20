@@ -49,6 +49,52 @@ function shopCart() {
   // location.href = "shopCar.html";
 }
 
+(function($) {
+  $.extend({
+    tipsBox: function(options) {
+      options = $.extend(
+        {
+          obj: null, //jq对象，要在那个html标签上显示
+          str: "+1", //字符串，要显示的内容;也可以传一段html，如: "<b style='font-family:Microsoft YaHei;'>+1</b>"
+          startSize: "12px", //动画开始的文字大小
+          endSize: "30px", //动画结束的文字大小
+          interval: 600, //动画时间间隔
+          color: "#cd4450", //文字颜色
+          weight: "bold", //文字
+          callback: function() {} //回调函数
+        },
+        options
+      );
+      $("body").append("<span class='num'>" + options.str + "</span>");
+      var box = $(".num");
+      var left = options.obj.offset().left + options.obj.width() / 2;
+      var top = options.obj.offset().top - options.obj.height();
+      box.css({
+        position: "absolute",
+        left: left + "px",
+        top: top + "px",
+        "z-index": 9999,
+        "font-size": options.startSize,
+        "line-height": options.endSize,
+        color: options.color,
+        "font-weight": options.weight
+      });
+      box.animate(
+        {
+          "font-size": options.endSize,
+          opacity: "0",
+          top: top - parseInt(options.endSize) + "px"
+        },
+        options.interval,
+        function() {
+          box.remove();
+          options.callback();
+        }
+      );
+    }
+  });
+})(jQuery);
+
 // 点击加入购物车 调addToShopCart接口
 function addShopCart() {
   let params = location.search.split("=");
