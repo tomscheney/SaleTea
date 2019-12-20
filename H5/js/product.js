@@ -59,20 +59,17 @@ function addShopCart() {
     dataType: "json",
     data: {
       openId: window.localStorage.getItem("openId"),
-      // productId:location.search.substr(1, 8)
       productId: productId.substr(0, 8)
     },
     success: function(res) {
-      if (res.code === "200") {
-        alert("ok!!!!!!!!!!!!");
-        $.tipsBox({
-          obj: $(this),
-          str: "+ 1",
-          callback: function() {
-            alert(5);
-          }
-        });
-      }
+      alert("ok!!!!!!!!!!!!");
+      $.tipsBox({
+        obj: $(this),
+        str: "+ 1",
+        callback: function() {
+          alert(5);
+        }
+      });
     }
   });
 }
