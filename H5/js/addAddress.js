@@ -79,15 +79,16 @@ function deleteBox(i) {
   }
 }
 
-$(function(){
-// 共享地址
-wx.openAddress({
-  success: function(res) {
-    console.log(res);
-  }
+$(function() {
+  // 共享地址
+  wx.ready(function() {
+    wx.openAddress({
+      success: function(res) {
+        console.log(res);
+      }
+    });
+  });
 });
-})
-
 
 $(document).ready(function() {
   getAllAddressByOpenId();
