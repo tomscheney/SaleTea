@@ -64,11 +64,12 @@ function addShopCart() {
     },
     success: function(res) {
       if (res.code === "200") {
+        alert("ok!!!!!!!!!!!!");
         $.tipsBox({
           obj: $(this),
           str: "+ 1",
           callback: function() {
-            //alert(5);
+            alert(5);
           }
         });
       }
