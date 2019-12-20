@@ -51,6 +51,14 @@ function shopCart() {
 
 // 点击加入购物车 调addToShopCart接口
 function addShopCart() {
+  $.tipsBox({
+    obj: $(this),
+    str: "+ 1",
+    callback: function() {
+      //alert(5);
+    }
+  });
+
   let params = location.search.split("=");
   let productId = params[1];
   $.ajax({
@@ -224,7 +232,7 @@ $(function() {
       },
       complete: function() {
         alert("分享完成");
-      },
+      }
       // trigger: function() {
       //   alert("点击了分享菜单");
       // }
@@ -249,7 +257,7 @@ $(function() {
       },
       complete: function() {
         alert("分享完成");
-      },
+      }
       // trigger: function() {
       //   alert("点击了分享菜单");
       // }
