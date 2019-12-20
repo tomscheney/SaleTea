@@ -225,9 +225,9 @@ $(function() {
       complete: function() {
         alert("分享完成");
       },
-      trigger: function() {
-        alert("点击了分享菜单");
-      }
+      // trigger: function() {
+      //   alert("点击了分享菜单");
+      // }
     });
   });
 
@@ -250,9 +250,9 @@ $(function() {
       complete: function() {
         alert("分享完成");
       },
-      trigger: function() {
-        alert("点击了分享菜单");
-      }
+      // trigger: function() {
+      //   alert("点击了分享菜单");
+      // }
     });
   });
 });
