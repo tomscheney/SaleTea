@@ -62,13 +62,16 @@ function addShopCart() {
       productId: productId.substr(0, 8)
     },
     success: function(res) {
+      console.log(res);
       alert("ok!!!!!!!!!!!!");
-      $.tipsBox({
-        obj: $(this),
-        str: "+ 1",
-        callback: function() {
-          alert(5);
-        }
+      $(function() {
+        $.tipsBox({
+          obj: $(this),
+          str: "+ 1",
+          callback: function() {
+            //alert(5);
+          }
+        });
       });
     }
   });
