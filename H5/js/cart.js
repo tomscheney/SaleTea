@@ -186,17 +186,17 @@ function getList() {
         var result = res.data.productList;
         console.log(result);
 
-        // // 数组长度
-        // function getJsonLength() {
-        //   var jsonLength = 0;
-        //   for (var jsonLength in result) {
-        //     jsonLength++;
-        //   }
-        //   return jsonLength;
-        // }
-        // let Length = getJsonLength();
-        // console.log(Length);
-        // window.localStorage.setItem("Length", Length);
+        // 数组长度
+        function getJsonLength() {
+          var jsonLength = 0;
+          for (var jsonLength in result) {
+            jsonLength++;
+          }
+          return jsonLength;
+        }
+        let Length = getJsonLength();
+        console.log(Length);
+        window.localStorage.setItem("Length", Length);
 
         var amounts = res.data.amounts;
         var htmls = template("addressTpl", {
