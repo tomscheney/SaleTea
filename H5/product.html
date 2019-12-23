@@ -237,42 +237,42 @@
                   y = $target.offset().top + 10,
                   X = $endElement.offset().left,
                   Y = $endElement.offset().top;
-                if (!($(document).find("#cartIcon").length > 0)) {
-                  $("body").append(S.addIcon);
-                  var $obj = $("#cartIcon");
-                  if (!$obj.is(":animated")) {
-                    $obj
-                      .css({ left: x, top: y })
-                      .animate({ left: X, top: Y + 70 }, 500, function() {
-                        $obj
-                          .stop(false, false)
-                          .animate(
-                            { top: Y - 20, opacity: 0 },
-                            500,
-                            function() {
-                              $obj.fadeOut(300, function() {
-                                $obj.remove();
-                                $target.data("click", false);
-                                $options.endFunction($(this));
-                              });
-                            }
-                          );
-                      });
-                  }
-                }
+                // if (!($(document).find("#cartIcon").length > 0)) {
+                //   $("body").append(S.addIcon);
+                //   var $obj = $("#cartIcon");
+                //   if (!$obj.is(":animated")) {
+                //     $obj
+                //       .css({ left: x, top: y })
+                //       .animate({ left: X, top: Y + 70 }, 500, function() {
+                //         $obj
+                //           .stop(false, false)
+                //           .animate(
+                //             { top: Y - 20, opacity: 0 },
+                //             500,
+                //             function() {
+                //               $obj.fadeOut(300, function() {
+                //                 $obj.remove();
+                //                 $target.data("click", false);
+                //                 $options.endFunction($(this));
+                //               });
+                //             }
+                //           );
+                //       });
+                //   }
+                // }
               },
-              addIcon: function() {
-                if ($options.iconImg == "" || $options.iconImg == null) {
-                  throw new Error("样式图片必须填上");
-                }
-                var icon =
-                  '<div id="cartIcon" style="width:50px;height:50px;padding:2px;background:#fff;border:solid 5px #e54144;overflow:hidden;position:absolute;z-index:890;' +
-                  $options.iconCSS +
-                  '"><img src="' +
-                  $options.iconImg +
-                  '" width="50" height="50" /></div>';
-                return icon;
-              }
+              // addIcon: function() {
+              //   if ($options.iconImg == "" || $options.iconImg == null) {
+              //     throw new Error("样式图片必须填上");
+              //   }
+              //   var icon =
+              //     '<div id="cartIcon" style="width:50px;height:50px;padding:2px;background:#fff;border:solid 5px #e54144;overflow:hidden;position:absolute;z-index:890;' +
+              //     $options.iconCSS +
+              //     '"><img src="' +
+              //     $options.iconImg +
+              //     '" width="50" height="50" /></div>';
+              //   return icon;
+              // }
             };
             S.init();
           }
