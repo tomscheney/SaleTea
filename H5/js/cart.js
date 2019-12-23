@@ -184,11 +184,10 @@ function getList() {
     success: function(res) {
       if (res.code == "200") {
         console.log(res);
- 
+        var result = res.data.productList;
 
         // json长度
-        function getJsonLength(result) {
-          var result = res.data.productList;
+        function getJsonLength() {
           console.log(result);
           var jsonLength = 0;
           for (var jsonLength in result) {
