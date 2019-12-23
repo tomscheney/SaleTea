@@ -184,6 +184,8 @@ function getList() {
     success: function(res) {
       if (res.code == "200") {
         console.log(res);
+        getHsonLength();
+        console.log(getHsonLength());
         var result = res.data.productList;
         var amounts = res.data.amounts;
         var htmls = template("addressTpl", {
@@ -198,6 +200,14 @@ function getList() {
       }
     }
   });
+}
+
+function getJsonLength(json) {
+  var jsonLength = 0;
+  for (var i in json) {
+    jsonLength++;
+  }
+  return jsonLength;
 }
 
 // 点击减号（-）的时候 调 reduceProductAmount接口
