@@ -183,6 +183,7 @@ function getList() {
     },
     success: function(res) {
       if (res.code == "200") {
+        console.log(res);
         var result = res.data.productList;
         var amounts = res.data.amounts;
         var htmls = template("addressTpl", {
