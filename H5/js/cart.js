@@ -149,7 +149,6 @@ function koncat() {
 }
 
 // 删除接口 deleteProduct数据
-// 利用事件委托选择到删除按钮所在ul
 function dels(productId) {
   var r = confirm("您确定要删除当前商品？");
   if (r == true) {
@@ -185,14 +184,15 @@ function getList() {
       if (res.code == "200") {
         console.log(res);
         var result = res.data.productList;
-
-        // json长度
+        console.log(result);
+        // 数组长度
         function getJsonLength() {
-          console.log(result);
           var jsonLength = 0;
           for (var jsonLength in result) {
             jsonLength++;
           }
+          window.localStorage.setItem("getJsonLength()",JSON.stringify(getJsonLength));
+          // window.localStorage.setItem("getJsonLength", JSON.stringify(addressObject));
           return jsonLength;
         }
         console.log(getJsonLength());
@@ -211,14 +211,6 @@ function getList() {
     }
   });
 }
-
-// function getJsonLength(json) {
-//   var jsonLength = 0;
-//   for (var i in json) {
-//     jsonLength++;
-//   }
-//   return jsonLength;
-// }
 
 // 点击减号（-）的时候 调 reduceProductAmount接口
 function reduce(index, productId) {
