@@ -185,14 +185,17 @@ function getList() {
       if (res.code == "200") {
         console.log(res);
         var result = res.data.productList;
+        console.log(result);
 
         // json长度
         function getJsonLength(result) {
-          var jsonLength = 0;
-          for (var jsonLength in result) {
-            jsonLength++;
-          }
-          return jsonLength;
+          // var jsonLength = 0;
+          // for (var jsonLength in result) {
+          //   jsonLength++;
+          // }
+          // return jsonLength;
+          for (var i = 0; i < result; i++) {}
+          return i;
         }
         console.log(getJsonLength());
 
