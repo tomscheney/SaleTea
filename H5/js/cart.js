@@ -169,7 +169,7 @@ function dels(productId) {
   }
 }
 
-// 点击购物车所有产品  调queryShopCart接口
+// 点击购物车获取所有商品  调queryShopCart接口
 function getList() {
   let openId = localStorage.getItem("openId");
   // 获取数据渲染数据到页面
@@ -186,17 +186,17 @@ function getList() {
         var result = res.data.productList;
         console.log(result);
 
-        // // 数组长度
-        // function getJsonLength() {
-        //   var jsonLength = 0;
-        //   for (var jsonLength in result) {
-        //     jsonLength++;
-        //   }
-        //   return jsonLength;
-        // }
-        // let Length = getJsonLength();
-        // console.log(Length);
-        // window.localStorage.setItem("Length", Length);
+        // 数组长度
+        function getJsonLength() {
+          var jsonLength = 0;
+          for (var jsonLength in result) {
+            jsonLength++;
+          }
+          return jsonLength;
+        }
+        let Length = getJsonLength();
+        console.log(Length);
+        window.localStorage.setItem("Length", Length);
 
         var amounts = res.data.amounts;
         var htmls = template("addressTpl", {

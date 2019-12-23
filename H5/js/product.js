@@ -2,6 +2,7 @@ let telephone = window.localStorage.getItem("telephone");
 console.log(telephone);
 let desc = window.localStorage.getItem("recommendDesc");
 console.log(desc);
+
 let search = location.search;
 console.log(search);
 let list = search.split("&");
@@ -43,11 +44,11 @@ function buyNow(productId) {
 function shopCart() {
   location.href =
     "shopCar.html?openId=" + window.localStorage.getItem("openId");
+  // location.href = "shopCar.html";
 }
 
 // 点击加入购物车 调addToShopCart接口
 function addShopCart() {
-  window.location.reload();
   let params = location.search.split("=");
   let productId = params[1];
   $.ajax({
@@ -61,39 +62,6 @@ function addShopCart() {
     },
     success: function(res) {
       if (res.code === "200") {
-      }
-    }
-  });
-}
-
-// 所以产品的接口
-function getList() {
-  let openId = localStorage.getItem("openId");
-  // 获取数据渲染数据到页面
-  $.ajax({
-    url: "https://kidstoms.com/queryShopCart",
-    type: "post",
-    dataType: "json",
-    data: {
-      openId: openId
-    },
-    success: function(res) {
-      if (res.code == "200") {
-        console.log(res);
-        var result = res.data.productList;
-        console.log(result);
-
-        // 数组长度
-        function getJsonLength() {
-          var jsonLength = 0;
-          for (var jsonLength in result) {
-            jsonLength++;
-          }
-          return jsonLength;
-        }
-        let Length = getJsonLength();
-        console.log(Length);
-        window.localStorage.setItem("Length", Length);
       }
     }
   });
@@ -140,8 +108,8 @@ function getProductDetail() {
       console.log(productDesc);
       window.localStorage.setItem("productDesc", productDesc);
 
-      // 商品简介
       descList = res.data.productRecommend;
+      // 商品简介
       var recommendDesc = res.data.productRecommend[0].recommendDesc;
       window.localStorage.setItem("recommendDesc", recommendDesc);
 
@@ -179,6 +147,10 @@ function getProductDetail() {
     }
   });
 }
+
+$(document).ready(function() {
+  getProductDetail();
+});
 
 // 点击猜你喜欢按钮 调getProductByDesc接口
 function getRecommendProductId(index) {
@@ -250,7 +222,7 @@ $(function() {
       },
       complete: function() {
         alert("分享完成");
-      }
+      },
       // trigger: function() {
       //   alert("点击了分享菜单");
       // }
@@ -275,16 +247,10 @@ $(function() {
       },
       complete: function() {
         alert("分享完成");
-      }
+      },
       // trigger: function() {
       //   alert("点击了分享菜单");
       // }
     });
   });
-});
-
-$(document).ready(function() {
-  $("#spanNum").html(window.localStorage.getItem("Length"));
-  getList();
-  getProductDetail();
 });
