@@ -43,7 +43,6 @@ function buyNow(productId) {
 function shopCart() {
   location.href =
     "shopCar.html?openId=" + window.localStorage.getItem("openId");
-  // location.href = "shopCar.html";
 }
 
 // 点击加入购物车 调addToShopCart接口
@@ -65,6 +64,16 @@ function addShopCart() {
     }
   });
 }
+
+// 数组长度
+function getJsonLength(addShopCart) {
+  var jsonLength = 0;
+  for (var jsonLength in addShopCart) {
+    jsonLength++;
+  }
+  return jsonLength;
+}
+console.log(getJsonLength)
 
 // 调用轮播图
 function swiper_init() {
@@ -147,7 +156,6 @@ function getProductDetail() {
   });
 }
 
-
 // 点击猜你喜欢按钮 调getProductByDesc接口
 function getRecommendProductId(index) {
   let recommendDesc = descList[index].recommendDesc;
@@ -218,7 +226,7 @@ $(function() {
       },
       complete: function() {
         alert("分享完成");
-      },
+      }
       // trigger: function() {
       //   alert("点击了分享菜单");
       // }
@@ -243,14 +251,13 @@ $(function() {
       },
       complete: function() {
         alert("分享完成");
-      },
+      }
       // trigger: function() {
       //   alert("点击了分享菜单");
       // }
     });
   });
 });
-
 
 $(document).ready(function() {
   $("#spanNum").html(window.localStorage.getItem("Length"));

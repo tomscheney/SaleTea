@@ -192,10 +192,6 @@ function getList() {
           for (var jsonLength in result) {
             jsonLength++;
           }
-          window.localStorage.setItem(
-            "getJsonLength",
-            JSON.stringify(getJsonLength)
-          );
           return jsonLength;
         }
         let Length = getJsonLength();
