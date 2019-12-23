@@ -107,8 +107,8 @@ function getProductDetail() {
       console.log(productDesc);
       window.localStorage.setItem("productDesc", productDesc);
 
-      descList = res.data.productRecommend;
       // 商品简介
+      descList = res.data.productRecommend;
       var recommendDesc = res.data.productRecommend[0].recommendDesc;
       window.localStorage.setItem("recommendDesc", recommendDesc);
 
@@ -147,9 +147,6 @@ function getProductDetail() {
   });
 }
 
-$(document).ready(function() {
-  getProductDetail();
-});
 
 // 点击猜你喜欢按钮 调getProductByDesc接口
 function getRecommendProductId(index) {
@@ -252,4 +249,10 @@ $(function() {
       // }
     });
   });
+});
+
+
+$(document).ready(function() {
+  $("#spanNum").val(window.localStorage.getItem("Length"));
+  getProductDetail();
 });
