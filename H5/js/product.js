@@ -49,7 +49,7 @@ function shopCart() {
 function addShopCart() {
   window.location.reload();
   $("#spanNum").html(window.localStorage.getItem("Length"));
-
+  
   let params = location.search.split("=");
   let productId = params[1];
   $.ajax({
@@ -183,7 +183,7 @@ function getProductDetail() {
 }
 
 $(document).ready(function() {
-  // $("#spanNum").html(window.localStorage.getItem("Length"));
+  $("#spanNum").html(window.localStorage.getItem("Length"));
   getList();
   getProductDetail();
 });
