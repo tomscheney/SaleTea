@@ -189,7 +189,7 @@ function getList() {
         // json长度
         function getJsonLength(result) {
           var jsonLength = 0;
-          for (var jsonLength in result.length) {
+          for (var jsonLength in result) {
             jsonLength++;
           }
           return jsonLength;
