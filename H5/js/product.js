@@ -95,16 +95,16 @@ function getList() {
         console.log(Length);
         window.localStorage.setItem("Length", Length);
 
-        var amounts = res.data.amounts;
-        var htmls = template("addressTpl", {
-          result: result,
-          amounts: amounts
-        });
-        $(".address-box").html(htmls);
-        shuliang();
-        TotalPrice();
-        var qx = $(".product-all em");
-        qx.toggleClass("product-all-on");
+        // var amounts = res.data.amounts;
+        // var htmls = template("addressTpl", {
+        //   result: result,
+        //   amounts: amounts
+        // });
+        // $(".address-box").html(htmls);
+        // shuliang();
+        // TotalPrice();
+        // var qx = $(".product-all em");
+        // qx.toggleClass("product-all-on");
       }
     }
   });
