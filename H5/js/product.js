@@ -284,7 +284,7 @@ $(function() {
 });
 
 $(document).ready(function() {
-  window.location.reload();
+  // window.location.reload();
   getList();
   $("#spanNum").html(window.localStorage.getItem("Length"));
   getProductDetail();
