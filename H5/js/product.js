@@ -253,6 +253,6 @@ $(function() {
 
 
 $(document).ready(function() {
-  $("#spanNum").val(window.localStorage.getItem("Length"));
+  $("#spanNum").html(window.localStorage.getItem("Length"));
   getProductDetail();
 });
