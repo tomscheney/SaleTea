@@ -285,6 +285,7 @@ $(function() {
 });
 
 $(document).ready(function() {
+  $("#spanNum").html(window.localStorage.getItem("Length"));
   getList();
   getProductDetail();
 });
