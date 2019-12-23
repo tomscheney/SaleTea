@@ -184,9 +184,9 @@ function getList() {
     success: function(res) {
       if (res.code == "200") {
         console.log(res);
-        var productLength = res.data.productList.length;
-        console.length(productLength);
         var result = res.data.productList;
+        var productLength = result.length;
+        console.length(productLength);
         var amounts = res.data.amounts;
         var htmls = template("addressTpl", {
           result: result,
