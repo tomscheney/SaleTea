@@ -281,31 +281,25 @@ button {
 	left: 60%;
 	background-color: #fd3a38;
 }
+.btn-div {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #8f8484d6;
+    position: absolute;
+    top: 0.7rem;
+    right: 0.3rem;
+    border-radius: 50rem;
 
-.yuan {
-	position: absolute;
-	z-index: 1000;
-	width: 3.5vw;
-	top: 22%;
-	left: 83%;
-	height: 3.5vw;
-	background-color: red;
-	border-radius: 50%;
-	display: none;
+}
+.btn-div span {
+	font-size: 0.5rem;
+    color: red;
+    display: block;
+    position: absolute;
+    top: -1.7rem;
+    right: 0.3rem;
 }
 
-.jia1 {
-	position: absolute;
-	z-index: 1000;
-	width: 50px;
-	top: -15%;
-	left: 50%;
-	height: 5px;
-	color: red;
-	animation: myfirst 2s;
-	-webkit-animation: myfirst 2s;
-	display: none;
-}
 
 @keyframes myfirst {
 	from {
