@@ -185,16 +185,21 @@ function getList() {
         console.log(res);
         var result = res.data.productList;
         console.log(result);
+
         // 数组长度
         function getJsonLength() {
           var jsonLength = 0;
           for (var jsonLength in result) {
             jsonLength++;
           }
-          window.localStorage.setItem("getJsonLength",JSON.stringify(getJsonLength));
+          window.localStorage.setItem(
+            "getJsonLength",
+            JSON.stringify(getJsonLength)
+          );
           // window.localStorage.setItem("getJsonLength", JSON.stringify(addressObject));
           return jsonLength;
         }
+        console.log(jsonLength);
         console.log(getJsonLength());
 
         var amounts = res.data.amounts;
