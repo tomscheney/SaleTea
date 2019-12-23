@@ -47,8 +47,7 @@ function shopCart() {
 
 // 点击加入购物车 调addToShopCart接口
 function addShopCart() {
-  // window.location.reload();
-  $("#spanNum").html(window.localStorage.getItem("Length"));
+  window.location.reload();
   let params = location.search.split("=");
   let productId = params[1];
   $.ajax({
@@ -285,6 +284,7 @@ $(function() {
 });
 
 $(document).ready(function() {
+  $("#spanNum").html(window.localStorage.getItem("Length"));
   getList();
   getProductDetail();
 });
