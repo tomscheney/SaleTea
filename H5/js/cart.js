@@ -197,7 +197,7 @@ function getList() {
             JSON.stringify(getJsonLength)
           );
           let Length = getJsonLength();
-          console.log(length);
+          console.log(Length);
           // window.localStorage.setItem("getJsonLength", JSON.stringify(addressObject));
           return jsonLength;
         }
