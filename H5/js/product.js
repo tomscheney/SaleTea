@@ -47,6 +47,8 @@ function shopCart() {
 
 // 点击加入购物车 调addToShopCart接口
 function addShopCart() {
+  window.location.reload();
+  $("#spanNum").html(window.localStorage.getItem("Length"));
   let params = location.search.split("=");
   let productId = params[1];
   $.ajax({
@@ -93,7 +95,6 @@ function getList() {
         let Length = getJsonLength();
         console.log(Length);
         window.localStorage.setItem("Length", Length);
-        
       }
     }
   });
@@ -284,8 +285,6 @@ $(function() {
 });
 
 $(document).ready(function() {
-  // window.location.reload();
   getList();
-  $("#spanNum").html(window.localStorage.getItem("Length"));
   getProductDetail();
 });
