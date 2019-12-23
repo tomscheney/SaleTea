@@ -68,6 +68,7 @@ function addShopCart() {
 
 // 所以产品的接口
 function getList() {
+  $("#spanNum").html(window.localStorage.getItem("Length"));
   let openId = localStorage.getItem("openId");
   // 获取数据渲染数据到页面
   $.ajax({
@@ -94,17 +95,6 @@ function getList() {
         let Length = getJsonLength();
         console.log(Length);
         window.localStorage.setItem("Length", Length);
-
-        // var amounts = res.data.amounts;
-        // var htmls = template("addressTpl", {
-        //   result: result,
-        //   amounts: amounts
-        // });
-        // $(".address-box").html(htmls);
-        // shuliang();
-        // TotalPrice();
-        // var qx = $(".product-all em");
-        // qx.toggleClass("product-all-on");
       }
     }
   });
@@ -296,6 +286,5 @@ $(function() {
 
 $(document).ready(function() {
   getList();
-  $("#spanNum").html(window.localStorage.getItem("Length"));
   getProductDetail();
 });
