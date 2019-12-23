@@ -2,7 +2,6 @@ let telephone = window.localStorage.getItem("telephone");
 console.log(telephone);
 let desc = window.localStorage.getItem("recommendDesc");
 console.log(desc);
-
 let search = location.search;
 console.log(search);
 let list = search.split("&");
@@ -149,6 +148,7 @@ function getProductDetail() {
 }
 
 $(document).ready(function() {
+  $("#spanNum").html( window.localStorage.getItem("Length"));
   getProductDetail();
 });
 
