@@ -184,9 +184,18 @@ function getList() {
     success: function(res) {
       if (res.code == "200") {
         console.log(res);
-        getJsonLength();
-        console.log(getJsonLength());
         var result = res.data.productList;
+
+        // json长度
+        function getJsonLength(result) {
+          var jsonLength = 0;
+          for (var i in result) {
+            jsonLength++;
+          }
+          return jsonLength;
+        }
+        console.log(getJsonLength());
+
         var amounts = res.data.amounts;
         var htmls = template("addressTpl", {
           result: result,
@@ -202,13 +211,13 @@ function getList() {
   });
 }
 
-function getJsonLength(json) {
-  var jsonLength = 0;
-  for (var i in json) {
-    jsonLength++;
-  }
-  return jsonLength;
-}
+// function getJsonLength(json) {
+//   var jsonLength = 0;
+//   for (var i in json) {
+//     jsonLength++;
+//   }
+//   return jsonLength;
+// }
 
 // 点击减号（-）的时候 调 reduceProductAmount接口
 function reduce(index, productId) {
