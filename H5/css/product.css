@@ -16,6 +16,7 @@ body {
 .swiper-slide {
 	height: 251px;
 	overflow: hidden;
+	text-align: left;
 }
 
 .swiper-slide>img {
@@ -284,7 +285,7 @@ button {
 .btn-div {
     width: 1.5rem;
     height: 1.5rem;
-    background: #8f8484d6;
+    background: #8f84848a;
     position: absolute;
     top: 0.7rem;
     right: 0.3rem;
@@ -293,7 +294,7 @@ button {
 }
 .btn-div span {
 	font-size: 1rem;
-    color: red;
+    color: black;
     display: block;
     position: absolute;
     top: -1.7rem;
