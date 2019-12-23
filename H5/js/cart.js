@@ -196,12 +196,11 @@ function getList() {
             "getJsonLength",
             JSON.stringify(getJsonLength)
           );
-          // window.localStorage.setItem("getJsonLength", JSON.stringify(addressObject));
           return jsonLength;
         }
         let Length = getJsonLength();
         console.log(Length);
-        console.log(getJsonLength());
+        window.localStorage.setItem("Length", Length);
 
         var amounts = res.data.amounts;
         var htmls = template("addressTpl", {
