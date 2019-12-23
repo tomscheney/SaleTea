@@ -1,129 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<script src="js/jquery-3.3.1.js"></script>
-		<!-- <script src="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#2" type="text/javascript" charset="utf-8"></script> -->
-		<script type="text/javascript" src="js/jquery-addShopping.js"></script>
-		<script src="js/swiper-5.0.4/package/js/swiper.min.js"></script>
-		<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
-		<script src="js/product.js"></script>
-		<script src="js/jquery.fly.min.js"></script>
-		<script src="../lib/template-web.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="js/jquery-3.3.1.js"></script>
+    <!-- <script src="https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#2" type="text/javascript" charset="utf-8"></script> -->
+    <script type="text/javascript" src="js/jquery-addShopping.js"></script>
+    <script src="js/swiper-5.0.4/package/js/swiper.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"
+    ></script>
+    <script src="js/product.js"></script>
+    <script src="js/jquery.fly.min.js"></script>
+    <script src="../lib/template-web.js"></script>
 
-		<!-- Link Swiper's CSS -->
-		<link rel="stylesheet" href="js/swiper-5.0.4/package/css/swiper.min.css">
-		<link rel="stylesheet" href="js/bootstrap-3.3.7-dist/css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/product.css" />
-		<title>产品详情页</title>
-	</head>
-	<body>
-		<!-- 轮播图 -->
-		<div class="swiper-top">
-			<div class="swiper-container">
-				<div class="swiper-wrapper"></div>
-				<div class="swiper-pagination"></div>
-			</div>
-		</div>
-		<!-- 文字详情 -->
-		<div class="write">
-			<span class="tit-name"></span>
-			<div class="price">
-				<span class="tit-price"></span><span>|</span><span>不可退款</span>
-			</div>
-		</div>
-		<!-- 一条没有感情的分割线 -->
-		<hr class="hr-1">
-		<!-- 包邮 -->
-		<button type="button" class="btn">包邮</button>
-		<!-- 又一条没有感情的分割线 -->
-		<hr class="hr-2">
-		<!-- 商品详情 -->
-		<div class="Commodity-details">
-			<div class="details">
-				<p>商品详情</p>
-				<hr class="hr-3">
-			</div>
-			<table class="table table-striped">
-				<tbody>
-					<tr>
-						<td>产地</td>
-						<td class="productPlace"></td>
-					</tr>
-					<tr>
-						<td>包装</td>
-						<td class="wrapping"></td>
-					</tr>
-					<tr>
-						<td>品牌</td>
-						<td class="brand"></td>
-					</tr>
-					<tr>
-						<td>保质期</td>
-						<td class="qualityPeriod"></td>
-					</tr>
-					<tr>
-						<td>规格</td>
-						<td class="standards"></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<!-- 亮点 -->
-		<div class="Bright-spot">
-			<div class="spot bling-spot">
-				<p>亮点</p>
-				<hr class="hr-4">
-			</div>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="js/swiper-5.0.4/package/css/swiper.min.css" />
+    <link rel="stylesheet" href="js/bootstrap-3.3.7-dist/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/product.css" />
+    <title>产品详情页</title>
+  </head>
+  <body>
+    <!-- 轮播图 -->
+    <div class="swiper-top">
+      <div class="swiper-container">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <!-- 文字详情 -->
+    <div class="write">
+      <span class="tit-name"></span>
+      <div class="price">
+        <span class="tit-price"></span><span>|</span><span>不可退款</span>
+      </div>
+    </div>
+    <!-- 一条没有感情的分割线 -->
+    <hr class="hr-1" />
+    <!-- 包邮 -->
+    <button type="button" class="btn">包邮</button>
+    <!-- 又一条没有感情的分割线 -->
+    <hr class="hr-2" />
+    <!-- 商品详情 -->
+    <div class="Commodity-details">
+      <div class="details">
+        <p>商品详情</p>
+        <hr class="hr-3" />
+      </div>
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td>产地</td>
+            <td class="productPlace"></td>
+          </tr>
+          <tr>
+            <td>包装</td>
+            <td class="wrapping"></td>
+          </tr>
+          <tr>
+            <td>品牌</td>
+            <td class="brand"></td>
+          </tr>
+          <tr>
+            <td>保质期</td>
+            <td class="qualityPeriod"></td>
+          </tr>
+          <tr>
+            <td>规格</td>
+            <td class="standards"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- 亮点 -->
+    <div class="Bright-spot">
+      <div class="spot bling-spot">
+        <p>亮点</p>
+        <hr class="hr-4" />
+      </div>
+    </div>
+    <!-- 猜你喜欢 -->
+    <div class="like">
+      <div class="spot like-spot">
+        <p>猜你喜欢</p>
+        <hr class="hr-4" />
+      </div>
+    </div>
+    <!-- 购物车 -->
+    <div class="shopping-car">
+      <div>
+        <!-- 购物车图标 -->
+        <button onclick="shopCart()" class="123" id="btn-car1">
+          <img src="img/car.jpg" />
+          <p class="yuan"><span id="num">0</span></p>
+          <span class="jia1">+1</span>
+        </button>
+        <button id="btn-car2" onclick="addShopCart()">加入购物车</button>
+        <button onclick="buyNow(productId)" id="btn-car3">立即购买</button>
+      </div>
+    </div>
 
-		</div>
-		<!-- 猜你喜欢 -->
-		<div class="like">
-			<div class="spot like-spot">
-				<p>猜你喜欢</p>
-				<hr class="hr-4">
-			</div>
+    <script type="text/html" id="featureTpl">
+      <% for(var index = 0; index < result.length; index++){ %>
+      <div class="Bright-spot-1">
+      	 <div class="Bright-spot-1-l">
+      		<img src= "<%= result[index].featureImg%>"/>
+      	 </div>
+      	 <div class="Bright-spot-1-r">
+      		<span><%= result[index].featureDesc %></span>
+      	 </div>
+      </div>
+      <% } %>
+    </script>
 
-		</div>
-		<!-- 购物车 -->
-		<div class="shopping-car">
-			<div>
-				<!-- 购物车图标 -->
-				<button onclick="shopCart()" class="123" id="btn-car1"><img src="img/car.jpg">
-					<p class="yuan"><span id="num">0</span></p><span class="jia1">+1</span>
-				</button>
-				<button id="btn-car2" onclick="addShopCart()">加入购物车</button>
-				<button onclick="buyNow(productId)" id="btn-car3">立即购买</button>
-			</div>
-		</div>
+    <script type="text/html" id="recommendTpl">
+      <% for(var index = 0; index < result.length; index++){ %>
+      <div class="like-1" onclick="getRecommendProductId(<%= index %>)">
+      	<div class="like-1-img">
+      		<img src="<%= result[index].recommendCover %>" />
+      	</div>
+      	<p > <%= result[index].recommendDesc %></p>
+      	<p style="color: red;"><%= result[index].recommendPrice %>元/份</p>
+      </div>
+      <% } %>
+    </script>
 
-		<script type="text/html" id="featureTpl">
-			<% for(var index = 0; index < result.length; index++){ %>
-			<div class="Bright-spot-1">
-				 <div class="Bright-spot-1-l">
-					<img src= "<%= result[index].featureImg%>"/>
-				 </div>
-				 <div class="Bright-spot-1-r">
-					<span><%= result[index].featureDesc %></span>
-				 </div>
-			</div>
-			<% } %>
-		</script>
+    <script type="text/javascript">
+      (function($) {
+        $.extend({
+          tipsBox: function(options) {
+            options = $.extend(
+              {
+                obj: null, //jq对象，要在那个html标签上显示
+                str: "+1", //字符串，要显示的内容;也可以传一段html，如: "<b style='font-family:Microsoft YaHei;'>+1</b>"
+                startSize: "12px", //动画开始的文字大小
+                endSize: "30px", //动画结束的文字大小
+                interval: 600, //动画时间间隔
+                color: "red", //文字颜色
+                callback: function() {} //回调函数
+              },
+              options
+            );
+            $("body").append("<span class='num'>" + options.str + "</span>");
+            var box = $(".num");
+            var left = options.obj.offset().left + options.obj.width() / 2;
+            var top = options.obj.offset().top - options.obj.height();
+            box.css({
+              position: "absolute",
+              left: left + "px",
+              top: top + "px",
+              "z-index": 9999,
+              "font-size": options.startSize,
+              "line-height": options.endSize,
+              color: options.color
+            });
+            box.animate(
+              {
+                "font-size": options.endSize,
+                opacity: "0",
+                top: top - parseInt(options.endSize) + "px"
+              },
+              options.interval,
+              function() {
+                box.remove();
+                options.callback();
+              }
+            );
+          }
+        });
+      })(jQuery);
 
-		<script type="text/html" id="recommendTpl">
-			<% for(var index = 0; index < result.length; index++){ %>
-			<div class="like-1" onclick="getRecommendProductId(<%= index %>)">
-				<div class="like-1-img">
-					<img src="<%= result[index].recommendCover %>" />
-				</div>
-				<p > <%= result[index].recommendDesc %></p>
-				<p style="color: red;"><%= result[index].recommendPrice %>元/份</p>
-			</div>
-			<% } %>
-		</script>
-
-	</body>
-
+      function niceIn(prop) {
+        prop.find("i").addClass("niceIn");
+        setTimeout(function() {
+          prop.find("i").removeClass("niceIn");
+        }, 1000);
+      }
+      $(function() {
+        $("#btn-car2").click(function() {
+          $.tipsBox({
+            obj: $(this),
+            str: "+1",
+            callback: function() {}
+          });
+          niceIn($(this));
+        });
+      });
+    </script>
+  </body>
 </html>
