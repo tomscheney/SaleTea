@@ -169,7 +169,7 @@ function dels(productId) {
   }
 }
 
-// 点击购物车  调queryShopCart接口
+// 点击购物车所有产品  调queryShopCart接口
 function getList() {
   let openId = localStorage.getItem("openId");
   // 获取数据渲染数据到页面

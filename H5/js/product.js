@@ -65,6 +65,50 @@ function addShopCart() {
   });
 }
 
+// 所以产品的接口
+function getList() {
+  let openId = localStorage.getItem("openId");
+  // 获取数据渲染数据到页面
+  $.ajax({
+    url: "https://kidstoms.com/queryShopCart",
+    type: "post",
+    dataType: "json",
+    data: {
+      openId: openId
+    },
+    success: function(res) {
+      if (res.code == "200") {
+        console.log(res);
+        var result = res.data.productList;
+        console.log(result);
+
+        // 数组长度
+        function getJsonLength() {
+          var jsonLength = 0;
+          for (var jsonLength in result) {
+            jsonLength++;
+          }
+          return jsonLength;
+        }
+        let Length = getJsonLength();
+        console.log(Length);
+        window.localStorage.setItem("Length", Length);
+
+        var amounts = res.data.amounts;
+        var htmls = template("addressTpl", {
+          result: result,
+          amounts: amounts
+        });
+        $(".address-box").html(htmls);
+        shuliang();
+        TotalPrice();
+        var qx = $(".product-all em");
+        qx.toggleClass("product-all-on");
+      }
+    }
+  });
+}
+
 // 调用轮播图
 function swiper_init() {
   var mySwiper = new Swiper(".swiper-container", {
@@ -146,7 +190,6 @@ function getProductDetail() {
   });
 }
 
-
 // 点击猜你喜欢按钮 调getProductByDesc接口
 function getRecommendProductId(index) {
   let recommendDesc = descList[index].recommendDesc;
@@ -217,7 +260,7 @@ $(function() {
       },
       complete: function() {
         alert("分享完成");
-      },
+      }
       // trigger: function() {
       //   alert("点击了分享菜单");
       // }
@@ -242,7 +285,7 @@ $(function() {
       },
       complete: function() {
         alert("分享完成");
-      },
+      }
       // trigger: function() {
       //   alert("点击了分享菜单");
       // }
@@ -250,8 +293,8 @@ $(function() {
   });
 });
 
-
 $(document).ready(function() {
+  getList();
   $("#spanNum").html(window.localStorage.getItem("Length"));
   getProductDetail();
 });
