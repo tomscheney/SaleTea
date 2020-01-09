@@ -131,7 +131,7 @@ p {
     width: 1px;
     background-color: #3a2f2b;
     vertical-align: middle;
-    /*margin: 0 7px;*/
+    margin: 0 7px;
 }
 .footer .new {
     font-size: 11px;
@@ -139,6 +139,8 @@ p {
 }
 .phone{
     font-size: 11px;
+    display: flex;
+    flex-direction: column;
 
 }
 .copyright{
