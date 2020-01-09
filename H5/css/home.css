@@ -94,7 +94,7 @@ p {
 /* 底部 */
 .footer {
     color: darkgray;
-    height: 50px;
+    height: 30px;
     line-height: 50px;
     text-align: center;
 }
@@ -102,27 +102,28 @@ p {
 /* 底部 */
 .footer{
     border-top: 1px solid #2d2522;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-weight: 700;
     color: #5f4838;
     -webkit-font-smoothing: antialiased;
-    font-size: 12px;
+    font-size: 11px;
 }
 .wrapper {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
     height: 100%;
     position: relative;
 }
 .fl{
     float: center;
+    background-color: #fff;
 }
 .footer .link a {
     color: #5f4838;
     text-decoration: none;
     vertical-align: middle;
-    line-height: 3rem;
+    line-height: 1rem;
 }
 .cut {
     height: 12px;
@@ -130,19 +131,15 @@ p {
     width: 1px;
     background-color: #3a2f2b;
     vertical-align: middle;
-    margin: 0 7px;
+    /*margin: 0 7px;*/
 }
 .footer .new {
-    font-size: 20px;
+    font-size: 11px;
     text-align: right;
 }
 .phone{
-    font-size: 15px;
-    background: url("img/tel.png") no-repeat left center;
-    background-size: 1rem;
-    color: #89674c;
-    font-family: Arial;
-    padding-left: 15px;
+    font-size: 11px;
+
 }
 .copyright{
     font-size: 11px;
@@ -155,7 +152,7 @@ p {
     margin-left: 0px;
 }
 .filing {
-    font-size: 12px;
+    font-size: 11px;
     text-align: right;
     margin-left: 10px;
 }
