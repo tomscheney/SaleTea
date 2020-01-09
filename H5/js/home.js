@@ -38,8 +38,8 @@ function getProductList() {
         window.location.href = "product.html?productId=" + e.currentTarget.id;
       });
     },
-    error: function data() {
-      console.log("dataerro", data);
+    error: function (error) {
+      console.log(" erro", error);
     }
   });
 }
@@ -68,9 +68,12 @@ function getOpenId() {
     let value = tempArr[1];
     obj[key] = value;
   });
-
   //code 无值，
   let code = obj.code;
+  if (code === undefined){
+    console.log('未截取到code');
+    return;
+  }
   // 判断openId是否存在
   $.ajax({
     url: "https://zhixianzhai.com/getOpenIdByCode",
@@ -87,11 +90,11 @@ function getOpenId() {
         console.log(openId);
         window.localStorage.setItem("openId", openId);
       } else {
-        alert(res.msg);
+        console.log(res.msg);
       }
     },
-    error: function() {
-      console.log("XMLHttpRequest", XMLHttpRequest);
+    error: function(error) {
+      console.log("XMLHttpRequest", error);
     }
   });
 }

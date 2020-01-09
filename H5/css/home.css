@@ -98,3 +98,64 @@ p {
     line-height: 50px;
     text-align: center;
 }
+
+/* 底部 */
+.footer{
+    border-top: 1px solid #2d2522;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 700;
+    color: #5f4838;
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+}
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+}
+.fl{
+    float: center;
+}
+.footer .link a {
+    color: #5f4838;
+    text-decoration: none;
+    vertical-align: middle;
+    line-height: 3rem;
+}
+.cut {
+    height: 12px;
+    display: inline-block;
+    width: 1px;
+    background-color: #3a2f2b;
+    vertical-align: middle;
+    margin: 0 7px;
+}
+.footer .new {
+    font-size: 20px;
+    text-align: right;
+}
+.phone{
+    font-size: 15px;
+    background: url("img/tel.png") no-repeat left center;
+    background-size: 1rem;
+    color: #89674c;
+    font-family: Arial;
+    padding-left: 15px;
+}
+.copyright{
+    font-size: 11px;
+}
+.copyright em {
+    display: inherit;
+    font-style: normal;
+}
+.copyright>span:nth-of-type(1){
+    margin-left: 0px;
+}
+.filing {
+    font-size: 12px;
+    text-align: right;
+    margin-left: 10px;
+}
