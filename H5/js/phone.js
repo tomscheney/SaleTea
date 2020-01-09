@@ -29,7 +29,7 @@ function sendMessage() {
   InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
 
   $.ajax({
-    url: "https://kidstoms.com/getSecurityCode",
+    url: "https://zhixianzhai.com/getSecurityCode",
     type: "post",
     dataType: "json",
     data: {

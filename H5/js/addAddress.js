@@ -15,7 +15,7 @@ var addressList = "";
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
 function getAllAddressByOpenId() {
   $.ajax({
-    url: "https://kidstoms.com/getAllAddressByOpenId",
+    url: "https://zhixianzhai.com/getAllAddressByOpenId",
     type: "post",
     dataType: "json",
     data: {
@@ -65,7 +65,7 @@ function deleteBox(i) {
   var r = confirm("您确定要删除当前商品？");
   if (r === true) {
     $.ajax({
-      url: "https://kidstoms.com/deleteAddressByTelephone",
+      url: "https://zhixianzhai.com/deleteAddressByTelephone",
       type: "post",
       dataType: "json",
       data: {

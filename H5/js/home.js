@@ -3,7 +3,7 @@ function getProductList() {
   // 获取地址栏中的字符串，并将其转化为对象
   let openId = window.localStorage.getItem("openId");
   $.ajax({
-    url: "https://kidstoms.com/getAllProduct",
+    url: "https://zhixianzhai.com/getAllProduct",
     type: "post",
     dataType: "json",
     data: {},
@@ -73,7 +73,7 @@ function getOpenId() {
   let code = obj.code;
   // 判断openId是否存在
   $.ajax({
-    url: "https://kidstoms.com/getOpenIdByCode",
+    url: "https://zhixianzhai.com/getOpenIdByCode",
     type: "get",
     dataType: "json",
     data: {

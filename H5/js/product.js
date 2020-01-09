@@ -49,11 +49,11 @@ function shopCart() {
 function addShopCart() {
   window.location.reload();
   // $("#spanNum").html(window.localStorage.getItem("Length"));
-  
+
   let params = location.search.split("=");
   let productId = params[1];
   $.ajax({
-    url: "https://kidstoms.com/addToShopCart",
+    url: "https://zhixianzhai.com/addToShopCart",
     type: "post",
     dataType: "json",
     data: {
@@ -73,7 +73,7 @@ function getList() {
   let openId = localStorage.getItem("openId");
   // 获取数据渲染数据到页面
   $.ajax({
-    url: "https://kidstoms.com/queryShopCart",
+    url: "https://zhixianzhai.com/queryShopCart",
     type: "post",
     dataType: "json",
     data: {
@@ -129,7 +129,7 @@ $("#btn-car2").click(function() {
 // 获取产品详情  getProductDetail接口
 function getProductDetail() {
   $.ajax({
-    url: "https://kidstoms.com/getProductDetail",
+    url: "https://zhixianzhai.com/getProductDetail",
     type: "post",
     dataType: "json",
     data: {
@@ -192,7 +192,7 @@ $(document).ready(function() {
 function getRecommendProductId(index) {
   let recommendDesc = descList[index].recommendDesc;
   $.ajax({
-    url: "https://kidstoms.com/getProductByDesc",
+    url: "https://zhixianzhai.com/getProductByDesc",
     type: "post",
     dataType: "json",
     data: {
@@ -211,10 +211,10 @@ function getRecommendProductId(index) {
 // 分享
 $(function() {
   $.ajax({
-    url: "https://kidstoms.com/getShareConfiguration",
+    url: "https://zhixianzhai.com/getShareConfiguration",
     type: "post",
     data: {
-      // shareUrl: "https://kidstoms.com/tea/H5/product.html?productId=88880008" ,
+      // shareUrl: "https://zhixianzhai.com/tea/H5/product.html?productId=88880008" ,
       shareUrl: href // 获取页面当前链接
     },
     dataType: "json",
@@ -244,7 +244,7 @@ $(function() {
     wx.onMenuShareAppMessage({
       title: "芷贤斋精选", // 分享标题
       desc: window.localStorage.getItem("productDesc"), // 分享描述
-      link: "https://kidstoms.com/tea/H5/product.html?productId=" + productId, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      link: "https://zhixianzhai.com/tea/H5/product.html?productId=" + productId, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
       imgUrl: linkUrl, // 分享图标
       success: function() {
         // 设置成功
@@ -269,7 +269,7 @@ $(function() {
     //需在用户可能点击分享按钮前就先调用
     wx.onMenuShareTimeline({
       title: "芷贤斋精选", // 分享标题
-      link: "https://kidstoms.com/tea/H5/product.html?productId=" + productId, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+      link: "https://zhixianzhai.com/tea/H5/product.html?productId=" + productId, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
       imgUrl: linkUrl, // 分享图标
       success: function() {
         // 设置成功

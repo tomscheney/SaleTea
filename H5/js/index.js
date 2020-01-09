@@ -8,7 +8,7 @@ $(document).ready(function () {
     )();
     if (wx) {
         let appid = "wx6e974f12e898a2ee"
-        let redirect_uri = "https://kidstoms.com/tea/H5/home.html"
+        let redirect_uri = "https://zhixianzhai.com/tea/H5/home.html"
         let response_type = "code"
         let state = "STATE#wechat_redirect"
         let scope = "snsapi_base"

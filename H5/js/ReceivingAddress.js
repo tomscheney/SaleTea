@@ -44,7 +44,7 @@ function newAdd() {
     alert("请添加收货人详细地址");
   } else {
     $.ajax({
-      url: "https://kidstoms.com/saveAddress",
+      url: "https://zhixianzhai.com/saveAddress",
       type: "post",
       dataType: "json",
       data: {

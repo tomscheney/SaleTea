@@ -6,7 +6,7 @@ $(function() {
 
   // 进去立即购买页面 调buyNow接口
   $.ajax({
-    url: "https://kidstoms.com/buyNow",
+    url: "https://zhixianzhai.com/buyNow",
     type: "post",
     dataType: "json",
     data: {

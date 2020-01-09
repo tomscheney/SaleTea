@@ -14,13 +14,13 @@
 // 		}
 // 		var obj = addr_obj()
 // 		 console.log(obj.openId)
-		
+
 // //获取手机验证码
 // 	// var InterValObj; //timer变量，控制时间
 // 	// var count = 60; //间隔函数，1秒执行
 // 	// var curCount;//当前剩余秒数
 // 	// var phone = "";
-	
+
 // 	// function sendMessage() {
 // 	//   　curCount = count;
 // 	// 　　//设置button效果，开始计时
@@ -33,23 +33,23 @@
 // 	// 	 $.ajax({
 // 	// 	 　　type: "get", //用get方式传输
 // 	// 	 　　dataType: "JSON", //数据格式:JSON
-// 	// 	 　　url: 'https://kidstoms.com/getSecurityCode', //目标地址
+// 	// 	 　　url: 'https://zhixianzhai.com/getSecurityCode', //目标地址
 // 	// 	　　 data: {
 // 	// 			openId = openId,
 // 	// 			phone = phone,
 // 	// 			   }
 // 	// 	　　 error: function (data) { },
-// 	// 	 　　success: function (msg){ 
+// 	// 	 　　success: function (msg){
 // 	// 		    alert("验证码"+msg)
 // 	// 	 }
 // 	// 	 });
 // 	// }
 // 	// console.log(openId,phone)
-	
-	
+
+
 // 	//timer处理函数
 // 	// function SetRemainTime() {
-// 	// 	if (curCount == 0) {                
+// 	// 	if (curCount == 0) {
 // 	// 		window.clearInterval(InterValObj);//停止计时器
 // 	// 		$("#btnSendCode").removeAttr("disabled");//启用按钮
 // 	// 		$("#btnSendCode").val("重新获取验证码").css({"background-color":"#0097a8"});
@@ -59,8 +59,8 @@
 // 	// 		$("#btnSendCode").val("" + curCount + "秒后重新获取").css({"background-color":"#D1D4D3"});
 // 	// 	}
 // 	// }
-			
-			
+
+
 // //*********获取语音验证码*********//
 
 // 	var AddInterValObj; //timer变量，控制时间
@@ -68,9 +68,9 @@
 // 	var addCount;//当前剩余秒数
 // 	 var openId = obj.openId;
 // 	function sendAddmes() {
-// 		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
-// 		if(!myreg.test($("#add_phone").val())) 
-// 		{ 
+// 		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+// 		if(!myreg.test($("#add_phone").val()))
+// 		{
 // 			layertest('请输入有效的手机号码')
 // 		    return false;
 // 		}else{
@@ -85,24 +85,24 @@
 // 			 $.ajax({
 // 		 　　type: "post", //用post方式传输
 // 		 　　dataType: "JSON", //数据格式:JSON
-// 		 　　url: 'https://kidstoms.com/sms/getSecurityCode', //目标地址
+// 		 　　url: 'https://zhixianzhai.com/sms/getSecurityCode', //目标地址
 // 		　　 data: {
 // 				openId : openId,
 // 				phone : phone,
 // 				   },
-// 		 　　success: function (res){ 
+// 		 　　success: function (res){
 // 			    alert("验证码:"+res)
 // 		 },
 // 		 　 error: function () {
-			  
+
 // 		 },
 // 		 });
 // 		}
 // 	}
 // 	function telphone(){
-// 		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
-// 		if(!myreg.test($("#add_phone").val())) 
-// 		{ 
+// 		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+// 		if(!myreg.test($("#add_phone").val()))
+// 		{
 // 			$("#add_phone").test('请输入有效的手机号码');
 // 			$('.login_ipt').addClass('error');
 // 		    return false;
@@ -117,7 +117,7 @@
 // 	});
 // 	// timer处理函数
 // 	function SetAddnTime() {
-// 		if (addCount == 0) {                
+// 		if (addCount == 0) {
 // 			window.clearInterval(AddInterValObj);//停止计时器
 // 			$("#addSendCode").removeAttr("disabled");//启用按钮
 // 			$("#addSendCode").val("重新获取验证码").css({"background-color":"#0097a8"});
@@ -127,7 +127,7 @@
 // 			$("#addSendCode").val("" + addCount + "秒后重新获取").css({"background-color":"#D1D4D3"});
 // 		}
 // 	}
-	
+
 // 	//code 验证
 // 	function code_test(){
 // 		if($('#code').val()==''){
@@ -140,7 +140,7 @@
 // 	$(document).on('blur','.code',function(){
 // 		code_test();
 // 	});
-	
+
 // 	// layer modal
 // 	// function layertest(content){
 // 	// 	layer.open({
@@ -155,7 +155,7 @@
 // 	// 	    ,content: content
 // 	// 	});
 // 	// }
-	
+
 // 	// update btn click
 // 	// $(document).on('click','.updateBtn',function(){
 // 	// 	if($('.error').length >0){

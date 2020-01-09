@@ -153,7 +153,7 @@ function dels(productId) {
   var r = confirm("您确定要删除当前商品？");
   if (r == true) {
     $.ajax({
-      url: "https://kidstoms.com/deleteProduct",
+      url: "https://zhixianzhai.com/deleteProduct",
       type: "post",
       dataType: "json",
       data: {
@@ -174,7 +174,7 @@ function getList() {
   let openId = localStorage.getItem("openId");
   // 获取数据渲染数据到页面
   $.ajax({
-    url: "https://kidstoms.com/queryShopCart",
+    url: "https://zhixianzhai.com/queryShopCart",
     type: "post",
     dataType: "json",
     data: {
@@ -223,7 +223,7 @@ function reduce(index, productId) {
     return;
   }
   $.ajax({
-    url: "https://kidstoms.com/reduceProductAmount",
+    url: "https://zhixianzhai.com/reduceProductAmount",
     type: "post",
     dataType: "json",
     data: {
@@ -241,7 +241,7 @@ function reduce(index, productId) {
 // 点击加号（+）的时候 调 addToShopCart接口
 function add(index, productId) {
   $.ajax({
-    url: "https://kidstoms.com/addToShopCart",
+    url: "https://zhixianzhai.com/addToShopCart",
     type: "post",
     dataType: "json",
     data: {

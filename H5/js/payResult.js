@@ -4,7 +4,7 @@ console.log(search);
 console.log(list);
 
 // 获取后台数据
-let notifyUrl = "http://kidstoms.com/H5/payResult.html";
+let notifyUrl = "http://zhixianzhai.com/H5/payResult.html";
 
 function pay() {
   if (typeof WeixinJSBridge == "undefined") {
@@ -26,7 +26,7 @@ function onBridgeReady() {
   console.log(totalFee);
   console.log(orderNo);
   $.ajax({
-    url: "https://kidstoms.com/getPayInfo",
+    url: "https://zhixianzhai.com/getPayInfo",
     type: "post",
     dataType: "json",
     data: {

@@ -11,7 +11,7 @@ var orderNo = 0;
 // 进去立即购买页面 调buyNow接口
 function buyNow() {
   $.ajax({
-    url: "https://kidstoms.com/buyNow",
+    url: "https://zhixianzhai.com/buyNow",
     type: "post",
     dataType: "json",
     data: {
@@ -53,7 +53,7 @@ function adda() {
 // 获取指定用户所有地址 调getAllAddressByOpenId接口
 function getAllAddressByOpenId() {
   $.ajax({
-    url: "https://kidstoms.com/getAllAddressByOpenId",
+    url: "https://zhixianzhai.com/getAllAddressByOpenId",
     type: "post",
     dataType: "json",
     data: {
@@ -132,7 +132,7 @@ $(document).ready(function() {
 
 function settleAccounts() {
   $.ajax({
-    url: "https://kidstoms.com/settleAccounts",
+    url: "https://zhixianzhai.com/settleAccounts",
     type: "post",
     dataType: "json",
     data: {

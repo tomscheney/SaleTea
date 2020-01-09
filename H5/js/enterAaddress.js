@@ -44,7 +44,7 @@ function newAdd() {
   // console.log("地址", address);
 
   $.ajax({
-    url: "https://kidstoms.com/saveAddress",
+    url: "https://zhixianzhai.com/saveAddress",
     type: "post",
     dataType: "json",
     data: {
